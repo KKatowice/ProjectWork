@@ -78,21 +78,21 @@ def getRicerca():
     # Restituisci i risultati alla pagina web
     return render_template('risultati_ricerca.html', risultati=res)
 
-
+# --PAGINA UTENTE--
 @apiBlueprint.route('/api/getAutobyBudget', methods=['GET'])
 def getAutobyBudget():
-    form_data = request.form
-    num_utente = form_data("num_utente")
-    c = create_db_connection(DBNAME)
-    q1 = f"""SELECT  budget FROM utente WHERE id_utente = "{num_utente}"; """
+    num_utente = request.args.get("num_utente")
+    c = create_db_connection("concessionario")
+    q1 = f"""SELECT budget FROM utente WHERE id_utente = "{num_utente}"; """
+    budget = read_query(c, q1)[0]['budget']
     q2 = f"""SELECT * FROM auto "
          JOIN motori ON motori.id_motore = auto.id_motore "
          JOIN marchi ON marchi.id_marchio = auto.id_,marchio"
-         WHERE auto.prezzo < utente.budget;"""
-    res = read_query(c, q1)
+         WHERE auto.prezzo < {budget};"""
+
     res = read_query(c, q2)
     c.close()
-    return render_template('risultati_ricerca.html', risultati=res)
+    return res
 
 
 
