@@ -6,6 +6,7 @@
     <title>DAITV12 - Home Page</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         body {
             background-color:#ffffff;
@@ -140,13 +141,17 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
     </style>
+
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="navbar-overlay"></div>
     <div class="container">
-        <a class="navbar-brand" href="#">DrivenChoice</a>
+        <a class="navbar-brand" href="#">
+            <i class="bi bi-speedometer2"></i> <!-- Icona della macchina -->
+            DriverChoice
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -154,7 +159,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
                 <a class="nav-link active" href="/">Home</a>
-                <a class="nav-link" href="/Chi siamo">Chi Siamo</a>
+                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Chi%20Siamo.html?_ijt=umfh61dhsgln0sjnkhm436cehi&_ij_reload=RELOAD_ON_SAVE">Chi Siamo</a>
                 <a class="nav-link" href="/film">I nostri Marchi</a>
                 <a class="nav-link" href="/generi">Tutte le automobili</a>
                 <a class="nav-link" href="/grafici">Grafici</a>
@@ -166,10 +171,11 @@
 </nav>
 
 
+
 <div class="welcome-banner">
     <div class="container welcome-banner-content">
         <h2>Benvenuti</h2>
-        <p>Esplora il mondo di DrivenChoice. Trova l'automobile adatta a tutte le tue esigenze</p>
+        <p>Esplora il vasto mondo di DrivenChoice, dove l'auto perfetta, ti aspetta dietro ogni angolo. </p>
     </div>
 </div>
 
@@ -210,7 +216,6 @@
         </div>
     </div>
 </div>
-
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
