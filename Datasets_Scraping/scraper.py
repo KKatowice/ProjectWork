@@ -82,7 +82,7 @@ def getEngines(divvoneCar: BeautifulSoup, brand: str, model: str):
             #print(y['href'])
             # pulito o no ? TODO
             #nme = y.text.replace(brand.upper(),"").replace(model.upper(),"").rsplit("(")[0].strip()
-            eng[y.text] = y['href']
+            eng[y.text] = {'link':y['href']}
     return eng
     
 
@@ -101,6 +101,31 @@ async def scrape_eachModel_data(dizModels: dict):
         with open('marca_modello_engines.json', 'w') as f:
             json.dump(dizModels, f)
     return dizModels
+
+async def scrape_eachEngine_data(dizModels: dict):
+    for brand in tqdm(dizModels.keys(),f"scraping engines details"):
+        for model in dizModels[brand]:
+            for engine in dizModels[brand][model]['engines']:
+                sg = ScriptGenerator(dizModels[brand][model]['engines'][engine]['link'])#['link']
+                sg = await sg.scrape_data()
+                tableInfo = sg.find_all('div',{'class':'padcol2'})
+                for y in tableInfo:
+                    if "ENGINE SPECS" in y.text:
+                        tableInfo = y
+                        break
+                try:
+                    descInfo = tableInfo.find_all('td',{'class':'left'})
+                    descVal = tableInfo.find_all('td',{'class':'right'})
+                except:
+                    print(f"{tableInfo}")
+                for x in range(len(descInfo)):
+                    dizModels[brand][model]['engines'][engine][descInfo[x].text] = descVal[x].text
+                
+
+    
+    with open('completo.json', 'w') as f:
+        json.dump(dizModels, f)
+    return dizModels
             
 
 
@@ -115,9 +140,10 @@ async def main(url):
     #print(dcarModel)
 
 async def maintest():
-    with open('marca_modello.json', 'r') as f:
+    with open('marca_modello_engines.json', 'r') as f:
         dcarModel = json.load(f)
-    daipls = await scrape_eachModel_data(dcarModel)
+    daipls = await scrape_eachEngine_data(dcarModel)
+    
 
 
 if __name__ == '__main__':
