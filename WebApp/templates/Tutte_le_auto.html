@@ -199,12 +199,12 @@
     </div>
 </div>
 
-<script>
+
 
 <div class="container mt-5 text-center">
     <h1>Auto filtrate</h1>
 
-    {% for car in filtered_cars %}
+    {% for car in auto %}
     <div class="card" style="width: 18rem;">
 
         <img src="{{ car['img_src'] }}" class="card-img-top" alt="Car Image">
@@ -224,8 +224,9 @@
             <li class="list-group-item">Emissioni: {{ car['emissioni'] }}</li>
             <li class="list-group-item">Prezzi: {{ car['prezzi'] }}</li>
         </ul>
+        <a href="/auto?marchio={{ car['marchio'] }}"><button class="btn btn-primary">Vedi auto</button></a>
     </div>
-
+{% endfor %}
 </div>
 
 
