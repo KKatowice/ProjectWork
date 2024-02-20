@@ -6,7 +6,8 @@ c = create_db_connection("concessionario")
 
 marchi = """CREATE TABLE marchi(
             id_marchio int PRIMARY KEY AUTO_INCREMENT,
-            nome varchar(45) UNIQUE NOT NULL)"""
+            nome varchar(45) UNIQUE NOT NULL,
+            foto_marchio varchar(255))"""
 
 motore = """CREATE TABLE motori(
             id_motore int PRIMARY KEY AUTO_INCREMENT,
@@ -24,7 +25,8 @@ auto = """CREATE TABLE auto(
             consumi decimal(10,2),
             emissioni decimal(10,2),
             serbatoio decimal(10,2),
-            prezzo decimal(10,2),
+            prezzo decimal(10,2), 
+            foto_auto varchar(255),
             FOREIGN KEY (id_motore) REFERENCES motori(id_motore) ON DELETE CASCADE ON UPDATE CASCADE,
             FOREIGN KEY (id_marchio) REFERENCES marchi(id_marchio) ON DELETE CASCADE ON UPDATE CASCADE)"""
 
