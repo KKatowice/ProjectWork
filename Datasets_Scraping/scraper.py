@@ -188,3 +188,14 @@ if __name__ == '__main__':
         
 
 
+""" 
+marchio (fiat)
+|_imglink
+|_modello (panda)
+  |_engines
+  | |_modello (panda 1.2L)
+  |   |_ ...info modello
+  |   ...
+  |
+  |_car_imglink
+ """

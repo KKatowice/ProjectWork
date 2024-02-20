@@ -61,6 +61,7 @@ async def scrapePrices():
         for x in tqdm(dcarModel, f"scraping prices"):
             #print(x)
             for y in dcarModel[x]:
+                if y == "imglink": continue
                 #nme = x+" "+y+" price"
                 lnk = f'https://www.google.com/search?q={x}+{y}+price'
                 #print(lnk)
