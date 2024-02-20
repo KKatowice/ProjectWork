@@ -200,55 +200,66 @@
 </div>
 
 <script>
-<!--    // Funzione per aggiornare il valore visualizzato per emissioni, consumi e prezzo-->
-<!--    function updateValue(elementId, value) {-->
-<!--        // Aggiorna il testo con il valore e l'unità di misura-->
-<!--        document.getElementById(elementId).innerText = value ;-->
-<!--    }-->
 
-<!--    // Event listener per la barra di scorrimento dei consumi-->
-<!--    document.getElementById('consumi').addEventListener('input', function() {-->
-<!--        updateValue('consumi-value', this.value);-->
-<!--    });-->
+<div class="container mt-5 text-center">
+    <h1>Auto filtrate</h1>
 
-<!--    // Event listener per il pulsante "Applica filtri"-->
-<!--    document.getElementById('applyFiltersBtn').addEventListener('click', function() {-->
-<!--        // Aggiungi qui la logica per applicare i filtri e ottenere le auto filtrate-->
-<!--        console.log('Filtri applicati');-->
-<!--    });-->
+    {% for car in filtered_cars %}
+    <div class="card" style="width: 18rem;">
 
- function inviaDatiJSONfiltri() {
-            // Ottieni i dati dal form
-            var motore = document.getElementById('motore').value;
-            var marchio = document.getElementById('marchio').value;
-            var anno = document.getElementById('anno').value;
-            var carburante = document.getElementById('carburante').value;
-            var consumi = document.getElementById('consumi').value;
-            var emissioni = document.getElementById('emissioni').value;
-            var prezzo = document.getElementById('prezzo').value;
+        <img src="{{ car['img_src'] }}" class="card-img-top" alt="Car Image">
+        <div class="card-body">
+
+            <h5 class="card-title">{{ car['nome'] }}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+
+            <li class="list-group-item">Marchio: {{ car['marchio'] }}</li>
+            <li class="list-group-item">Cilindrata: {{ car['cilindrata'] }}</li>
+            <li class="list-group-item">Cavalli: {{ car['cavalli'] }}</li>
+            <li class="list-group-item">Anno: {{ car['anno'] }}</li>
+            <li class="list-group-item">Motore: {{ car['motore'] }}</li>
+            <li class="list-group-item">Carburante: {{ car['carburante'] }}</li>
+            <li class="list-group-item">Consumii: {{ car['consumii'] }}</li>
+            <li class="list-group-item">Emissioni: {{ car['emissioni'] }}</li>
+            <li class="list-group-item">Prezzi: {{ car['prezzi'] }}</li>
+        </ul>
+    </div>
+
+</div>
 
 
-            // Costruisci l'oggetto JSON
-            var datiJSON = {
-                motore: motore,
-                marchio: marchio,
-                anno: anno,
-                carburante: carburante,
-                consumi: consumi,
-                emissioni: emissioni,
-                prezzo: prezzo
-            };
+ <script>
+    function inviaDatiJSONfiltri() {
+        // Ottieni i dati dal form
+        var motore = document.getElementById('motore').value;
+        var marchio = document.getElementById('marchio').value;
+        var anno = document.getElementById('anno').value;
+        var carburante = document.getElementById('carburante').value;
+        var consumi = document.getElementById('consumi').value;
+        var emissioni = document.getElementById('emissioni').value;
+        var prezzo = document.getElementById('prezzo').value;
 
-            // Esegui la richiesta POST con i dati JSON
-            fetch('/api/auto_filter', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(datiJSON)
-            });
-        }
+        // Costruisci l'oggetto JSON
+        var datiJSON = {
+            motore: motore,
+            marchio: marchio,
+            anno: anno,
+            carburante: carburante,
+            consumi: consumi,
+            emissioni: emissioni,
+            prezzo: prezzo
+        };
 
+        // Esegui la richiesta POST con i dati JSON
+        fetch('/api/auto_filter', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(datiJSON)
+        });
+    }
 </script>
 
 <!-- Script delle librerie JavaScript -->
