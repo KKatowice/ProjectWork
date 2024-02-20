@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request
 from api import *
-
+import os
 from Api.api import apiBlueprint
-from Api.proveLeoApp.provaApi import getAuto, getMarchio, getAutobyMarchio
+from Api.proveLeoApp.provaApi import *
 from Database.dbUtils import *
+from provaApi import *
 
 from ProjectWork.Database.dbUtils import create_db_connection, read_query
 
@@ -11,8 +12,8 @@ app = Flask(__name__)
 app.register_blueprint(apiBlueprint)
 DBNAME = "concessionario"
 app.config['SQLALCHEMY_DATABASE_URI'] = (
-    f"mysql+pymysql://{os.environ['DB_USER']}:{os.environ['DB_PASSWORD']}@"
-    f"{os.environ['DB_HOST']}:3306/concessionario"
+    f"mysql+pymysql://{os.getenv('ID')}:{os.getenv('PSW')}@"
+    f"{os.getenv('H')}:3306/concessionario"
 )
 
 def select_specific_instance(table_name, instance_id):
@@ -30,30 +31,20 @@ def home():
 
 @app.route('/auto')
 def show_auto():
-    param_ord = request.args.get('param_ord')
+    f = request.args.get('filtro', default=None)
     page = int(request.args.get('page', default=1))
     items_per_page = 20
     c = create_db_connection(DBNAME)
     query = "SELECT COUNT(*) AS num_auto FROM auto"
     conteggio = read_query(c, query)[0]['num_auto']
     totale = (conteggio // items_per_page) + 1
-    auto = request.args.get('auto', default=None)
-
-    if auto:
-        if isinstance(auto, str):
-            data = getAuto()
-        else:
-            raise TypeError("L'auto deve essere una stringa")
+    if f:
+        data = filtra_auto()
+        lista_auto = [x.to_dict() for x in data]
     else:
-        if param_ord == "dal più basso":
-            data = getAuto(param_ord='asc')
-        elif param_ord == "dal più alto":
-            data = getAuto(param_ord='desc')
-        else:
-            data = getAuto()
-
+        lista_auto = getAuto()
     c.close()
-    return render_template('auto.html', auto=data, page=page, total_pages=totale)
+    return render_template('auto.html', auto=lista_auto, page=page, total_pages=totale)
 
 
 
