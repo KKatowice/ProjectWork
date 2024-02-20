@@ -20,32 +20,37 @@ def show_auto():
     query = "SELECT COUNT(*) AS num_auto FROM auto"
     conteggio = read_query(c, query)[0]['num_auto']
     totale = (conteggio // items_per_page) + 1
-    auto = request.args.get('auto', default=None)
-    if auto:
-        if isinstance(auto, str):
-            data = getAuto()
+    marchi = request.args.get('marchi', default=None)
+
+    if marchi:
+        if isinstance(marchi, str):
+            data = getAutobyMarchio()
         else:
-            raise TypeError("l'auto deve essere una stringa")
+            raise TypeError("L'auto deve essere una stringa")
     else:
-        data = getAuto()
-        if param_ord == "dal p":
-            data = data.sort(lambda x: x["Title"])
-        elif param_ord == "4_stelle":
-            data = get_evaluation()
-    top_diesci = Top10Film()
+        if param_ord == "dal più basso":
+            data = getAuto(param_ord='asc')
+        elif param_ord == "dal più alto":
+            data = getAuto(param_ord='desc')
+        else:
+            data = getAuto()
+
+    c.close()
     return render_template('auto.html', auto=data, page=page, total_pages=totale)
 
 
+
 @app.route('/marchi')
-def show_generi():
+def show_marchi():
     page = int(request.args.get('page', default=1))
     items_per_page = 10
     c = create_db_connection(DBNAME)
-    query = "SELECT COUNT(*) AS num_generi FROM generi"
-    conteggio = read_query(c, query)[0]['num_generi']
+    query = "SELECT COUNT(*) AS num_marchi FROM marchi"
+    conteggio = read_query(c, query)[0]['num_marchi']
     totale = (conteggio // items_per_page) + 1
-    data = getGeneri()
-    return render_template('Generi.html', generi=data, page=page, total_pages=totale)
+    data = getMarchio()
+    return render_template('marchi.html', generi=data, page=page, total_pages=totale)
+
 
 # @app.route('/grafici')
 # def showGrafici():
