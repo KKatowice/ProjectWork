@@ -1,0 +1,22 @@
+{
+  
+  "dependencies": {
+  
+    
+  "@grammyjs/menu": "^1.2.1",
+  
+    
+  "dotenv": "^16.4.5",
+  
+    
+  "grammy": "^1.21.1"
+  
+  },
+  
+  "devDependencies": {
+  
+    
+  "@types/node": "^20.11.19"
+  
+  }
+}
