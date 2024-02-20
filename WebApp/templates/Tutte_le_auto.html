@@ -1,124 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Agenzia ViaggiGiraMondo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAITV12 - Tutte le auto</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         body {
-        display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-image: url('https://img.freepik.com/premium-photo/travel-concept-blue-background-with-copy-space-airplane-toy-blue-color-background_661495-33675.jpg');
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;}
-            {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background-color: #ffffff;
+            color: #000000; /* testo nero */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
-        h1 {
-            color: #333;
+        .navbar {
+            position: relative;
+            background-color: #D3D3D3;
+            border-bottom: 1px solid #6ca577;
         }
 
-        form {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 50px;
-            max-width: 400px;
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #000000; /* testo nero */
+            font-weight: bold;
+        }
+
+        .nav-link:hover {
+            color: #7FFFD4;
+        }
+
+        .container {
+            max-width: 800px;
             margin: 20px auto;
         }
 
-        fieldset {
-            border: none;
-            margin: 0;
-            padding: 0;
+        .filters {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-item {
             margin-bottom: 20px;
+            display: flex;
+            align-items: center;
         }
 
-        input {
+        .filter-item label {
+            margin-right: 10px;
+        }
+
+        .filter-item select,
+        .filter-item input[type="range"] {
+            width: 200px;
+            margin-top: 5px;
+        }
+
+        /* Custom styling for range input */
+        .custom-range {
+            -webkit-appearance: none;
+            appearance: none;
             width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
+            height: 10px; /* Altezza barra di scorrimento */
+            background-color: #e0e0e0; /* Colore barra di scorrimento */
+            outline: none;
+            border-radius: 5px;
+            margin-top: 8px;
         }
 
-        .privacy-checkbox-label a:hover {
-            color: #333;
+        .custom-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px; /* Larghezza del pollice */
+            height: 20px; /* Altezza del pollice */
+            background-color: #7FFF00; /* Colore del pollice */
+            border: 2px solid #7FFF00; /* Colore del bordo del pollice */
+            border-radius: 50%; /* Bordi arrotondati */
+            cursor: pointer;
+            margin-top: -7px;
+            transition: transform 0.2s;
         }
 
-        .link-container {
-            text-align: center;
-            margin-top: 20px;
+        .custom-range::-moz-range-thumb {
+            width: 20px; /* Larghezza del pollice */
+            height: 20px; /* Altezza del pollice */
+            background-color: #7FFF00; /* Colore del pollice */
+            border: 2px solid #7FFF00; /* Colore del bordo del pollice */
+            border-radius: 50%; /* Bordi arrotondati */
+            cursor: pointer;
+            margin-top: -7px;
+            transition: transform 0.2s;
         }
 
-        .link-container a {
-            color: #1E90FF;
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 16px;
-            font-family: Arial, sans-serif;
-            transition: color 0.3s;
+        .range-value {
+            font-size: 14px;
+            margin-left: 10px;
+            color: #4CAF50; /* Colore verde salvia */
         }
 
-        .link-container a:hover {
-            color: #333;
+        /* Hover effect on range thumb */
+        .custom-range::-webkit-slider-thumb:hover,
+        .custom-range::-moz-range-thumb:hover {
+            transform: scale(1.1);
+        }
+
+        /* Personalizzazione del pulsante Filtri */
+        #applyFiltersBtn {
+            background-color: #7FFF00; /* Colore verde foglia */
+            border-color: #7FFF00; /* Colore del bordo */
         }
     </style>
 </head>
-
 <body>
 
-<div class="link-container">
-    <a href="http://localhost:63342/pythonProject2/lab%20CSS/agenzia%20viaggi.html?_ijt=anv8r4ksd0jnc799oi66tffj1f&_ij_reload=RELOAD_ON_SAVE">Home</a>
-    <a href="http://localhost:63342/pythonProject2/lab%20CSS/chi_siamo.html?_ijt=b4318q5ep2damccsaa7jkhq6ql&_ij_reload=RELOAD_ON_SAVE">Chi
-        Siamo</a>
-    <a href="http://localhost:63342/pythonProject2/lab%20CSS/iscriviti_newsletter.html?_ijt=i6ht6hugi65ssuttfoba6fdti&_ij_reload=RELOAD_ON_SAVE">Iscriviti</a>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="bi bi-speedometer2"></i> <!-- Icona della macchina -->
+            DriverChoice
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link active" href="/">Home</a>
+                <a class="nav-link" href="#">Chi Siamo</a>
+                <a class="nav-link" href="#">I nostri Marchi</a>
+                <a class="nav-link" href="#">Tutte le automobili</a>
+                <a class="nav-link" href="#">Grafici</a>
+                <a class="nav-link" href="#">Utente</a>
+                <a class="nav-link" href="#">Preferiti</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="filters">
+        <div class="filter-item">
+            <label for="motore">Motore:</label>
+            <select name="motore" id="motore">
+                <option value="benzina">Benzina</option>
+                <option value="diesel">Diesel</option>
+                <option value="ibrida">Ibrida</option>
+                <option value="elettrica">Elettrica</option>
+            </select>
+        </div>
+        <div class="filter-item">
+            <label for="marchio">Marchio:</label>
+            <select name="marchio" id="marchio">
+                <option value="bmw">BMW</option>
+                <option value="audi">Audi</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="toyota">Toyota</option>
+            </select>
+        </div>
+        <div class="filter-item">
+            <label for="anno">Anno:</label>
+            <select name="anno" id="anno">
+                <option value="anno">2000-2010</option>
+                <option value="anno">2011-2020</option>
+                <option value="anno">2021-2024</option>
+            </select>
+        </div>
+        <div class="filter-item">
+            <label for="carburante">Carburante:</label>
+            <select name="carburante" id="carburante">
+                <option value="bmw">Benzina</option>
+                <option value="audi">Diesel</option>
+                <option value="mercedes">GPL</option>
+                <option value="toyota">Elettrica</option>
+                <option value="toyota">Ibrida</option>
+                <option value="toyota">Metano</option>
+            </select>
+        </div>
+        <div class="filter-item">
+            <label for="consumi">Consumi:</label>
+            <input type="range" name="consumi" id="consumi" class="custom-range" min="0" max="20">
+            <span class="range-value" id="consumi-value">0 litri/km</span>
+        </div>
+        <div class="filter-item">
+            <label for="emissioni">Emissioni:</label>
+            <input type="range" name="emissioni" id="emissioni" class="custom-range" min="0" max="100">
+            <span class="range-value" id="emissioni-value">0</span>
+        </div>
+        <div class="filter-item">
+            <label for="prezzo">Prezzo:</label>
+            <input type="range" name="prezzo" id="prezzo" class="custom-range" min="0" max="1000000">
+            <span class="range-value" id="prezzo-value">0</span>
+        </div>
+        <!-- Pulsante Applica filtri -->
+        <div class="filter-item">
+            <button class="btn btn-primary" id="applyFiltersBtn">Applica filtri</button>
+        </div>
+    </div>
 </div>
 
-<h1><strong>Iscriviti alla nostra Newsletter</strong></h1>
+<script>
+    // Funzione per aggiornare il valore visualizzato per emissioni, consumi e prezzo
+    function updateValue(elementId, value) {
+        // Aggiorna il testo con il valore e l'unità di misura
+        document.getElementById(elementId).innerText = value ;
+    }
 
-<form action="http://localhost:63342/pythonProject2/lab%20CSS/iscritto.html" method="get">
-    <fieldset>
-        <legend><strong>I tuoi dettagli</strong></legend>
+    // Event listener per la barra di scorrimento dei consumi
+    document.getElementById('consumi').addEventListener('input', function() {
+        updateValue('consumi-value', this.value);
+    });
 
-        <li>
-            <label for="name"><strong>Nome e Cognome</strong></label>
-            <input id="name" name="name" type="text" placeholder="Nome e cognome" required autofocus>
-        </li>
-        <li>
-            <label for="email"><strong>Email</strong></label>
-            <input id="email" name="email" type="email" placeholder="esempio@gmail.com" required>
-        </li>
-        <li>
-            <label for="phone"><strong>Telefono</strong></label>
-            <input id="phone" name="Telefono" type="tel" placeholder="Es. +3975147698" required>
-        </li>
+    // Event listener per il pulsante "Applica filtri"
+    document.getElementById('applyFiltersBtn').addEventListener('click', function() {
+        // Aggiungi qui la logica per applicare i filtri e ottenere le auto filtrate
+        console.log('Filtri applicati');
+    });
 
-    </fieldset>
+ function inviaDatiJSONautore() {
+            // Ottieni i dati dal form
+            var nome_ = document.getElementById('autore').value;
+            var data_nascita = document.getElementById('data_di_nascita').value;
+            var data_morte = document.getElementById('data_di_morte').value;
+            var movimento_ = document.getElementById('movimento').value;
 
-    <fieldset class="conosciuti-box">
-        <legend><strong>Come ci hai conosciuti?</strong></legend>
-        <input type="checkbox" name="social network" value="social network"/> social network
-        <br/>
-        <input type="checkbox" name="passaparola" value="passaparola"/> passaparola
-        <br/>
-        <input type="checkbox" name="pubblicità" value="pubblicità"/> pubblicità
-    </fieldset>
 
-    <fieldset>
-        <legend><strong>Privacy</strong></legend>
-        <label for="privacyCheckbox">
-            <input type="checkbox" id="privacyCheckbox" name="privacyCheckbox" required>
-            Ho letto e accetto le <a href="https://en.wikipedia.org/wiki/Privacy_policy" target="_blank"><strong>"condizioni
-            sulla privacy"</strong></a>
-        </label>
-    </fieldset>
-    <button type="submit">Iscriviti</button>
-</form>
+            // Costruisci l'oggetto JSON
+            var datiJSON = {
+                autore: nome_,
+                movimento: movimento_,
+                data_di_nascita: data_nascita,
+                data_di_morte: data_morte
+            };
 
+            // Esegui la richiesta POST con i dati JSON
+            fetch('/api/addArtista', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(datiJSON)
+            });
+        }
+
+</script>
+
+<!-- Script delle librerie JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>
