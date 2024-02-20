@@ -12,11 +12,12 @@ bot.command("start", (ctx) => ctx.reply("Welcome! do /menu o/."));
 
 const userState = new Map();
 
+// Function to handle the user's response to "Domanda1"
 function handleDomanda1Response(ctx) {
   const userId = ctx.from.id;
   const userResponse = ctx.message.text;
 
-  if (userState.has(userId) && userState.get(userId) === 'domanda1_response') {
+  if (userState.has(userId) && userState.get(userId) === 'waiting_for_domanda1_response') {
     ctx.reply(`You responded with: ${userResponse}`);
     userState.delete(userId);
   }
@@ -25,26 +26,28 @@ function handleDomanda1Response(ctx) {
 function rispOne(ctx) {
   const userId = ctx.from.id;
   if (!userState.has(userId)) {
-    userState.set(userId, 'domanda1_response');
+    userState.set(userId, 'waiting_for_domanda1_response');
     ctx.reply("Domanda1:");
   } else {
     ctx.reply("Please complete your current task before starting a new one.");
   }
 }
 
-const menu = new Menu("Menu Scelta")
-  .text("Budget", (ctx) => {
+const menu = new Menu("my-menu-identifier")
+  .text("AA", (ctx) => {
     rispOne(ctx);
-  }) // da a
-  .text("Cavalli", (ctx) => ctx.reply("You pressed A!")).row() // da a
-  .text("Cilindrata", (ctx) => ctx.reply("You pressed BB!")) // da a
-  .text("Consumi", (ctx) => ctx.reply("You pressed B!")).row() // da a
-  //.text("Marchi", (ctx) => ctx.reply("You pressed BB!")) @TODO menu con tutti i marchi
+  })
+  .text("A", (ctx) => ctx.reply("You pressed A!")).row()
+  .text("BB", (ctx) => ctx.reply("You pressed BB!"))
+  .text("B", (ctx) => ctx.reply("You pressed B!")).row();
 
+// Register the menu and message handling middleware
 bot.use(menu);
 bot.on('message', handleDomanda1Response);
 
-bot.command("menu", async (ctx) => {
+bot.command("scroto", async (ctx) => {
+  console.log("wtf")
+    // Send the menu.
     await ctx.reply("Impostazioni:", { reply_markup: menu });
   });
 
