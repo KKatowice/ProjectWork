@@ -13,18 +13,18 @@ motore = """CREATE TABLE motori(
             id_motore int PRIMARY KEY AUTO_INCREMENT,
             cilindrata int,
             potenza int,
-            cavalli int)"""
+            cavalli int,
+            carburante varchar(25),
+            consumi decimal(10,2),
+            emissioni decimal(10,2),
+            serbatoio decimal(10,2)
+            )"""
 
 auto = """CREATE TABLE auto(
             id_auto int PRIMARY KEY AUTO_INCREMENT,
             id_motore int,
             id_marchio int,
             modello varchar(55),
-            anno int,
-            carburante varchar(25),
-            consumi decimal(10,2),
-            emissioni decimal(10,2),
-            serbatoio decimal(10,2),
             prezzo decimal(10,2), 
             foto_auto varchar(255),
             FOREIGN KEY (id_motore) REFERENCES motori(id_motore) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -34,6 +34,8 @@ utenti = """CREATE TABLE utenti(
             id_utente int PRIMARY KEY AUTO_INCREMENT,
             nome varchar(55) NOT NULL,
             cognome varchar(55) NOT NULL,
+            eta int(11) NOT NULL CHECK(eta>0 AND eta<120),
+            sesso varchar(55) NOT NULL CHECK(sesso = 'maschio' or sesso ='femmina' or sesso = 'altro'),
             email varchar(55) UNIQUE NOT NULL,
             cap varchar(6),
             budget int)"""

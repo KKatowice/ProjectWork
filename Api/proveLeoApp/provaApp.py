@@ -31,15 +31,18 @@ def home():
 
 @app.route('/auto')
 def show_auto():
-
+    f = request.args.get('filtro', default=None)
     page = int(request.args.get('page', default=1))
     items_per_page = 20
     c = create_db_connection(DBNAME)
     query = "SELECT COUNT(*) AS num_auto FROM auto"
     conteggio = read_query(c, query)[0]['num_auto']
     totale = (conteggio // items_per_page) + 1
-    data = filtra_auto()
-    lista_auto = [x.to_dict() for x in data]
+    if f:
+        data = filtra_auto()
+        lista_auto = [x.to_dict() for x in data]
+    else:
+        lista_auto = getAuto()
     c.close()
     return render_template('auto.html', auto=lista_auto, page=page, total_pages=totale)
 
