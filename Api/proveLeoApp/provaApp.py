@@ -8,6 +8,10 @@ from Database.dbUtils import *
 app = Flask(__name__)
 app.register_blueprint(apiBlueprint)
 DBNAME = "concessionario"
+app.config['SQLALCHEMY_DATABASE_URI'] = (
+    f"mysql+pymysql://{os.environ['DB_USER']}:{os.environ['DB_PASSWORD']}@"
+    f"{os.environ['DB_HOST']}:3306/concessionario"
+)
 
 def select_specific_instance(table_name, instance_id):
     c = create_db_connection(DBNAME)
