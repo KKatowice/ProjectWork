@@ -55,7 +55,7 @@ class Motore(db.Model):
 
 
 class Marchio(db.Model):
-    __tablename__ = 'motori'
+    __tablename__ = 'marchi'
     id_marchio = db.Column(db.Integer, primary_key=True, autoincrement=True)
     nome = db.Column(db.String(45))
     foto_marchio = db.Column(db.String(255))
