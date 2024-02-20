@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Agenzia ViaggiGiraMondo</title>
+
+    <style>
+        body {
+        display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url('https://img.freepik.com/premium-photo/travel-concept-blue-background-with-copy-space-airplane-toy-blue-color-background_661495-33675.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;}
+            {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 50px;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        fieldset {
+            border: none;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        .privacy-checkbox-label a:hover {
+            color: #333;
+        }
+
+        .link-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .link-container a {
+            color: #1E90FF;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            transition: color 0.3s;
+        }
+
+        .link-container a:hover {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="link-container">
+    <a href="http://localhost:63342/pythonProject2/lab%20CSS/agenzia%20viaggi.html?_ijt=anv8r4ksd0jnc799oi66tffj1f&_ij_reload=RELOAD_ON_SAVE">Home</a>
+    <a href="http://localhost:63342/pythonProject2/lab%20CSS/chi_siamo.html?_ijt=b4318q5ep2damccsaa7jkhq6ql&_ij_reload=RELOAD_ON_SAVE">Chi
+        Siamo</a>
+    <a href="http://localhost:63342/pythonProject2/lab%20CSS/iscriviti_newsletter.html?_ijt=i6ht6hugi65ssuttfoba6fdti&_ij_reload=RELOAD_ON_SAVE">Iscriviti</a>
+</div>
+
+<h1><strong>Iscriviti alla nostra Newsletter</strong></h1>
+
+<form action="http://localhost:63342/pythonProject2/lab%20CSS/iscritto.html" method="get">
+    <fieldset>
+        <legend><strong>I tuoi dettagli</strong></legend>
+
+        <li>
+            <label for="name"><strong>Nome e Cognome</strong></label>
+            <input id="name" name="name" type="text" placeholder="Nome e cognome" required autofocus>
+        </li>
+        <li>
+            <label for="email"><strong>Email</strong></label>
+            <input id="email" name="email" type="email" placeholder="esempio@gmail.com" required>
+        </li>
+        <li>
+            <label for="phone"><strong>Telefono</strong></label>
+            <input id="phone" name="Telefono" type="tel" placeholder="Es. +3975147698" required>
+        </li>
+
+    </fieldset>
+
+    <fieldset class="conosciuti-box">
+        <legend><strong>Come ci hai conosciuti?</strong></legend>
+        <input type="checkbox" name="social network" value="social network"/> social network
+        <br/>
+        <input type="checkbox" name="passaparola" value="passaparola"/> passaparola
+        <br/>
+        <input type="checkbox" name="pubblicità" value="pubblicità"/> pubblicità
+    </fieldset>
+
+    <fieldset>
+        <legend><strong>Privacy</strong></legend>
+        <label for="privacyCheckbox">
+            <input type="checkbox" id="privacyCheckbox" name="privacyCheckbox" required>
+            Ho letto e accetto le <a href="https://en.wikipedia.org/wiki/Privacy_policy" target="_blank"><strong>"condizioni
+            sulla privacy"</strong></a>
+        </label>
+    </fieldset>
+    <button type="submit">Iscriviti</button>
+</form>
+
+</body>
+
+</html>
