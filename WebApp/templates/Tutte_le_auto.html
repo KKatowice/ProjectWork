@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAITV12 - Tutte le auto</title>
+    <title>Tutte le auto</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
@@ -67,6 +67,7 @@
             outline: none;
             border-radius: 5px;
             margin-top: 8px;
+            position: relative;
         }
 
         .custom-range::-webkit-slider-thumb {
@@ -74,29 +75,35 @@
             appearance: none;
             width: 20px; /* Larghezza del pollice */
             height: 20px; /* Altezza del pollice */
-            background-color: #7FFF00; /* Colore del pollice */
-            border: 2px solid #7FFF00; /* Colore del bordo del pollice */
+            background-color: #93a996; /* Colore del pollice */
+            border: 2px solid #93a996; /* Colore del bordo del pollice */
             border-radius: 50%; /* Bordi arrotondati */
             cursor: pointer;
             margin-top: -7px;
             transition: transform 0.2s;
+            z-index: 1;
         }
 
         .custom-range::-moz-range-thumb {
             width: 20px; /* Larghezza del pollice */
             height: 20px; /* Altezza del pollice */
-            background-color: #7FFF00; /* Colore del pollice */
-            border: 2px solid #7FFF00; /* Colore del bordo del pollice */
+            background-color: #93a996; /* Colore del pollice */
+            border: 2px solid #93a996; /* Colore del bordo del pollice */
             border-radius: 50%; /* Bordi arrotondati */
             cursor: pointer;
             margin-top: -7px;
             transition: transform 0.2s;
+            z-index: 1;
         }
 
         .range-value {
             font-size: 14px;
             margin-left: 10px;
             color: #4CAF50; /* Colore verde salvia */
+            position: absolute;
+            bottom: calc(100% + 5px);
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         /* Hover effect on range thumb */
@@ -107,8 +114,14 @@
 
         /* Personalizzazione del pulsante Filtri */
         #applyFiltersBtn {
-            background-color: #7FFF00; /* Colore verde foglia */
-            border-color: #7FFF00; /* Colore del bordo */
+            background-color: #93a996; /* Colore verde foglia */
+            border-color: #93a996; /* Colore del bordo */
+        }
+
+        /* Stile per il pallino verde */
+        .green-dot {
+            color: #93a996; /* Colore verde foglia */
+            margin-right: 5px;
         }
     </style>
 </head>
@@ -177,6 +190,7 @@
                 <option value="toyota">Metano</option>
             </select>
         </div>
+
         <div class="filter-item">
             <label for="consumi">Consumi:</label>
             <input type="range" name="consumi" id="consumi" class="custom-range" min="0" max="20">
@@ -185,7 +199,7 @@
         <div class="filter-item">
             <label for="emissioni">Emissioni:</label>
             <input type="range" name="emissioni" id="emissioni" class="custom-range" min="0" max="100">
-            <span class="range-value" id="emissioni-value">0</span>
+            <span class="range-value" id="emissioni-value"></span>
         </div>
         <div class="filter-item">
             <label for="prezzo">Prezzo:</label>
@@ -194,16 +208,17 @@
         </div>
         <!-- Pulsante Applica filtri -->
         <div class="filter-item">
-            <button class="btn btn-primary" id="applyFiltersBtn">Applica filtri</button>
+            <button class="btn btn-primary" id="applyFiltersBtn">
+                <span class="mr-2"><i class="bi bi-dot green-dot"></i></span> Applica filtri
+            </button>
         </div>
     </div>
 </div>
 
-
-
 <div class="container mt-5 text-center">
     <h1>Auto filtrate</h1>
 
+    <!-- Iterazione sulle auto e visualizzazione dei dettagli -->
     {% for car in auto %}
     <div class="card" style="width: 18rem;">
 
@@ -226,11 +241,11 @@
         </ul>
         <a href="/auto?marchio={{ car['marchio'] }}"><button class="btn btn-primary">Vedi auto</button></a>
     </div>
-{% endfor %}
+    {% endfor %}
 </div>
 
-
- <script>
+<script>
+    // Funzione per inviare i dati JSON dei filtri
     function inviaDatiJSONfiltri() {
         // Ottieni i dati dal form
         var motore = document.getElementById('motore').value;
@@ -261,6 +276,13 @@
             body: JSON.stringify(datiJSON)
         });
     }
+
+    // Aggiorna il valore visualizzato quando si muove la barra dei consumi
+    var consumiRange = document.getElementById('consumi');
+    var consumiValue = document.getElementById('consumi-value');
+    consumiRange.addEventListener('input', function() {
+        consumiValue.textContent = this.value + " litri/km";
+    });
 </script>
 
 <!-- Script delle librerie JavaScript -->
