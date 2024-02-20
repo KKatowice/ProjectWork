@@ -3,17 +3,21 @@ import aiohttp
 from bs4 import BeautifulSoup
 import json
 from tqdm import tqdm
+import re
 
 DEBUGZ = True
 
-class ScriptGenerator:
+class ScrapeGenerator:
     def __init__(self, url):
         self.url = url
         self.soup = None
 
     async def scrape_data(self):
+            headers = {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",
+            }
             async with aiohttp.ClientSession() as session:
-                async with session.get(self.url) as response:
+                async with session.get(self.url,headers=headers) as response:
                     content = await response.text()
                     soup = BeautifulSoup(content, 'html.parser')
                     self.soup = soup
@@ -51,10 +55,14 @@ def removeBrandName(s: str, torem: str):
 async def scrape_car_model_data(lstBrand: list):
     ret = {} #{ brand:{model:{..info}}, ...  }
     for link_brand in tqdm(lstBrand,"scraping car models"):
+        #print(link_brand)
         nme = link_brand.split("/")[3]
-        ret[nme] = {}
-        sg = ScriptGenerator(link_brand)
+
+        sg = ScrapeGenerator(link_brand)
         sg = await sg.scrape_data()
+        imglink = sg.find_all('div',{'class':'pic'})
+        imglink = imglink[0].find('img')['src']
+        ret[nme] = {'imglink':imglink}
         divCars = sg.find_all('div',{'class':'carmod clearfix'})
         #prendo ogni div che contioene ogni macchina
         for car in divCars:
@@ -89,12 +97,18 @@ def getEngines(divvoneCar: BeautifulSoup, brand: str, model: str):
 async def scrape_eachModel_data(dizModels: dict):
     for brand in tqdm(dizModels.keys(),f"scraping models details"):
         for model in dizModels[brand]:
-            sg = ScriptGenerator(dizModels[brand][model]['link'])
+            if model == "imglink": continue
+            sg = ScrapeGenerator(dizModels[brand][model]['link'])
             sg = await sg.scrape_data()
+            
+            imgcar = sg.find('div',{'class':'col1width fl'})
+            imgcar = imgcar.find('img')['src']
+            
             divEngines = sg.find_all('div',{'class':'container carmodel clearfix'})
             #print(type(divEngines))
             engList = getEngines(divEngines[0],brand,model)#brand,model dipende se da pulire nome o no @TODO
             dizModels[brand][model]['engines'] = engList
+            dizModels[brand][model]['car_imglink'] = imgcar
             
 
     if DEBUGZ:
@@ -105,8 +119,9 @@ async def scrape_eachModel_data(dizModels: dict):
 async def scrape_eachEngine_data(dizModels: dict):
     for brand in tqdm(dizModels.keys(),f"scraping engines details"):
         for model in dizModels[brand]:
+            if model == "imglink": continue
             for engine in dizModels[brand][model]['engines']:
-                sg = ScriptGenerator(dizModels[brand][model]['engines'][engine]['link'])#['link']
+                sg = ScrapeGenerator(dizModels[brand][model]['engines'][engine]['link'])#['link']
                 sg = await sg.scrape_data()
                 tableInfo = sg.find_all('div',{'class':'padcol2'})
                 for y in tableInfo:
@@ -118,6 +133,22 @@ async def scrape_eachEngine_data(dizModels: dict):
                     descVal = tableInfo.find_all('td',{'class':'right'})
                 except:
                     print(f"{tableInfo}")
+
+                pattern = r'\((\d+)\sHP\)'
+                match = re.search(pattern, engine)
+                if match:
+                    dizModels[brand][model]['engines'][engine]["HP"] = match.group(1)
+                else:
+                    dizModels[brand][model]['engines'][engine]["HP"] = None
+                
+                #\d+(?:\.\d+)?(?:cc|L)
+                pattern = r'\d+(?:\.\d+)?(?:cc|L)'
+                match = re.search(pattern, engine)
+                if match:
+                    dizModels[brand][model]['engines'][engine]["Pdisplacement"] = match.group(0)
+                else:
+                    dizModels[brand][model]['engines'][engine]["Pdisplacement"] = None
+
                 for x in range(len(descInfo)):
                     dizModels[brand][model]['engines'][engine][descInfo[x].text] = descVal[x].text
                 
@@ -130,11 +161,12 @@ async def scrape_eachEngine_data(dizModels: dict):
 
 
 async def main(url):
-    sg = ScriptGenerator(url)
+    sg = ScrapeGenerator(url)
     sg = await sg.scrape_data()
     lbrand = await scrape_car_brand_data(sg)
     dcarModel = await scrape_car_model_data(lbrand)
-    daipls = await scrape_eachModel_data(dcarModel)
+    #daipls = await scrape_eachModel_data(dcarModel)
+    #scrape_eachEngine_data(daipls)
      
     
     #print(dcarModel)
@@ -154,4 +186,5 @@ if __name__ == '__main__':
     else:
         asyncio.run(main(url))
         
-         
+
+

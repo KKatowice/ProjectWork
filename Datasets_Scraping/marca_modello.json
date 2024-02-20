@@ -1,5 +1,6 @@
 {
     "acura": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/acura-sm.jpg",
         "MDX": {
             "link": "https://www.autoevolution.com/acura/mdx/"
         },
@@ -26,9 +27,9 @@
         }
     },
     "alfa-romeo": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/alfa-romeo-sm.jpg",
         "Giulia": {
             "link": "https://www.autoevolution.com/alfa-romeo/giulia/"
-            
         },
         "Stelvio": {
             "link": "https://www.autoevolution.com/alfa-romeo/stelvio/"
@@ -59,6 +60,7 @@
         }
     },
     "alpine": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/alpine-sm.jpg",
         "A110S": {
             "link": "https://www.autoevolution.com/alpine/a110s/"
         },
@@ -67,6 +69,7 @@
         }
     },
     "ariel": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/ariel-sm.jpg",
         "Atom": {
             "link": "https://www.autoevolution.com/ariel/atom/"
         },
@@ -75,11 +78,13 @@
         }
     },
     "artega": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/artega-sm.jpg",
         "Scalo": {
             "link": "https://www.autoevolution.com/artega/scalo/"
         }
     },
     "aston-martin": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/aston-martin-sm.jpg",
         "V12 Vantage": {
             "link": "https://www.autoevolution.com/aston-martin/v12-vantage/"
         },
@@ -136,6 +141,7 @@
         }
     },
     "audi": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/audi-sm.jpg",
         "SQ7": {
             "link": "https://www.autoevolution.com/audi/sq7/"
         },
@@ -327,11 +333,13 @@
         }
     },
     "aurus": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/aurus-sm.jpg",
         "Senat": {
             "link": "https://www.autoevolution.com/aurus/senat/"
         }
     },
     "bentley": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/bentley-sm.jpg",
         "Bentayga Speed": {
             "link": "https://www.autoevolution.com/bentley/bentayga-speed/"
         },
@@ -355,6 +363,7 @@
         }
     },
     "bmw": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/bmw-sm.jpg",
         "4 Series Convertible": {
             "link": "https://www.autoevolution.com/bmw/4-series-convertible/"
         },
@@ -519,11 +528,13 @@
         }
     },
     "bristol": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/bristol-sm.jpg",
         "Bullet": {
             "link": "https://www.autoevolution.com/bristol/bullet/"
         }
     },
     "bufori": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/bufori-sm.jpg",
         "Geneva": {
             "link": "https://www.autoevolution.com/bufori/geneva/"
         },
@@ -532,6 +543,7 @@
         }
     },
     "bugatti": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/bugatti-sm.jpg",
         "Chiron": {
             "link": "https://www.autoevolution.com/bugatti/chiron/"
         },
@@ -552,6 +564,7 @@
         }
     },
     "buick": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/buick-sm.jpg",
         "Encore": {
             "link": "https://www.autoevolution.com/buick/encore/"
         },
@@ -572,6 +585,7 @@
         }
     },
     "cadillac": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/cadillac-sm.jpg",
         "CT5-V": {
             "link": "https://www.autoevolution.com/cadillac/ct5-v/"
         },
@@ -619,6 +633,7 @@
         }
     },
     "caterham": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/caterham-sm.jpg",
         "Supersport": {
             "link": "https://www.autoevolution.com/caterham/supersport/"
         },
@@ -645,6 +660,7 @@
         }
     },
     "chevrolet": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/chevrolet-sm.jpg",
         "Equinox": {
             "link": "https://www.autoevolution.com/chevrolet/equinox/"
         },
@@ -752,6 +768,7 @@
         }
     },
     "chrysler": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/chrysler-sm.jpg",
         "300": {
             "link": "https://www.autoevolution.com/chrysler/300/"
         },
@@ -763,6 +780,7 @@
         }
     },
     "citroen": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/citroen-sm.jpg",
         "C3 Aircross": {
             "link": "https://www.autoevolution.com/citroen/c3-aircross/"
         },
@@ -816,6 +834,7 @@
         }
     },
     "cupra": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/cupra-sm.jpg",
         "Ateca": {
             "link": "https://www.autoevolution.com/cupra/ateca-1/"
         },
@@ -836,6 +855,7 @@
         }
     },
     "dacia": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/dacia-sm.jpg",
         "Duster": {
             "link": "https://www.autoevolution.com/dacia/duster/"
         },
@@ -874,6 +894,7 @@
         }
     },
     "daihatsu": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/daihatsu-sm.jpg",
         "Sirion": {
             "link": "https://www.autoevolution.com/daihatsu/sirion/"
         },
@@ -885,6 +906,7 @@
         }
     },
     "datsun": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/datsun-sm.jpg",
         "GO": {
             "link": "https://www.autoevolution.com/datsun/go/"
         },
@@ -899,6 +921,7 @@
         }
     },
     "dodge": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/dodge-sm.jpg",
         "Durango": {
             "link": "https://www.autoevolution.com/dodge/durango/"
         },
@@ -925,6 +948,7 @@
         }
     },
     "ds-automobiles": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/ds-automobiles-sm.jpg",
         "DS 7": {
             "link": "https://www.autoevolution.com/ds-automobiles/ds7-1/"
         },
@@ -945,6 +969,7 @@
         }
     },
     "ferrari": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/ferrari-sm.jpg",
         "F8": {
             "link": "https://www.autoevolution.com/ferrari/f8-tributo/"
         },
@@ -992,6 +1017,7 @@
         }
     },
     "fiat": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/fiat-sm.jpg",
         "500 Abarth": {
             "link": "https://www.autoevolution.com/fiat/500-abarth/"
         },
@@ -1057,11 +1083,13 @@
         }
     },
     "fisker": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/fisker-sm.jpg",
         "Ocean": {
             "link": "https://www.autoevolution.com/fisker/ocean/"
         }
     },
     "ford": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/ford-sm.jpg",
         "Explorer": {
             "link": "https://www.autoevolution.com/ford/explorer/"
         },
@@ -1211,6 +1239,7 @@
         }
     },
     "geely": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/geely-sm.jpg",
         "Emgrand EC7": {
             "link": "https://www.autoevolution.com/geely/emgrand-ec7/"
         },
@@ -1222,6 +1251,7 @@
         }
     },
     "genesis": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/genesis-sm.jpg",
         "GV80": {
             "link": "https://www.autoevolution.com/genesis/gv80/"
         },
@@ -1248,6 +1278,7 @@
         }
     },
     "gmc": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/gmc-sm.jpg",
         "Sierra": {
             "link": "https://www.autoevolution.com/gmc/sierra/"
         },
@@ -1280,6 +1311,7 @@
         }
     },
     "gordon-murray-automotive": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/gordon-murray-automotive-sm.jpg",
         "GORDON MURRAY Automotive T.33": {
             "link": "https://www.autoevolution.com/gordon-murray-automotive/t33/"
         },
@@ -1288,6 +1320,7 @@
         }
     },
     "hindustan": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/hindustan-sm.jpg",
         "Pushpak/Trekker": {
             "link": "https://www.autoevolution.com/hindustan/pushpaktrekker/"
         },
@@ -1296,6 +1329,7 @@
         }
     },
     "holden": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/holden-sm.jpg",
         "Commodore Sedan": {
             "link": "https://www.autoevolution.com/holden/commodore-sedan/"
         },
@@ -1319,6 +1353,7 @@
         }
     },
     "honda": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/honda-sm.jpg",
         "Passport": {
             "link": "https://www.autoevolution.com/honda/passport/"
         },
@@ -1384,6 +1419,7 @@
         }
     },
     "hyundai": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/hyundai-sm.jpg",
         "Bayon": {
             "link": "https://www.autoevolution.com/hyundai/bayon/"
         },
@@ -1488,11 +1524,13 @@
         }
     },
     "ineos": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/ineos-sm.jpg",
         "Grenadier": {
             "link": "https://www.autoevolution.com/ineos/grenadier/"
         }
     },
     "infiniti": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/infiniti-sm.jpg",
         "QX60": {
             "link": "https://www.autoevolution.com/infiniti/qx60/"
         },
@@ -1522,11 +1560,13 @@
         }
     },
     "isuzu": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/isuzu-sm.jpg",
         "Rodeo / D-Max": {
             "link": "https://www.autoevolution.com/isuzu/rodeo-d-max/"
         }
     },
     "jaguar": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/jaguar-sm.jpg",
         "F-Pace SVR": {
             "link": "https://www.autoevolution.com/jaguar/f-pace-svr/"
         },
@@ -1565,6 +1605,7 @@
         }
     },
     "jeep": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/jeep-sm.jpg",
         "Wrangler": {
             "link": "https://www.autoevolution.com/jeep/wrangler/"
         },
@@ -1594,6 +1635,7 @@
         }
     },
     "karma": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/karma-sm.jpg",
         "Karma Revero GT": {
             "link": "https://www.autoevolution.com/karma/revero-gt/"
         },
@@ -1602,6 +1644,7 @@
         }
     },
     "kia": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/kia-sm.jpg",
         "Carnival / Sedona": {
             "link": "https://www.autoevolution.com/kia/carnival-sedona/"
         },
@@ -1703,6 +1746,7 @@
         }
     },
     "koenigsegg": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/koenigsegg-sm.jpg",
         "Gemera": {
             "link": "https://www.autoevolution.com/koenigsegg/gemera/"
         },
@@ -1714,11 +1758,13 @@
         }
     },
     "ktm": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/ktm-sm.jpg",
         "X-Bow": {
             "link": "https://www.autoevolution.com/ktm/x-bow/"
         }
     },
     "lada": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/lada-sm.jpg",
         "Kalina Sedan": {
             "link": "https://www.autoevolution.com/lada/kalina-sedan/"
         },
@@ -1727,6 +1773,7 @@
         }
     },
     "lamborghini": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/lamborghini-sm.jpg",
         "Huracan Spyder": {
             "link": "https://www.autoevolution.com/lamborghini/huracan-spyder/"
         },
@@ -1759,11 +1806,13 @@
         }
     },
     "lancia": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/lancia-sm.jpg",
         "Ypsilon": {
             "link": "https://www.autoevolution.com/lancia/ypsilon/"
         }
     },
     "land-rover": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/land-rover-sm.jpg",
         "Range Rover Velar": {
             "link": "https://www.autoevolution.com/land-rover/range-rover-velar/"
         },
@@ -1811,6 +1860,7 @@
         }
     },
     "lexus": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/lexus-sm.jpg",
         "GX": {
             "link": "https://www.autoevolution.com/lexus/gx/"
         },
@@ -1864,6 +1914,7 @@
         }
     },
     "lightyear": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/lightyear-sm.jpg",
         "Lightyear 0": {
             "link": "https://www.autoevolution.com/lightyear/lightyear-0/"
         },
@@ -1872,6 +1923,7 @@
         }
     },
     "lincoln": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/lincoln-sm.jpg",
         "Nautilus": {
             "link": "https://www.autoevolution.com/lincoln/nautilus/"
         },
@@ -1904,6 +1956,7 @@
         }
     },
     "lotus": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/lotus-sm.jpg",
         "Elise": {
             "link": "https://www.autoevolution.com/lotus/elise/"
         },
@@ -1927,6 +1980,7 @@
         }
     },
     "lucid-motors": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/lucid-motors-sm.jpg",
         "Lucid Motors Air": {
             "link": "https://www.autoevolution.com/lucid-motors/lucid-air/"
         },
@@ -1935,6 +1989,7 @@
         }
     },
     "mahindra": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/mahindra-sm.jpg",
         "Mahindra Thar": {
             "link": "https://www.autoevolution.com/mahindra/thar/"
         },
@@ -1949,6 +2004,7 @@
         }
     },
     "marussia-motors": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/marussia-sm.jpg",
         "MARUSSIA B1": {
             "link": "https://www.autoevolution.com/marussia-motors/b1/"
         },
@@ -1957,6 +2013,7 @@
         }
     },
     "maruti-suzuki": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/maruti-suzuki-sm.jpg",
         "Swift": {
             "link": "https://www.autoevolution.com/maruti-suzuki/swift/"
         },
@@ -1971,6 +2028,7 @@
         }
     },
     "maserati": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/maserati-sm.jpg",
         "Ghibli": {
             "link": "https://www.autoevolution.com/maserati/ghibli/"
         },
@@ -1994,6 +2052,7 @@
         }
     },
     "mazda": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/mazda-sm.jpg",
         "2 / Demio": {
             "link": "https://www.autoevolution.com/mazda/2-demio/"
         },
@@ -2053,6 +2112,7 @@
         }
     },
     "mclaren": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/mclaren-sm.jpg",
         "Senna": {
             "link": "https://www.autoevolution.com/mclaren/senna/"
         },
@@ -2091,6 +2151,7 @@
         }
     },
     "mercedes-benz": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/mercedes-benz-sm.jpg",
         "GLE-Class": {
             "link": "https://www.autoevolution.com/mercedes-benz/gle-class/"
         },
@@ -2246,6 +2307,7 @@
         }
     },
     "mercedes-amg": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/mercedes-amg-sm.jpg",
         "Mercedes-AMG GLE  Coupe": {
             "link": "https://www.autoevolution.com/mercedes-amg/gle-amg-coupe/"
         },
@@ -2344,6 +2406,7 @@
         }
     },
     "mg": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/mg-sm.jpg",
         "ZS": {
             "link": "https://www.autoevolution.com/mg/zs/"
         },
@@ -2367,6 +2430,7 @@
         }
     },
     "mini": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/mini-sm.jpg",
         "Countryman": {
             "link": "https://www.autoevolution.com/mini/countryman/"
         },
@@ -2384,6 +2448,7 @@
         }
     },
     "mitsubishi": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/mitsubishi-sm.jpg",
         "ASX / RVR / Outlander Sport": {
             "link": "https://www.autoevolution.com/mitsubishi/asx-rvr-outlander-sport/"
         },
@@ -2431,6 +2496,7 @@
         }
     },
     "morgan": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/morgan-sm.jpg",
         "Plus Six": {
             "link": "https://www.autoevolution.com/morgan/plus-six/"
         },
@@ -2457,6 +2523,7 @@
         }
     },
     "nio": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/nio-sm.jpg",
         "ES8": {
             "link": "https://www.autoevolution.com/nio/es8/"
         },
@@ -2474,6 +2541,7 @@
         }
     },
     "nissan": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/nissan-sm.jpg",
         "Sentra": {
             "link": "https://www.autoevolution.com/nissan/sentra/"
         },
@@ -2590,6 +2658,7 @@
         }
     },
     "opel": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/opel-sm.jpg",
         "Corsa 5 Doors": {
             "link": "https://www.autoevolution.com/opel/corsa-5-doors-1/"
         },
@@ -2664,6 +2733,7 @@
         }
     },
     "pagani": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/pagani-sm.jpg",
         "Utopia": {
             "link": "https://www.autoevolution.com/pagani/utopia/"
         },
@@ -2678,6 +2748,7 @@
         }
     },
     "panoz": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/panoz-sm.jpg",
         "Avezzano": {
             "link": "https://www.autoevolution.com/panoz/avezzano/"
         },
@@ -2686,6 +2757,7 @@
         }
     },
     "perodua": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/perodua-sm.jpg",
         "Axia": {
             "link": "https://www.autoevolution.com/perodua/axia/"
         },
@@ -2703,6 +2775,7 @@
         }
     },
     "peugeot": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/peugeot-sm.jpg",
         "2008": {
             "link": "https://www.autoevolution.com/peugeot/2008/"
         },
@@ -2753,6 +2826,7 @@
         }
     },
     "pininfarina": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/pininfarina-sm.jpg",
         "Pininfarina B95": {
             "link": "https://www.autoevolution.com/pininfarina/b95/"
         },
@@ -2761,6 +2835,7 @@
         }
     },
     "polestar": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/polestar-sm.jpg",
         "Polestar 2": {
             "link": "https://www.autoevolution.com/polestar/polestar-2/"
         },
@@ -2775,6 +2850,7 @@
         }
     },
     "porsche": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/porsche-sm.jpg",
         "Taycan": {
             "link": "https://www.autoevolution.com/porsche/taycan/"
         },
@@ -2954,6 +3030,7 @@
         }
     },
     "proton": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/proton-sm.jpg",
         "Persona": {
             "link": "https://www.autoevolution.com/proton/persona/"
         },
@@ -2977,6 +3054,7 @@
         }
     },
     "qoros": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/qoros-sm.jpg",
         "3": {
             "link": "https://www.autoevolution.com/qoros/3/"
         },
@@ -2985,6 +3063,7 @@
         }
     },
     "ram-trucks": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/ram-trucks-sm.jpg",
         "RAM Trucks 1500": {
             "link": "https://www.autoevolution.com/ram-trucks/1500-1/"
         },
@@ -2996,6 +3075,7 @@
         }
     },
     "renault": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/renault-sm.jpg",
         "Espace": {
             "link": "https://www.autoevolution.com/renault/espace/"
         },
@@ -3097,11 +3177,13 @@
         }
     },
     "rimac": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/rimac-sm.jpg",
         "Nevera": {
             "link": "https://www.autoevolution.com/rimac/nevera/"
         }
     },
     "rivian": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/rivian-sm.jpg",
         "R1S": {
             "link": "https://www.autoevolution.com/rivian/r1s/"
         },
@@ -3110,6 +3192,7 @@
         }
     },
     "rolls-royce": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/rolls-royce-sm.jpg",
         "ROLLS-ROYCE Ghost": {
             "link": "https://www.autoevolution.com/rolls-royce/ghost/"
         },
@@ -3133,11 +3216,13 @@
         }
     },
     "saab": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/saab-sm.jpg",
         "9-3 Aero": {
             "link": "https://www.autoevolution.com/saab/9-3-aero/"
         }
     },
     "santana": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/santana-sm.jpg",
         "PS 10 Pickup": {
             "link": "https://www.autoevolution.com/santana/ps-10-pickup/"
         },
@@ -3146,6 +3231,7 @@
         }
     },
     "seat": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/seat-sm.jpg",
         "Arona": {
             "link": "https://www.autoevolution.com/seat/arona/"
         },
@@ -3193,6 +3279,7 @@
         }
     },
     "skoda": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/skoda-sm.jpg",
         "Octavia": {
             "link": "https://www.autoevolution.com/skoda/octavia/"
         },
@@ -3255,6 +3342,7 @@
         }
     },
     "smart": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/smart-sm.jpg",
         "forfour": {
             "link": "https://www.autoevolution.com/smart/forfour/"
         },
@@ -3272,6 +3360,7 @@
         }
     },
     "spyker": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/spyker-sm.jpg",
         "C8 Preliator": {
             "link": "https://www.autoevolution.com/spyker/c8-preliator/"
         },
@@ -3289,6 +3378,7 @@
         }
     },
     "ssang-yong": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/ssang-yong-sm.jpg",
         "SSANGYONG Rexton": {
             "link": "https://www.autoevolution.com/ssang-yong/rexton/"
         },
@@ -3306,6 +3396,7 @@
         }
     },
     "subaru": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/subaru-sm.jpg",
         "Crosstrek": {
             "link": "https://www.autoevolution.com/subaru/crosstrek/"
         },
@@ -3341,6 +3432,7 @@
         }
     },
     "suzuki": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/suzuki-sm.jpg",
         "Swift 5 Doors": {
             "link": "https://www.autoevolution.com/suzuki/swift-5-doors/"
         },
@@ -3379,6 +3471,7 @@
         }
     },
     "tata-motors": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/tata-motors-sm.jpg",
         "Safari": {
             "link": "https://www.autoevolution.com/tata-motors/safari-1/"
         },
@@ -3411,6 +3504,7 @@
         }
     },
     "tesla-motors": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/tesla-motors-sm.jpg",
         "TESLA Model 3": {
             "link": "https://www.autoevolution.com/tesla-motors/model-3/"
         },
@@ -3431,6 +3525,7 @@
         }
     },
     "toyota": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/toyota-sm.jpg",
         "GR Yaris": {
             "link": "https://www.autoevolution.com/toyota/gr-yaris/"
         },
@@ -3601,11 +3696,13 @@
         }
     },
     "tvr": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/tvr-sm.jpg",
         "Griffith": {
             "link": "https://www.autoevolution.com/tvr/griffith/"
         }
     },
     "vauxhall": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/vauxhall-sm.jpg",
         "Astra Estate": {
             "link": "https://www.autoevolution.com/vauxhall/astra-estate/"
         },
@@ -3629,6 +3726,7 @@
         }
     },
     "vinfast": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/vinfast-sm.jpg",
         "VinFast VF 8": {
             "link": "https://www.autoevolution.com/vinfast/vf-8/"
         },
@@ -3637,6 +3735,7 @@
         }
     },
     "volkswagen": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/volkswagen-sm.jpg",
         "Golf GTI / GTD / GTE": {
             "link": "https://www.autoevolution.com/volkswagen/golf-gti-gtd-gte/"
         },
@@ -3798,6 +3897,7 @@
         }
     },
     "volvo": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/volvo-sm.jpg",
         "XC40": {
             "link": "https://www.autoevolution.com/volvo/xc40/"
         },
@@ -3845,6 +3945,7 @@
         }
     },
     "wiesmann": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/wiesmann-sm.jpg",
         "GT MF5": {
             "link": "https://www.autoevolution.com/wiesmann/gt-mf5/"
         },
@@ -3868,6 +3969,7 @@
         }
     },
     "xpeng": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/xpeng-sm.jpg",
         "Xpeng G3": {
             "link": "https://www.autoevolution.com/xpeng/g3i/"
         },
@@ -3885,6 +3987,7 @@
         }
     },
     "zenvo": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/zenvo-sm.jpg",
         "Zenvo Aurora": {
             "link": "https://www.autoevolution.com/zenvo/aurora-1/"
         },
