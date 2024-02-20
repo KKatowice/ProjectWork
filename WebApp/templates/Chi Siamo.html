@@ -49,7 +49,7 @@
         .card {
             border: none;
             transition: transform 0.2s, box-shadow 0.2s;
-            background-color: #ffffff;
+            background-color: green;
             border-radius: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
@@ -87,7 +87,7 @@
 
 
         .card-title {
-            color: #009900;
+            color: black;
             font-weight: bold;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -137,7 +137,7 @@
         .welcome-banner h2 {
             font-size: 36px;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
@@ -145,6 +145,11 @@
             font-size: 18px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
+        .accordion-button.collapsed {
+          background: #4b7b4c;
+          text-align: center;
+            }
+
     </style>
 
 </head>
@@ -177,21 +182,19 @@
 <div class="welcome-banner">
     <div class="container welcome-banner-content">
         <h2>DrivenChoice</h2>
-
+    </div>
     </div>
 
 
-<div class="accordion" id="accordionExample" style="opacity: 1;">
-  <div class="accordion-item" style="height: 33vh">
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        <b> Chi siamo </b>
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        Chi Siamo
       </button>
     </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-
-Benvenuti su DrivenChoice, il tuo affidabile concessionario online per l'acquisto di auto. <br> Qui, ci impegniamo a offrire una vasta selezione di vetture di alta qualità, progettate per soddisfare ogni esigenza di mobilità.
+    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Benvenuti su DrivenChoice, il tuo affidabile concessionario online per l'acquisto di auto. <br> Qui, ci impegniamo a offrire una vasta selezione di vetture di alta qualità, progettate per soddisfare ogni esigenza di mobilità.
 
  <br>Indipendentemente dal tipo di veicolo che stai cercando, DrivenChoice ha la soluzione perfetta per te. <br> Se hai bisogno di una city car agile per gli spostamenti in città, un SUV robusto per le avventure fuori strada o una spaziosa station wagon per la famiglia, siamo qui per aiutarti a trovare l'auto ideale per le tue esigenze. <br>
 
@@ -200,34 +203,84 @@ Con DrivenChoice, non devi compromettere la qualità per il prezzo. <br> Ogni ve
  <br>Inoltre, il nostro team dedicato è disponibile per guidarti attraverso il processo di acquisto, fornendoti supporto esperto e assistenza personalizzata per garantire una esperienza di acquisto senza stress.
 
  <br>Scopri la nostra vasta selezione di auto di qualità su DrivenChoice e inizia il tuo viaggio verso la tua prossima auto perfetta oggi stesso. <br> Siamo qui per aiutarti a trovare il veicolo dei tuoi sogni, senza complicazioni e con la massima soddisfazione garantita.
-
-
-      </div>
+</div>
     </div>
   </div>
-<div class="accordion-item" style="height: auto;">
+  <div class="accordion-item">
     <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            <b>Contatti</b>
-        </button>
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        Contatti
+      </button>
     </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-            <div class="contact-card">
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body"><div class="contact-card">
                 <ul class="list-unstyled">
                     <li><i class="bi bi-telephone"></i> Numero di telefono: +06 302 578 5</li>
                     <li><i class="bi bi-envelope"></i> Email: info@drivenchoice.com</li>
                     <li><i class="bi bi-geo-alt"></i> Sede legale: Via Udine 123, 20019, Milano, Italia</li>
                     <li><i class="bi bi-credit-card"></i> Partita IVA: 7548596183</li>
                 </ul>
-            </div>
-        </div>
+            </div></div>
     </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        Le nostre Sedi
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+
+          <div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+  <img src="https://eosconsulting.com/wp-content/uploads/2018/09/eni1.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Roma</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">+06 302 578 5</li>
+    <li class="list-group-item">inforoma@drivenchoice.com</li>
+    <li class="list-group-item">Via Fermi 3, Roma</li>
+  </ul>
 </div>
     </div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <div class="col">
+       <div class="card" style="width: 18rem;">
+  <img src="https://th.bing.com/th/id/R.435cdaede25c2f18a376327a0d302154?rik=ztSIlZD5fwQCJQ&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Milano</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">+02 440 185 6</li>
+    <li class="list-group-item">infomilano@drivenchoice.com</li>
+    <li class="list-group-item">Via Bisceglie 35, Milano</li>
+  </ul>
+</div>
     </div>
+    <div class="col">
+       <div class="card" style="width: 18rem;">
+  <img src="https://www.arketipomagazine.it/wp-content/uploads/sites/20/2016/03/DSC_7355.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Monza</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">+02 302 518 4</li>
+    <li class="list-group-item">infomonza@drivenchoice.com</li>
+    <li class="list-group-item">Via Cavour 16, Monza Brianza</li>
+  </ul>
+</div>
+    </div>
+  </div>
+</div>
+    </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
+
+
+
