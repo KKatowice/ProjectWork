@@ -5,6 +5,8 @@ from Api.api import apiBlueprint
 from Api.proveLeoApp.provaApi import getAuto, getMarchio, getAutobyMarchio
 from Database.dbUtils import *
 
+from ProjectWork.Database.dbUtils import create_db_connection, read_query
+
 app = Flask(__name__)
 app.register_blueprint(apiBlueprint)
 DBNAME = "concessionario"
@@ -57,10 +59,10 @@ def show_marchi():
     items_per_page = 10
     c = create_db_connection(DBNAME)
     query = "SELECT COUNT(*) AS num_marchi FROM marchi"
-    conteggio = read_query(c, query)[0]['num_generi']
+    conteggio = read_query(c, query)[0]['num_marchi']
     totale = (conteggio // items_per_page) + 1
-    data = getMarchio()
-    return render_template('marchi.html', generi=data, page=page, total_pages=totale)
+    marchi = getMarchio()
+    return render_template('marchi.html', marchi=marchi, page=page, total_pages=totale)
 
 @app.route('/marchi/autoByMarchio')
 def show_autoByMarchio():
