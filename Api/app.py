@@ -12,28 +12,28 @@ def home():
 
 
 @app.route('/auto')
-def show_film():
+def show_auto():
     param_ord = request.args.get('param_ord')
     page = int(request.args.get('page', default=1))
     items_per_page = 20
     c = create_db_connection(DBNAME)
-    query = "SELECT COUNT(*) AS num_film FROM film"
-    conteggio = read_query(c, query)[0]['num_film']
+    query = "SELECT COUNT(*) AS num_auto FROM auto"
+    conteggio = read_query(c, query)[0]['num_auto']
     totale = (conteggio // items_per_page) + 1
-    genere = request.args.get('genere', default=None)
-    if genere:
-        if isinstance(genere, str):
-            data = getMovieByGenre()
+    auto = request.args.get('auto', default=None)
+    if auto:
+        if isinstance(auto, str):
+            data = getAuto()
         else:
-            raise TypeError("Il genere deve essere una stringa")
+            raise TypeError("l'auto deve essere una stringa")
     else:
-        data = getMovies()
-        if param_ord == "az":
+        data = getAuto()
+        if param_ord == "dal p":
             data = data.sort(lambda x: x["Title"])
         elif param_ord == "4_stelle":
             data = get_evaluation()
     top_diesci = Top10Film()
-    return render_template('Film.html', films=data, topdieci=top_diesci, page=page, total_pages=totale)
+    return render_template('auto.html', auto=data, page=page, total_pages=totale)
 
 
 @app.route('/marchi')
