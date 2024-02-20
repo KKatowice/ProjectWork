@@ -23,7 +23,7 @@ auto = """CREATE TABLE auto(
             carburante varchar(25),
             consumi decimal(10,2),
             emissioni decimal(10,2),
-            serbatio decimal(10,2),
+            serbatoio decimal(10,2),
             prezzo decimal(10,2),
             FOREIGN KEY (id_motore) REFERENCES motori(id_motore) ON DELETE CASCADE ON UPDATE CASCADE,
             FOREIGN KEY (id_marchio) REFERENCES marchi(id_marchio) ON DELETE CASCADE ON UPDATE CASCADE)"""
