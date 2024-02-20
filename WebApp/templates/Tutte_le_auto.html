@@ -200,41 +200,47 @@
 </div>
 
 <script>
-    // Funzione per aggiornare il valore visualizzato per emissioni, consumi e prezzo
-    function updateValue(elementId, value) {
-        // Aggiorna il testo con il valore e l'unità di misura
-        document.getElementById(elementId).innerText = value ;
-    }
+<!--    // Funzione per aggiornare il valore visualizzato per emissioni, consumi e prezzo-->
+<!--    function updateValue(elementId, value) {-->
+<!--        // Aggiorna il testo con il valore e l'unità di misura-->
+<!--        document.getElementById(elementId).innerText = value ;-->
+<!--    }-->
 
-    // Event listener per la barra di scorrimento dei consumi
-    document.getElementById('consumi').addEventListener('input', function() {
-        updateValue('consumi-value', this.value);
-    });
+<!--    // Event listener per la barra di scorrimento dei consumi-->
+<!--    document.getElementById('consumi').addEventListener('input', function() {-->
+<!--        updateValue('consumi-value', this.value);-->
+<!--    });-->
 
-    // Event listener per il pulsante "Applica filtri"
-    document.getElementById('applyFiltersBtn').addEventListener('click', function() {
-        // Aggiungi qui la logica per applicare i filtri e ottenere le auto filtrate
-        console.log('Filtri applicati');
-    });
+<!--    // Event listener per il pulsante "Applica filtri"-->
+<!--    document.getElementById('applyFiltersBtn').addEventListener('click', function() {-->
+<!--        // Aggiungi qui la logica per applicare i filtri e ottenere le auto filtrate-->
+<!--        console.log('Filtri applicati');-->
+<!--    });-->
 
- function inviaDatiJSONautore() {
+ function inviaDatiJSONfiltri() {
             // Ottieni i dati dal form
-            var nome_ = document.getElementById('autore').value;
-            var data_nascita = document.getElementById('data_di_nascita').value;
-            var data_morte = document.getElementById('data_di_morte').value;
-            var movimento_ = document.getElementById('movimento').value;
+            var motore = document.getElementById('motore').value;
+            var marchio = document.getElementById('marchio').value;
+            var anno = document.getElementById('anno').value;
+            var carburante = document.getElementById('carburante').value;
+            var consumi = document.getElementById('consumi').value;
+            var emissioni = document.getElementById('emissioni').value;
+            var prezzo = document.getElementById('prezzo').value;
 
 
             // Costruisci l'oggetto JSON
             var datiJSON = {
-                autore: nome_,
-                movimento: movimento_,
-                data_di_nascita: data_nascita,
-                data_di_morte: data_morte
+                motore: motore,
+                marchio: marchio,
+                anno: anno,
+                carburante: carburante,
+                consumi: consumi,
+                emissioni: emissioni,
+                prezzo: prezzo
             };
 
             // Esegui la richiesta POST con i dati JSON
-            fetch('/api/addArtista', {
+            fetch('/api/auto_filter', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
