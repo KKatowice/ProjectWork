@@ -70,10 +70,10 @@ def show_autoByMarchio():
     items_per_page = 10
     c = create_db_connection(DBNAME)
     query = "SELECT COUNT(*) AS num_marchi FROM marchi"
-    conteggio = read_query(c, query)[0]['num_generi']
+    conteggio = read_query(c, query)[0]['num_marchi']
     totale = (conteggio // items_per_page) + 1
     data = getAutobyMarchio()
-    return render_template('marchi.html', generi=data, page=page, total_pages=totale)
+    return render_template('auto_x_marchio.html', marchi=data, page=page, total_pages=totale)
 
 
 
