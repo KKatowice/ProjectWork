@@ -8,7 +8,12 @@ const { Menu } = require("@grammyjs/menu");
 
 const bot = new Bot(ky);
 
-bot.command("start", (ctx) => ctx.reply("Welcome! do /menu o/."));
+let qna = {
+  "Domanda1": null,
+  "Domanda2": null,
+  "Domanda3": null,
+  "Domanda4": null,
+}
 
 const userState = new Map();
 
@@ -43,13 +48,14 @@ const menu = new Menu("my-menu-identifier")
 
 // Register the menu and message handling middleware
 bot.use(menu);
+bot.command("start", (ctx) => ctx.reply("Welcome! do /menu o/."));
+bot.command("menu", (ctx) => {
+  ctx.reply("Welcome! do quclsoa mortaccitua o/.", { reply_markup: menu })
+  
+});
 bot.on('message', handleDomanda1Response);
 
-bot.command("scroto", async (ctx) => {
-  console.log("wtf")
-    // Send the menu.
-    await ctx.reply("Impostazioni:", { reply_markup: menu });
-  });
+
 
 
 bot.start();
