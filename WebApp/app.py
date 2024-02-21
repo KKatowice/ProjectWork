@@ -36,7 +36,7 @@ def show_auto():
         data=getAuto()
 
     c.close()
-    return render_template('auto.html', auto=data, page=page, total_pages=totale)
+    return render_template('Tutte_le_auto.html', auto=data, page=page, total_pages=totale)
 
 @app.route('/marchi')
 def show_marchi():

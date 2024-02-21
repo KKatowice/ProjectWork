@@ -36,8 +36,8 @@ def getMarchio():
     c = create_db_connection(DBNAME)
     print(c)
 
-    q = f"""SELECT * FROM marchio
-         ORDER BY marchio.nome
+    q = f"""SELECT * FROM marchi
+         ORDER BY marchi.nome
          LIMIT {items_per_page} OFFSET {offset};"""
 
     res = read_query(c, q)
