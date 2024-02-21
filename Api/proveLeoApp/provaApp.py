@@ -40,7 +40,10 @@ def show_auto():
     totale = (conteggio // items_per_page) + 1
     if f:
         data = filtra_auto()
-        lista_auto = [x.to_dict() for x in data]
+        if len(data) > 0:
+            lista_auto = [x.to_dict() for x in data]
+        else:
+            lista_auto = []
     else:
         lista_auto = getAuto()
     c.close()
