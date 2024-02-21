@@ -1,6 +1,15 @@
+from api import *
+import os
 
-from ..Api.api import *
-from flask import Flask, render_template, request
+app = Flask(__name__)
+app.register_blueprint(apiBlueprint)
+
+DBNAME = "concessionario"
+
+app.config['SQLALCHEMY_DATABASE_URI'] = (
+    f"mysql+pymysql://{os.getenv('ID')}:{os.getenv('PSW')}@"
+    f"{os.getenv('H')}:3306/concessionario"
+)
 
 @app.route('/')
 def home():
@@ -28,3 +37,19 @@ def show_auto():
 
     c.close()
     return render_template('auto.html', auto=data, page=page, total_pages=totale)
+
+@app.route('/marchi')
+def show_marchi():
+    page = int(request.args.get('page', default=1))
+    items_per_page = 10
+    c = create_db_connection(DBNAME)
+    query = "SELECT COUNT(*) AS num_marchi FROM marchi"
+    conteggio = read_query(c, query)[0]['num_marchi']
+    totale = (conteggio // items_per_page) + 1
+    marchi = getMarchio()
+    return render_template('marchi.html', marchi=marchi, page=page, total_pages=totale)
+
+# @app.route('/')
+
+if __name__ == '__main__':
+    app.run(debug=True)
