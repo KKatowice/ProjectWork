@@ -3,6 +3,9 @@
   "dependencies": {
   
     
+  "@grammyjs/conversations": "^1.2.0",
+  
+    
   "@grammyjs/menu": "^1.2.1",
   
     
