@@ -1,61 +1,83 @@
 /* import 'dotenv/config'
 require('dotenv').config() */
 const ky = '7056648941:AAG_FCbKAFCKQp8tn1DpGBNRNXZvYzznyHk'
-const { Bot } = require("grammy");
+const { Bot, session, InlineKeyboard } = require("grammy");
 const { Menu } = require("@grammyjs/menu");
-
+const {
+  conversations,
+  createConversation,
+} = require("@grammyjs/conversations");
 //const apiky = process.env.API_TG;
 
 const bot = new Bot(ky);
 
 let qna = {
-  "Domanda1": null,
-  "Domanda2": null,
-  "Domanda3": null,
-  "Domanda4": null,
+  "Budget": null,
+  "Cavalli": null,
+  "Consumi": null,
+  "Cilindrata": null,
 }
 
 const userState = new Map();
 
-// Function to handle the user's response to "Domanda1"
-function handleDomanda1Response(ctx) {
-  const userId = ctx.from.id;
-  const userResponse = ctx.message.text;
 
-  if (userState.has(userId) && userState.get(userId) === 'waiting_for_domanda1_response') {
-    ctx.reply(`You responded with: ${userResponse}`);
-    userState.delete(userId);
+  function session_collector() {
+    return {}
   }
-}
 
-function rispOne(ctx) {
-  const userId = ctx.from.id;
-  if (!userState.has(userId)) {
-    userState.set(userId, 'waiting_for_domanda1_response');
-    ctx.reply("Domanda1:");
-  } else {
-    ctx.reply("Please complete your current task before starting a new one.");
-  }
-}
+bot.use(session({
+  initial: () => new session_collector()
+}))
+bot.use(conversations());
 
-const menu = new Menu("my-menu-identifier")
-  .text("AA", (ctx) => {
-    rispOne(ctx);
-  })
-  .text("A", (ctx) => ctx.reply("You pressed A!")).row()
-  .text("BB", (ctx) => ctx.reply("You pressed BB!"))
-  .text("B", (ctx) => ctx.reply("You pressed B!")).row();
-
-// Register the menu and message handling middleware
-bot.use(menu);
-bot.command("start", (ctx) => ctx.reply("Welcome! do /menu o/."));
-bot.command("menu", (ctx) => {
-  ctx.reply("Welcome! do quclsoa mortaccitua o/.", { reply_markup: menu })
-  
+// register /mySession to show current session data
+bot.command("mySession", (ctx) => {
+  const session = ctx.session;
+  ctx.reply(`Current session data: ${JSON.stringify(session)}`);
 });
-bot.on('message', handleDomanda1Response);
 
+// convo function
+async function collect_data_conv(conversation, ctx) {
+  fields_to_collect = ["Budget",
+                       "Cavalli",
+                       "Consumi",
+                       "Cilindrata"];
+  const inlineKeyb = new InlineKeyboard()
+  .text('Budget', 'Budget')
+  .text('Cavalli', 'Cavalli')
+  .text('Consumi', 'Consumi')
+  .text('Cilindrata', 'Cilindrata');
+  await ctx.reply("Quale dato vuoi inserire?", { reply_markup: inlineKeyb });
 
+  for (let i = 0; i < fields_to_collect.length; i++) {
+    let selected_field = await conversation.waitFor("callback_query");
+    selected_field = selected_field.update.callback_query.data;
+    ///
+    await ctx.reply(`Inserisci il valore di ${selected_field}DA`);
+    let value = await conversation.waitFor("message:text");
+    value = value.message.text;
+    ctx.session[`${selected_field}DA`] = value;
+    await ctx.reply(`Il valore di ${selected_field} è ${value}`);
+    ///
+    await ctx.reply(`Inserisci il valore di ${selected_field}A`);
+    value = await conversation.waitFor("message:text");
+    value = value.message.text;
+    ctx.session[`${selected_field}A`] = value;
+    await ctx.reply(`Il valore di ${selected_field} è ${value}`);
+    ///
+  }
+  await ctx.reply("Grazie per aver inserito i dati!");
+  // send all the data
+  
+  await ctx.reply(`I dati inseriti sono: ${JSON.stringify(ctx.session)}`);
+}
+bot.use(createConversation(collect_data_conv));
 
+// add /testino command for conversation
+bot.command("menu", async (ctx) => {
+  ctx.session = new session_collector();
+  await ctx.conversation.enter("collect_data_conv");
+});
+bot.command("start", (ctx) => ctx.reply("Welcome! do /menu o/."));
 
 bot.start();

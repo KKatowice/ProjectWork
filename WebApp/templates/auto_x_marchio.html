@@ -172,17 +172,21 @@
 
 <div class="container mt-5 text-center">
         <h1>Auto di questo Marchio</h1>
-        {% for elem in auto %}
-        <div class="card" style="width: 18rem;">
-  <img src="{{elem.foto_auto}}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">{{elem.modello}}</h5>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{elem.prezzo}}</li>
-  </ul>
+    <div class="container text-center">
+            <div class="row">
+            {% for elem in auto %}
+                <div class="col-md-4 mb-4">
+                <div class="card" style="width: 18rem;">
+                <img src="{{elem.foto_auto}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">{{elem.modello}}</h5>
+                        <button type="button" class="btn btn-primary" onclick="openPopup('{{ elem.modello }}', '{{ loop.index }}')">Dettagli </button>
+                </div>
 </div>
+                    </div>
         {% endfor %}
+                </div>
+        </div>
 </div>
 </body>
 </html>
