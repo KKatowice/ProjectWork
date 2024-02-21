@@ -49,7 +49,7 @@
         .card {
             border: none;
             transition: transform 0.2s, box-shadow 0.2s;
-            background-color: green;
+            background-color: #ffffff;
             border-radius: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
@@ -87,7 +87,7 @@
 
 
         .card-title {
-            color: black;
+            color: #009900;
             font-weight: bold;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -137,7 +137,7 @@
         .welcome-banner h2 {
             font-size: 36px;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
@@ -145,145 +145,89 @@
             font-size: 18px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
-        .accordion-button.collapsed {
-          background: #4b7b4c;
-          text-align: center;
-        }
-.container-a {
-            background-color: #6ca577;
-            color: black;
-            text-align: center;
-            padding: 20px 0;
-            position: absolute;
-            bottom: 5;
-            width: 100%;
-            margin-top: 3%
-        }
     </style>
 
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="navbar-overlay"></div>
     <div class="container">
-        <a class="navbar-brand" href="#"><i ></i> DrivenChoice</a>
+        <a class="navbar-brand" href="#">DrivenChoice</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-                <a class="nav-link active" href="http://localhost:63342/pythonProject3/WebApp/templates/Home.html?_ijt=nt5mj6p6i2hq0el95r2hkhh5lj&_ij_reload=RELOAD_ON_SAVE">Home</a>
-                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/ChiSiamo.html?_ijt=dtpt7l5l3m0ig0aljl2dm75ac1&_ij_reload=RELOAD_ON_SAVE">Chi Siamo</a>
-                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/marchi.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">I nostri Marchi</a>
-                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Tutte_le_auto.html?_ijt=p3o8134dsvl12gsrrtnur7daeh&_ij_reload=RELOAD_ON_SAVE">Tutte le automobili</a>
-                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Grafici.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">Grafici</a>
-                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Utente.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">Utente</a>
-                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/preferiti.html?_ijt=ukkskfsjrk31d2kp7kjl8quvco&_ij_reload=RELOAD_ON_SAVE">Preferiti</a>
+
+                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Home.html?_ijt=nia9hbuk2qumb1dtqs52kstn7&_ij_reload=RELOAD_ON_SAVE">Home</a>
+                <a class="nav-link" href="/Chi siamo">Chi Siamo <i class="bi bi-chevron-right"></i></a>
+                <a class="nav-link" href="/film">I nostri Marchi</a>
+                <a class="nav-link" href="/generi">Form</a>
+                <a class="nav-link" href="/grafici">Grafici</a>
+                <a class="nav-link" href="/Utente">Utente</a>
+                <a class="nav-link" href="/Preferiti">Preferiti</a>
             </div>
         </div>
     </div>
 </nav>
 
+
 <div class="welcome-banner">
     <div class="container welcome-banner-content">
-        <h2> DrivenChoice</h2>
-    </div>
-</div>
+        <h2>DrivenChoice</h2>
 
-<div class="accordion accordion-flush" id="accordionFlushExample">
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                <b>Chi Siamo</b>
-            </button>
-        </h2>
-        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
-                Benvenuti su DrivenChoice, il tuo affidabile concessionario online per l'acquisto di auto. <br> Qui, ci impegniamo a offrire una vasta selezione di vetture di alta qualità, progettate per soddisfare ogni esigenza di mobilità.
-                <br>Indipendentemente dal tipo di veicolo che stai cercando, DrivenChoice ha la soluzione perfetta per te. <br> Se hai bisogno di una city car agile per gli spostamenti in città, un SUV robusto per le avventure fuori strada o una spaziosa station wagon per la famiglia, siamo qui per aiutarti a trovare l'auto ideale per le tue esigenze. <br>
-                Con DrivenChoice, non devi compromettere la qualità per il prezzo. <br> Ogni veicolo nel nostro inventario è stato attentamente selezionato e sottoposto a rigidi controlli di qualità, garantendo la tua tranquillità e sicurezza su strada.
-                <br>Inoltre, il nostro team dedicato è disponibile per guidarti attraverso il processo di acquisto, fornendoti supporto esperto e assistenza personalizzata per garantire una esperienza di acquisto senza stress.
-                <br>Scopri la nostra vasta selezione di auto di qualità su DrivenChoice e inizia il tuo viaggio verso la tua prossima auto perfetta oggi stesso. <br> Siamo qui per aiutarti a trovare il veicolo dei tuoi sogni, senza complicazioni e con la massima soddisfazione garantita.
-            </div>
-        </div>
     </div>
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                <b>Contatti</b>
-            </button>
-        </h2>
-        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
-                <div class="contact-card">
-                    <ul class="list-unstyled">
-                        <li><i class="bi bi-telephone"></i> Numero di telefono: +06 302 578 5</li>
-                        <li><i class="bi bi-envelope"></i> Email: info@drivenchoice.com</li>
-                        <li><i class="bi bi-geo-alt"></i> Sede legale: Via Udine 123, 20019, Milano, Italia</li>
-                        <li><i class="bi bi-credit-card"></i> Partita IVA: 7548596183</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+
+
+<div class="accordion" id="accordionExample" style="opacity: 1;">
+  <div class="accordion-item" style="height: 33vh">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <b> Chi siamo </b>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+
+Benvenuti su DrivenChoice, il tuo affidabile concessionario online per l'acquisto di auto. <br> Qui, ci impegniamo a offrire una vasta selezione di vetture di alta qualità, progettate per soddisfare ogni esigenza di mobilità.
+
+ <br>Indipendentemente dal tipo di veicolo che stai cercando, DrivenChoice ha la soluzione perfetta per te. <br> Se hai bisogno di una city car agile per gli spostamenti in città, un SUV robusto per le avventure fuori strada o una spaziosa station wagon per la famiglia, siamo qui per aiutarti a trovare l'auto ideale per le tue esigenze. <br>
+
+Con DrivenChoice, non devi compromettere la qualità per il prezzo. <br> Ogni veicolo nel nostro inventario è stato attentamente selezionato e sottoposto a rigidi controlli di qualità, garantendo la tua tranquillità e sicurezza su strada.
+
+ <br>Inoltre, il nostro team dedicato è disponibile per guidarti attraverso il processo di acquisto, fornendoti supporto esperto e assistenza personalizzata per garantire una esperienza di acquisto senza stress.
+
+ <br>Scopri la nostra vasta selezione di auto di qualità su DrivenChoice e inizia il tuo viaggio verso la tua prossima auto perfetta oggi stesso. <br> Siamo qui per aiutarti a trovare il veicolo dei tuoi sogni, senza complicazioni e con la massima soddisfazione garantita.
+
+
+      </div>
     </div>
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                <b>Le nostre Sedi</b>
-            </button>
-        </h2>
-        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://eosconsulting.com/wp-content/uploads/2018/09/eni1.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Roma</h5>
-                                </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">+06 302 578 5</li>
-                                    <li class="list-group-item">inforoma@drivenchoice.com</li>
-                                    <li class="list-group-item">Via Fermi 3, Roma</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://th.bing.com/th/id/R.435cdaede25c2f18a376327a0d302154?rik=ztSIlZD5fwQCJQ&pid=ImgRaw&r=0" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Milano</h5>
-                                </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">+02 440 185 6</li>
-                                    <li class="list-group-item">infomilano@drivenchoice.com</li>
-                                    <li class="list-group-item">Via Bisceglie 35, Milano</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://www.arketipomagazine.it/wp-content/uploads/sites/20/2016/03/DSC_7355.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Monza</h5>
-                                </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">+02 302 518 4</li>
-                                    <li class="list-group-item">infomonza@drivenchoice.com</li>
-                                    <li class="list-group-item">Via Cavour 16, Monza Brianza</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  </div>
+<div class="accordion-item" style="height: auto;">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <b>Contatti</b>
+        </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <div class="contact-card">
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-telephone"></i> Numero di telefono: +06 302 578 5</li>
+                    <li><i class="bi bi-envelope"></i> Email: info@drivenchoice.com</li>
+                    <li><i class="bi bi-geo-alt"></i> Sede legale: Via Udine 123, 20019, Milano, Italia</li>
+                    <li><i class="bi bi-credit-card"></i> Partita IVA: 7548596183</li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
+    </div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </div>
 </body>
-<div class="container-a">
-    <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
-</div>
 </html>
