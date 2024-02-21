@@ -123,7 +123,7 @@ def getAutobyBudget():
 @apiBlueprint.route('/api/auto_filter', methods=['POST'])
 def filtra_auto():
     data = request.get_json()
-    q = (Auto.query.join(Motore, Motore.id_motore == Auto.id_motore).join(Marchio, Marchio.id_marchio == Auto.id_marchio).filter(Marchio.nome == data['marchio']).filter(Auto.anno == data['anno']).filter(Auto.carburante == data['carburante']).filter(Auto.consumi == data['consumi']).filter(Auto.emissioni == data['emissioni']).filter(Auto.prezzo == data['prezzo']))
+    q = (Auto.query.join(Motore, Motore.id_motore == Auto.id_motore).join(Marchio, Marchio.id_marchio == Auto.id_marchio).filter(Marchio.nome == data['marchio']).filter(Motore.carburante == data['carburante']).filter(Motore.consumi == data['consumi']).filter(Motore.emissioni == data['emissioni']).filter(Auto.prezzo == data['prezzo']))
     result = q.all()
     return result
 

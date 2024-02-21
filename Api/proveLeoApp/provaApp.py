@@ -44,7 +44,7 @@ def show_auto():
     else:
         lista_auto = getAuto()
     c.close()
-    return render_template('auto.html', auto=lista_auto, page=page, total_pages=totale)
+    return render_template('Tutte_le_auto.html', auto=lista_auto, page=page, total_pages=totale)
 
 
 
