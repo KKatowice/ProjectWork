@@ -30,7 +30,8 @@ def dai():
                         deletatiByCilindr += 1
                     elif pdisp == None and disp:
                         #print('DIIIIS', int(disp.split()[0])/1000)
-                        dcarModel_cln[brand][model]['engines'][eng]['Pdisplacement'] = f"{int(disp.split()[0])/1000}L"
+                        numz =  "{:.1f}".format(int(disp.split()[0])/1000) 
+                        dcarModel_cln[brand][model]['engines'][eng]['Pdisplacement'] = f"{numz}L"
         print("cancellatiByEng", deletatiByEng)
         print("cancellatiByCilindr", deletatiByCilindr)
                     
