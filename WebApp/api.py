@@ -31,7 +31,7 @@ def getAuto():
 @apiBlueprint.route('/api/getMarchio', methods=['GET'])
 def getMarchio():
     page = int(request.args.get('page', default=1))
-    items_per_page = 20
+    items_per_page = 21
     offset = (page - 1) * items_per_page
     c = create_db_connection(DBNAME)
     print(c)

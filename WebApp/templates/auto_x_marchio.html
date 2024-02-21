@@ -160,8 +160,8 @@
             <div class="navbar-nav ml-auto">
                 <a class="nav-link active" href="/">Home</a>
                 <a class="nav-link" href="/ChiSiamo.html">Chi Siamo</a>
-                <a class="nav-link" href="/film">I nostri Marchi</a>
-                <a class="nav-link" href="/generi">Tutte le automobili</a>
+                <a class="nav-link" href="/marchi">I nostri Marchi</a>
+                <a class="nav-link" href="/auto">Tutte le automobili</a>
                 <a class="nav-link" href="/grafici">Grafici</a>
                 <a class="nav-link" href="/Utente">Utente</a>
                 <a class="nav-link" href="/Preferiti">Preferiti</a>
@@ -172,16 +172,16 @@
 
 <div class="container mt-5 text-center">
         <h1>Auto di questo Marchio</h1>
-        {% for elem in marchi %}
+        {% for elem in auto %}
         <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+  <img src="{{elem.foto_auto}}" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">{{elem['nome']}}</h5>
+    <h5 class="card-title">{{elem.modello}}</h5>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{elem['cilindrata']}}</li>
-    <li class="list-group-item">{{elem['cavalli']}}</li>
-    <li class="list-group-item">{{elem['anno']}}</li>
+    <li class="list-group-item">{{elem.prezzo}}</li>
+    <li class="list-group-item">{{elem}}</li>
+    <li class="list-group-item">{{elem}}</li>
   </ul>
 </div>
         {% endfor %}
