@@ -2,9 +2,164 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+         body {
+            background-color:#ffffff;
+            color: #7FFFD4;
+            font-family: 'Georgia', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            position: relative;
+            background-color:#D3D3D3;
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid #6ca577;
+        }
+
+        .navbar-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            z-index: 1;
+        }
+
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #7FFFD4; /* grigio */
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .nav-link:hover {
+            color: #7FFFD4;
+        }
+        .container {
+            margin-top: 50px;
+        }
+
+        .btn-primary {
+            background-color: #51875; /* Verde scuro */
+            border-color: #51875;
+        }
+
+        .btn-primary:hover {
+            background-color: #51875; /* Verde scuro */
+            border-color: #51875;
+        }
+
+        .btn-success {
+            background-color: #51875; /* Verde salvia */
+            border-color: #51875;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-success:hover {
+            background-color: #51875; /* Verde scuro */
+            border-color: #51875;
+        }
+
+        .card {
+            background-color: #f8f9fa; /* Grigio chiaro */
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Effetto di sollevamento al passaggio del mouse */
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+        .container-a {
+            background-color: #6ca577;
+            color: black;
+            text-align: center;
+            padding: 20px 0;
+            position: absolute;
+            bottom: 5;
+            width: 100%;
+            margin-top: 3%
+        }
+    </style>
 </head>
 <body>
 
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">DrivenChoice</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                  <a class="nav-link active" href="http://localhost:63342/pythonProject3/WebApp/templates/Home.html?_ijt=nt5mj6p6i2hq0el95r2hkhh5lj&_ij_reload=RELOAD_ON_SAVE">Home</a>
+               <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/ChiSiamo.html?_ijt=dtpt7l5l3m0ig0aljl2dm75ac1&_ij_reload=RELOAD_ON_SAVE">Chi Siamo</a>
+
+                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/marchi.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">I nostri Marchi</a>
+                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Tutte_le_auto.html?_ijt=p3o8134dsvl12gsrrtnur7daeh&_ij_reload=RELOAD_ON_SAVE">Tutte le automobili</a>
+                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Grafici.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">Grafici</a>
+                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Utente.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">Utente</a>
+                <a class="nav-link" href="/Preferiti">Preferiti</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Accedi al tuo account</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Inserisci email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" id="password" placeholder="Inserisci password">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Accedi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Crea un account</h2>
+                    <p class="text-center mb-4">Non hai ancora un account? Crea un nuovo account qui.</p>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-success btn-block">Crea Account <i class="bi bi-person-plus-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-a">
+        <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
+    </div>
 </body>
 </html>

@@ -6,6 +6,7 @@
     <title> Home Page</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         body {
             background-color:#ffffff;
@@ -42,6 +43,11 @@
         .nav-link:hover {
             color: #7FFFD4;
         }
+
+        .navbar-brand i {
+            margin-right: 5px;
+        }
+
 
         .card {
             border: none;
@@ -154,11 +160,10 @@
 </head>
 <body>
 
-
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="navbar-overlay"></div>
     <div class="container">
-        <a class="navbar-brand" href="#">DrivenChoice</a>
+        <a class="navbar-brand" href="#"><i class="bi bi-car"></i> DrivenChoice</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -166,11 +171,12 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
                 <a class="nav-link active" href="/">Home</a>
-                <a class="nav-link" href="/Chi siamo">Chi Siamo</a>
-                <a class="nav-link" href="/film">I nostri Marchi</a>
-                <a class="nav-link" href="/generi">Tutte le automobili</a>
-                <a class="nav-link" href="/grafici">Grafici</a>
-                <a class="nav-link" href="/Utente">Utente</a>
+               <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/ChiSiamo.html?_ijt=dtpt7l5l3m0ig0aljl2dm75ac1&_ij_reload=RELOAD_ON_SAVE">Chi Siamo</a>
+
+                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/marchi.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">I nostri Marchi</a>
+                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Tutte_le_auto.html?_ijt=p3o8134dsvl12gsrrtnur7daeh&_ij_reload=RELOAD_ON_SAVE">Tutte le automobili</a>
+                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Grafici.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">Grafici</a>
+                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Utente.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">Utente</a>
                 <a class="nav-link" href="/Preferiti">Preferiti</a>
             </div>
         </div>
@@ -193,7 +199,7 @@
                 <div class="card-body">
                     <h5 class="card-title">I nostri Marchi</h5>
                     <p class="card-text">Esplora i marchi di automobili disponibili e le valutazioni degli utenti.</p>
-                    <a href="/film" class="btn btn-custom">Scopri</a>
+                    <a href="http://localhost:63342/pythonProject3/WebApp/templates/marchi.html?_ijt=lfbc80acnjnbc8umqj7fsngt45&_ij_reload=RELOAD_ON_SAVE" class="btn btn-custom">Scopri</a>
                 </div>
             </div>
         </div>
@@ -204,7 +210,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Tutte le Automobili</h5>
                     <p class="card-text">Esplora tutte le automobili disponibili e le loro caratteristiche.</p>
-                    <a href="/generi" class="btn btn-custom">Scopri</a>
+                    <a href="http://localhost:63342/pythonProject3/WebApp/templates/Tutte_le_auto.html?_ijt=p3o8134dsvl12gsrrtnur7daeh&_ij_reload=RELOAD_ON_SAVE" class="btn btn-custom">Scopri</a>
                 </div>
             </div>
         </div>
@@ -232,4 +238,3 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
