@@ -188,28 +188,25 @@
     <div class="container mt-5 text-center">
         <h1>Tutti i Marchi</h1>
         <div class="container text-center">
-            {% for elem in marchi %}
             <div class="row">
-            <div class="col">
+            {% for elem in marchi %}
+            <div class="col-md-4">
                 <div class="card" style="width: 18rem;">
   <img src="{{elem.foto_marchio}}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">{{elem.nome}}</h5>
-      <button></button>
     <a  href="/marchi/autoByMarchio" class="btn btn-primary">Visualizza auto</a>
   </div>
 </div>
             </div>
-
-        </div>
-        </div>
-
             {% endfor %}
+        </div>
+        </div>
     </div>
+
 <div class="container-a">
         <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
     </div>
-</div>
     <!-- Includi Bootstrap JS (opzionale) -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>

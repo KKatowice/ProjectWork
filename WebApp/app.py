@@ -41,12 +41,13 @@ def show_auto():
 @app.route('/marchi')
 def show_marchi():
     page = int(request.args.get('page', default=1))
-    items_per_page = 10
+    items_per_page = 20
     c = create_db_connection(DBNAME)
     query = "SELECT COUNT(*) AS num_marchi FROM marchi"
     conteggio = read_query(c, query)[0]['num_marchi']
     totale = (conteggio // items_per_page) + 1
     marchi = getMarchio()
+    c.close()
     return render_template('marchi.html', marchi=marchi, page=page, total_pages=totale)
 
 # @app.route('/')
