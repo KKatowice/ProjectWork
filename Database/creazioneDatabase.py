@@ -11,13 +11,13 @@ marchi = """CREATE TABLE marchi(
 
 motore = """CREATE TABLE motori(
             id_motore int PRIMARY KEY AUTO_INCREMENT,
-            cilindrata int,
-            potenza int,
+            cilindrata decimal(10,1),
+            potenza decimal(10,1),
             cavalli int,
-            carburante varchar(25),
+            carburante varchar(255),
             consumi decimal(10,2),
             emissioni decimal(10,2),
-            serbatoio decimal(10,2)
+            serbatoio decimal(10,1)
             )"""
 
 auto = """CREATE TABLE auto(
