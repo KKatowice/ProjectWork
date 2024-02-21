@@ -46,9 +46,9 @@ def getMarchio():
 
 @apiBlueprint.route('/api/getAutobyMarchio', methods=['GET'])
 def getAutobyMarchio():
-    marchio = request.args.get('marchio')
+    marchio = request.args.get('marchio',default="acura")
     c = create_db_connection("concessionario")
-    q = f"""SELECT * FROM auto JOIN marchio ON auto.id_marchio = marchio.id_marchio WHERE marchio.nome = "{marchio}"; """
+    q = f"""SELECT * FROM auto JOIN marchi ON auto.id_marchio = marchi.id_marchio WHERE marchi.nome = "{marchio}"; """
     res = read_query(c, q)
     c.close()
     return res

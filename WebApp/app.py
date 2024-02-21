@@ -18,7 +18,6 @@ def home():
 
 @app.route('/auto')
 def show_auto():
-
     page = int(request.args.get('page', default=1))
     items_per_page = 20
     c = create_db_connection(DBNAME)
@@ -50,7 +49,15 @@ def show_marchi():
     c.close()
     return render_template('marchi.html', marchi=marchi, page=page, total_pages=totale)
 
-# @app.route('/')
+@app.route('/autopermarchio')
+def show_auto_for_marchi():
+    marchio = request.args.get('marchio')
+    if marchio:
+        auto = getAutobyMarchio()
+    else:
+        auto = getAuto()
+    return render_template('auto_x_marchio.html', auto=auto)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
