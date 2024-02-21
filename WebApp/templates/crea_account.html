@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione Account</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000; /* testo nero */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            position: relative;
+            background-color: #D3D3D3; /* grigio */
+            border-bottom: 1px solid #6ca577;
+        }
+
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #000000; /* testo nero */
+            font-weight: bold;
+        }
+
+        .nav-link:hover {
+            color: #7FFFD4; /* verde salvia */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .btn-primary {
+            background-color: #93a996; /* verde salvia */
+            border-color: #93a996; /* verde salvia */
+        }
+
+        .btn-primary:hover {
+            background-color: #7FFFD4; /* verde salvia chiaro */
+            border-color: #7FFFD4; /* verde salvia chiaro */
+        }
+        .container-a {
+            background-color: #6ca577;
+            color: black;
+            text-align: center;
+            padding: 20px 0;
+            position: absolute;
+            bottom: 5;
+            width: 100%;
+            margin-top: 3%
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">DrivenChoice</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="navbar-nav ml-auto">
+                 <a class="nav-link active" href="http://localhost:63342/pythonProject3/WebApp/templates/Home.html?_ijt=nt5mj6p6i2hq0el95r2hkhh5lj&_ij_reload=RELOAD_ON_SAVE">Home</a>
+               <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/ChiSiamo.html?_ijt=dtpt7l5l3m0ig0aljl2dm75ac1&_ij_reload=RELOAD_ON_SAVE">Chi Siamo</a>
+
+                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/marchi.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">I nostri Marchi</a>
+                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Tutte_le_auto.html?_ijt=p3o8134dsvl12gsrrtnur7daeh&_ij_reload=RELOAD_ON_SAVE">Tutte le automobili</a>
+                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Grafici.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">Grafici</a>
+                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Utente.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">Utente</a>
+                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/preferiti.html?_ijt=ukkskfsjrk31d2kp7kjl8quvco&_ij_reload=RELOAD_ON_SAVE">Preferiti</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1>Registrazione Account</h1>
+    <form action="/registrazione" method="post">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nome" required>
+        </div>
+        <div class="form-group">
+            <label for="cognome">Cognome:</label>
+            <input type="text" class="form-control" id="cognome" name="cognome" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="conferma_password">Conferma Password:</label>
+            <input type="password" class="form-control" id="conferma_password" name="conferma_password" required>
+        </div>
+        <div class="form-group">
+            <label for="età">Data di Nascita:</label>
+            <input type="date" class="form-control" id="età" name="età" required>
+       </div>
+        <button type="submit" class="btn btn-primary" style="background-color: #93a996; border-color: #93a996;">Registrati</button>
+    </form>
+</div>
+<div>
+    <div class="container-a">
+        <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
+    </div>
+</div>
+<!-- Script delle librerie JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

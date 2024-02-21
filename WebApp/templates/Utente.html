@@ -59,14 +59,15 @@
         }
 
         .btn-success {
-            background-color: #51875; /* Verde salvia */
-            border-color: #51875;
+            background-color: #95c799; /* Verde */
+            border-color: #95c799;
+            color: #ffffff; /* Testo bianco */
             transition: background-color 0.3s ease;
         }
 
         .btn-success:hover {
-            background-color: #51875; /* Verde scuro */
-            border-color: #51875;
+            background-color: #1d5f38; /* Verde più scuro */
+            border-color: #1d5f38;
         }
 
         .card {
@@ -97,26 +98,25 @@
     </style>
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="navbar-overlay"></div>
     <div class="container">
         <a class="navbar-brand" href="#">DrivenChoice</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ml-auto">
-                  <a class="nav-link active" href="http://localhost:63342/pythonProject3/WebApp/templates/Home.html?_ijt=nt5mj6p6i2hq0el95r2hkhh5lj&_ij_reload=RELOAD_ON_SAVE">Home</a>
-               <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/ChiSiamo.html?_ijt=dtpt7l5l3m0ig0aljl2dm75ac1&_ij_reload=RELOAD_ON_SAVE">Chi Siamo</a>
-
-                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/marchi.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">I nostri Marchi</a>
-                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Tutte_le_auto.html?_ijt=p3o8134dsvl12gsrrtnur7daeh&_ij_reload=RELOAD_ON_SAVE">Tutte le automobili</a>
-                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Grafici.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">Grafici</a>
-                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Utente.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">Utente</a>
-                <a class="nav-link" href="/Preferiti">Preferiti</a>
-            </div>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+            <a class="nav-link active" href="http://localhost:63342/pythonProject3/WebApp/templates/Home.html?_ijt=nt5mj6p6i2hq0el95r2hkhh5lj&_ij_reload=RELOAD_ON_SAVE">Home</a>
+            <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/ChiSiamo.html?_ijt=dtpt7l5l3m0ig0aljl2dm75ac1&_ij_reload=RELOAD_ON_SAVE">Chi Siamo</a>
+            <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/marchi.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">I nostri Marchi</a>
+            <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Tutte_le_auto.html?_ijt=p3o8134dsvl12gsrrtnur7daeh&_ij_reload=RELOAD_ON_SAVE">Tutte le automobili</a>
+            <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Grafici.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">Grafici</a>
+            <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Utente.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">Utente</a>
+            <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/preferiti.html?_ijt=ukkskfsjrk31d2kp7kjl8quvco&_ij_reload=RELOAD_ON_SAVE">Preferiti</a>
         </div>
+    </div>
     </div>
 </nav>
 
@@ -135,7 +135,7 @@
                             <label for="password">Password:</label>
                             <input type="password" class="form-control" id="password" placeholder="Inserisci password">
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Accedi</button>
+                        <button type="submit" class="btn btn-success btn-block">Accedi</button>
                     </form>
                 </div>
             </div>
@@ -151,15 +151,17 @@
                     <h2 class="text-center mb-4">Crea un account</h2>
                     <p class="text-center mb-4">Non hai ancora un account? Crea un nuovo account qui.</p>
                     <div class="text-center">
-                        <a href="#" class="btn btn-success btn-block">Crea Account <i class="bi bi-person-plus-fill"></i></a>
+                        <a href="http://localhost:63342/pythonProject3/WebApp/templates/crea_account.html?_ijt=8tkfi8pn1j652urllhh5ddg4eq&_ij_reload=RELOAD_ON_SAVE" class="btn btn-success btn-block">Crea Account <i class="bi bi-person-plus-fill"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <div class="container-a">
-        <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
-    </div>
+    <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
+</div>
+
 </body>
 </html>
