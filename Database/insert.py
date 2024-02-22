@@ -1,16 +1,16 @@
-from dbUtils import *
+from dbUtils_aiven import *
 import json
 import re
 
 #Apro i due file json
-c = create_db_connection("concessionario")
+c = create_db_connection()
 data = json.load(open("../Datasets_Scraping/completo_wPrices_cleaner.json"))
 users = json.load(open("../Datasets_Scraping/utenti.json"))
 
 #Inserimento dei marchi
 def insert_marchi():
     for elem in data.keys():
-        query = f"""INSERT INTO marchi(nome, foto_marchio) VALUES('{elem}', "{data[elem]['imglink']}")"""
+        query = f"""INSERT INTO marchi(nome, foto_marchio) VALUES('{elem}', '{data[elem]["imglink"]}');"""
         execute_query(c,query)
 
 
@@ -75,24 +75,29 @@ def insert_auto():
     l = []
     lista = []
     for marchio in data.keys():
-        numero = read_query(c, query=f"""SELECT id_marchio FROM marchi WHERE nome = '{marchio}'""")[0]['id_marchio']
+        numero = read_query(c, query=f"""SELECT id_marchio FROM marchi WHERE nome = '{marchio}';""")[0]['id_marchio']
         for elem in data[marchio].keys():
             if elem != "imglink":
                 im = data[marchio][elem]["car_imglink"]
                 pr = str(data[marchio][elem]["price"])
+                if pr == 'None' or pr == None:
+                    pr = "0.00"
+                """ if len(pr) >= 10:
+                    print("wtf", pr, elem) """
                 for motore in data[marchio][elem]["engines"]:
                     nome = data[marchio][elem]["engines"].keys()
                     for e in nome:
                         if e not in lista:
+                            
                             lista.append(e)
                             t = (numero, im, pr, e, i)
                             i += 1
                             l.append(t)
-    l1 = l[:(len(l)//2)]
-    l2 = l[(len(l)//2):]
+    #l1 = l[:(len(l)//2)]
+    #l2 = l[(len(l)//2):]
     query = f"""INSERT INTO auto(id_marchio, foto_auto, prezzo, modello, id_motore) VALUES(%s,%s,%s,%s,%s)"""
-    execute_many_query(c, query, l1)
-    execute_many_query(c, query, l2)
+    execute_many_query(c, query, l)
+    #execute_many_query(c, query, l2)
 
 q1 = """SET FOREIGN_KEY_CHECKS = 0;"""
 q2= """ SET FOREIGN_KEY_CHECKS = 1"""

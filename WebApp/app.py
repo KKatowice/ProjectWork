@@ -19,6 +19,7 @@ def home():
 @app.route('/auto', methods=['GET', 'POST'])
 def show_auto():
     f = request.args.get('filtro', default=None)
+    print(f)
     page = int(request.args.get('page', default=1))
     items_per_page = 20
     c = create_db_connection("concessionario")
@@ -27,6 +28,7 @@ def show_auto():
     totale = (conteggio // items_per_page) + 1
     if f == 'filtrate':
         data = filtra_auto()
+        print(data)
         if len(data) > 0:
             lista_auto = [x.to_dict() for x in data]
         else:
@@ -56,6 +58,10 @@ def show_auto_for_marchi():
     else:
         auto = getAuto()
     return render_template('auto_x_marchio.html', auto=auto)
+
+@app.route('/chisiamo')
+def chisiamo():
+   return render_template('ChiSiamo.html')
 
 
 if __name__ == '__main__':
