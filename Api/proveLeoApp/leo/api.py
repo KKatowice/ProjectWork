@@ -1,7 +1,10 @@
 from flask import Blueprint, request, render_template
 from sys import path
+
+from ProjectWork.Database.dbUtils_aiven import *
+
 path.append('create db')
-from Database.dbUtils import *
+
 
 
 
@@ -105,3 +108,18 @@ def updateUtentiBloccati():
     q = f"""INSERT INTO utenti_bloccati(email,password) VALUES({email},{password})"""
     execute_query(connessione, q)
 
+@apiBlueprint.route('/api/getMarchio', methods=['GET'])
+def getMarchio():
+    page = int(request.args.get('page', default=1))
+    items_per_page = 21
+    offset = (page - 1) * items_per_page
+    c = create_db_connection(DBNAME)
+    print(c)
+
+    q = f"""SELECT * FROM marchi
+         ORDER BY marchi.nome
+         LIMIT {items_per_page} OFFSET {offset};"""
+
+    res = read_query(c, q)
+    c.close()
+    return res

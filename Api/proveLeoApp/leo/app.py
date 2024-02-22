@@ -1,8 +1,13 @@
+# from flask import *
+#
+# from ProjectWork.Api.api import apiBlueprint
+# from ProjectWork.Api.proveLeoApp.leo.api import *
+# from ProjectWork.Database.dbUtils_aiven import *
 from flask import *
-
-from WebApp.api import getMarchio
-from api import *
-
+from sys import path
+path.append(r'ProjectWork/Database')
+path.append(r'ProjectWork/ap')
+from ProjectWork.Database.dbUtils_aiven import *
 
 app = Flask(__name__)
 app.register_blueprint(apiBlueprint)
@@ -53,7 +58,7 @@ def show_marchi():
     data = getMarchio()
     return render_template('marchi.html', generi=data, page=page, total_pages=totale)
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/utente', methods=['GET', 'POST'])
 def login():
     connessione = create_db_connection(DBNAME)
     if request.method == 'POST':
@@ -76,7 +81,7 @@ def login():
         #         conn.commit()
 
     else:
-        return render_template('login.html')
+        return render_template('Utente.html')
 @app.route('/login', methods=['GET', 'POST'])
 def register():
     connessione = create_db_connection(DBNAME)
@@ -89,7 +94,7 @@ def register():
         password = request.form['password']
         cap = request.form['cap']
         q = f"""INSERT INTO utente(nome, cognome, eta, sesso, email, password, cap)
-                             VALUES({nome},{cognome},{eta},{sesso},{email},{password},{cap})"""
+                             VALUES('{nome}','{cognome}','{eta}','{sesso}','{email}','{password}','{cap}')"""
         verifica = read_query(connessione, q)
 
         if len(verifica) == 0:
@@ -98,7 +103,7 @@ def register():
         else:
             return "mail già utilizzata"
     else:
-        return render_template("register.html")
+        return render_template("crea_account.html")
 
 @app.route('/dashboard')
 def dashboard():

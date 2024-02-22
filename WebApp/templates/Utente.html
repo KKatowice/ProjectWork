@@ -151,7 +151,7 @@
                     <h2 class="text-center mb-4">Crea un account</h2>
                     <p class="text-center mb-4">Non hai ancora un account? Crea un nuovo account qui.</p>
                     <div class="text-center">
-                        <a href="/register" class="btn btn-success btn-block">Crea Account <i class="bi bi-person-plus-fill"></i></a>
+                        <a href="/crea_account" class="btn btn-success btn-block">Crea Account <i class="bi bi-person-plus-fill"></i></a>
                     </div>
                 </div>
             </div>
@@ -209,6 +209,23 @@ fetch('/login', {
         },
         body: JSON.stringify(datiJSON)
     });
+    })
+        .then(response => {
+            if (response.ok) {
+                // Reindirizza l'utente alla dashboard dopo il login
+                window.location.href = '/dashboard';
+            } else {
+                // Mostra un messaggio di errore se le credenziali sono errate
+                attempts++;
+                if (attempts >= maxAttempts) {alert("Hai esaurito tutti i tentativi. Account bloccato per motivi di sicurezza.");
+                    document.getElementById("loginButton").disabled = true; // Disabilita il pulsante di login
+                } else {alert("Email o password errate. Tentativi rimanenti:" + (maxAttempts - attempts));
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Si è verificato un errore:', error);
+        });
 }
 </script>
 </body>

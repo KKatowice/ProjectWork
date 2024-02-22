@@ -71,7 +71,60 @@ def show_auto_for_marchi():
                 d[key] = float(value)
     return render_template('auto_x_marchio.html', auto=auto)
 
+@app.route('/Utente', methods=['GET', 'POST'])
+def login():
+    connessione = create_db_connection(DBNAME)
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        q1 = f"""SELECT email,password FROM utente WHERE {email} AND {password}"""
+        verifica = execute_query(connessione, q1)
+        if len(verifica) > 1:        # Password corretta, autenticazione riuscita
+            return redirect(url_for('dashboard'))
+        else:
+            return "email o password errate"
+        # else:
+        #     # Password errata, incrementa il numero di tentativi
+        #     attempts += 1
+        #     remaining_attempts = max_attempts - attempts
+        #     if remaining_attempts > 0:
+        #         return f"Password errata. {remaining_attempts} tentativi rimanenti."
+        #     else:
+        #         c.execute("INSERT INTO utenti_bloccati (email) VALUES (?)", (email,))
+        #         conn.commit()
 
+    else:
+        return render_template('Utente.html')
+@app.route('/crea_account', methods=['GET', 'POST'])
+def register():
+    connessione = create_db_connection(DBNAME)
+    if request.method == 'POST':
+        nome = request.form['nome']
+        cognome = request.form['cognome']
+        eta = request.form['eta']
+        sesso = request.form['sesso']
+        email = request.form['email']
+        password = request.form['password']
+        CAP = request.form['CAP']
+        q = f"""INSERT INTO utente(nome, cognome, eta, sesso, email, password, CAP)
+                             VALUES('{nome}','{cognome}','{eta}','{sesso}','{email}','{password}','{CAP}')"""
+        verifica = read_query(connessione, q)
+        print(verifica)
+
+        if len(verifica) == 0:
+            execute_query(connessione, q)
+            print(verifica)
+        else:
+            return "mail già utilizzata"
+    else:
+        return render_template("crea_account.html")
+
+@app.route('/dashboard')
+def dashboard():
+    if 'email' in session:
+        return f"Benvenuto, {session['email']}! Questa è la tua dashboard."
+    else:
+        return redirect(url_for('login'))
 
 @app.route('/chisiamo')
 def chisiamo():

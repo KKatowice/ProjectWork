@@ -145,15 +145,15 @@
             <div class='welcome'>Ciao!</div>
             <div class='subtitle'>Abbiamo quasi finito. Prima di utilizzare i nostri servizi è necessario creare un account.</div>
             <div class='input-fields'>
-                <input type='text' placeholder='Nome' class='input-line full-width'>
-                <input type='text' placeholder='Cognome' class='input-line full-width'>
-                <input type='text' id='datepicker' placeholder='Età' class='input-line full-width'>
-                <input type='text' placeholder='Sesso' class='input-line full-width'>
-                <input type='text' placeholder='CAP' class='input-line full-width'>
-                <input type='email' placeholder='Email' class='input-line full-width'>
-                <input type='password' placeholder='Password' class='input-line full-width'>
+                <input type='text' id='nome' placeholder='Nome' class='input-line full-width'>
+                <input type='text' id='cognome' placeholder='Cognome' class='input-line full-width'>
+                <input type='text' id='eta' placeholder='Età' class='input-line full-width'>
+                <input type='text' id='sesso' placeholder='Sesso' class='input-line full-width'>
+                <input type='text' id='CAP' placeholder='CAP' class='input-line full-width'>
+                <input type='email' id='email' placeholder='Email' class='input-line full-width'>
+                <input type='password' id='password' placeholder='Password' class='input-line full-width'>
             </div>
-            <div><button class='ghost-round full-width'>Create Account</button></div>
+            <div><button onclick="register()" class='ghost-round full-width'>Create Account</button></div>
         </div>
     </div>
 </div>
@@ -165,34 +165,34 @@
     </div>
 </div>
 
-<!-- Script delle librerie JavaScript -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 <script>
 function register() {
-var nome = document.getElementByid("nome").value;
-var cognome = document.getElementByid("cognome").value;
-var eta = document.getElementByid("eta").value;
-var sesso = document.getElementByid("sesso").value;
-var email = document.getElementByid("email").value;
-var password = document.getElementByid("password").value;
-var cap = document.getElementByid("cap").value;
+var nome = document.getElementById("nome").value;
+console.log(datiJSON)
+var cognome = document.getElementById("cognome").value;
+console.log(datiJSON)
+var eta = document.getElementById("eta").value;
+console.log(datiJSON)
+var sesso = document.getElementById("sesso").value;
+console.log(datiJSON)
+var email = document.getElementById("email").value;
+console.log(datiJSON)
+var password = document.getElementById("password").value;
+console.log(datiJSON)
+var cap = document.getElementById("CAP").value;
+console.log(datiJSON)
 
 var datiJSON = {
     nome: nome,
-    cognome: cognome
+    cognome: cognome,
     eta: eta,
-    sesso: sesso
+    sesso: sesso,
     email: email,
-    password: password
-    cap: cap
+    password: password,
+    cap: CAP
     };
-
-fetch('/register', {
+console.log(datiJSON)
+fetch('/crea_account', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -201,6 +201,13 @@ fetch('/register', {
     });
 }
 </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
 
 </body>
 </html>

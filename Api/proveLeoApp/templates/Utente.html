@@ -121,7 +121,46 @@
     <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
 </div>
 
-<!-- Script delle librerie JavaScript -->
+
+<script>
+var attempts = 0;
+var maxAttempts = 3;
+function login() {
+var email = document.getElementByid("email").value;
+var password = document.getElementByid("password").value;
+
+
+var datiJSON = {
+    email: email,
+    password: password
+    };
+
+fetch('/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datiJSON)
+    });
+})
+        .then(response => {
+            if (response.ok) {
+                // Reindirizza l'utente alla dashboard dopo il login
+                window.location.href = '/dashboard';
+            } else {
+                // Mostra un messaggio di errore se le credenziali sono errate
+                attempts++;
+                if (attempts >= maxAttempts) {alert("Hai esaurito tutti i tentativi. Account bloccato per motivi di sicurezza.");
+                    document.getElementById("loginButton").disabled = true; // Disabilita il pulsante di login
+                } else {alert("Email o password errate. Tentativi rimanenti:" + (maxAttempts - attempts));
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Si è verificato un errore:', error);
+        });
+    }
+</script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

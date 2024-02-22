@@ -1,4 +1,3 @@
-from faker import Faker
 from random import randint
 from faker import Faker
 import json

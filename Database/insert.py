@@ -18,9 +18,9 @@ def insert_marchi():
 def insert_users():
     lista = []
     for elem in users.keys():
-        t = (users[elem]['nome'],users[elem]['cognome'],users[elem]['eta'],users[elem]['sesso'], users[elem]['email'],users[elem]['cap'],users[elem]['budget'])
+        t = (users[elem]['nome'],users[elem]['cognome'],users[elem]['eta'],users[elem]['sesso'], users[elem]['email'],users[elem]['password'],users[elem]['cap'],users[elem]['budget'])
         lista.append(t)
-    query = f"""INSERT INTO utenti(nome, cognome, eta, sesso, email, cap, budget) VALUES(%s,%s,%s,%s,%s,%s,%s)"""
+    query = f"""INSERT INTO utenti(nome, cognome, eta, sesso, email,password, cap, budget) VALUES(%s,%s,%s,%s,%s,%s,%s,%s)"""
     execute_many_query(c,query,lista)
 
 def insert_motori():
@@ -101,12 +101,12 @@ def insert_auto():
 
 q1 = """SET FOREIGN_KEY_CHECKS = 0;"""
 q2= """ SET FOREIGN_KEY_CHECKS = 1"""
-execute_query(c,q1)
-insert_marchi()
+# execute_query(c,q1)
+# insert_marchi()
 insert_users()
-insert_motori()
-insert_auto()
-execute_query(c,q2)
+# insert_motori()
+# insert_auto()
+# execute_query(c,q2)
 
 
 
