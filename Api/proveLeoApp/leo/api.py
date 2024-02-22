@@ -61,22 +61,22 @@ def getAutobyMarchio():
 # --CRUD--
 # datetime formato pe date: 'YYYY-MM-DD HH:MM:SS'
 
-@apiBlueprint.route('/api/getRicerca', methods=['GET'])
-def getRicerca():
-    form_data = request.form
-    # Estrai i dati dal form
-    cilindrata = form_data.get('cilindrata')
-    marca = form_data.get('marchio')
-    capacità_serbatoio = form_data("capacità_serbatoio")
-
-    # Esegui la ricerca nel database basata sui dati del form
-    c = create_db_connection(DBNAME)
-    q = f"""SELECT * FROM auto WHERE nome = "{nome}" AND marca = "{marca}"; """
-    res = read_query(c, q)
-    c.close()
-
-    # Restituisci i risultati alla pagina web
-    return render_template('risultati_ricerca.html', risultati=res)
+# @apiBlueprint.route('/api/getRicerca', methods=['GET'])
+# def getRicerca():
+#     form_data = request.form
+#     # Estrai i dati dal form
+#     cilindrata = form_data.get('cilindrata')
+#     marca = form_data.get('marchio')
+#     capacità_serbatoio = form_data("capacità_serbatoio")
+#
+#     # Esegui la ricerca nel database basata sui dati del form
+#     c = create_db_connection(DBNAME)
+#     q = f"""SELECT * FROM auto WHERE nome = "{nome}" AND marca = "{marca}"; """
+#     res = read_query(c, q)
+#     c.close()
+#
+#     # Restituisci i risultati alla pagina web
+#     return render_template('risultati_ricerca.html', risultati=res)
 
 # --PAGINA UTENTE--
 @apiBlueprint.route('/api/getAutobyBudget', methods=['GET'])
@@ -97,8 +97,11 @@ def getAutobyBudget():
 #api per login e register
 @apiBlueprint.route('/api/updateDB', methods=['POST'])
 def updateUtentiBloccati():
+    connessione = create_db_connection(DBNAME)
     data = request.get_json()
     connesione = create_db_connection(DBNAME)
-    q = f"""UPDATE utenti_bloccati"""
-
+    email = request.form['email']
+    password = request.form['password']
+    q = f"""INSERT INTO utenti_bloccati(email,password) VALUES({email},{password})"""
+    execute_query(connessione, q)
 
