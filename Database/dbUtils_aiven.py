@@ -33,7 +33,7 @@ def create_server_connection():
             #database=DBNAME,
             port=p,
             charset="utf8mb4",
-            connect_timeout=120,
+            connect_timeout=120,auth_plugin='caching_sha2_password'
         ) 
         print("MySQL Database connection successful")
     except Error as err:
