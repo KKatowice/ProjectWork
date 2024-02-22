@@ -1,9 +1,7 @@
 from flask import Blueprint, request, render_template
 from sys import path
-path.append('create db')
-from Database.dbUtils import *
-
-
+path.append(r'Database')
+from dbUtils_aiven import *
 
 
 DBNAME = "concessionario"

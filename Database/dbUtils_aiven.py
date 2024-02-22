@@ -42,14 +42,15 @@ def create_server_connection():
     return connection
 
 
-def create_db_connection():
+def create_db_connection(dbn = DBNAME):
+    print("sissi arrivo qui")
     connection = None
     try:
         connection = mysql.connector.connect(
             host=h,
             user=id,
             password=psw,
-            database=DBNAME,
+            database=dbn,
             port=p,
             charset="utf8mb4",
             connect_timeout=10,
