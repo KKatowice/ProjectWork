@@ -8,18 +8,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        body {
-            background-color: #ffffff;
-            color: #000000; /* testo nero */
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-        }
+        
 
         .filters {
             display: flex;
@@ -123,26 +112,28 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="navbar-overlay"></div>
-    <div class="container">
-        <a class="navbar-brand" href="#"><i class="bi bi-speedometer2"></i> DrivenChoice</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ml-auto">
-                 <a class="nav-link active" href="/">Home</a>
-                <a class="nav-link" href="/chisiamo">Chi Siamo</a>
-                <a class="nav-link" href="/marchi">I nostri Marchi</a>
-                <a class="nav-link" href="/Tutte_le_auto">Tutte le automobili</a>
-                <a class="nav-link" href="/Grafici">Grafici</a>
-                <a class="nav-link" href="/Utente">Utente</a>
-                <a class="nav-link" href="/Preferiti">Preferiti</a>
+            <div class="container">
+                <a class="navbar-brand" href="#"><i class="fas fa-car"></i> DrivenChoice</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Icona della macchina -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ml-auto">
+                        <a class="nav-link active" href="/">Home</a>
+                        <a class="nav-link" href="/chisiamo">Chi Siamo</a>
+                        <a class="nav-link" href="/marchi">I nostri Marchi</a>
+                        <a class="nav-link" href="/Tutte_le_auto">Tutte le automobili</a>
+                        <a class="nav-link" href="/Grafici">Grafici</a>
+                        <a class="nav-link" href="/Utente">Utente</a>
+                        <a class="nav-link" href="/Preferiti">Preferiti</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</nav>
+        </nav>
 
 <div class="container">
     <div class="filters">
@@ -244,7 +235,7 @@
 </div>
 
 <div class="container mt-5 text-center">
-    <h1>Auto filtrate</h1>
+    <h1 class="mb-5">Auto filtrate</h1>
 
     <!-- Iterazione sulle auto e visualizzazione dei dettagli -->
     {% for car in auto %}
