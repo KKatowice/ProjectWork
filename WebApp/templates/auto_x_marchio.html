@@ -3,75 +3,21 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>DAITV12 - Home Page</title>
+        <title>AutoPerMarchio</title>
         <!-- Bootstrap CSS -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
 
         <style>
-            body {
-                background-color: #ffffff;
-                color: black;
-                font-family: "Georgia", sans-serif;
-                margin: 0;
-                padding: 0;
-            }
-
             .card {
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombra leggera di base */
-      transition: box-shadow 0.3s ease; /* Transizione fluida per l'ombra */
-    }
-    /* Stile per l'ombreggiatura quando si passa sopra */
-    .card:hover  {
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ombra più marcata quando si passa sopra */
-    }
-        .card:hover h5 {
-        color: #28a745 !important;
-    }
-
-            .btn-custom {
-                background-color: #6ca577;
-                color: #ffffff;
-                border: none;
-                border-radius: 20px;
-                padding: 8px 20px;
-                transition: transform 0.3s, background-color 0.3s;
-                z-index: 1;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombra leggera di base */
+                transition: box-shadow 0.3s ease; /* Transizione fluida per l'ombra */
             }
-
-            .btn-custom:hover {
-                transform: scale(1.05);
-                background-color: #4b7b4c;
+            /* Stile per l'ombreggiatura quando si passa sopra */
+            .card:hover {
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ombra più marcata quando si passa sopra */
             }
-
-            /* Banner di benvenuto */
-            .welcome-banner {
-                background-image: url("https://th.bing.com/th/id/R.ecad7899dbaac682072375643050970a?rik=XQVxCrT5iR3ypg&riu=http%3a%2f%2fimmagini.4ever.eu%2fdata%2fdownload%2fastratti%2fsfondo-verde-207433.jpg%3fno-logo&ehk=PHc8Gr%2bVsQh7L64asoq8fM7hhtvRWRC9eAie9KYIPzc%3d&risl=&pid=ImgRaw&r=0"); /* Immagine del cinema */
-                background-size: cover;
-                background-position: center;
-                color: #fff;
-                text-align: center;
-                padding: 50px 0;
-                margin-bottom: 50px;
-                border-radius: 20px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                overflow: hidden;
-            }
-
-            .welcome-banner-content {
-                position: relative;
-                z-index: 1;
-            }
-
-            .welcome-banner h2 {
-                font-size: 36px;
-                font-weight: bold;
-                margin-bottom: 20px;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            }
-
-            .welcome-banner p {
-                font-size: 18px;
-                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            .card:hover h5 {
+                color: #28a745 !important;
             }
         </style>
     </head>
@@ -151,7 +97,7 @@
 
         <script>
             function openPopup(car) {
-            console.log(car)
+                console.log(car);
                 var carDetailsElement = document.getElementById("carDetails");
                 carDetailsElement.textContent = car.modello;
                 var carPriceElement = document.getElementById("carPrice");
