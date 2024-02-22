@@ -7,7 +7,7 @@ app.register_blueprint(apiBlueprint)
 DBNAME = "concessionario"
 
 app.config['SQLALCHEMY_DATABASE_URI'] = (
-    f"mysql+pymysql://{os.getenv('ID')}:{os.getenv('PSW')}@"
+    f"mysql+mysqlconnector://{os.getenv('ID')}:{os.getenv('PSW')}@"
     f"{os.getenv('H')}:3306/concessionario"
 )
 
@@ -16,26 +16,25 @@ def home():
    return render_template('home.html')
 
 
-@app.route('/auto')
+@app.route('/auto', methods=['GET', 'POST'])
 def show_auto():
+    f = request.args.get('filtro', default=None)
     page = int(request.args.get('page', default=1))
     items_per_page = 20
-    c = create_db_connection(DBNAME)
+    c = create_db_connection("concessionario")
     query = "SELECT COUNT(*) AS num_auto FROM auto"
     conteggio = read_query(c, query)[0]['num_auto']
     totale = (conteggio // items_per_page) + 1
-    marchi = request.args.get('marchio', default=None)
-
-    if marchi:
-        if isinstance(marchi, str):
-            data = getAutobyMarchio()
+    if f == 'filtrate':
+        data = filtra_auto()
+        if len(data) > 0:
+            lista_auto = [x.to_dict() for x in data]
         else:
-            raise TypeError("L'auto deve essere una stringa")
+            lista_auto = []
     else:
-        data=getAuto()
-
+        lista_auto = getAuto()
     c.close()
-    return render_template('Tutte_le_auto.html', auto=data, page=page, total_pages=totale)
+    return render_template('Tutte_le_auto.html', auto=lista_auto, page=page, total_pages=totale)
 
 @app.route('/marchi')
 def show_marchi():

@@ -16,12 +16,12 @@ def getAuto():
     items_per_page = 20
     offset = (page - 1) * items_per_page
     c = create_db_connection(DBNAME)
-    print(c)
 
-    q = f"""SELECT * FROM auto "
-         JOIN motori ON motori.id_motore = auto.id_motore "
-         JOIN marchi ON marchi.id_marchio = auto.id_,marchio"
-         ORDER BY auto.prezzo"
+
+    q = f"""SELECT * FROM auto
+         JOIN motori ON motori.id_motore = auto.id_motore
+         JOIN marchi ON marchi.id_marchio = auto.id_marchio
+         ORDER BY auto.prezzo
          LIMIT {items_per_page} OFFSET {offset};"""
 
     res = read_query(c, q)
@@ -118,9 +118,15 @@ def getAutobyBudget():
 @apiBlueprint.route('/api/auto_filter', methods=['POST'])
 def filtra_auto():
     from classAuto import Auto, Motore, Marchio
-    data = request.get_json()
+    try:
+        data = request.get_json()
+    except Error as e:
+        print(e)
+    print("success")
     q = (Auto.query.join(Motore, Motore.id_motore == Auto.id_motore).join(Marchio, Marchio.id_marchio == Auto.id_marchio).filter(Marchio.nome == data['marchio']).filter(Motore.carburante == data['carburante']).filter(Motore.consumi < float(data['consumi'])).filter(Motore.emissioni < float(data['emissioni'])).filter(Auto.prezzo < float(data['prezzo'])).filter(Motore.serbatoio > float(data['serbatoio'])).filter(Motore.potenza > int(data['potenza'])).filter(Motore.cilindrata > int(data['cilindrata'])).filter(Motore.cavalli > int(data['cavalli'])))
+    print("success")
     result = q.all()
+    print("success")
     return result
 
 

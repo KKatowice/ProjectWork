@@ -173,7 +173,7 @@
                 <option value="ibrida">Ibrida</option>
                 <option value="metano">Metano</option>
             </select>
-            </select>
+
         </div>
         <div class="filter-item">
             <label for="marchio">Marchio:</label>
@@ -243,13 +243,19 @@
             <input type="range" name="cavalli" id="cavalli" class="custom-range" min="0" max="500">
             <span class="range-value" id="cavalli-value">0</span>
         </div>
-
+        <div class="filter-item">
+            <label for="serbatoio">Serbatoio:</label>
+            <input type="range" name="serbatoio" id="serbatoio" class="custom-range" min="0" max="500">
+            <span class="range-value" id="serbatoio-value"></span>
+        </div>
 
         <!-- Pulsante Applica filtri -->
         <div class="filter-item">
-            <button class="btn btn-primary" id="applyFiltersBtn">
+            <a href="/auto?filtro=filtrate">
+            <button onclick="inviaDatiJSONfiltri()" class="btn btn-primary" id="applyFiltersBtn">
                 <span class="mr-2"><i class="bi bi-dot green-dot"></i></span> Applica filtri
             </button>
+            </a>
         </div>
     </div>
 </div>
@@ -362,11 +368,18 @@
     cavalliRange.addEventListener('input', function() {
         cavalliValue.textContent = this.value;
     });
+
+    // Aggiorna il valore visualizzato quando si muove la barra del serbatoio
+    var serbatoioRange = document.getElementById('serbatoio');
+    var serbatoioValue = document.getElementById('serbatoio-value');
+    serbatoioValue.addEventListener('input', function() {
+        serbatoioValue.textContent = this.value;
+    });
 </script>
 <div class="container-a">
         <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
     </div>
-</div>
+
 
 <!-- Script delle librerie JavaScript -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
