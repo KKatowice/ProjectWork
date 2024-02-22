@@ -37,6 +37,7 @@ utenti = """CREATE TABLE utenti(
             eta int(11) NOT NULL CHECK(eta>0 AND eta<120),
             sesso varchar(55) NOT NULL CHECK(sesso = 'maschio' or sesso ='femmina' or sesso = 'altro'),
             email varchar(55) UNIQUE NOT NULL,
+            password varchar(55) UNIQUE NOT NULL,
             cap varchar(6),
             budget int)"""
 
