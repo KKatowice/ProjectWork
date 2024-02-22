@@ -4,31 +4,6 @@ from app import *
 db = SQLAlchemy(app)
 
 
-class Auto(db.Model):
-    __tablename__ = 'auto'
-
-    id_auto = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    id_motore = db.Column(db.Integer)
-    id_marchio = db.Column(db.Integer)
-    modello = db.Column(db.String(55))
-    prezzo = db.Column(db.Numeric(10, 2))
-    foto_auto = db.Column(db.String(255))
-    motori = db.relationship('motori', backref='auto', foreign_keys=[id_motore])
-    marchi = db.relationship('marchi', backref='auto', foreign_keys=[id_marchio])
-
-    def to_dict(self):
-        return {
-            'id_auto': self.id_auto,
-            'id_motore': self.id_motore,
-            'id_marchio': self.id_marchio,
-            'modello': self.modello,
-            'prezzo': float(self.prezzo),
-            'foto_auto': self.foto_auto
-        }
-
-
-
-
 class Motore(db.Model):
     __tablename__ = 'motori'
     id_motore = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -65,3 +40,30 @@ class Marchio(db.Model):
             'nome': self.nome,
             'foto_marchio': self.foto_marchio
         }
+
+
+class Auto(db.Model):
+    __tablename__ = 'auto'
+
+    id_auto = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    id_motore = db.Column(db.Integer, db.ForeignKey('motori.id_motore'))
+    id_marchio = db.Column(db.Integer, db.ForeignKey('marchi.id_marchio'))
+    modello = db.Column(db.String(55))
+    prezzo = db.Column(db.Numeric(10, 2))
+    foto_auto = db.Column(db.String(255))
+    motore = db.relationship(Motore, foreign_keys=id_motore)
+    marchio = db.relationship(Marchio, foreign_keys=id_marchio)
+
+    def to_dict(self):
+        return {
+            'id_auto': self.id_auto,
+            'id_motore': self.id_motore,
+            'id_marchio': self.id_marchio,
+            'modello': self.modello,
+            'prezzo': float(self.prezzo),
+            'foto_auto': self.foto_auto
+        }
+
+
+
+
