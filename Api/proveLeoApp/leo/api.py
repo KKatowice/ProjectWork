@@ -95,6 +95,10 @@ def getAutobyBudget():
     return res
 
 #api per login e register
-@apiBlueprint.route('/api/', methods=['GET'])
-def updateRegistration():
+@apiBlueprint.route('/api/updateDB', methods=['POST'])
+def updateUtentiBloccati():
+    data = request.get_json()
+    connesione = create_db_connection(DBNAME)
+    q = f"""UPDATE utenti_bloccati"""
+
 

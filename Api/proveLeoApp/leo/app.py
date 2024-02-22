@@ -100,12 +100,12 @@ def register():
     else:
         return render_template("register.html")
 
-
-
-
-
-
-
+@app.route('/dashboard')
+def dashboard():
+    if 'email' in session:
+        return f"Benvenuto, {session['email']}! Questa è la tua dashboard."
+    else:
+        return redirect(url_for('login'))
 
 
 if __name__ == '__main__':
