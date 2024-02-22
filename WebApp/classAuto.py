@@ -66,4 +66,3 @@ class Auto(db.Model):
 
 
 
-
