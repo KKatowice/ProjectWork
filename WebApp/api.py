@@ -1,8 +1,13 @@
-from flask import *
+from classAuto import *
 from sys import path
-path.append(r'ProjectWork/Database')
-from ProjectWork.Database.dbUtils_aiven import *
 
+isFABIO = True
+if not isFABIO:
+    path.append(r'ProjectWork/Database')
+    from ProjectWork.Database.dbUtils_aiven import *
+else:
+    path.append(r'Database')
+    from dbUtils_aiven import *
 
 apiBlueprint = Blueprint("apiBlueprint", __name__)
 
@@ -13,7 +18,7 @@ DBNAME = "concessionario"
 @apiBlueprint.route('/api/getAuto', methods=['GET'])
 def getAuto():
     page = int(request.args.get('page', default=1))
-    items_per_page = 20
+    items_per_page = 21
     offset = (page - 1) * items_per_page
     c = create_db_connection(DBNAME)
 

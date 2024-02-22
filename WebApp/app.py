@@ -1,11 +1,10 @@
 from decimal import Decimal
-
 from api import *
 import os
 """ cwd = os.getcwd()
 print(cwd) """
 
-app = Flask(__name__)
+#app = Flask(__name__)
 app.register_blueprint(apiBlueprint)
 
 DBNAME = "concessionario"
@@ -14,6 +13,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = (
     f"mysql+mysqlconnector://{os.getenv('ID')}:{os.getenv('PSW')}@"
     f"{os.getenv('H')}:{os.getenv('PRT')}/concessionario"
 )
+
 
 @app.route('/')
 def home():

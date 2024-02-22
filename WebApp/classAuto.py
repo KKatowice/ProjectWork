@@ -1,7 +1,21 @@
 from flask_sqlalchemy import SQLAlchemy
-from app import *
+from flask import *
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
+app = Flask(__name__)
+
+DBNAME = "concessionario"
+
+app.config['SQLALCHEMY_DATABASE_URI'] = (
+    f"mysql+mysqlconnector://{os.getenv('ID')}:{os.getenv('PSW')}@"
+    f"{os.getenv('H')}:{os.getenv('PRT')}/concessionario"
+)
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+with app.app_context():
+    db.create_all()
 
 
 class Motore(db.Model):
@@ -63,6 +77,5 @@ class Auto(db.Model):
             'prezzo': float(self.prezzo),
             'foto_auto': self.foto_auto
         }
-
 
 
