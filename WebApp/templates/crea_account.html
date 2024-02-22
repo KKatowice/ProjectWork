@@ -80,8 +80,8 @@
             flex-direction: column;
             box-shadow: 0px 15px 50px 10px rgba(0, 0, 0, 0.2);
             box-sizing: border-box;
-            height: 700px;
-            width: 500px;
+            height: 710px;
+            width:600px;
             background: #93a996 url('https://pexels.imgix.net/photos/27718/pexels-photo-27718.jpg?fit=crop&w=1280&h=823') top left no-repeat;
         }
 
@@ -89,7 +89,7 @@
             background: linear-gradient(#93a996, #93a996);
             opacity: 0.85;
             position: absolute;
-            width: 100%;
+            width:100%;
             height: 100%;
             z-index: 1;
         }
@@ -148,7 +148,20 @@
                 <input type='text' id='nome' placeholder='Nome' class='input-line full-width'>
                 <input type='text' id='cognome' placeholder='Cognome' class='input-line full-width'>
                 <input type='text' id='eta' placeholder='Età' class='input-line full-width'>
-                <input type='text' id='sesso' placeholder='Sesso' class='input-line full-width'>
+                <input type='text' id='sesso' placeholder='Segna il tuo sesso:' class='input-line full-width'>
+
+ <div class="sesso form-check-inline"> <!-- Aggiungi la classe form-check-inline -->
+  <input class="sesso" type="checkbox" id="inlineCheckbox1" value="option1">
+  <label class="sesso" for="inlineCheckbox1">Femmina</label>
+</div>
+<div class="sesso form-check-inline"> <!-- Aggiungi la classe form-check-inline -->
+  <input class="sesso" type="checkbox" id="inlineCheckbox2" value="option2">
+  <label class="sesso" for="inlineCheckbox2">Maschio</label>
+</div>
+<div class="sesso form-check-inline"> <!-- Aggiungi la classe form-check-inline -->
+  <input class="sesso" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+  <label class="sesso" for="inlineCheckbox3">Altro</label>
+</div>
                 <input type='text' id='CAP' placeholder='CAP' class='input-line full-width'>
                 <input type='email' id='email' placeholder='Email' class='input-line full-width'>
                 <input type='password' id='password' placeholder='Password' class='input-line full-width'>
@@ -158,12 +171,7 @@
     </div>
 </div>
 
-<div>
 
-    <div class="container-a">
-        <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
-    </div>
-</div>
 
 <script>
 function register() {
@@ -200,6 +208,12 @@ fetch('/crea_account', {
         body: JSON.stringify(datiJSON)
     });
 }
+
+<div>
+    <div class="container-a">
+        <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
+    </div>
+</div>
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
@@ -207,7 +221,9 @@ fetch('/crea_account', {
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-
-
+</div>
+</script>
 </body>
+
+
 </html>
