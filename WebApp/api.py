@@ -1,7 +1,7 @@
 from flask import *
 from sys import path
-path.append(r'ProjectWork\ProjectWork\Database')
-from ProjectWork.Database.dbUtils import *
+path.append(r'Database')
+from dbUtils import *
 
 
 apiBlueprint = Blueprint("apiBlueprint", __name__)

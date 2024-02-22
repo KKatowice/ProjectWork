@@ -1,8 +1,8 @@
-from dbUtils import *
+from dbUtils_aiven import *
 
 connection = create_server_connection()
 create_database(connection, "CREATE DATABASE concessionario")
-c = create_db_connection("concessionario")
+c = create_db_connection()
 
 marchi = """CREATE TABLE marchi(
             id_marchio int PRIMARY KEY AUTO_INCREMENT,
@@ -24,8 +24,8 @@ auto = """CREATE TABLE auto(
             id_auto int PRIMARY KEY AUTO_INCREMENT,
             id_motore int,
             id_marchio int,
-            modello varchar(55),
-            prezzo decimal(10,2), 
+            modello varchar(100),
+            prezzo decimal(12,2), 
             foto_auto varchar(255),
             FOREIGN KEY (id_motore) REFERENCES motori(id_motore) ON DELETE CASCADE ON UPDATE CASCADE,
             FOREIGN KEY (id_marchio) REFERENCES marchi(id_marchio) ON DELETE CASCADE ON UPDATE CASCADE)"""
