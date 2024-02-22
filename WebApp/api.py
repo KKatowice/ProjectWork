@@ -1,7 +1,7 @@
 from flask import *
 from sys import path
-path.append(r'Database')
-from dbUtils_aiven import *
+path.append(r'ProjectWork/Database')
+from ProjectWork.Database.dbUtils_aiven import *
 
 
 apiBlueprint = Blueprint("apiBlueprint", __name__)
@@ -48,7 +48,8 @@ def getMarchio():
 def getAutobyMarchio():
     marchio = request.args.get('marchio',default="acura")
     c = create_db_connection("concessionario")
-    q = f"""SELECT * FROM auto JOIN marchi ON auto.id_marchio = marchi.id_marchio WHERE marchi.nome = '{marchio}'; """
+    q = f"""SELECT * FROM auto JOIN marchi ON auto.id_marchio = marchi.id_marchio 
+        JOIN motori ON auto.id_motore = motori.id_motore WHERE marchi.nome = '{marchio}'; """
     res = read_query(c, q)
     c.close()
     return res

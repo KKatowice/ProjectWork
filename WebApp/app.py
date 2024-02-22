@@ -1,3 +1,4 @@
+from decimal import Decimal
 
 from api import *
 import os
@@ -58,9 +59,18 @@ def show_auto_for_marchi():
     marchio = request.args.get('marchio')
     if marchio:
         auto = getAutobyMarchio()
+        print(1)
     else:
         auto = getAuto()
+        print(2)
+    for d in auto:
+        for key, value in d.items():
+            if isinstance(value, Decimal):
+                d[key] = float(value)
+    print(auto)
     return render_template('auto_x_marchio.html', auto=auto)
+
+
 
 @app.route('/chisiamo')
 def chisiamo():

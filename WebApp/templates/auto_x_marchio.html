@@ -1,192 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAITV12 - Home Page</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DAITV12 - Home Page</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
 
-    <style>
-        body {
-            background-color:#ffffff;
-            color: black;
-            font-family: 'Georgia', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+        <style>
+            body {
+                background-color: #ffffff;
+                color: black;
+                font-family: "Georgia", sans-serif;
+                margin: 0;
+                padding: 0;
+            }
 
-        .navbar {
-            position: relative;
-            background-color:#D3D3D3;
-            background-size: cover;
-            background-position: center;
-            border-bottom: 1px solid #6ca577;
-        }
+            .navbar {
+                position: relative;
+                background-color: #d3d3d3;
+                background-size: cover;
+                background-position: center;
+                border-bottom: 1px solid #6ca577;
+            }
 
-        .navbar-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.5);
-            z-index: 1;
-        }
+            .navbar-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.5);
+                z-index: 1;
+            }
 
-        .navbar-brand, .navbar-nav .nav-link {
-            color: #7FFFD4; /* grigio */
-            font-weight: bold;
-            z-index: 2;
-        }
+            .navbar-brand,
+            .navbar-nav .nav-link {
+                color: #7fffd4; /* grigio */
+                font-weight: bold;
+                z-index: 2;
+            }
 
-        .nav-link:hover {
-            color: #7FFFD4;
-        }
+            .nav-link:hover {
+                color: #7fffd4;
+            }
 
-        .card {
-            border: none;
-            transition: transform 0.2s, box-shadow 0.2s;
-            background-color: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
+            .card {
+                border: none;
+                transition: transform 0.2s, box-shadow 0.2s;
+                background-color: #ffffff;
+                border-radius: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+                height: 100%;
+                position: relative;
+                overflow: hidden;
+            }
 
-        .card:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom right, #D3D3D3, #D3D3D3);
-            opacity: 0.8;
-            z-index: 0;
-        }
+            .card:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to bottom right, #d3d3d3, #d3d3d3);
+                opacity: 0.8;
+                z-index: 0;
+            }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
-        }
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+            }
 
-        .card-img-top {
-            border-radius: 20px 20px 0 0;
-            z-index: 1;
-        }
+            .card-img-top {
+                border-radius: 20px 20px 0 0;
+                z-index: 1;
+            }
 
-        .card-body {
-            position: relative;
-            z-index: 1;
-        }
+            .card-body {
+                position: relative;
+                z-index: 1;
+            }
 
-        .card-title {
-            color: #009900;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
+            .card-title {
+                color: #009900;
+                font-weight: bold;
+                margin-bottom: 10px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
 
-        .card-text {
-            color: #000000;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        }
+            .card-text {
+                color: #000000;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            }
 
-        .btn-custom {
-            background-color: #6ca577;
-            color: #ffffff;
-            border: none;
-            border-radius: 20px;
-            padding: 8px 20px;
-            transition: transform 0.3s, background-color 0.3s;
-            z-index: 1;
-        }
+            .btn-custom {
+                background-color: #6ca577;
+                color: #ffffff;
+                border: none;
+                border-radius: 20px;
+                padding: 8px 20px;
+                transition: transform 0.3s, background-color 0.3s;
+                z-index: 1;
+            }
 
-        .btn-custom:hover {
-            transform: scale(1.05);
-            background-color: #4b7b4c;
-        }
+            .btn-custom:hover {
+                transform: scale(1.05);
+                background-color: #4b7b4c;
+            }
 
-        /* Banner di benvenuto */
-        .welcome-banner {
-            background-image: url('https://th.bing.com/th/id/R.ecad7899dbaac682072375643050970a?rik=XQVxCrT5iR3ypg&riu=http%3a%2f%2fimmagini.4ever.eu%2fdata%2fdownload%2fastratti%2fsfondo-verde-207433.jpg%3fno-logo&ehk=PHc8Gr%2bVsQh7L64asoq8fM7hhtvRWRC9eAie9KYIPzc%3d&risl=&pid=ImgRaw&r=0'); /* Immagine del cinema */
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            text-align: center;
-            padding: 50px 0;
-            margin-bottom: 50px;
-            border-radius: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
+            /* Banner di benvenuto */
+            .welcome-banner {
+                background-image: url("https://th.bing.com/th/id/R.ecad7899dbaac682072375643050970a?rik=XQVxCrT5iR3ypg&riu=http%3a%2f%2fimmagini.4ever.eu%2fdata%2fdownload%2fastratti%2fsfondo-verde-207433.jpg%3fno-logo&ehk=PHc8Gr%2bVsQh7L64asoq8fM7hhtvRWRC9eAie9KYIPzc%3d&risl=&pid=ImgRaw&r=0"); /* Immagine del cinema */
+                background-size: cover;
+                background-position: center;
+                color: #fff;
+                text-align: center;
+                padding: 50px 0;
+                margin-bottom: 50px;
+                border-radius: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+            }
 
-        .welcome-banner-content {
-            position: relative;
-            z-index: 1;
-        }
+            .welcome-banner-content {
+                position: relative;
+                z-index: 1;
+            }
 
-        .welcome-banner h2 {
-            font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
+            .welcome-banner h2 {
+                font-size: 36px;
+                font-weight: bold;
+                margin-bottom: 20px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
 
-        .welcome-banner p {
-            font-size: 18px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        }
-    </style>
+            .welcome-banner p {
+                font-size: 18px;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="navbar-overlay"></div>
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <i class="bi bi-speedometer2"></i>
+                    <!-- Icona della macchina -->
+                    DriverChoice
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ml-auto">
+                        <a class="nav-link active" href="/">Home</a>
+                        <a class="nav-link" href="/chisiamo">Chi Siamo</a>
+                        <a class="nav-link" href="/marchi">I nostri Marchi</a>
+                        <a class="nav-link" href="/auto">Tutte le automobili</a>
+                        <a class="nav-link" href="/grafici">Grafici</a>
+                        <a class="nav-link" href="/utente">Utente</a>
+                        <a class="nav-link" href="/preferiti">Preferiti</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
-</head>
-<body>
-
-<nav class="navbar navbar-expand-lg navbar-light">
-    <div class="navbar-overlay"></div>
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <i class="bi bi-speedometer2"></i> <!-- Icona della macchina -->
-            DriverChoice
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ml-auto">
-                <a class="nav-link active" href="/">Home</a>
-                <a class="nav-link" href="/chisiamo">Chi Siamo</a>
-                <a class="nav-link" href="/marchi">I nostri Marchi</a>
-                <a class="nav-link" href="/auto">Tutte le automobili</a>
-                <a class="nav-link" href="/grafici">Grafici</a>
-                <a class="nav-link" href="/utente">Utente</a>
-                <a class="nav-link" href="/preferiti">Preferiti</a>
+        <div class="container mt-5 text-center">
+            <h1>Auto di questo Marchio</h1>
+            <div class="container text-center">
+                <div class="row">
+                    {% for elem in auto %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="{{elem.foto_auto}}" class="card-img-top" alt="..." />
+                            <div class="card-body">
+                                <h5 class="card-title">{{elem.modello}}</h5>
+                                <button type="button" class="btn btn-primary" onclick="openPopup({{elem}})">Dettagli</button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
-    </div>
-</nav>
-
-<div class="container mt-5 text-center">
-        <h1>Auto di questo Marchio</h1>
-    <div class="container text-center">
-            <div class="row">
-            {% for elem in auto %}
-                <div class="col-md-4 mb-4">
-                <div class="card" style="width: 18rem;">
-                <img src="{{elem.foto_auto}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">{{elem.modello}}</h5>
-                        <button type="button" class="btn btn-primary" onclick="openPopup('{{ elem.modello }}', '{{ loop.index }}')">Dettagli </button>
-                </div>
-</div>
+        <div class="modal fade" id="carModal" tabindex="-1" role="dialog" aria-labelledby="carModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="carrModalLabel">Dettagli auto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-        {% endfor %}
+                    <div class="modal-body">
+                        <h5 id="carDetails"></h5>
+                        <p id="carPrice"></p>
+                        <p id="carCil"></p>
+                        <p id="carCav"></p>
+                        <p id="carPot"></p>
+                        <p id="carCar"></p>
+                        <p id="carCons"></p>
+                        <p id="carEmi"></p>
+                        <p id="carSer"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
+            </div>
         </div>
-</div>
-</body>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script>
+            function openPopup(car) {
+            console.log(car)
+                var carDetailsElement = document.getElementById("carDetails");
+                carDetailsElement.textContent = car.modello;
+                var carPriceElement = document.getElementById("carPrice");
+                carPriceElement.textContent = "Prezzo: " + car.prezzo + "$";
+                var carCilElement = document.getElementById("carCil");
+                carCilElement.textContent = "Cilindrata: " + car.cilindrata + "L";
+                var carCavElement = document.getElementById("carCav");
+                carCavElement.textContent = "Cavalli: " + car.cavalli;
+                var carPotElement = document.getElementById("carPot");
+                carPotElement.textContent = "Potenza: " + car.potenza + "KW";
+                var carCarElement = document.getElementById("carCar");
+                carCarElement.textContent = "Carburante: " + car.carburante;
+                var carConsElement = document.getElementById("carCons");
+                carConsElement.textContent = "Consumi: " + car.consumi + "L/100km";
+                var carEmiElement = document.getElementById("carEmi");
+                carEmiElement.textContent = "Emissioni: " + car.emissioni + "g/km";
+                var carSerElement = document.getElementById("carSer");
+                carSerElement.textContent = "Serbatoio: " + car.serbatoio + "L";
+                $("#carModal").modal("show");
+            }
+        </script>
+    </body>
 </html>
