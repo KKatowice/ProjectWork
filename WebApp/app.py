@@ -23,7 +23,6 @@ def home():
 @app.route('/auto', methods=['GET', 'POST'])
 def show_auto():
     f = request.args.get('filtro', default=None)
-    print("effe ",f)
     page = int(request.args.get('page', default=1))
     items_per_page = 20
     c = create_db_connection("concessionario")
@@ -39,6 +38,11 @@ def show_auto():
             lista_auto = []
     else:
         lista_auto = getAuto()
+    for d in lista_auto:
+        for key, value in d.items():
+            if isinstance(value, Decimal):
+                d[key] = float(value)
+    print(lista_auto)
     c.close()
     return render_template('Tutte_le_auto.html', auto=lista_auto, page=page, total_pages=totale)
 

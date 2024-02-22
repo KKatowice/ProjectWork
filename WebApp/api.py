@@ -1,7 +1,7 @@
 from classAuto import *
 from sys import path
 
-isFABIO = True
+isFABIO = False
 if not isFABIO:
     path.append(r'ProjectWork/Database')
     from ProjectWork.Database.dbUtils_aiven import *
@@ -39,7 +39,6 @@ def getMarchio():
     items_per_page = 21
     offset = (page - 1) * items_per_page
     c = create_db_connection(DBNAME)
-    print(c)
 
     q = f"""SELECT * FROM marchi
          ORDER BY marchi.nome
@@ -51,7 +50,7 @@ def getMarchio():
 
 @apiBlueprint.route('/api/getAutobyMarchio', methods=['GET'])
 def getAutobyMarchio():
-    marchio = request.args.get('marchio',default="acura")
+    marchio = request.args.get('marchio')
     c = create_db_connection("concessionario")
     q = f"""SELECT * FROM auto JOIN marchi ON auto.id_marchio = marchi.id_marchio 
         JOIN motori ON auto.id_motore = motori.id_motore WHERE marchi.nome = '{marchio}'; """
