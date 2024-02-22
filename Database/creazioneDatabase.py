@@ -37,7 +37,7 @@ utenti = """CREATE TABLE utenti(
             eta int(11) NOT NULL CHECK(eta>0 AND eta<120),
             sesso varchar(55) NOT NULL CHECK(sesso = 'maschio' or sesso ='femmina' or sesso = 'altro'),
             email varchar(55) UNIQUE NOT NULL,
-            password varchar(55) UNIQUE NOT NULL,
+            password varchar(55) NOT NULL,
             cap varchar(6),
             budget int)"""
 
@@ -49,10 +49,10 @@ preferenze = """CREATE TABLE preferenze(
                 FOREIGN KEY (id_utente) REFERENCES utenti(id_utente) ON DELETE CASCADE ON UPDATE CASCADE)"""
 
 utenti_bloccati = """CREATE TABLE utenti_bloccati(
-                id_utente_bloccato int PRIMARY KEY AUTOINCREMENT,
+                id_utente_bloccato int PRIMARY KEY AUTO_INCREMENT,
                 id_utente int,
                 email varchar(55) UNIQUE NOT NULL,
-                password varchar(55) UNIQUE NOT NULL,
+                password varchar(55) NOT NULL,
                 FOREIGN KEY (id_utente) REFERENCES utente('id_utente') ON DELETE CASCADE ON UPDATE CASCADE)"""
 
 
