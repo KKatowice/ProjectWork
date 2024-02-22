@@ -158,7 +158,24 @@
         </div>
     </div>
 </div>
+function login() {
+var email = document.getElementByid("email").value;
+var password = document.getElementByid("password").value;
 
+
+var datiJSON = {
+    email: email,
+    password: password
+    };
+
+fetch('/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datiJSON)
+    });
+}
 <div class="container-a">
     <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
 </div>
