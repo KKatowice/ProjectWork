@@ -18,7 +18,7 @@ DBNAME = "concessionario"
 @apiBlueprint.route('/api/getAuto', methods=['GET'])
 def getAuto():
     page = int(request.args.get('page', default=1))
-    items_per_page = 21
+    items_per_page = 42
     offset = (page - 1) * items_per_page
     c = create_db_connection(DBNAME)
 

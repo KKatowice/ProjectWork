@@ -24,7 +24,7 @@ def home():
 def show_auto():
     f = request.args.get('filtro', default=None)
     page = int(request.args.get('page', default=1))
-    items_per_page = 20
+    items_per_page = 42
     c = create_db_connection("concessionario")
     query = "SELECT COUNT(*) AS num_auto FROM auto"
     conteggio = read_query(c, query)[0]['num_auto']
