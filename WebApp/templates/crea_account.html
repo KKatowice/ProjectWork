@@ -1,24 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <div class='bold-line'></div>
-<div class='container'>
-  <div class='window'>
-    <div class='overlay'></div>
-    <div class='content'>
-      <div class='welcome'>Ciao!</div>
-      <div class='subtitle'>Abbiamo quasi finito. Prima di utilizzare i nostri servizi è necessario creare un account.</div>
-      <div class='input-fields'>
-        <input type='text' placeholder='Username' class='input-line full-width'></input>
-        <input type='email' placeholder='Email' class='input-line full-width'></input>
-        <input type='password' placeholder='Password' class='input-line full-width'></input>
-
-      </div>
-      <div class='spacing'>or continue with <span class='highlight'>Facebook</span></div>
-      <div><button class='ghost-round full-width'>Create Account</button></div>
-    </div>
-  </div>
-</div>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrazione Account</title>
@@ -26,228 +8,113 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <style>
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500);
-body,
-html {
-  margin: 0;
-  height: 100%;
-}
-
-input {
-  border: none;
-}
-
-button:focus {
-  outline: none;
-}
-
-::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.65);
-}
-
-::-webkit-input-placeholder .input-line:focus +::input-placeholder {
-  color: #fff;
-}
-
-.highlight {
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 400;
-  cursor: pointer;
-  transition: color .2s ease;
-}
-
-.highlight:hover {
-  color: #fff;
-  transition: color .2s ease;
-}
-.navbar {
-            background-color: #D3D3D3;
-            position: fixed; /* Rende la navbar posizionata in modo fisso */
-            top: 0; /* La navbar sarà posizionata in cima alla pagina */
-            width: 100%; /* Occupa l'intera larghezza della pagina */
-            z-index: 1000; /* Assicura che la navbar sia posizionata sopra gli altri elementi */
+        body, html {
+            margin: 0;
+            height: 100%;
         }
 
-.spacing {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  height: 120px;
-  font-weight: 300;
-  text-align: center;
-  margin-top: 10px;
-  color: rgba(255, 255, 255, 0.65)
-}
+        input {
+            border: none;
+        }
 
-.input-line:focus {
-  outline: none;
-  border-color: #fff;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
-}
+        button:focus {
+            outline: none;
+        }
 
-.ghost-round {
-  cursor: pointer;
-  background: none;
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  border-radius: 25px;
-  color: rgba(255, 255, 255, 0.65);
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  font-size: 19px;
-  font-size: 1.2rem;
-  font-family: roboto;
-  font-weight: 300;
-  line-height: 2.5em;
-  margin-top: auto;
-  margin-bottom: 25px;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
-}
+        .input-line:focus {
+            outline: none;
+            border-color: #fff;
+            transition: all .2s ease;
+        }
 
-.ghost-round:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
-}
+        .ghost-round {
+            cursor: pointer;
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-radius: 25px;
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 1.2rem;
+            font-weight: 300;
+            line-height: 2.5em;
+            margin-top: auto;
+            margin-bottom: 25px;
+            transition: all .2s ease;
+        }
 
-.input-line {
-  background: none;
-  margin-bottom: 10px;
-  line-height: 2.4em;
-  color: #fff;
-  font-family: roboto;
-  font-weight: 300;
-  letter-spacing: 0px;
-  letter-spacing: 0.02rem;
-  font-size: 19px;
-  font-size: 1.2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
-}
+        .ghost-round:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: #FFFFFF;
+            transition: all .2s ease;
+        }
 
-.full-width {
-  width: 100%;
-}
+        .input-line {
+            background: none;
+            margin-bottom: 10px;
+            line-height: 2.4em;
+            color: #fff;
+            font-weight: 300;
+            letter-spacing: 0.02rem;
+            font-size: 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+            transition: all .2s ease;
+        }
 
-.input-fields {
-  margin-top: 25px;
-}
+        .full-width {
+            width: 100%;
+        }
 
-.container {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  background: #eee;
-  height: 100%;
-}
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eee;
+            height: 100%;
+        }
 
-.content {
-  padding-left: 25px;
-  padding-right: 25px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: column;
-  -ms-flex-flow: column;
-  flex-flow: column;
-  z-index: 5;
-}
+        .window {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 15px 50px 10px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+            height: 700px;
+            width: 500px;
+            background: #93a996 url('https://pexels.imgix.net/photos/27718/pexels-photo-27718.jpg?fit=crop&w=1280&h=823') top left no-repeat;
+        }
 
-.welcome {
-  font-weight: 200;
-  margin-top: 75px;
-  text-align: center;
-  font-size: 40px;
-  font-size: 2.5rem;
-  letter-spacing: 0px;
-  letter-spacing: 0.05rem;
-}
+        .overlay {
+            background: linear-gradient(#93a996, #93a996);
+            opacity: 0.85;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
 
-.subtitle {
-  text-align: center;
-  line-height: 1em;
-  font-weight: 100;
-  letter-spacing: 0px;
-  letter-spacing: 0.02rem;
-}
+        .content {
+            padding: 0 25px;
+            display: flex;
+            flex-direction: column;
+            z-index: 5;
+        }
 
-.menu {
-  background: rgba(0, 0, 0, 0.2);
-  width: 100%;
-  height: 50px;
-}
+        .welcome {
+            font-weight: 200;
+            margin-top: 75px;
+            text-align: center;
+            font-size: 2.5rem;
+            letter-spacing: 0.05rem;
+        }
 
-.window {
-  z-index: 100;
-  color: #fff;
-  font-family: roboto;
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: column;
-  -ms-flex-flow: column;
-  flex-flow: column;
-  box-shadow: 0px 15px 50px 10px rgba(0, 0, 0, 0.2);
-  box-sizing: border-box;
-  height: 560px;
-  width: 360px;
-  background: #93a996;
-  background: url('https://pexels.imgix.net/photos/27718/pexels-photo-27718.jpg?fit=crop&w=1280&h=823') top left no-repeat;
-}
-
-.overlay {
-  background: -webkit-linear-gradient(#93a996, #93a996  );
-  background: linear-gradient(#93a996, #93a996 );
-  opacity: 0.85;
-  filter: alpha(opacity=85);
-  height: 560px;
-  position: absolute;
-  width: 360px;
-  z-index: 1;
-}
-
-.bold-line {
-  background: #e7e7e7;
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  margin: auto;
-  width: 100%;
-  height: 360px;
-  z-index: 1;
-  opacity:0.1;
-    background: url('https://pexels.imgix.net/photos/27718/pexels-photo-27718.jpg?fit=crop&w=1280&h=823') left no-repeat;
-  background-size:cover;
-}
-
-@media (max-width: 500px) {
-  .window {
-    width: 100%;
-    height: 100%;
-  }
-  .overlay {
-    width: 100%;
-    height: 100%;
-  }
-}
+        .subtitle {
+            text-align: center;
+            font-weight: 100;
+            letter-spacing: 0.02rem;
+            margin-bottom: 25px;
+        }
     </style>
 </head>
 <body>
@@ -258,32 +125,82 @@ button:focus {
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-            <div class="navbar-nav ml-auto">
-                 <a class="nav-link active" href="http://localhost:63342/pythonProject3/WebApp/templates/Home.html?_ijt=nt5mj6p6i2hq0el95r2hkhh5lj&_ij_reload=RELOAD_ON_SAVE">Home</a>
-               <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/ChiSiamo.html?_ijt=dtpt7l5l3m0ig0aljl2dm75ac1&_ij_reload=RELOAD_ON_SAVE">Chi Siamo</a>
-
-                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/marchi.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">I nostri Marchi</a>
-                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Tutte_le_auto.html?_ijt=p3o8134dsvl12gsrrtnur7daeh&_ij_reload=RELOAD_ON_SAVE">Tutte le automobili</a>
-                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Grafici.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">Grafici</a>
-                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Utente.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">Utente</a>
-                <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/preferiti.html?_ijt=ukkskfsjrk31d2kp7kjl8quvco&_ij_reload=RELOAD_ON_SAVE">Preferiti</a>
-            </div>
+        <div class="navbar-nav ml-auto">
+            <a class="nav-link active" href="/">Home</a>
+            <a class="nav-link" href="/chisiamo">Chi Siamo</a>
+            <a class="nav-link" href="/marchi">I nostri Marchi</a>
+            <a class="nav-link" href="/Tutte_le_auto">Tutte le automobili</a>
+            <a class="nav-link" href="/Grafici">Grafici</a>
+            <a class="nav-link" href="/Utente">Utente</a>
+            <a class="nav-link" href="/Preferiti">Preferiti</a>
         </div>
     </div>
-
 </nav>
 
-
-    </form>
+<div class='bold-line'></div>
+<div class='container'>
+    <div class='window'>
+        <div class='overlay'></div>
+        <div class='content'>
+            <div class='welcome'>Ciao!</div>
+            <div class='subtitle'>Abbiamo quasi finito. Prima di utilizzare i nostri servizi è necessario creare un account.</div>
+            <div class='input-fields'>
+                <input type='text' placeholder='Nome' class='input-line full-width'>
+                <input type='text' placeholder='Cognome' class='input-line full-width'>
+                <input type='text' id='datepicker' placeholder='Età' class='input-line full-width'>
+                <input type='text' placeholder='Sesso' class='input-line full-width'>
+                <input type='text' placeholder='CAP' class='input-line full-width'>
+                <input type='email' placeholder='Email' class='input-line full-width'>
+                <input type='password' placeholder='Password' class='input-line full-width'>
+            </div>
+            <div><button class='ghost-round full-width'>Create Account</button></div>
+        </div>
+    </div>
 </div>
+
 <div>
+
     <div class="container-a">
         <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
     </div>
 </div>
+
 <!-- Script delle librerie JavaScript -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+function register() {
+var nome = document.getElementByid("nome").value;
+var cognome = document.getElementByid("cognome").value;
+var eta = document.getElementByid("eta").value;
+var sesso = document.getElementByid("sesso").value;
+var email = document.getElementByid("email").value;
+var password = document.getElementByid("password").value;
+var cap = document.getElementByid("cap").value;
+
+var datiJSON = {
+    nome: nome,
+    cognome: cognome
+    eta: eta,
+    sesso: sesso
+    email: email,
+    password: password
+    cap: cap
+    };
+
+fetch('/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datiJSON)
+    });
+}
+</script>
+
 </body>
 </html>

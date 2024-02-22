@@ -1,7 +1,7 @@
 from flask import *
 from sys import path
-path.append(r'ProjectWork\ProjectWork\Database')
-from ProjectWork.Database.dbUtils import *
+path.append(r'Database')
+from dbUtils_aiven import *
 
 
 apiBlueprint = Blueprint("apiBlueprint", __name__)
@@ -48,7 +48,7 @@ def getMarchio():
 def getAutobyMarchio():
     marchio = request.args.get('marchio',default="acura")
     c = create_db_connection("concessionario")
-    q = f"""SELECT * FROM auto JOIN marchi ON auto.id_marchio = marchi.id_marchio WHERE marchi.nome = "{marchio}"; """
+    q = f"""SELECT * FROM auto JOIN marchi ON auto.id_marchio = marchi.id_marchio WHERE marchi.nome = '{marchio}'; """
     res = read_query(c, q)
     c.close()
     return res
@@ -59,7 +59,7 @@ def getAutobyMotori():
     cilindratamax = request.args.get('cilindratamax')
     cilindratamin = request.args.get('cilindratamin')
     c = create_db_connection("concessionario")
-    q = f"""SELECT * FROM auto JOIN motori ON auto.id_motore = motori.id_motore WHERE motore.cilindrata BETWEEN "{cilindratamin}" AND "{cilindratamax}"; """
+    q = f"""SELECT * FROM auto JOIN motori ON auto.id_motore = motori.id_motore WHERE motore.cilindrata BETWEEN '{cilindratamin}' AND '{cilindratamax}'; """
     res = read_query(c, q)
     c.close()
     return res
@@ -91,7 +91,7 @@ def getRicerca():
     q = f"""SELECT * FROM auto
         JOIN motori ON motori.id_motore = auto.motori
         JOIN marchi ON marchi.id_marchio = auto.id_marchio 
-        WHERE motori.cilindrata = "{cilindrata}" AND marchi.nome = "{marca}"; """
+        WHERE motori.cilindrata = '{cilindrata}' AND marchi.nome = '{marca}'; """
     res = read_query(c, q)
     c.close()
 
@@ -105,9 +105,9 @@ def getAutobyBudget():
     c = create_db_connection("concessionario")
     q1 = f"""SELECT budget FROM utente WHERE id_utente = "{num_utente}"; """
     budget = read_query(c, q1)[0]['budget']
-    q2 = f"""SELECT * FROM auto "
-         JOIN motori ON motori.id_motore = auto.id_motore "
-         JOIN marchi ON marchi.id_marchio = auto.id_,marchio"
+    q2 = f"""SELECT * FROM auto
+         JOIN motori ON motori.id_motore = auto.id_motore
+         JOIN marchi ON marchi.id_marchio = auto.id_,marchio
          WHERE auto.prezzo < {budget};"""
 
     res = read_query(c, q2)

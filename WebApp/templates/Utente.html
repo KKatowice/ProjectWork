@@ -11,8 +11,8 @@
     <style>
          body {
             background-color:#ffffff;
-            color: #7FFFD4;
-            font-family: 'Georgia', sans-serif;
+            color: #000000;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
         }
@@ -108,13 +108,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-            <a class="nav-link active" href="http://localhost:63342/pythonProject3/WebApp/templates/Home.html?_ijt=nt5mj6p6i2hq0el95r2hkhh5lj&_ij_reload=RELOAD_ON_SAVE">Home</a>
-            <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/ChiSiamo.html?_ijt=dtpt7l5l3m0ig0aljl2dm75ac1&_ij_reload=RELOAD_ON_SAVE">Chi Siamo</a>
-            <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/marchi.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">I nostri Marchi</a>
-            <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Tutte_le_auto.html?_ijt=p3o8134dsvl12gsrrtnur7daeh&_ij_reload=RELOAD_ON_SAVE">Tutte le automobili</a>
-            <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Grafici.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">Grafici</a>
-            <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/Utente.html?_ijt=mnv1jbruumsrnu1u2c8gq4oqvt&_ij_reload=RELOAD_ON_SAVE">Utente</a>
-            <a class="nav-link" href="http://localhost:63342/pythonProject3/WebApp/templates/preferiti.html?_ijt=ukkskfsjrk31d2kp7kjl8quvco&_ij_reload=RELOAD_ON_SAVE">Preferiti</a>
+             <a class="nav-link active" href="/">Home</a>
+                <a class="nav-link" href="/chisiamo">Chi Siamo</a>
+                <a class="nav-link" href="/marchi">I nostri Marchi</a>
+                <a class="nav-link" href="/Tutte_le_auto">Tutte le automobili</a>
+                <a class="nav-link" href="/Grafici">Grafici</a>
+                <a class="nav-link" href="/Utente">Utente</a>
+                <a class="nav-link" href="/Preferiti">Preferiti</a>
         </div>
     </div>
     </div>
@@ -151,7 +151,7 @@
                     <h2 class="text-center mb-4">Crea un account</h2>
                     <p class="text-center mb-4">Non hai ancora un account? Crea un nuovo account qui.</p>
                     <div class="text-center">
-                        <a href="http://localhost:63342/pythonProject3/WebApp/templates/crea_account.html?_ijt=8tkfi8pn1j652urllhh5ddg4eq&_ij_reload=RELOAD_ON_SAVE" class="btn btn-success btn-block">Crea Account <i class="bi bi-person-plus-fill"></i></a>
+                        <a href="/register" class="btn btn-success btn-block">Crea Account <i class="bi bi-person-plus-fill"></i></a>
                     </div>
                 </div>
             </div>
@@ -162,6 +162,55 @@
 <div class="container-a">
     <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
 </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Intestazione -->
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <!-- Barra di navigazione -->
+</nav>
 
+<div class="container">
+    <!-- Sezione di login -->
+</div>
+
+<div class="container mt-5">
+    <!-- Sezione di creazione account -->
+</div>
+
+<div class="container-a">
+    <!-- Footer -->
+</div>
+
+<!-- Script delle librerie JavaScript -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+ function login() {
+var email = document.getElementByid("email").value;
+var password = document.getElementByid("password").value;
+
+
+var datiJSON = {
+    email: email,
+    password: password
+    };
+
+fetch('/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datiJSON)
+    });
+}
+</script>
 </body>
 </html>
+
