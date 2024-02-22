@@ -59,6 +59,10 @@ def show_auto_for_marchi():
         auto = getAuto()
     return render_template('auto_x_marchio.html', auto=auto)
 
+@app.route('/chisiamo')
+def chisiamo():
+   return render_template('ChiSiamo.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
