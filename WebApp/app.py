@@ -20,8 +20,9 @@ def home():
    return render_template('Home.html')
 
 
-@app.route('/auto', methods=['GET', 'POST'])
+@app.route('/auto', methods=['GET'])
 def show_auto():
+
     f = request.args.get('filtro', default=None)
     page = int(request.args.get('page', default=1))
     items_per_page = 42
@@ -30,20 +31,33 @@ def show_auto():
     conteggio = read_query(c, query)[0]['num_auto']
     totale = (conteggio // items_per_page) + 1
     if f == 'filtrate':
-        print(f)
-        data = filtra_auto()
-        print("dataz ",data)
-        if len(data) > 0:
-            lista_auto = [x.to_dict() for x in data]
+        #                callzLink = `/auto?filtro=filtrate&marchio=${marchio}&carburante=${carburante}&consumi=${consumi}&emissioni=${emissioni}&prezzo=${prezzo}&serbatoio=${serbatoio}&potenza=${potenza}&cilindrata=${cilindrata}&cavalli=${cavalli}`
+        dd = {
+            'marchio': request.args.get('marchio'),
+            'carburante': request.args.get('carburante'),
+            'consumi': request.args.get('consumi'),
+            'emissioni': request.args.get('emissioni'),
+            'prezzo': request.args.get('prezzo'),
+            'serbatoio': request.args.get('serbatoio'),
+            'potenza': request.args.get('potenza'),
+            'cilindrata': request.args.get('cilindrata'),
+            'cavalli': request.args.get('cavalli')
+        }
+        print("filtrate", dd)
+        data = filtra_auto(dd)
+        print("dataz r ",data)
+        if len(data) > 0 and type(data) == list:
+            lista_auto = [x.to_dict() for x in data['data']]
         else:
             lista_auto = []
+        print("passati if else", lista_auto)
     else:
         lista_auto = getAuto()
     for d in lista_auto:
         for key, value in d.items():
             if isinstance(value, Decimal):
                 d[key] = float(value)
-    print(lista_auto)
+    print(lista_auto, "fine show_auto, now render template diopan")
     c.close()
     return render_template('Tutte_le_auto.html', auto=lista_auto, page=page, total_pages=totale)
 

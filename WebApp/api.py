@@ -1,5 +1,6 @@
 from classAuto import *
 from sys import path
+import json
 
 isFABIO = True
 if not isFABIO:
@@ -120,17 +121,32 @@ def getAutobyBudget():
     return res
 
 
-@apiBlueprint.route('/api/auto_filter', methods=['POST'])
-def filtra_auto():
+#@apiBlueprint.route('/api/auto_filter', methods=['POST'])
+def filtra_auto(data):
     from classAuto import Auto, Motore, Marchio
-    data = request.get_json()
-    print(data)
-    q = (Auto.query.join(Motore, Motore.id_motore == Auto.id_motore).join(Marchio, Marchio.id_marchio == Auto.id_marchio).filter(Marchio.nome == data['marchio']).filter(Motore.carburante == data['carburante']).filter(Motore.consumi < float(data['consumi'])).filter(Motore.emissioni < float(data['emissioni'])).filter(Auto.prezzo < float(data['prezzo'])).filter(Motore.serbatoio > float(data['serbatoio'])).filter(Motore.potenza > int(data['potenza'])).filter(Motore.cilindrata > int(data['cilindrata'])).filter(Motore.cavalli > int(data['cavalli'])))
-    print("success")
+    #if request.method == 'POST':
+    #data = request.get_json()
+    print("in filtra",data)
+    q = (Auto.query.join(Motore, Motore.id_motore == Auto.id_motore)
+            .join(Marchio, Marchio.id_marchio == Auto.id_marchio)
+            .filter(Marchio.nome == data['marchio'])
+            .filter(Motore.carburante == data['carburante'])
+            .filter(Motore.consumi < float(data['consumi']))
+            .filter(Motore.emissioni < float(data['emissioni']))
+            .filter(Auto.prezzo < float(data['prezzo']))
+            .filter(Motore.serbatoio > float(data['serbatoio']))
+            .filter(Motore.potenza > int(data['potenza']))
+            .filter(Motore.cilindrata > int(data['cilindrata']))
+            .filter(Motore.cavalli > int(data['cavalli'])))
+    
     result = q.all()
-    print("success")
-    print(result)
-    return result
+    print("post qua", result)
+    if result:
+        r = {'data':result, 'success': True}
+    else:
+        r = {'data': [], 'success': False}
+    return json.dumps(r)
+
 
 
 

@@ -43,7 +43,7 @@ def create_server_connection():
 
 
 def create_db_connection(dbn = DBNAME):
-    print("sissi arrivo qui")
+    #print("sissi arrivo qui")
     connection = None
     try:
         connection = mysql.connector.connect(

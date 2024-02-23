@@ -201,7 +201,7 @@
                 </div>
                 <div class="filter-item">
                     <label for="cilindrata">Cilindrata:</label>
-                    <input type="range" name="cilindrata" id="cilindrata" class="custom-range" min="0" max="5000" />
+                    <input type="range" name="cilindrata" id="cilindrata" class="custom-range" min="0.0" max="5.0" />
                     <span class="range-value" id="cilindrata-value">0 cc</span>
                 </div>
 
@@ -238,7 +238,7 @@
 
                 <!-- Pulsante Applica filtri -->
                 <div class="filter-item">
-                    <a href="/auto?filtro=filtrate">
+                    <a>
                         <button onclick="inviaDatiJSONfiltri()" class="btn btn-primary" id="applyFiltersBtn">
                             <span class="mr-2"><i class="bi bi-dot green-dot"></i></span> Applica filtri
                         </button>
@@ -322,9 +322,19 @@
                 var potenza = document.getElementById("potenza").value;
                 var cilindrata = document.getElementById("cilindrata").value;
                 var cavalli = document.getElementById("cavalli").value;
-
+                let callzLink = `/auto?filtro=filtrate&marchio=${marchio}&carburante=${carburante}&consumi=${consumi}&emissioni=${emissioni}&prezzo=${prezzo}&serbatoio=${serbatoio}&potenza=${potenza}&cilindrata=${cilindrata}&cavalli=${cavalli}`
+                let res = fetch(callzLink, {
+                    method: "GET"
+                })
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log("la res",data);
+                }); 
+                location.href = callzLink;
+                return callzLink
+                
                 // Costruisci l'oggetto JSON
-                var datiJSON = {
+                /* var datiJSON = {
                     marchio: marchio,
                     carburante: carburante,
                     consumi: consumi,
@@ -335,15 +345,19 @@
                     potenza: potenza,
                     cavalli: cavalli,
                 };
-
+                console.log("invio:", datiJSON)
                 // Esegui la richiesta POST con i dati JSON
-                fetch("/api/auto_filter", {
+                let res = fetch("/auto?filtro=filtrate", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
                     },
                     body: JSON.stringify(datiJSON),
-                });
+                })
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log("la res",data);
+                }); */
             }
 
             // Aggiorna il valore visualizzato quando si muove la barra dei consumi
