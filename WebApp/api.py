@@ -4,7 +4,7 @@ from classAuto import *
 from sys import path
 import json
 
-isFABIO = False
+isFABIO = True
 if not isFABIO:
     path.append(r'ProjectWork/Database')
     from ProjectWork.Database.dbUtils_aiven import *
@@ -155,7 +155,7 @@ def login():
     connessione = create_db_connection(DBNAME)
     try:
         data = request.get_json()
-        print(data)
+        print("data dentro python login",data)
         email = data['email']
         password = data['password']
         q = f"""SELECT password FROM utenti WHERE email = {email}"""

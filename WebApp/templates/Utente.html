@@ -8,6 +8,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     <style>
          body {
             background-color:#ffffff;
@@ -135,8 +136,8 @@
                             <label for="password">Password:</label>
                             <input type="password" name="password" class="form-control" id="password" placeholder="Inserisci password">
                         </div>
-                        <button onclick="login()" id="btnLogIn"  class="btn btn-success btn-block">Accedi</button>
                     </form>
+                     <button onclick="login()" id="btnLogIn"  class="btn btn-success btn-block">Accedi</button>
                 </div>
             </div>
         </div>
@@ -190,42 +191,38 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
 
 <script>
- function login() {console.log('porcaccioiidddio')
-var email = document.getElementByid("email").value;
-var password = document.getElementByid("password").value;
+ async function login() {
+var email = document.getElementById("email").value;
+var password = document.getElementById("password").value;
 
 
 var datiJSON = {
     email: email,
     password: password
     };
-console.log(email)
-fetch('/login', {
+//console.log(datiJSON)
+let resp = await fetch('/api/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(datiJSON)
 
-    }).then(response =>  {console.log(response)
-            if (response.ok)
-             {
-                // Reindirizza l'utente alla dashboard dopo il login
-                window.location.href = '/dashboard';
-            } else {
-                // Mostra un messaggio di errore se le credenziali sono errate
-                attempts++;
-                if (attempts >= maxAttempts) {alert("Hai esaurito tutti i tentativi. Account bloccato per motivi di sicurezza.");
-                    document.getElementById("loginButton").disabled = true; // Disabilita il pulsante di login
-                } else {alert("Email o password errate. Tentativi rimanenti:" + (maxAttempts - attempts));
-                }
-            }
-        })
-        .catch(error => {
-            console.error('Si è verificato un errore:', error);
-        });
+    })
+    let trueResp = await resp.json()
+    console.log(trueResp)
+    var notyf = new Notyf();
+    if (trueResp.success) {
+        
+        notyf.success('Login succesfull');
+        window.location.href = "/";
+    } else {
+        notyf.error('Login errato');
+        //alert("Credenziali errate")
+    }
 }
 </script>
 </body>
