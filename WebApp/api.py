@@ -162,12 +162,10 @@ def login():
         data1 = read_query(connessione, q)[0]
         #print(data1, password)
         if len(data1) > 0:
-            print(check_password_hash(str(data1['password']), password))
+            #print(check_password_hash(str(data1['password']), password))
             pswcheck = check_password_hash(str(data1['password']), password)
             if pswcheck:
-                print("o?")
                 session['utente'] = data['email']
-                print("o?",session['utente'])
                 return {'success':True}
             else:
                 return {'success':False}
