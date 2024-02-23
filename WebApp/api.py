@@ -1,7 +1,7 @@
 from classAuto import *
 from sys import path
 
-isFABIO = False
+isFABIO = True
 if not isFABIO:
     path.append(r'ProjectWork/Database')
     from ProjectWork.Database.dbUtils_aiven import *
