@@ -148,44 +148,20 @@
                 <input type='text' id='nome' placeholder='Nome' class='input-line full-width'>
                 <input type='text' id='cognome' placeholder='Cognome' class='input-line full-width'>
                 <input type='text' id='eta' placeholder='Età' class='input-line full-width'>
-
-<div class="radio">
-  <input class="sesso" id="sesso" type="radio" value="maschio">
-  <label class="sesso" for="sesso" >Maschio</label>
-
-  <input class="sesso" id="sesso" type="radio" value="femmina">
-  <label class="sesso" for="sesso" >Femmina</label>
-
-  <input class="sesso" id="sesso" type="radio" value="altro">
-  <label class="sesso" for="sesso" >Altro</label>
-</div>
-
-
+<div id="sessosfrenato">
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sesso" value="option1">
-  <label class="form-check-label" for="inlineRadio1">Maschio</label>
+  <input class="form-check-input" type="radio" name="sesso" id="sesso" value="maschio">
+  <label class="form-check-label" for="">Maschio</label>
 </div>
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sesso" value="option2">
-  <label class="form-check-label" for="inlineRadio2">Femmina</label>
+  <input class="form-check-input" type="radio" name="sesso" id="sesso" value="femmina">
+  <label class="form-check-label" for="">Femmina</label>
 </div>
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sesso" value="option3">
-  <label class="form-check-label" for="inlineRadio3">Altro (disabled)</label>
+  <input class="form-check-input" type="radio" name="sesso" id="sesso" value="altro">
+  <label class="form-check-label" for="">Altro (disabled)</label>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
 
                 <input type='text' id='cap' placeholder='cap' class='input-line full-width'>
                 <input type='email' id='email' placeholder='Email' class='input-line full-width'>
@@ -202,11 +178,21 @@
 
 
 <script>
+<!--variabile form per racchiuder gli id -->
+var form = document.getElementById("sessosfrenato")
+let selectedValue = '';
+form.addEventListener('click', function(event){
+    if (event.target.type === 'radio') {
+          selectedValue = event.target.value;
+             }
+             });
+
+
 async function register() {
 var nome = document.getElementById("nome").value;
 var cognome = document.getElementById("cognome").value;
 var eta = document.getElementById("eta").value;
-var sesso = document.getElementById("sesso").value;
+var sesso = selectedValue;
 var email = document.getElementById("email").value;
 var password = document.getElementById("password").value;
 var cap = document.getElementById("cap").value;
