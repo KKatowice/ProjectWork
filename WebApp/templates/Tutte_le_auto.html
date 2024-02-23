@@ -144,134 +144,137 @@
             </div>
         </nav>
 
-        <div class="container">
-            <div class="filters">
-                <div class="filter-item">
-                    <label for="carburante">Carburante:</label>
-                    <select name="carburante" id="carburante">
-                        <option value="Gasoline">Benzina</option>
-                        <option value="diesel">Ibrido</option>
-                        <option value="gpl">Diesel</option>
-                        <option value="elettrica">Benzina Ibrida</option>
-                        <option value="ibrida">Ibrido delicato</option>
-                        <option value="metano">Diesel ibrido leggero</option>
-                         <option value="elettrica">Ibrido plug-in</option>
-                        <option value="ibrida">Elettrico</option>
-                        <option value="metano">Etanolo</option>
-                        <option value="metano">Diesel Ibrido</option>
-                        <option value="metano">Gas di petrolio</option>
-                        <option value="metano">Gas(LPG)</option>
-                        <option value="metano">Gas Naturale</option>
-                    </select>
-                </div>
-                <div class="filter-item">
-                    <label for="marchio">Marchio:</label>
-                    <select name="marchio" id="marchio">
-                        <option value="alfa-romeo">Alfa Romeo</option>
-                        <option value="audi">Audi</option>
-                        <option value="bmw">BMW</option>
-                        <option value="citroen">Citroën</option>
-                        <option value="fiat">Fiat</option>
-                        <option value="ford">Ford</option>
-                        <option value="honda">Honda</option>
-                        <option value="hyundai">Hyundai</option>
-                        <option value="jeep">Jeep</option>
-                        <option value="kia">Kia</option>
-                        <option value="land_rover">Land Rover</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="mini">MINI</option>
-                        <option value="nissan">Nissan</option>
-                        <option value="opel">Opel</option>
-                        <option value="peugeot">Peugeot</option>
-                        <option value="renault">Renault</option>
-                        <option value="seat">SEAT</option>
-                        <option value="skoda">Škoda</option>
-                        <option value="subaru">Subaru</option>
-                        <option value="suzuki">Suzuki</option>
-                        <option value="toyota">Toyota</option>
-                        <option value="volkswagen">Volkswagen</option>
-                        <option value="volvo">Volvo</option>
-                        <!-- Aggiungi altri marchi se necessario -->
-                    </select>
-                </div>
-                <div class="filter-item">
-                    <label for="motore">Motore:</label>
-                    <input type="range" name="cavalli" id="motore" class="custom-range" min="0" max="500" />
-                    <p class="range-value" id="motore-value" style="color:red">0</p>
-                </div>
-                
-                <div class="filter-item">
-                    <label for="cilindrata">Cilindrata:</label>
-                    <input type="range" name="cilindrata" id="cilindrata" class="custom-range" min="0.0" max="5.0" />
-                    <span class="range-value" id="cilindrata-value">0 cc</span>
-                </div>
-
-                <div class="filter-item">
-                    <label for="consumi">Consumi:</label>
-                    <input type="range" name="consumi" id="consumi" class="custom-range" min="0" max="100" />
-                    <span class="range-value" id="consumi-value">0 litri/km</span>
-                </div>
-                <div class="filter-item">
-                    <label for="emissioni">Emissioni:</label>
-                    <input type="range" name="emissioni" id="emissioni" class="custom-range" min="0" max="100" />
-                    <span class="range-value" id="emissioni-value">0</span>
-                </div>
-                <div class="filter-item">
-                    <label for="prezzo">Prezzo:</label>
-                    <input type="range" name="prezzo" id="prezzo" class="custom-range" min="0" max="1000000" />
-                    <span class="range-value" id="prezzo-value">0</span>
-                </div>
-                <div class="filter-item">
-                    <label for="potenza">Potenza:</label>
-                    <input type="range" name="potenza" id="potenza" class="custom-range" min="0" max="500" />
-                    <span class="range-value" id="potenza-value">0 CV</span>
-                </div>
-                <div class="filter-item">
-                    <label for="cavalli">Cavalli:</label>
-                    <input type="range" name="cavalli" id="cavalli" class="custom-range" min="0" max="500" />
-                    <span class="range-value" id="cavalli-value">0</span>
-                </div>
-                <div class="filter-item">
-                    <label for="serbatoio">Serbatoio:</label>
-                    <input type="range" name="serbatoio" id="serbatoio" class="custom-range" min="0" max="500" />
-                    <span class="range-value" id="serbatoio-value"></span>
-                </div>
-
-                <!-- Pulsante Applica filtri -->
-                <div class="filter-item">
-                    <a>
-                        <button onclick="inviaDatiJSONfiltri()" class="btn btn-primary" id="applyFiltersBtn">
-                            <span class="mr-2"><i class="bi bi-dot green-dot"></i></span> Applica filtri
-                        </button>
-                    </a>
-                </div>
-            </div>
-        </div>
-
         <div class="container mt-5 text-center">
-            <h1 class="mb-5">Auto trovate</h1>
-            <div class="container text-center">
-                <div class="row">
-                    {% for elem in auto %}
-                    <div class="col-md-4 mb-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="{{elem.foto_auto}}" class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title card-title lead">{{elem.modello}}</h5>
-                                <button type="button" class="btn btn-dark" onclick="openPopup({{elem}})">Dettagli</button>
+            <div class="row">
+                <div class="col-4">
+                    <div class="container" style="margin-top: 140px;">
+                        <div class="filters">
+                            <div class="filter-item">
+                                <label for="carburante">Carburante:</label>
+                                <select name="carburante" id="carburante">
+                                    <option value="Gasoline">Benzina</option>
+                                    <option value="diesel">Ibrido</option>
+                                    <option value="gpl">Diesel</option>
+                                    <option value="elettrica">Benzina Ibrida</option>
+                                    <option value="ibrida">Ibrido delicato</option>
+                                    <option value="metano">Diesel ibrido leggero</option>
+                                    <option value="elettrica">Ibrido plug-in</option>
+                                    <option value="ibrida">Elettrico</option>
+                                    <option value="metano">Etanolo</option>
+                                    <option value="metano">Diesel Ibrido</option>
+                                    <option value="metano">Gas di petrolio</option>
+                                    <option value="metano">Gas(LPG)</option>
+                                    <option value="metano">Gas Naturale</option>
+                                </select>
+                            </div>
+                            <div class="filter-item">
+                                <label for="marchio">Marchio:</label>
+                                <select name="marchio" id="marchio">
+                                    <option value="alfa-romeo">Alfa Romeo</option>
+                                    <option value="audi">Audi</option>
+                                    <option value="bmw">BMW</option>
+                                    <option value="citroen">Citroën</option>
+                                    <option value="fiat">Fiat</option>
+                                    <option value="ford">Ford</option>
+                                    <option value="honda">Honda</option>
+                                    <option value="hyundai">Hyundai</option>
+                                    <option value="jeep">Jeep</option>
+                                    <option value="kia">Kia</option>
+                                    <option value="land_rover">Land Rover</option>
+                                    <option value="mercedes">Mercedes</option>
+                                    <option value="mini">MINI</option>
+                                    <option value="nissan">Nissan</option>
+                                    <option value="opel">Opel</option>
+                                    <option value="peugeot">Peugeot</option>
+                                    <option value="renault">Renault</option>
+                                    <option value="seat">SEAT</option>
+                                    <option value="skoda">Škoda</option>
+                                    <option value="subaru">Subaru</option>
+                                    <option value="suzuki">Suzuki</option>
+                                    <option value="toyota">Toyota</option>
+                                    <option value="volkswagen">Volkswagen</option>
+                                    <option value="volvo">Volvo</option>
+                                    <!-- Aggiungi altri marchi se necessario -->
+                                </select>
+                            </div>
+
+                            <div class="filter-item">
+                                <label for="cilindrata">Cilindrata:</label>
+                                <input type="range" name="cilindrata" id="cilindrata" class="custom-range" min="0.0" max="5.0" />
+                                <span class="range-value" id="cilindrata-value">0 cc</span>
+                            </div>
+
+                            <div class="filter-item">
+                                <label for="consumi">Consumi:</label>
+                                <input type="range" name="consumi" id="consumi" class="custom-range" min="0" max="100" />
+                                <span class="range-value" id="consumi-value">0 litri/km</span>
+                            </div>
+                            <div class="filter-item">
+                                <label for="emissioni">Emissioni:</label>
+                                <input type="range" name="emissioni" id="emissioni" class="custom-range" min="0" max="100" />
+                                <span class="range-value" id="emissioni-value">0</span>
+                            </div>
+                            <div class="filter-item">
+                                <label for="prezzo">Prezzo:</label>
+                                <input type="range" name="prezzo" id="prezzo" class="custom-range" min="0" max="1000000" />
+                                <span class="range-value" id="prezzo-value">0</span>
+                            </div>
+                            <div class="filter-item">
+                                <label for="potenza">Potenza:</label>
+                                <input type="range" name="potenza" id="potenza" class="custom-range" min="0" max="500" />
+                                <span class="range-value" id="potenza-value">0 CV</span>
+                            </div>
+                            <div class="filter-item">
+                                <label for="cavalli">Cavalli:</label>
+                                <input type="range" name="cavalli" id="cavalli" class="custom-range" min="0" max="500" />
+                                <span class="range-value" id="cavalli-value">0</span>
+                            </div>
+                            <div class="filter-item">
+                                <label for="serbatoio">Serbatoio:</label>
+                                <input type="range" name="serbatoio" id="serbatoio" class="custom-range" min="0" max="500" />
+                                <span class="range-value" id="serbatoio-value"></span>
+                            </div>
+
+                            <!-- Pulsante Applica filtri -->
+                            <div class="filter-item">
+                                <a>
+                                    <button onclick="inviaDatiJSONfiltri()" class="btn btn-primary" id="applyFiltersBtn">
+                                        <span class="mr-2"><i class="bi bi-dot green-dot"></i></span> Applica filtri
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
+                </div>
+                <div class="col-8">
+                    <div class="container mt-5 text-center">
+                        <h1 class="mb-5">Auto trovate</h1>
+                        <div class="container text-center">
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                {% for elem in auto %}
+                                <div class="col-md-4 mb-4">
+                                    <div class="card">
+                                        <img src="{{elem.foto_auto}}" class="card-img-top" alt="..." />
+                                        <div class="card-body">
+                                            <h5 class="card-title card-title lead">{{elem.modello}}</h5>
+                                            <button type="button" class="btn btn-dark" onclick="openPopup({{elem}})">Dettagli</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
+        <
         <nav aria-label="Page navigation example">
             <ul class="pagination mt-5">
                 {% if page > 1 %}
                 <li class="page-item"><a class="page-link" href="{{ url_for('show_auto', page=page-1) }}">Previous</a></li>
-                {% endif %} {% for num in range(1, total_pages + 1) %} {% if num == page %}
+                {% endif %} {% for num in range(1,11) %} {% if num == page %}
                 <li class="page-item">
                     <a class="page-link" href="#"><strong>{{ num }}</strong></a>
                 </li>
@@ -282,6 +285,7 @@
                 {% endif %}
             </ul>
         </nav>
+
         <div class="modal fade" id="carModal" tabindex="-1" role="dialog" aria-labelledby="carModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -323,17 +327,17 @@
                 var potenza = document.getElementById("potenza").value;
                 var cilindrata = document.getElementById("cilindrata").value;
                 var cavalli = document.getElementById("cavalli").value;
-                let callzLink = `/auto?filtro=filtrate&marchio=${marchio}&carburante=${carburante}&consumi=${consumi}&emissioni=${emissioni}&prezzo=${prezzo}&serbatoio=${serbatoio}&potenza=${potenza}&cilindrata=${cilindrata}&cavalli=${cavalli}`
+                let callzLink = `/auto?filtro=filtrate&marchio=${marchio}&carburante=${carburante}&consumi=${consumi}&emissioni=${emissioni}&prezzo=${prezzo}&serbatoio=${serbatoio}&potenza=${potenza}&cilindrata=${cilindrata}&cavalli=${cavalli}`;
                 let res = fetch(callzLink, {
-                    method: "GET"
+                    method: "GET",
                 })
-                .then((res) => res.json())
-                .then((data) => {
-                    console.log("la res",data);
-                }); 
+                    .then((res) => res.json())
+                    .then((data) => {
+                        console.log("la res", data);
+                    });
                 location.href = callzLink;
-                return callzLink
-                
+                return callzLink;
+
                 // Costruisci l'oggetto JSON
                 /* var datiJSON = {
                     marchio: marchio,
