@@ -167,6 +167,10 @@ def logutente():
 def chisiamo():
    return render_template('ChiSiamo.html')
 
+@app.route('/crea_account')
+def reg():
+   return render_template('crea_account.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
