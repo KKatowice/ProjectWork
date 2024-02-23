@@ -4,7 +4,7 @@ from classAuto import *
 from sys import path
 import json
 
-isFABIO = False
+isFABIO = True
 if not isFABIO:
     path.append(r'ProjectWork/Database')
     from ProjectWork.Database.dbUtils_aiven import *
@@ -128,6 +128,7 @@ def filtra_auto(data):
     from classAuto import Auto, Motore, Marchio
     #if request.method == 'POST':
     #data = request.get_json()
+    
     print("in filtra",data)
     q = (Auto.query.join(Motore, Motore.id_motore == Auto.id_motore)
             .join(Marchio, Marchio.id_marchio == Auto.id_marchio)

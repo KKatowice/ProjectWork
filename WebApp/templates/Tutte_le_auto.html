@@ -152,9 +152,10 @@
                             <div class="filter-item">
                                 <label for="carburante">Carburante:</label>
                                 <select name="carburante" id="carburante">
+                                    <option value="Diesel ">Diesel</option><!-- TODO togli spazio   -->
+                                    
                                     <option value="Gasoline">Benzina</option>
-                                    <option value="diesel">Ibrido</option>
-                                    <option value="gpl">Diesel</option>
+                                    <option value="gpl">Gpl</option>
                                     <option value="elettrica">Benzina Ibrida</option>
                                     <option value="ibrida">Ibrido delicato</option>
                                     <option value="metano">Diesel ibrido leggero</option>
@@ -167,7 +168,7 @@
                                     <option value="metano">Gas Naturale</option>
                                 </select>
                             </div>
-                            <div class="filter-item">
+                            <div class="filter-item"><!-- TODO query e forloop marchi e carburanti -->
                                 <label for="marchio">Marchio:</label>
                                 <select name="marchio" id="marchio">
                                     <option value="alfa-romeo">Alfa Romeo</option>
@@ -200,38 +201,38 @@
 
                             <div class="filter-item">
                                 <label for="cilindrata">Cilindrata:</label>
-                                <input type="range" name="cilindrata" id="cilindrata" class="custom-range" min="0.0" max="5.0" />
+                                <input type="range" name="cilindrata" id="cilindrata" value="2.2" class="custom-range" min="0.0" max="5.0" />
                                 <span class="range-value" id="cilindrata-value">0 cc</span>
                             </div>
 
                             <div class="filter-item">
                                 <label for="consumi">Consumi:</label>
-                                <input type="range" name="consumi" id="consumi" class="custom-range" min="0" max="100" />
+                                <input type="range" name="consumi" id="consumi" value="5.5" class="custom-range" min="0" max="100" />
                                 <span class="range-value" id="consumi-value">0 litri/km</span>
                             </div>
                             <div class="filter-item">
                                 <label for="emissioni">Emissioni:</label>
-                                <input type="range" name="emissioni" id="emissioni" class="custom-range" min="0" max="100" />
+                                <input type="range" name="emissioni" id="emissioni" value="144" class="custom-range" min="0" max="100" />
                                 <span class="range-value" id="emissioni-value">0</span>
                             </div>
                             <div class="filter-item">
                                 <label for="prezzo">Prezzo:</label>
-                                <input type="range" name="prezzo" id="prezzo" class="custom-range" min="0" max="1000000" />
+                                <input type="range" name="prezzo" id="prezzo" value="99000" class="custom-range" min="0" max="1000000" />
                                 <span class="range-value" id="prezzo-value">0</span>
                             </div>
                             <div class="filter-item">
                                 <label for="potenza">Potenza:</label>
-                                <input type="range" name="potenza" id="potenza" class="custom-range" min="0" max="500" />
+                                <input type="range" name="potenza" id="potenza" value="154.5" class="custom-range" min="0.0" max="500.0" />
                                 <span class="range-value" id="potenza-value">0 CV</span>
                             </div>
                             <div class="filter-item">
                                 <label for="cavalli">Cavalli:</label>
-                                <input type="range" name="cavalli" id="cavalli" class="custom-range" min="0" max="500" />
+                                <input type="range" name="cavalli" id="cavalli" value="210" class="custom-range" min="0" max="500" />
                                 <span class="range-value" id="cavalli-value">0</span>
                             </div>
                             <div class="filter-item">
                                 <label for="serbatoio">Serbatoio:</label>
-                                <input type="range" name="serbatoio" id="serbatoio" class="custom-range" min="0" max="500" />
+                                <input type="range" name="serbatoio" id="serbatoio" value="57.9" class="custom-range" min="0" max="500" />
                                 <span class="range-value" id="serbatoio-value"></span>
                             </div>
 
@@ -338,81 +339,10 @@
                 location.href = callzLink;
                 return callzLink;
 
-                // Costruisci l'oggetto JSON
-                /* var datiJSON = {
-                    marchio: marchio,
-                    carburante: carburante,
-                    consumi: consumi,
-                    emissioni: emissioni,
-                    prezzo: prezzo,
-                    serbatoio: serbatoio,
-                    cilindrata: cilindrata,
-                    potenza: potenza,
-                    cavalli: cavalli,
-                };
-                console.log("invio:", datiJSON)
-                // Esegui la richiesta POST con i dati JSON
-                let res = fetch("/auto?filtro=filtrate", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(datiJSON),
-                })
-                .then((res) => res.json())
-                .then((data) => {
-                    console.log("la res",data);
-                }); */
+                
             }
 
-            // Aggiorna il valore visualizzato quando si muove la barra dei consumi
-            var consumiRange = document.getElementById("consumi");
-            var consumiValue = document.getElementById("consumi-value");
-            consumiRange.addEventListener("input", function () {
-                consumiValue.textContent = this.value + " litri/km";
-            });
-
-            // Aggiorna il valore visualizzato quando si muove la barra del motore
-            var motoreRange = document.getElementById("motore");
-            var motoreValue = document.getElementById("motore-value");
-            motoreRange.addEventListener("input", function () {
-                motoreValue.textContent = this.value;
-            });
-
-            // Aggiorna il valore visualizzato quando si muove la barra della cilindrata
-            var cilindrataRange = document.getElementById("cilindrata");
-            var cilindrataValue = document.getElementById("cilindrata-value");
-            cilindrataRange.addEventListener("input", function () {
-                cilindrataValue.textContent = this.value + " cc";
-            });
-
-            // Aggiorna il valore visualizzato quando si muove la barra del prezzo
-            var prezzoRange = document.getElementById("prezzo");
-            var prezzoValue = document.getElementById("prezzo-value");
-            prezzoRange.addEventListener("input", function () {
-                prezzoValue.textContent = this.value;
-            });
-
-            // Aggiorna il valore visualizzato quando si muove la barra della potenza
-            var potenzaRange = document.getElementById("potenza");
-            var potenzaValue = document.getElementById("potenza-value");
-            potenzaRange.addEventListener("input", function () {
-                potenzaValue.textContent = this.value + " CV";
-            });
-
-            // Aggiorna il valore visualizzato quando si muove la barra dei cavalli
-            var cavalliRange = document.getElementById("cavalli");
-            var cavalliValue = document.getElementById("cavalli-value");
-            cavalliRange.addEventListener("input", function () {
-                cavalliValue.textContent = this.value;
-            });
-
-            // Aggiorna il valore visualizzato quando si muove la barra del serbatoio
-            var serbatoioRange = document.getElementById("serbatoio");
-            var serbatoioValue = document.getElementById("serbatoio-value");
-            serbatoioValue.addEventListener("input", function () {
-                serbatoioValue.textContent = this.value;
-            });
+            
         </script>
         <script>
             function openPopup(car) {
