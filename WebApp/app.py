@@ -9,7 +9,7 @@ print(cwd) """
 
 #app = Flask(__name__)
 app.register_blueprint(apiBlueprint)
-
+app.secret_key = 'VERY_BAD_SECRET_KEY'
 DBNAME = "concessionario"
 
 app.config['SQLALCHEMY_DATABASE_URI'] = (
@@ -101,7 +101,7 @@ def userHome():
 
 @app.route('/logout')
 def logout():
-    session.pop('user',None)
+    session['utente'] = None
     return redirect('/')
 @app.route('/Utente')
 def logutente():
