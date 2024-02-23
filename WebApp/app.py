@@ -30,6 +30,7 @@ def show_auto():
     conteggio = read_query(c, query)[0]['num_auto']
     totale = (conteggio // items_per_page) + 1
     if f == 'filtrate':
+        print(f)
         data = filtra_auto()
         print("dataz ",data)
         if len(data) > 0:

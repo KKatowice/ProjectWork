@@ -149,7 +149,7 @@
                 <div class="filter-item">
                     <label for="carburante">Carburante:</label>
                     <select name="carburante" id="carburante">
-                        <option value="benzina">Benzina</option>
+                        <option value="Gasoline">Benzina</option>
                         <option value="diesel">Diesel</option>
                         <option value="gpl">GPL</option>
                         <option value="elettrica">Elettrica</option>
@@ -160,7 +160,7 @@
                 <div class="filter-item">
                     <label for="marchio">Marchio:</label>
                     <select name="marchio" id="marchio">
-                        <option value="alfa_romeo">Alfa Romeo</option>
+                        <option value="alfa-romeo">Alfa Romeo</option>
                         <option value="audi">Audi</option>
                         <option value="bmw">BMW</option>
                         <option value="citroen">Citroën</option>
@@ -231,9 +231,11 @@
 
                 <!-- Pulsante Applica filtri -->
                 <div class="filter-item">
-                    <button onclick="inviaDatiJSONfiltri()" class="btn btn-primary" id="applyFiltersBtn">
-                        <span class="mr-2"><i class="bi bi-dot green-dot"></i></span> Applica filtri
-                    </button>
+                    <a href="/auto?filtro=filtrate">
+                        <button onclick="inviaDatiJSONfiltri()" class="btn btn-primary" id="applyFiltersBtn">
+                            <span class="mr-2"><i class="bi bi-dot green-dot"></i></span> Applica filtri
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
