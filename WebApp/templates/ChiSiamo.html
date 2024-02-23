@@ -23,7 +23,7 @@
         body {
             background-color: #f8f9fa; /* Light gray background */
             color: #343a40; /* Dark gray text color */
-            font-family: "Georgia", sans-serif;
+            font-family: 'Exo 2', sans-serif;
             margin: 0;
             padding: 0;
         }
@@ -41,13 +41,16 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        .navbar-nav .nav-link {
-            padding-right: 0.5rem;
-            padding-left: 0.5rem;
+        .nav-link {
+            padding: 10px 15px; /* Riduci il padding per rendere i riquadri più piccoli */
+            margin: 0 5px; /* Aggiungi un margine tra i riquadri */
+            border-radius: 5px; /* Aggiungi un bordo arrotondato ai riquadri */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Aggiungi una transizione per un effetto fluido */
         }
 
+        /* Stile dei riquadri dei menu al passaggio del mouse */
         .nav-link:hover {
-            color: #7fffd4; /* Light blue on hover */
+            background-color: #6c757d; /* Cambia il colore di sfondo al passaggio del mouse */
         }
 
         .dropdown-menu {
