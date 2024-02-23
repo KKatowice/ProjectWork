@@ -6,7 +6,7 @@
     <title>Registrazione Account</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
     <!-- jQuery UI CSS -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -148,25 +148,28 @@
                 <input type='text' id='nome' placeholder='Nome' class='input-line full-width'>
                 <input type='text' id='cognome' placeholder='Cognome' class='input-line full-width'>
                 <input type='text' id='eta' placeholder='Età' class='input-line full-width'>
-                <input type='text' id='sesso' placeholder='Inserisci il tuo sesso:' class='input-line full-width'>
+<div id="sessosfrenato">
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="sesso" id="sesso" value="maschio">
+  <label class="form-check-label" for="">Maschio</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="sesso" id="sesso" value="femmina">
+  <label class="form-check-label" for="">Femmina</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="sesso" id="sesso" value="altro">
+  <label class="form-check-label" for="">Altro (disabled)</label>
+</div>
+</div>
 
- <div class="sesso form-check-inline"> <!-- Aggiungi la classe form-check-inline -->
-  <input class="sesso" type="checkbox" id="inlineCheckbox1" value="option1">
-  <label class="sesso" for="inlineCheckbox1">Femmina</label>
-</div>
-<div class="sesso form-check-inline"> <!-- Aggiungi la classe form-check-inline -->
-  <input class="sesso" type="checkbox" id="inlineCheckbox2" value="option2">
-  <label class="sesso" for="inlineCheckbox2">Maschio</label>
-</div>
-<div class="sesso form-check-inline"> <!-- Aggiungi la classe form-check-inline -->
-  <input class="sesso" type="checkbox" id="inlineCheckbox3" value="option3" >
-  <label class="sesso" for="inlineCheckbox3">Altro</label>
-</div>
-                <input type='text' id='CAP' placeholder='CAP' class='input-line full-width'>
+                <input type='text' id='cap' placeholder='cap' class='input-line full-width'>
                 <input type='email' id='email' placeholder='Email' class='input-line full-width'>
                 <input type='password' id='password' placeholder='Password' class='input-line full-width'>
             </div>
-            <div><button onclick="register()" class='ghost-round full-width'>Create Account</button></div>
+            <div>
+                <button onclick="register()" class='ghost-round full-width'>Create Account</button>
+            </div>
             <div id="success-message" style="display: none; text-align: center; color: green;">Account creato con successo</div>
         </div>
     </div>
@@ -175,21 +178,24 @@
 
 
 <script>
-function register() {
+<!--variabile form per racchiuder gli id -->
+var form = document.getElementById("sessosfrenato")
+let selectedValue = '';
+form.addEventListener('click', function(event){
+    if (event.target.type === 'radio') {
+          selectedValue = event.target.value;
+             }
+             });
+
+
+async function register() {
 var nome = document.getElementById("nome").value;
-console.log(datiJSON)
 var cognome = document.getElementById("cognome").value;
-console.log(datiJSON)
 var eta = document.getElementById("eta").value;
-console.log(datiJSON)
-var sesso = document.getElementById("sesso").value;
-console.log(datiJSON)
+var sesso = selectedValue;
 var email = document.getElementById("email").value;
-console.log(datiJSON)
 var password = document.getElementById("password").value;
-console.log(datiJSON)
-var cap = document.getElementById("CAP").value;
-console.log(datiJSON)
+var cap = document.getElementById("cap").value;
 
 var datiJSON = {
     nome: nome,
@@ -198,23 +204,31 @@ var datiJSON = {
     sesso: sesso,
     email: email,
     password: password,
-    cap: CAP
+    cap: cap
     };
-console.log(datiJSON)
-fetch('/crea_account', {
+//console.log(datiJSON)
+let resp = await fetch('/api/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(datiJSON)
-    });
-}
-    .then(response => {
-        if (response.ok) {
-            document.getElementById("success-message").style.display = "block";
-        }
-    })
-    .catch(error => console.error('Error:', error));
+
+})
+console.log(datiJSON)
+
+
+    let trueResp = await resp.json()
+    console.log(trueResp)
+    var notyf = new Notyf();
+    if (trueResp.success) {
+
+        notyf.success('Registration successfull');
+        window.location.href = "/";
+    } else {
+        notyf.error('Login errato');
+        //alert("Credenziali errate")
+    }
 }
 
 
@@ -224,7 +238,7 @@ fetch('/crea_account', {
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
 </div>
  <div>
     <div class="container-a">

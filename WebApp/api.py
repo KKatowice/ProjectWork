@@ -1,4 +1,4 @@
-from werkzeug.security import check_password_hash
+from werkzeug.security import check_password_hash, generate_password_hash
 
 from classAuto import *
 from sys import path
@@ -158,21 +158,47 @@ def login():
         print("data dentro python login",data)
         email = data['email']
         password = data['password']
-        q = f"""SELECT password FROM utenti WHERE email = {email}"""
+        q = f"""SELECT password FROM utenti WHERE email = '{email}';"""
         data1 = read_query(connessione, q)[0]
-        print(data1)
+        #print(data1, password)
         if len(data1) > 0:
-            if check_password_hash(str(data1['password']), password):
-                # session['utente'] = data[0][0]
+            print(check_password_hash(str(data1['password']), password))
+            pswcheck = check_password_hash(str(data1['password']), password)
+            if pswcheck:
+                print("o?")
+                session['utente'] = data['email']
+                print("o?",session['utente'])
                 return {'success':True}
             else:
                 return {'success':False}
         else:
             return {'success':False}
     except Exception as e:
+        print(e)
         return {'success':False}
     finally:
         connessione.close()
+
+@apiBlueprint.route('/api/register', methods=['POST'])
+def register():
+    data = request.get_json()
+    connessione = create_db_connection(DBNAME)
+    nome = data['nome']
+    cognome = data['cognome']
+    eta = data['eta']
+    sesso = data['sesso']
+    email = data['email']
+    password = generate_password_hash(data['password'])
+    cap = data['cap']
+    q = f"""INSERT INTO utenti(nome, cognome, eta, sesso, email, password, cap)
+                         VALUES('{nome}','{cognome}','{eta}','{sesso}','{email}','{password}','{cap}')"""
+    try:
+        execute_query(connessione, q)
+        return {'success':True}
+
+    except Exception as e:
+        print(e)
+        return {'success':False}
 
 
 
