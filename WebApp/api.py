@@ -1,8 +1,10 @@
+from werkzeug.security import check_password_hash
+
 from classAuto import *
 from sys import path
 import json
 
-isFABIO = True
+isFABIO = False
 if not isFABIO:
     path.append(r'ProjectWork/Database')
     from ProjectWork.Database.dbUtils_aiven import *
@@ -121,7 +123,7 @@ def getAutobyBudget():
     return res
 
 
-#@apiBlueprint.route('/api/auto_filter', methods=['POST'])
+# @apiBlueprint.route('/api/auto_filter', methods=['POST'])
 def filtra_auto(data):
     from classAuto import Auto, Motore, Marchio
     #if request.method == 'POST':
@@ -146,6 +148,33 @@ def filtra_auto(data):
     else:
         r = {'data': [], 'success': False}
     return json.dumps(r)
+
+@apiBlueprint.route('/api/login', methods=['POST'])
+def login():
+    print("gagag")
+    connessione = create_db_connection(DBNAME)
+    try:
+        data = request.get_json()
+        print(data)
+        email = data['email']
+        password = data['password']
+        q = f"""SELECT password FROM utenti WHERE email = {email}"""
+        data1 = read_query(connessione, q)[0]
+        print(data1)
+        if len(data1) > 0:
+            if check_password_hash(str(data1['password']), password):
+                # session['utente'] = data[0][0]
+                return {'success':True}
+            else:
+                return {'success':False}
+        else:
+            return {'success':False}
+    except Exception as e:
+        return {'success':False}
+    finally:
+        connessione.close()
+
+
 
 
 

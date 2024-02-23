@@ -126,7 +126,7 @@
             <div class="card mt-5">
                 <div class="card-body">
                     <h2 class="text-center mb-4">Accedi al tuo account</h2>
-                    <form class="form-signin" action="/validateLogin" method="post">
+                    <form class="form-signin" >
                         <div class="form-group">
                             <label for="email">Email:</label>
                             <input type="email" name="email" class="form-control" id="email" placeholder="Inserisci email">
@@ -135,7 +135,7 @@
                             <label for="password">Password:</label>
                             <input type="password" name="password" class="form-control" id="password" placeholder="Inserisci password">
                         </div>
-                        <button id="btnLogIn" type="submit" class="btn btn-success btn-block">Accedi</button>
+                        <button onclick="login()" id="btnLogIn"  class="btn btn-success btn-block">Accedi</button>
                     </form>
                 </div>
             </div>
@@ -192,7 +192,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
- function login() {
+ function login() {console.log('porcaccioiidddio')
 var email = document.getElementByid("email").value;
 var password = document.getElementByid("password").value;
 
@@ -201,17 +201,17 @@ var datiJSON = {
     email: email,
     password: password
     };
-
+console.log(email)
 fetch('/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(datiJSON)
-    });
-    })
-        .then(response => {
-            if (response.ok) {
+
+    }).then(response =>  {console.log(response)
+            if (response.ok)
+             {
                 // Reindirizza l'utente alla dashboard dopo il login
                 window.location.href = '/dashboard';
             } else {

@@ -1,6 +1,6 @@
 from decimal import Decimal
 
-from werkzeug.security import *
+# from werkzeug.security import *
 
 from api import *
 import os
@@ -90,28 +90,6 @@ def show_auto_for_marchi():
     return render_template('auto_x_marchio.html', auto=auto)
 
 
-@app.route('/validateLogin', methods=['POST'])
-
-def validateLogin():
-    connessione = create_db_connection(DBNAME)
-    try:
-        email = request.form['inputEmail']
-        password = request.form['inputPassword']
-        q = f"""SELECT password FROM utenti WHERE email = {email}"""
-        data = read_query(connessione,q)[0]
-
-        if len(data) > 0:
-            if check_password_hash(str(data['password']), password):
-                # session['utente'] = data[0][0]
-                return redirect('/')
-            else:
-                return render_template('error.html', error='Wrong Email address or Password.')
-        else:
-            return render_template('error.html', error='Wrong Email address or Password.')
-    except Exception as e:
-        return render_template('error.html', error=str(e))
-    finally:
-        connessione.close()
 
 
 @app.route('/userHome')
@@ -125,6 +103,10 @@ def userHome():
 def logout():
     session.pop('user',None)
     return redirect('/')
+@app.route('/Utente')
+def logutente():
+    return render_template('Utente.html')
+
 
 # @app.route('/Utente', methods=['GET', 'POST'])
 # def login():
