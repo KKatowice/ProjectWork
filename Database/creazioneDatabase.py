@@ -1,7 +1,7 @@
 from dbUtils_aiven import *
 
 connection = create_server_connection()
-# create_database(connection, "CREATE DATABASE concessionario")
+create_database(connection, "CREATE DATABASE concessionario")
 c = create_db_connection()
 
 marchi = """CREATE TABLE marchi(
@@ -37,7 +37,7 @@ utenti = """CREATE TABLE utenti(
             eta int(11) NOT NULL CHECK(eta>0 AND eta<120),
             sesso varchar(55) NOT NULL CHECK(sesso = 'maschio' or sesso ='femmina' or sesso = 'altro'),
             email varchar(55) UNIQUE NOT NULL,
-            password varchar(55) NOT NULL,
+            password varchar(255) NOT NULL,
             cap varchar(6),
             budget int)"""
 
@@ -56,9 +56,9 @@ utenti_bloccati = """CREATE TABLE utenti_bloccati(
                 FOREIGN KEY (id_utente) REFERENCES utenti(id_utente) ON DELETE CASCADE ON UPDATE CASCADE)"""
 
 
-# execute_query(c, marchi)
-# execute_query(c, motore)
-# execute_query(c, auto)
-# execute_query(c, utenti)
-# execute_query(c, preferenze)
+execute_query(c, marchi)
+execute_query(c, motore)
+execute_query(c, auto)
+execute_query(c, utenti)
+execute_query(c, preferenze)
 execute_query(c, utenti_bloccati)

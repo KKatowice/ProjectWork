@@ -126,16 +126,16 @@
             <div class="card mt-5">
                 <div class="card-body">
                     <h2 class="text-center mb-4">Accedi al tuo account</h2>
-                    <form>
+                    <form class="form-signin" action="/validateLogin" method="post">
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" placeholder="Inserisci email">
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Inserisci email">
                         </div>
                         <div class="form-group">
                             <label for="password">Password:</label>
-                            <input type="password" class="form-control" id="password" placeholder="Inserisci password">
+                            <input type="password" name="password" class="form-control" id="password" placeholder="Inserisci password">
                         </div>
-                        <button type="submit" class="btn btn-success btn-block">Accedi</button>
+                        <button id="btnLogIn" type="submit" class="btn btn-success btn-block">Accedi</button>
                     </form>
                 </div>
             </div>

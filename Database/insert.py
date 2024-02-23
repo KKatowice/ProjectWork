@@ -101,12 +101,12 @@ def insert_auto():
 
 q1 = """SET FOREIGN_KEY_CHECKS = 0;"""
 q2= """ SET FOREIGN_KEY_CHECKS = 1"""
-# execute_query(c,q1)
-# insert_marchi()
+execute_query(c,q1)
+insert_marchi()
 insert_users()
-# insert_motori()
-# insert_auto()
-# execute_query(c,q2)
+insert_motori()
+insert_auto()
+execute_query(c,q2)
 
 
 

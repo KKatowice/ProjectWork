@@ -1,124 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TutteLeAuto</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
 
-<head>
-    <meta charset="UTF-8">
-    <title>Agenzia ViaggiGiraMondo</title>
+        <style>
+            .card {
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombra leggera di base */
+                transition: box-shadow 0.3s ease; /* Transizione fluida per l'ombra */
+            }
+            /* Stile per l'ombreggiatura quando si passa sopra */
+            .card:hover {
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ombra più marcata quando si passa sopra */
+            }
+            .card:hover h5 {
+                color: #28a745 !important;
+            }
 
-    <style>
-        body {
-        display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-image: url('https://img.freepik.com/premium-photo/travel-concept-blue-background-with-copy-space-airplane-toy-blue-color-background_661495-33675.jpg');
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;}
-            {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+            .filters {
+                display: flex;
+                flex-direction: column;
+            }
 
-        h1 {
-            color: #333;
-        }
+            .filter-item {
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+            }
 
-        form {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 50px;
-            max-width: 400px;
-            margin: 20px auto;
-        }
+            .filter-item label {
+                margin-right: 10px;
+            }
 
-        fieldset {
-            border: none;
-            margin: 0;
-            padding: 0;
-            margin-bottom: 20px;
-        }
+            .filter-item select,
+            .filter-item input[type="range"] {
+                width: 200px;
+                margin-top: 5px;
+            }
 
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-        }
+            /* Custom styling for range input */
+            .custom-range {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 100%;
+                height: 10px; /* Altezza barra di scorrimento */
+                background-color: #e0e0e0; /* Colore barra di scorrimento */
+                outline: none;
+                border-radius: 5px;
+                margin-top: 8px;
+                position: relative;
+            }
 
-        .privacy-checkbox-label a:hover {
-            color: #333;
-        }
+            .custom-range::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 20px; /* Larghezza del pollice */
+                height: 20px; /* Altezza del pollice */
+                background-color: #93a996; /* Colore del pollice */
+                border: 2px solid #93a996; /* Colore del bordo del pollice */
+                border-radius: 50%; /* Bordi arrotondati */
+                cursor: pointer;
+                margin-top: -7px;
+                transition: transform 0.2s;
+                z-index: 1;
+            }
 
-        .link-container {
-            text-align: center;
-            margin-top: 20px;
-        }
+            .custom-range::-moz-range-thumb {
+                width: 20px; /* Larghezza del pollice */
+                height: 20px; /* Altezza del pollice */
+                background-color: #93a996; /* Colore del pollice */
+                border: 2px solid #93a996; /* Colore del bordo del pollice */
+                border-radius: 50%; /* Bordi arrotondati */
+                cursor: pointer;
+                margin-top: -7px;
+                transition: transform 0.2s;
+                z-index: 1;
+            }
 
-        .link-container a {
-            color: #1E90FF;
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 16px;
-            font-family: Arial, sans-serif;
-            transition: color 0.3s;
-        }
+            .range-value {
+                font-size: 14px;
+                margin-left: 10px;
+                color: #4caf50; /* Colore verde salvia */
+                position: absolute;
+                bottom: calc(100% + 5px);
+                left: 50%;
+                transform: translateX(-50%);
+            }
 
-        .link-container a:hover {
-            color: #333;
-        }
-    </style>
-</head>
+            /* Hover effect on range thumb */
+            .custom-range::-webkit-slider-thumb:hover,
+            .custom-range::-moz-range-thumb:hover {
+                transform: scale(1.1);
+            }
 
-<body>
+            /* Personalizzazione del pulsante Filtri */
+            #applyFiltersBtn {
+                background-color: #93a996; /* Colore verde foglia */
+                border-color: #93a996; /* Colore del bordo */
+            }
 
-<div class="link-container">
-    <a href="http://localhost:63342/pythonProject2/lab%20CSS/agenzia%20viaggi.html?_ijt=anv8r4ksd0jnc799oi66tffj1f&_ij_reload=RELOAD_ON_SAVE">Home</a>
-    <a href="http://localhost:63342/pythonProject2/lab%20CSS/chi_siamo.html?_ijt=b4318q5ep2damccsaa7jkhq6ql&_ij_reload=RELOAD_ON_SAVE">Chi
-        Siamo</a>
-    <a href="http://localhost:63342/pythonProject2/lab%20CSS/iscriviti_newsletter.html?_ijt=i6ht6hugi65ssuttfoba6fdti&_ij_reload=RELOAD_ON_SAVE">Iscriviti</a>
-</div>
+            /* Stile per il pallino verde */
+            .green-dot {
+                color: #93a996; /* Colore verde foglia */
+                margin-right: 5px;
+            }
+            .container-a {
+                background-color: #6ca577;
+                color: black;
+                text-align: center;
+                padding: 20px 0;
+                position: absolute;
+                bottom: 5;
+                width: 100%;
+                margin-top: 3%;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#"><i class="fas fa-car"></i> DrivenChoice</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Icona della macchina -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ml-auto">
+                        <a class="nav-link active" href="/">Home</a>
+                        <a class="nav-link" href="/chisiamo">Chi Siamo</a>
+                        <a class="nav-link" href="/marchi">I nostri Marchi</a>
+                        <a class="nav-link" href="/Tutte_le_auto">Tutte le automobili</a>
+                        <a class="nav-link" href="/Grafici">Grafici</a>
+                        <a class="nav-link" href="/Utente">Utente</a>
+                        <a class="nav-link" href="/Preferiti">Preferiti</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
-<h1><strong>Iscriviti alla nostra Newsletter</strong></h1>
+        <div class="container">
+            <div class="filters">
+                <div class="filter-item">
+                    <label for="carburante">Carburante:</label>
+                    <select name="carburante" id="carburante">
+                        <option value="Gasoline">Benzina</option>
+                        <option value="diesel">Diesel</option>
+                        <option value="gpl">GPL</option>
+                        <option value="elettrica">Elettrica</option>
+                        <option value="ibrida">Ibrida</option>
+                        <option value="metano">Metano</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label for="marchio">Marchio:</label>
+                    <select name="marchio" id="marchio">
+                        <option value="alfa-romeo">Alfa Romeo</option>
+                        <option value="audi">Audi</option>
+                        <option value="bmw">BMW</option>
+                        <option value="citroen">Citroën</option>
+                        <option value="fiat">Fiat</option>
+                        <option value="ford">Ford</option>
+                        <option value="honda">Honda</option>
+                        <option value="hyundai">Hyundai</option>
+                        <option value="jeep">Jeep</option>
+                        <option value="kia">Kia</option>
+                        <option value="land_rover">Land Rover</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="mini">MINI</option>
+                        <option value="nissan">Nissan</option>
+                        <option value="opel">Opel</option>
+                        <option value="peugeot">Peugeot</option>
+                        <option value="renault">Renault</option>
+                        <option value="seat">SEAT</option>
+                        <option value="skoda">Škoda</option>
+                        <option value="subaru">Subaru</option>
+                        <option value="suzuki">Suzuki</option>
+                        <option value="toyota">Toyota</option>
+                        <option value="volkswagen">Volkswagen</option>
+                        <option value="volvo">Volvo</option>
+                        <!-- Aggiungi altri marchi se necessario -->
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label for="motore">Motore:</label>
+                    <input type="range" name="cavalli" id="motore" class="custom-range" min="0" max="500" />
+                    <span class="range-value" id="motore-value">0</span>
+                </div>
+                <div class="filter-item">
+                    <label for="cilindrata">Cilindrata:</label>
+                    <input type="range" name="cilindrata" id="cilindrata" class="custom-range" min="0" max="5000" />
+                    <span class="range-value" id="cilindrata-value">0 cc</span>
+                </div>
 
-<form action="http://localhost:63342/pythonProject2/lab%20CSS/iscritto.html" method="get">
-    <fieldset>
-        <legend><strong>I tuoi dettagli</strong></legend>
+                <div class="filter-item">
+                    <label for="consumi">Consumi:</label>
+                    <input type="range" name="consumi" id="consumi" class="custom-range" min="0" max="100" />
+                    <span class="range-value" id="consumi-value">0 litri/km</span>
+                </div>
+                <div class="filter-item">
+                    <label for="emissioni">Emissioni:</label>
+                    <input type="range" name="emissioni" id="emissioni" class="custom-range" min="0" max="100" />
+                    <span class="range-value" id="emissioni-value">0</span>
+                </div>
+                <div class="filter-item">
+                    <label for="prezzo">Prezzo:</label>
+                    <input type="range" name="prezzo" id="prezzo" class="custom-range" min="0" max="1000000" />
+                    <span class="range-value" id="prezzo-value">0</span>
+                </div>
+                <div class="filter-item">
+                    <label for="potenza">Potenza:</label>
+                    <input type="range" name="potenza" id="potenza" class="custom-range" min="0" max="500" />
+                    <span class="range-value" id="potenza-value">0 CV</span>
+                </div>
+                <div class="filter-item">
+                    <label for="cavalli">Cavalli:</label>
+                    <input type="range" name="cavalli" id="cavalli" class="custom-range" min="0" max="500" />
+                    <span class="range-value" id="cavalli-value">0</span>
+                </div>
+                <div class="filter-item">
+                    <label for="serbatoio">Serbatoio:</label>
+                    <input type="range" name="serbatoio" id="serbatoio" class="custom-range" min="0" max="500" />
+                    <span class="range-value" id="serbatoio-value"></span>
+                </div>
 
-        <li>
-            <label for="name"><strong>Nome e Cognome</strong></label>
-            <input id="name" name="name" type="text" placeholder="Nome e cognome" required autofocus>
-        </li>
-        <li>
-            <label for="email"><strong>Email</strong></label>
-            <input id="email" name="email" type="email" placeholder="esempio@gmail.com" required>
-        </li>
-        <li>
-            <label for="phone"><strong>Telefono</strong></label>
-            <input id="phone" name="Telefono" type="tel" placeholder="Es. +3975147698" required>
-        </li>
+                <!-- Pulsante Applica filtri -->
+                <div class="filter-item">
+                    <a href="/auto?filtro=filtrate">
+                        <button onclick="inviaDatiJSONfiltri()" class="btn btn-primary" id="applyFiltersBtn">
+                            <span class="mr-2"><i class="bi bi-dot green-dot"></i></span> Applica filtri
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-    </fieldset>
+        <div class="container mt-5 text-center">
+            <h1 class="mb-5">Auto trovate</h1>
+            <div class="container text-center">
+                <div class="row">
+                    {% for elem in auto %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="{{elem.foto_auto}}" class="card-img-top" alt="..." />
+                            <div class="card-body">
+                                <h5 class="card-title card-title lead">{{elem.modello}}</h5>
+                                <button type="button" class="btn btn-dark" onclick="openPopup({{elem}})">Dettagli</button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
 
-    <fieldset class="conosciuti-box">
-        <legend><strong>Come ci hai conosciuti?</strong></legend>
-        <input type="checkbox" name="social network" value="social network"/> social network
-        <br/>
-        <input type="checkbox" name="passaparola" value="passaparola"/> passaparola
-        <br/>
-        <input type="checkbox" name="pubblicità" value="pubblicità"/> pubblicità
-    </fieldset>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination mt-5">
+                {% if page > 1 %}
+                <li class="page-item"><a class="page-link" href="{{ url_for('show_auto', page=page-1) }}">Previous</a></li>
+                {% endif %} {% for num in range(1, total_pages + 1) %} {% if num == page %}
+                <li class="page-item">
+                    <a class="page-link" href="#"><strong>{{ num }}</strong></a>
+                </li>
+                {% else %}
+                <li class="page-item"><a class="page-link" href="{{ url_for('show_auto', page=num) }}">{{ num }}</a></li>
+                {% endif %} {% endfor %} {% if page < total_pages %}
+                <li class="page-item"><a class="page-link" href="{{ url_for('show_auto', page=page+1) }}">Next</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        <div class="modal fade" id="carModal" tabindex="-1" role="dialog" aria-labelledby="carModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="carrModalLabel">Dettagli auto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 id="carDetails"></h5>
+                        <p id="carBrand"></p>
+                        <p id="carPrice"></p>
+                        <p id="carCil"></p>
+                        <p id="carCav"></p>
+                        <p id="carPot"></p>
+                        <p id="carCar"></p>
+                        <p id="carCons"></p>
+                        <p id="carEmi"></p>
+                        <p id="carSer"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <fieldset>
-        <legend><strong>Privacy</strong></legend>
-        <label for="privacyCheckbox">
-            <input type="checkbox" id="privacyCheckbox" name="privacyCheckbox" required>
-            Ho letto e accetto le <a href="https://en.wikipedia.org/wiki/Privacy_policy" target="_blank"><strong>"condizioni
-            sulla privacy"</strong></a>
-        </label>
-    </fieldset>
-    <button type="submit">Iscriviti</button>
-</form>
+        <script>
+            // Funzione per inviare i dati JSON dei filtri
+            function inviaDatiJSONfiltri() {
+                // Ottieni i dati dal form
+                var marchio = document.getElementById("marchio").value;
+                var carburante = document.getElementById("carburante").value;
+                var consumi = document.getElementById("consumi").value;
+                var emissioni = document.getElementById("emissioni").value;
+                var prezzo = document.getElementById("prezzo").value;
+                var serbatoio = document.getElementById("serbatoio").value;
+                var potenza = document.getElementById("potenza").value;
+                var cilindrata = document.getElementById("cilindrata").value;
+                var cavalli = document.getElementById("cavalli").value;
 
-</body>
+                // Costruisci l'oggetto JSON
+                var datiJSON = {
+                    marchio: marchio,
+                    carburante: carburante,
+                    consumi: consumi,
+                    emissioni: emissioni,
+                    prezzo: prezzo,
+                    serbatoio: serbatoio,
+                    cilindrata: cilindrata,
+                    potenza: potenza,
+                    cavalli: cavalli,
+                };
 
+                // Esegui la richiesta POST con i dati JSON
+                fetch("/api/auto_filter", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(datiJSON),
+                });
+            }
+
+            // Aggiorna il valore visualizzato quando si muove la barra dei consumi
+            var consumiRange = document.getElementById("consumi");
+            var consumiValue = document.getElementById("consumi-value");
+            consumiRange.addEventListener("input", function () {
+                consumiValue.textContent = this.value + " litri/km";
+            });
+
+            // Aggiorna il valore visualizzato quando si muove la barra del motore
+            var motoreRange = document.getElementById("motore");
+            var motoreValue = document.getElementById("motore-value");
+            motoreRange.addEventListener("input", function () {
+                motoreValue.textContent = this.value;
+            });
+
+            // Aggiorna il valore visualizzato quando si muove la barra della cilindrata
+            var cilindrataRange = document.getElementById("cilindrata");
+            var cilindrataValue = document.getElementById("cilindrata-value");
+            cilindrataRange.addEventListener("input", function () {
+                cilindrataValue.textContent = this.value + " cc";
+            });
+
+            // Aggiorna il valore visualizzato quando si muove la barra del prezzo
+            var prezzoRange = document.getElementById("prezzo");
+            var prezzoValue = document.getElementById("prezzo-value");
+            prezzoRange.addEventListener("input", function () {
+                prezzoValue.textContent = this.value;
+            });
+
+            // Aggiorna il valore visualizzato quando si muove la barra della potenza
+            var potenzaRange = document.getElementById("potenza");
+            var potenzaValue = document.getElementById("potenza-value");
+            potenzaRange.addEventListener("input", function () {
+                potenzaValue.textContent = this.value + " CV";
+            });
+
+            // Aggiorna il valore visualizzato quando si muove la barra dei cavalli
+            var cavalliRange = document.getElementById("cavalli");
+            var cavalliValue = document.getElementById("cavalli-value");
+            cavalliRange.addEventListener("input", function () {
+                cavalliValue.textContent = this.value;
+            });
+
+            // Aggiorna il valore visualizzato quando si muove la barra del serbatoio
+            var serbatoioRange = document.getElementById("serbatoio");
+            var serbatoioValue = document.getElementById("serbatoio-value");
+            serbatoioValue.addEventListener("input", function () {
+                serbatoioValue.textContent = this.value;
+            });
+        </script>
+        <script>
+            function openPopup(car) {
+                console.log(car);
+                var carDetailsElement = document.getElementById("carDetails");
+                carDetailsElement.textContent = car.modello;
+                var carPriceElement = document.getElementById("carPrice");
+                carPriceElement.textContent = "Prezzo: " + car.prezzo + "€";
+                var carCilElement = document.getElementById("carCil");
+                carCilElement.textContent = "Cilindrata: " + car.cilindrata + " L";
+                var carCavElement = document.getElementById("carCav");
+                carCavElement.textContent = "Cavalli: " + car.cavalli;
+                var carPotElement = document.getElementById("carPot");
+                carPotElement.textContent = "Potenza: " + car.potenza + " KW";
+                var carCarElement = document.getElementById("carCar");
+                carCarElement.textContent = "Carburante: " + car.carburante;
+                var carConsElement = document.getElementById("carCons");
+                carConsElement.textContent = "Consumi: " + car.consumi + " L/100km";
+                var carEmiElement = document.getElementById("carEmi");
+                carEmiElement.textContent = "Emissioni: " + car.emissioni + " g/km";
+                var carSerElement = document.getElementById("carSer");
+                carSerElement.textContent = "Serbatoio: " + car.serbatoio + " L";
+                var carBrandElement = document.getElementById("carBrand");
+                carBrandElement.textContent = "Brand: " + car.nome;
+                $("#carModal").modal("show");
+            }
+        </script>
+
+        <div class="container-a">
+            <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
+        </div>
+
+        <!-- Script delle librerie JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
 </html>

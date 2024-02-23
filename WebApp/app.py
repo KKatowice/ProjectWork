@@ -1,4 +1,7 @@
 from decimal import Decimal
+
+from werkzeug.security import *
+
 from api import *
 import os
 """ cwd = os.getcwd()
@@ -86,19 +89,56 @@ def show_auto_for_marchi():
                 d[key] = float(value)
     return render_template('auto_x_marchio.html', auto=auto)
 
-@app.route('/Utente', methods=['GET', 'POST'])
-def login():
+
+@app.route('/validateLogin', methods=['POST'])
+
+def validateLogin():
     connessione = create_db_connection(DBNAME)
-    if request.method == 'POST':
-        email = request.form['email']
-        password = request.form['password']
-        q1 = f"""SELECT email,password FROM utente WHERE {email} AND {password}"""
-        verifica = execute_query(connessione, q1)
-        if len(verifica) > 1:        # Password corretta, autenticazione riuscita
-            return redirect(url_for('dashboard'))
+    try:
+        email = request.form['inputEmail']
+        password = request.form['inputPassword']
+        q = f"""SELECT password FROM utenti WHERE email = {email}"""
+        data = read_query(connessione,q)[0]
+
+        if len(data) > 0:
+            if check_password_hash(str(data['password']), password):
+                # session['utente'] = data[0][0]
+                return redirect('/')
+            else:
+                return render_template('error.html', error='Wrong Email address or Password.')
         else:
-            return "email o password errate"
-        # else:
+            return render_template('error.html', error='Wrong Email address or Password.')
+    except Exception as e:
+        return render_template('error.html', error=str(e))
+    finally:
+        connessione.close()
+
+
+@app.route('/userHome')
+def userHome():
+    if session.get('user'):
+        return render_template('userHome.html')
+    else:
+        return render_template('error.html', error='Unauthorized Access')
+
+@app.route('/logout')
+def logout():
+    session.pop('user',None)
+    return redirect('/')
+
+# @app.route('/Utente', methods=['GET', 'POST'])
+# def login():
+#     connessione = create_db_connection(DBNAME)
+#     if request.method == 'POST':
+#         email = request.form['email']
+#         password = request.form['password']
+#         q1 = f"""SELECT email,password FROM utente WHERE {email} AND {password}"""
+#         verifica = execute_query(connessione, q1)
+#         if len(verifica) > 1:        # Password corretta, autenticazione riuscita
+#             return redirect(url_for('dashboard'))
+#         else:
+#             return "email o password errate"
+#         # else:
         #     # Password errata, incrementa il numero di tentativi
         #     attempts += 1
         #     remaining_attempts = max_attempts - attempts
@@ -108,38 +148,38 @@ def login():
         #         c.execute("INSERT INTO utenti_bloccati (email) VALUES (?)", (email,))
         #         conn.commit()
 
-    else:
-        return render_template('Utente.html')
-@app.route('/crea_account', methods=['GET', 'POST'])
-def register():
-    connessione = create_db_connection(DBNAME)
-    if request.method == 'POST':
-        nome = request.form['nome']
-        cognome = request.form['cognome']
-        eta = request.form['eta']
-        sesso = request.form['sesso']
-        email = request.form['email']
-        password = request.form['password']
-        CAP = request.form['CAP']
-        q = f"""INSERT INTO utente(nome, cognome, eta, sesso, email, password, CAP)
-                             VALUES('{nome}','{cognome}','{eta}','{sesso}','{email}','{password}','{CAP}')"""
-        verifica = read_query(connessione, q)
-        print(verifica)
-
-        if len(verifica) == 0:
-            execute_query(connessione, q)
-            print(verifica)
-        else:
-            return "mail già utilizzata"
-    else:
-        return render_template("crea_account.html")
-
-@app.route('/dashboard')
-def dashboard():
-    if 'email' in session:
-        return f"Benvenuto, {session['email']}! Questa è la tua dashboard."
-    else:
-        return redirect(url_for('login'))
+    # else:
+    #     return render_template('Utente.html')
+# @app.route('/crea_account', methods=['GET', 'POST'])
+# def register():
+#     connessione = create_db_connection(DBNAME)
+#     if request.method == 'POST':
+#         nome = request.form['nome']
+#         cognome = request.form['cognome']
+#         eta = request.form['eta']
+#         sesso = request.form['sesso']
+#         email = request.form['email']
+#         password = request.form['password']
+#         CAP = request.form['CAP']
+#         q = f"""INSERT INTO utente(nome, cognome, eta, sesso, email, password, CAP)
+#                              VALUES('{nome}','{cognome}','{eta}','{sesso}','{email}','{password}','{CAP}')"""
+#         verifica = read_query(connessione, q)
+#         print(verifica)
+#
+#         if len(verifica) == 0:
+#             execute_query(connessione, q)
+#             print(verifica)
+#         else:
+#             return "mail già utilizzata"
+#     else:
+#         return render_template("crea_account.html")
+#
+# @app.route('/dashboard')
+# def dashboard():
+#     if 'email' in session:
+#         return f"Benvenuto, {session['email']}! Questa è la tua dashboard."
+#     else:
+#         return redirect(url_for('login'))
 
 @app.route('/chisiamo')
 def chisiamo():

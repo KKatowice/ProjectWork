@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AutoPerMarchio</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+
+        <style>
+            .card {
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombra leggera di base */
+                transition: box-shadow 0.3s ease; /* Transizione fluida per l'ombra */
+            }
+            /* Stile per l'ombreggiatura quando si passa sopra */
+            .card:hover {
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ombra più marcata quando si passa sopra */
+            }
+            .card:hover h5 {
+                color: #28a745 !important;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="navbar-overlay"></div>
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <i class="bi bi-speedometer2"></i>
+                    <!-- Icona della macchina -->
+                    DriverChoice
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ml-auto">
+                        <a class="nav-link active" href="/">Home</a>
+                        <a class="nav-link" href="/chisiamo">Chi Siamo</a>
+                        <a class="nav-link" href="/marchi">I nostri Marchi</a>
+                        <a class="nav-link" href="/auto">Tutte le automobili</a>
+                        <a class="nav-link" href="/grafici">Grafici</a>
+                        <a class="nav-link" href="/utente">Utente</a>
+                        <a class="nav-link" href="/preferiti">Preferiti</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5 text-center">
+            <h1 class="mb-5">Auto di questo Marchio</h1>
+            <div class="container text-center">
+                <div class="row">
+                    {% for elem in auto %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="{{elem.foto_auto}}" class="card-img-top" alt="..." />
+                            <div class="card-body">
+                                <h5 class="card-title card-title lead">{{elem.modello}}</h5>
+                                <button type="button" class="btn btn-dark" onclick="openPopup({{elem}})">Dettagli</button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="carModal" tabindex="-1" role="dialog" aria-labelledby="carModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="carrModalLabel">Dettagli auto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 id="carDetails"></h5>
+                        <p id="carPrice"></p>
+                        <p id="carCil"></p>
+                        <p id="carCav"></p>
+                        <p id="carPot"></p>
+                        <p id="carCar"></p>
+                        <p id="carCons"></p>
+                        <p id="carEmi"></p>
+                        <p id="carSer"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script>
+            function openPopup(car) {
+                console.log(car);
+                var carDetailsElement = document.getElementById("carDetails");
+                carDetailsElement.textContent = car.modello;
+                var carPriceElement = document.getElementById("carPrice");
+                carPriceElement.textContent = "Prezzo: " + car.prezzo + " €";
+                var carCilElement = document.getElementById("carCil");
+                carCilElement.textContent = "Cilindrata: " + car.cilindrata + " L";
+                var carCavElement = document.getElementById("carCav");
+                carCavElement.textContent = "Cavalli: " + car.cavalli;
+                var carPotElement = document.getElementById("carPot");
+                carPotElement.textContent = "Potenza: " + car.potenza + " KW";
+                var carCarElement = document.getElementById("carCar");
+                carCarElement.textContent = "Carburante: " + car.carburante;
+                var carConsElement = document.getElementById("carCons");
+                carConsElement.textContent = "Consumi: " + car.consumi + " L/100km";
+                var carEmiElement = document.getElementById("carEmi");
+                carEmiElement.textContent = "Emissioni: " + car.emissioni + " g/km";
+                var carSerElement = document.getElementById("carSer");
+                carSerElement.textContent = "Serbatoio: " + car.serbatoio + " L";
+                $("#carModal").modal("show");
+            }
+        </script>
+    </body>
+</html>

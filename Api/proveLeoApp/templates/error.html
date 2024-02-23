@@ -460,6 +460,7 @@ body {
             margin-top: 3%
         }
     </style>
+
 </head>
 <body>
  <div class="moon"></div>
@@ -526,59 +527,26 @@ body {
         </div>
     </div>
 </nav>
-
-<div class="welcome-banner">
-    <div class="container welcome-banner-content">
-        <h2>Benvenuti</h2>
-        <p>Esplora il vasto mondo di DrivenChoice, dove l'auto perfetta ti aspetta dietro ogni angolo.</p>
-    </div>
-</div>
-
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://images.pexels.com/photos/707046/pexels-photo-707046.jpeg?cs=srgb&dl=auto-automobil-bmw-707046.jpg&fm=jpg"
-                     class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">I nostri Marchi</h5>
-                    <p class="card-text">Esplora i marchi di automobili disponibili e le valutazioni degli utenti.</p>
-                    <a href="/marchi" class="btn btn-custom">Scopri</a>
-                </div>
-            </div>
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#">Home</a>
+                    </li>
+                    <li role="presentation"><a href="/showSignin">Sign In</a>
+                    </li>
+                    <li role="presentation"><a href="/showSignUp">Sign Up</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Python Flask App</h3>
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://cactusartprints.com/wp-content/uploads/2019/02/19x30_L_500rossaPatent.jpg"
-                     class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Tutte le Automobili</h5>
-                    <p class="card-text">Esplora tutte le automobili disponibili e le loro caratteristiche.</p>
-                    <a href="/auto" class="btn btn-custom">Scopri</a>
-                </div>
-            </div>
+        <div class="jumbotron">
+            <h1>{{error}}</h1>
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://img.freepik.com/free-vector/futuristic-hologram-car_23-2148202432.jpg?w=1060&t=st=1708354153~exp=1708354753~hmac=e75d0c4414324748dc41272f963e3ebb4466020319685d26a47c8f9a3f7b4690"
-                     class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Tutti i Grafici</h5>
-                    <p class="card-text">Esplora le nostre dashboard aggiornate con i dati sulle automobili.</p>
-                    <a href="/grafici" class="btn btn-custom">Scopri</a>
-                    </div>
-            </div>
-        </div>
+        <footer class="footer">
+            <p>&copy; Company 2015</p>
+        </footer>
     </div>
-</div>
-<div>
-    <div class="container-a">
-        <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
-    </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
