@@ -21,8 +21,8 @@ with app.app_context():
 class Motore(db.Model):
     __tablename__ = 'motori'
     id_motore = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    cilindrata = db.Column(db.Integer)
-    potenza = db.Column(db.Integer)
+    cilindrata = db.Column(db.Numeric(10, 2))
+    potenza = db.Column(db.Numeric(10, 2))
     cavalli = db.Column(db.Integer)
     carburante = db.Column(db.String(25))
     consumi = db.Column(db.Numeric(10, 2))
@@ -32,8 +32,8 @@ class Motore(db.Model):
     def to_dict(self):
         return {
             'id_motore': self.id_motore,
-            'cilindrata': self.cilindrata,
-            'potenza': self.potenza,
+            'cilindrata': float(self.cilindrata),
+            'potenza': float(self.potenza),
             'cavalli': self.cavalli,
             'carburante': self.carburante,
             'consumi': float(self.consumi),

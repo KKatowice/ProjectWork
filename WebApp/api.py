@@ -126,10 +126,28 @@ def getAutobyBudget():
 # @apiBlueprint.route('/api/auto_filter', methods=['POST'])
 def filtra_auto(data):
     from classAuto import Auto, Motore, Marchio
-    #if request.method == 'POST':
-    #data = request.get_json()
+    print("cavalli",int(data['cavalli']))
+    print("potenza",float(data['potenza']))
+    print("emissioni",int(data['emissioni']))
+    resultz = (Motore.query.join(Auto, Motore.id_motore == Auto.id_motore)
+            .join(Marchio, Marchio.id_marchio == Auto.id_marchio)
+            .filter(Marchio.nome == data['marchio'])
+            .filter(Motore.carburante == data['carburante'])
+            .filter(Motore.consumi <= float(data['consumi']))
+            .filter(Auto.prezzo <= float(data['prezzo']))
+            .filter(Motore.serbatoio >= float(data['serbatoio']))
+            .filter(Motore.cilindrata >= float(data['cilindrata']))
+            .filter(Motore.cavalli >= int(data['cavalli']))#tu cazzo3 mesa sempre nel value base
+            .filter(Motore.potenza >= float(data['potenza']))#tu cazzo2 errore nella tranformazione a int (era float) e value base
+            .filter(Motore.emissioni <= float(data['emissioni']))#tu cazzo, errore nel value base html
+            ).all()
+    print("dai su!!!!!!!!!!!!!\n ", resultz)
+    result = []
+    for x in resultz:
+        print(x.to_dict())
+        result.append(x.to_dict())
     
-    print("in filtra",data)
+    """ print("in filtra",data)
     q = (Auto.query.join(Motore, Motore.id_motore == Auto.id_motore)
             .join(Marchio, Marchio.id_marchio == Auto.id_marchio)
             .filter(Marchio.nome == data['marchio'])
@@ -142,13 +160,14 @@ def filtra_auto(data):
             .filter(Motore.cilindrata > int(data['cilindrata']))
             .filter(Motore.cavalli > int(data['cavalli'])))
     
-    result = q.all()
-    print("post qua", result)
+    result = q.all() """
     if result:
         r = {'data':result, 'success': True}
     else:
         r = {'data': [], 'success': False}
     return json.dumps(r)
+#funziona per i test#http://127.0.0.1:5000/auto?filtro=filtrate&marchio=alfa-romeo&carburante=Diesel%20&consumi=6&emissioni=150&prezzo=99000&serbatoio=58&potenza=100.3&cilindrata=2&cavalli=100
+
 
 @apiBlueprint.route('/api/login', methods=['POST'])
 def login():
