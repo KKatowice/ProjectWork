@@ -5,7 +5,7 @@ import re
 #Apro i due file json
 c = create_db_connection()
 data = json.load(open("../Datasets_Scraping/completo_wPrices_cleaner.json"))
-users = json.load(open("../Datasets_Scraping/utenti.json"))
+users = json.load(open("../Datasets_Scraping/utenti_official.json"))
 
 #Inserimento dei marchi
 def insert_marchi():
@@ -18,9 +18,9 @@ def insert_marchi():
 def insert_users():
     lista = []
     for elem in users.keys():
-        t = (users[elem]['nome'],users[elem]['cognome'],users[elem]['eta'],users[elem]['sesso'], users[elem]['email'],users[elem]['password'],users[elem]['cap'],users[elem]['budget'])
+        t = (users[elem]['nome'],users[elem]['cognome'],users[elem]['eta'],users[elem]['sesso'], users[elem]['email'],users[elem]['password'],users[elem]['provincia'],users[elem]['budget'])
         lista.append(t)
-    query = f"""INSERT INTO utenti(nome, cognome, eta, sesso, email,password, cap, budget) VALUES(%s,%s,%s,%s,%s,%s,%s,%s)"""
+    query = f"""INSERT INTO utenti(nome, cognome, eta, sesso, email,password, provincia, budget) VALUES(%s,%s,%s,%s,%s,%s,%s,%s)"""
     execute_many_query(c,query,lista)
 
 def insert_motori():
