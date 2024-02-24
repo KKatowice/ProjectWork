@@ -47,10 +47,10 @@ def show_auto():
             'cavalli': request.args.get('cavalli')
         }
         print("filtrate", dd)
-        data = filtra_auto(dd)
-        print("dataz r ",data)
+        data = json.loads(filtra_auto(dd))['data']
+        print("ress call!!!!!!!!!!!!!!!!!!!!", data, type(data))
         if len(data) > 0 and type(data) == list:
-            lista_auto = [x.to_dict() for x in data['data']]
+            lista_auto = data
         else:
             lista_auto = []
         print("passati if else", lista_auto)
