@@ -150,7 +150,7 @@ async def scrape_eachEngine_data(dizModels: dict):
                     dizModels[brand][model]['engines'][engine]["Pdisplacement"] = None
 
                 for x in range(len(descInfo)):
-                    dizModels[brand][model]['engines'][engine][descInfo[x].text] = descVal[x].text
+                    dizModels[brand][model]['engines'][engine][descInfo[x].text] = descVal[x].text.strip()
                 
 
     

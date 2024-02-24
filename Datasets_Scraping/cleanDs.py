@@ -14,8 +14,8 @@ def dai():
             for model in dcarModel[brand].keys():
                 if model == 'imglink': continue
                 a = dcarModel[brand][model]
-                if a['price'] < 1000:
-                    dcarModel_cln[brand][model]['price'] = None
+                """ if a['price'] < 1000:
+                    dcarModel_cln[brand][model]['price'] = None """
                 
                 if len(a['engines'].keys()) == 0:
                     print("cancello [eng == 0]",brand, model)
