@@ -219,7 +219,7 @@ def register():
         return {'success':False}
 
 
-@apiBlueprint.route('api/aggiungiPreferiti', methods=['PUT'])
+@apiBlueprint.route('/api/aggiungiPreferiti', methods=['PUT'])
 def aggiungiPreferiti():
     data = request.get_json()
     c = create_db_connection(DBNAME)

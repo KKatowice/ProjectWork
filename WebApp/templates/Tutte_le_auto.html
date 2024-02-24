@@ -6,7 +6,7 @@
         <title>TutteLeAuto</title>
         <!-- Bootstrap CSS -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
         <style>
             .card {
                 box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombra leggera di base */
@@ -260,7 +260,7 @@
                                             <h5 class="card-title card-title lead">{{elem.modello}}</h5>
                                             <button type="button" class="btn btn-dark" onclick="openPopup({{elem}})">Dettagli</button>
                                             {% if session['utente'] %}
-                                            <button type="button" class="btn btn-dark" onclick="aggiungiPreferiti()">Aggiungi ai preferiti</button>
+                                            <button type="button" class="btn btn-dark" onclick="aggiungiPreferiti({{elem}}, '{{session['utente']}}')">Aggiungi ai preferiti</button>
                                             {% endif %}
                                         </div>
                                     </div>
@@ -374,32 +374,38 @@
             }
         </script>
         <script>
-            function aggiungiPreferiti(){
+            async function aggiungiPreferiti(car,user){
+                console.log('funzione chiamata')
                 var auto = car.modello;
-                var utente = "{{ session['utente'] }}";
+                var utente = user;
                 var datiJSON = {
                     auto: auto,
                     utente: utente
             };
-                let res = fetch('/api/aggiungiPreferiti', {
-                  method: 'PUT',
-                  headers: {
-                    'Content-Type': 'application/json'
-                  },
-                  body: JSON.stringify(datiJSON)
-                }
-                let trueResp = await resp.json()
-                var notyf = new Notyf();
-                if (trueResp.success) {
+                try {
+        const resp = await fetch('/api/aggiungiPreferiti', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(datiJSON)
+        });
 
-                    notyf.success('Aggiunto ai preferiti');
-                    window.location.href = "/";
-                } else {
-                    notyf.error('Già nei preferiti');
-
-                }
+        if (resp.ok) { console.log('dati fetchati')
+            const trueResp = await resp.json();
+            var notyf = new Notyf();
+            if (trueResp.success) {
+                notyf.success('Aggiunto ai preferiti');
+            } else {
+                notyf.error('Già nei preferiti');
             }
-
+        } else {
+            console.error('Error:', resp.status);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
         </script>
         <div class="container-a">
             <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
@@ -409,5 +415,6 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
     </body>
 </html>
