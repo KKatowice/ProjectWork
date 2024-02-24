@@ -259,6 +259,9 @@
                                         <div class="card-body">
                                             <h5 class="card-title card-title lead">{{elem.modello}}</h5>
                                             <button type="button" class="btn btn-dark" onclick="openPopup({{elem}})">Dettagli</button>
+                                            {% if session['utente'] %}
+                                            <button type="button" class="btn btn-dark" onclick="aggiungiPreferiti()">Aggiungi ai preferiti</button>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
@@ -370,7 +373,34 @@
                 $("#carModal").modal("show");
             }
         </script>
+        <script>
+            function aggiungiPreferiti(){
+                var auto = car.modello;
+                var utente = "{{ session['utente'] }}";
+                var datiJSON = {
+                    auto: auto,
+                    utente: utente
+            };
+                let res = fetch('/api/aggiungiPreferiti', {
+                  method: 'PUT',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(datiJSON)
+                }
+                let trueResp = await resp.json()
+                var notyf = new Notyf();
+                if (trueResp.success) {
 
+                    notyf.success('Aggiunto ai preferiti');
+                    window.location.href = "/";
+                } else {
+                    notyf.error('Già nei preferiti');
+
+                }
+            }
+
+        </script>
         <div class="container-a">
             <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
         </div>

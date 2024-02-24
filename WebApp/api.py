@@ -4,7 +4,7 @@ from classAuto import *
 from sys import path
 import json
 
-isFABIO = True
+isFABIO = False
 if not isFABIO:
     path.append(r'ProjectWork/Database')
     from ProjectWork.Database.dbUtils_aiven import *
@@ -199,6 +199,20 @@ def register():
         print(e)
         return {'success':False}
 
+
+@apiBlueprint.route('api/aggiungiPreferiti', methods=['PUT'])
+def aggiungiPreferiti():
+    data = request.get_json()
+    c = create_db_connection(DBNAME)
+    id_auto = read_query(c, f"SELECT id_auto FROM auto WHERE modello = '{data['auto']}';")[0]['id_auto']
+    id_utente = read_query(c, f"SELECT id_utente FROM utenti WHERE email = '{data['utente']}';")[0]['id_utente']
+    verifica = read_query(c,f"SELECT * FROM preferenze WHERE id_auto = {id_auto} AND id_utente = {id_utente};")
+    if len(verifica) == 0:
+        q = f"""INSERT INTO preferenze(id_auto, id_utente) VALUES({id_auto}, {id_utente})"""
+        execute_query(c,q)
+        return {'success': True}
+    else:
+        return {'success': False}
 
 
 
