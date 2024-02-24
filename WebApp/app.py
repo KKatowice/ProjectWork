@@ -107,6 +107,12 @@ def logout():
 def logutente():
     return render_template('Utente.html')
 
+@app.route('/preferiti')
+def preferiti():
+    mail_utente = session.get('utente')
+    lista_auto = getPreferenze(mail_utente)
+    return render_template('preferiti.html', auto=lista_auto)
+
 
 # @app.route('/Utente', methods=['GET', 'POST'])
 # def login():

@@ -94,11 +94,82 @@
     <h2 class="mt-4 mb-2 text-black">Le tue auto preferite</h2>
     <p class="mb-4 text-black">Qui puoi visualizzare e gestire le tue auto salvate come preferite.</p>
 </div>
+{% if session['utente'] %}
+  <div class="container text-center">
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                {% for elem in auto %}
+                                <div class="col-md-4 mb-4">
+                                    <div class="card">
+                                        <img src="{{elem.foto_auto}}" class="card-img-top" alt="..." />
+                                        <div class="card-body">
+                                            <h5 class="card-title card-title lead">{{elem.modello}}</h5>
+                                            <button type="button" class="btn btn-dark" onclick="openPopup({{elem}})">Dettagli</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+         <div class="modal fade" id="carModal" tabindex="-1" role="dialog" aria-labelledby="carModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="carrModalLabel">Dettagli auto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 id="carDetails"></h5>
+                        <p id="carBrand"></p>
+                        <p id="carPrice"></p>
+                        <p id="carCil"></p>
+                        <p id="carCav"></p>
+                        <p id="carPot"></p>
+                        <p id="carCar"></p>
+                        <p id="carCons"></p>
+                        <p id="carEmi"></p>
+                        <p id="carSer"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+             {% else %}
+  <p>Effettua il <a href="/Utente">login</a> per visualizzare la tua lista dei preferiti</p>
+ {% endif %}
 <div>
     <div class="container-a">
         <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
     </div>
 </div>
-
+<script>
+            function openPopup(car) {
+                console.log(car);
+                var carDetailsElement = document.getElementById("carDetails");
+                carDetailsElement.textContent = car.modello;
+                var carPriceElement = document.getElementById("carPrice");
+                carPriceElement.textContent = "Prezzo: " + car.prezzo + "€";
+                var carCilElement = document.getElementById("carCil");
+                carCilElement.textContent = "Cilindrata: " + car.cilindrata + " L";
+                var carCavElement = document.getElementById("carCav");
+                carCavElement.textContent = "Cavalli: " + car.cavalli;
+                var carPotElement = document.getElementById("carPot");
+                carPotElement.textContent = "Potenza: " + car.potenza + " KW";
+                var carCarElement = document.getElementById("carCar");
+                carCarElement.textContent = "Carburante: " + car.carburante;
+                var carConsElement = document.getElementById("carCons");
+                carConsElement.textContent = "Consumi: " + car.consumi + " L/100km";
+                var carEmiElement = document.getElementById("carEmi");
+                carEmiElement.textContent = "Emissioni: " + car.emissioni + " g/km";
+                var carSerElement = document.getElementById("carSer");
+                carSerElement.textContent = "Serbatoio: " + car.serbatoio + " L";
+                var carBrandElement = document.getElementById("carBrand");
+                carBrandElement.textContent = "Brand: " + car.nome;
+                $("#carModal").modal("show");
+            }
+        </script>
 </body>
 </html>

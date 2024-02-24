@@ -235,5 +235,15 @@ def aggiungiPreferiti():
 
 
 
-
-
+def getPreferenze(utente):
+    c = create_db_connection(DBNAME)
+    q = f"SELECT id_auto FROM preferenze join utenti on preferenze.id_utente = utenti.id_utente where utenti.email = '{utente}';"
+    lista_id_auto = read_query(c, q)
+    lista_finale = []
+    for x in lista_id_auto:
+        q1 = f"""SELECT * FROM auto JOIN motori JOIN marchi
+                ON auto.id_motore=motori.id_motore AND auto.id_marchio=marchi.id_marchio
+                WHERE id_auto = {x['id_auto']};"""
+        info_auto = read_query(c, q1)[0]
+        lista_finale.append(info_auto)
+    return lista_finale
