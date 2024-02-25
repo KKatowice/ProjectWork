@@ -81,9 +81,11 @@ def execute_query(connection, query, mu=False): #
             print(query)
             cursor.execute(query)#,multi=mu
         connection.commit()
+        return True
     except Error as err:
         print(f"Failed query: '{query}'")
         print(f"Error: '{err}'")
+        return False
     finally:
         cursor.close()
 

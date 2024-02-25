@@ -258,10 +258,12 @@
                                         <img src="{{elem.foto_auto}}" class="card-img-top" alt="..." />
                                         <div class="card-body">
                                             <h5 class="card-title card-title lead">{{elem.modello}}</h5>
+                                            <div class="d-grid gap-2 d-md-block">
                                             <button type="button" class="btn btn-dark" onclick="openPopup({{elem}})">Dettagli</button>
                                             {% if session['utente'] %}
-                                            <button type="button" class="btn btn-dark" onclick="aggiungiPreferiti({{elem}}, '{{session['utente']}}')">Aggiungi ai preferiti</button>
+                                            <button style="margin-top: 10px" type="button" class="btn btn-dark" onclick="aggiungiPreferiti({{elem}}, '{{session['utente']}}')">Salva nei preferiti</button>
                                             {% endif %}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

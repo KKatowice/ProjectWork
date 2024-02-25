@@ -246,4 +246,19 @@ def getPreferenze(utente):
                 WHERE id_auto = {x['id_auto']};"""
         info_auto = read_query(c, q1)[0]
         lista_finale.append(info_auto)
+    c.close()
     return lista_finale
+
+@apiBlueprint.route('/api/deletePreferito', methods=['DELETE'])
+def deletePreferito():
+    c = create_db_connection(DBNAME)
+    user = session.get('utente')
+    auto = request.get_json()
+    id_utente = read_query(c, f"SELECT id_utente FROM utenti WHERE email = '{user}';")[0]['id_utente']
+    q = f"DELETE FROM preferenze WHERE id_auto = {auto['id_auto']} AND id_utente = {id_utente};"
+    r = execute_query(c,q)
+    c.close()
+    if r:
+        return {"success":True}
+    else:
+        return {"success":False}

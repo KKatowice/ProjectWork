@@ -7,6 +7,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     <style>
 
         body {
@@ -104,6 +105,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title card-title lead">{{elem.modello}}</h5>
                                             <button type="button" class="btn btn-dark" onclick="openPopup({{elem}})">Dettagli</button>
+                                            <button type="button" class="btn btn-dark" onclick="deletePreferito({{elem.id_auto}})">Elimina</button>
                                         </div>
                                     </div>
                                 </div>
@@ -171,5 +173,36 @@
                 $("#carModal").modal("show");
             }
         </script>
+        <script>
+            async function deletePreferito(auto){
+            var auto = auto
+            let refreshLink = '/preferiti';
+            const resp = await fetch('/api/deletePreferito', {
+              method: 'DELETE',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({'id_auto': auto})
+            });
+            if (resp.ok) {
+            const trueResp = await resp.json();
+            var notyf = new Notyf();
+            if (trueResp.success) {
+                notyf.success('Cancellato con successo');
+                location.reload();
+            } else {
+                notyf.error('Errore');
+            }
+        } else {
+            console.error('Error:', resp.status);
+        }
+
+          }
+        </script>
+<!-- Script delle librerie JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
 </body>
 </html>
