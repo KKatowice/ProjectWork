@@ -20,26 +20,25 @@
                 color: #28a745 !important;
             }
 
-            .filters {
-                display: flex;
-                flex-direction: column;
-            }
+           .filters {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Aggiungiamo uno spazio tra i filtri */
+}
 
-            .filter-item {
-                margin-bottom: 20px;
-                display: flex;
-                align-items: center;
-            }
+.filter-item {
+    display: flex;
+    align-items: center;
+}
 
-            .filter-item label {
-                margin-right: 10px;
-            }
+.filter-item label {
+    margin-right: 10px;
+}
 
-            .filter-item select,
-            .filter-item input[type="range"] {
-                width: 200px;
-                margin-top: 5px;
-            }
+.range-value {
+    margin-left: 10px;
+}
+
 
             /* Custom styling for range input */
             .custom-range {
@@ -111,7 +110,7 @@
                 background-color: #6ca577;
                 color: black;
                 text-align: center;
-                padding: 20px 0;
+                padding: 10px 0;
                 position: absolute;
                 bottom: 5;
                 width: 100%;
@@ -202,7 +201,8 @@
                             <div class="filter-item">
                                 <label for="cilindrata">Cilindrata:</label>
                                 <input type="range" name="cilindrata" id="cilindrata" value="2.2" class="custom-range" min="0.0" max="5.0" />
-                                <span class="range-value" id="cilindrata-value">0 cc</span>
+                                <span class="range-value" id="cilindrata-value" data-unit="cc">0 cc</span>
+
                             </div>
 
                             <div class="filter-item">
@@ -347,7 +347,14 @@
                 
             }
 
-            
+                var rangeInputs = document.querySelectorAll('input[type="range"]');
+             rangeInputs.forEach(function(input) {
+        var span = document.getElementById(input.id + "-value");
+
+        input.addEventListener('input', function() {
+            span.textContent = this.value + (span.dataset.unit ? " " + span.dataset.unit : "");
+        });
+    });
         </script>
         <script>
             function openPopup(car) {
