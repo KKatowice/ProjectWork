@@ -4,7 +4,7 @@ from classAuto import *
 from sys import path
 import json
 
-isFABIO = False
+isFABIO = True
 if not isFABIO:
     path.append(r'ProjectWork/Database')
     from ProjectWork.Database.dbUtils_aiven import *
@@ -122,45 +122,70 @@ def getAutobyBudget():
     c.close()
     return res
 
+from classAuto import Auto, Motore, Marchio
+def fixaRess(diz):
+    diz = diz.copy()
+    max_values_query = db.session.query(
+        db.func.max(Motore.cilindrata).label('cilindrata'),
+        db.func.max(Motore.potenza).label('potenza'),
+        db.func.max(Motore.cavalli).label('cavalli'),
+        db.func.max(Motore.consumi).label('consumi'),
+        db.func.max(Motore.emissioni).label('emissioni'),
+        db.func.max(Motore.serbatoio).label('serbatoio')
+        ).first()
+    min_values_query = db.session.query(
+        db.func.min(Motore.cilindrata).label('cilindrata'),
+        db.func.min(Motore.potenza).label('potenza'),
+        db.func.min(Motore.cavalli).label('cavalli'),
+        db.func.min(Motore.consumi).label('consumi'),
+        db.func.min(Motore.emissioni).label('emissioni'),
+        db.func.min(Motore.serbatoio).label('serbatoio')
+        ).first()
+    max_values = max_values_query._asdict()
+    min_values = min_values_query._asdict()
+    for k,v in diz.items():
+        if v == "0":
+        #data['consumi'] - data['prezzo'] - data['emissioni'] - tutto il resto check >=
+            if k == 'consumi' or k == 'emissioni':
+                diz[k] = max_values[k]
+            elif k == 'serbatoio' or k == 'cilindrata' or k == 'cavalli' or k == 'potenza':
+                print(max_values[k], type(max_values[k]))
+                diz[k] = min_values[k]
+            elif k == 'prezzo':
+                diz[k] = 100000000
+        
+    return diz
 
-# @apiBlueprint.route('/api/auto_filter', methods=['POST'])
-def filtra_auto(data):
-    from classAuto import Auto, Motore, Marchio
-    print("cavalli",int(data['cavalli']))
-    print("potenza",float(data['potenza']))
-    print("emissioni",int(data['emissioni']))
+
+
+@apiBlueprint.route('/api/auto_filter', methods=['POST'])
+def filtra_auto(data=None):
+    if data == None:
+        data = request.get_json()
+    data = fixaRess(data)
+    #print(data,"\n--------------\n",sistemato)
     resultz = (Motore.query.join(Auto, Motore.id_motore == Auto.id_motore)
             .join(Marchio, Marchio.id_marchio == Auto.id_marchio)
-            .filter(Marchio.nome == data['marchio'])
-            .filter(Motore.carburante == data['carburante'])
             .filter(Motore.consumi <= float(data['consumi']))
             .filter(Auto.prezzo <= float(data['prezzo']))
+            .filter(Motore.emissioni <= float(data['emissioni']))
             .filter(Motore.serbatoio >= float(data['serbatoio']))
             .filter(Motore.cilindrata >= float(data['cilindrata']))
-            .filter(Motore.cavalli >= int(data['cavalli']))#tu cazzo3 mesa sempre nel value base
-            .filter(Motore.potenza >= float(data['potenza']))#tu cazzo2 errore nella tranformazione a int (era float) e value base
-            .filter(Motore.emissioni <= float(data['emissioni']))#tu cazzo, errore nel value base html
-            ).all()
-    print("dai su!!!!!!!!!!!!!\n ", resultz)
+            .filter(Motore.cavalli >= int(data['cavalli']))
+            .filter(Motore.potenza >= float(data['potenza']))
+           
+            )
+    if data['marchio'] != 'tutti':
+        resultz = resultz.filter(Marchio.nome == data['marchio'])
+    if data['carburante'] != 'tutti':
+        resultz = resultz.filter(Motore.carburante == data['carburante'])
+    resultz = resultz.all()
+    #print("dai su!!!!!!!!!!!!!\n ", resultz)
     result = []
     for x in resultz:
-        print(x.to_dict())
+        #print(x.to_dict())
         result.append(x.to_dict())
-    
-    """ print("in filtra",data)
-    q = (Auto.query.join(Motore, Motore.id_motore == Auto.id_motore)
-            .join(Marchio, Marchio.id_marchio == Auto.id_marchio)
-            .filter(Marchio.nome == data['marchio'])
-            .filter(Motore.carburante == data['carburante'])
-            .filter(Motore.consumi < float(data['consumi']))
-            .filter(Motore.emissioni < float(data['emissioni']))
-            .filter(Auto.prezzo < float(data['prezzo']))
-            .filter(Motore.serbatoio > float(data['serbatoio']))
-            .filter(Motore.potenza > int(data['potenza']))
-            .filter(Motore.cilindrata > int(data['cilindrata']))
-            .filter(Motore.cavalli > int(data['cavalli'])))
-    
-    result = q.all() """
+
     if result:
         r = {'data':result, 'success': True}
     else:
