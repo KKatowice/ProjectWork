@@ -78,7 +78,7 @@ async def scrapePrices():
                 dcarModel[x][y]['price'] = pricez
 
 
-        with open('./Datasets_Scraping/completo_wPrices2.json', 'w') as f:
+        with open('completo_wPrices_official.json', 'w') as f:
             json.dump(dcarModel, f)
             
 
