@@ -1,4 +1,8 @@
 from decimal import Decimal
+from urllib import request
+
+from flask import *
+import openai
 from api import *
 import os
 from werkzeug import check_password_hash
@@ -15,6 +19,15 @@ app.config['SQLALCHEMY_DATABASE_URI'] = (
     f"{os.getenv('H')}:{os.getenv('PRT')}/concessionario"
 )
 
+openai.api_key  = "<place your openai_api_key>"
+def get_completion(prompt, model="gpt-3.5-turbo"):
+    messages = [{"role": "user", "content": prompt}]
+    response = openai.ChatCompletion.create(
+        model=model,
+        messages=messages,
+        temperature=0, # this is the degree of randomness of the model's output
+    )
+    return response.choices[0].message["content"]
 
 
 @app.route('/')
@@ -123,41 +136,41 @@ def logout():
 #             return redirect(url_for('dashboard'))
 #         else:
 #             return "email o password errate"
-        # else:
-        #     # Password errata, incrementa il numero di tentativi
-        #     attempts += 1
-        #     remaining_attempts = max_attempts - attempts
-        #     if remaining_attempts > 0:
-        #         return f"Password errata. {remaining_attempts} tentativi rimanenti."
-        #     else:
-        #         c.execute("INSERT INTO utenti_bloccati (email) VALUES (?)", (email,))
-        #         conn.commit()
-
-    # else:
-    #     return render_template('Utente.html')
-# @app.route('/crea_account', methods=['GET', 'POST'])
-# def register():
-#     connessione = create_db_connection(DBNAME)
-#     if request.method == 'POST':
-#         nome = request.form['nome']
-#         cognome = request.form['cognome']
-#         eta = request.form['eta']
-#         sesso = request.form['sesso']
-#         email = request.form['email']
-#         password = request.form['password']
-#         CAP = request.form['CAP']
-#         q = f"""INSERT INTO utente(nome, cognome, eta, sesso, email, password, CAP)
-#                              VALUES('{nome}','{cognome}','{eta}','{sesso}','{email}','{password}','{CAP}')"""
-#         verifica = read_query(connessione, q)
-#         print(verifica)
-#
-#         if len(verifica) == 0:
-#             execute_query(connessione, q)
-#             print(verifica)
 #         else:
-#             return "mail già utilizzata"
+#             # Password errata, incrementa il numero di tentativi
+#             attempts += 1
+#             remaining_attempts = max_attempts - attempts
+#             if remaining_attempts > 0:
+#                 return f"Password errata. {remaining_attempts} tentativi rimanenti."
+#             else:
+#                 c.execute("INSERT INTO utenti_bloccati (email) VALUES (?)", (email,))
+#                 conn.commit()
+#
 #     else:
-#         return render_template("crea_account.html")
+#         return render_template('Utente.html')
+@app.route('/crea_account', methods=['GET', 'POST'])
+def register():
+    connessione = create_db_connection(DBNAME)
+    if request.method == 'POST':
+        nome = request.form['nome']
+        cognome = request.form['cognome']
+        eta = request.form['eta']
+        sesso = request.form['sesso']
+        email = request.form['email']
+        password = request.form['password']
+        CAP = request.form['CAP']
+        q = f"""INSERT INTO utente(nome, cognome, eta, sesso, email, password, CAP)
+                             VALUES('{nome}','{cognome}','{eta}','{sesso}','{email}','{password}','{CAP}')"""
+        verifica = read_query(connessione, q)
+        print(verifica)
+
+        if len(verifica) == 0:
+            execute_query(connessione, q)
+            print(verifica)
+        else:
+            return "mail già utilizzata"
+    else:
+        return render_template("crea_account.html")
 #
 # @app.route('/dashboard')
 # def dashboard():
@@ -171,11 +184,12 @@ def chisiamo():
    return render_template('ChiSiamo.html')
 
 
-@app.route('/chat', methods=['POST'])
-def chat():
-    user_message = request.json['message']
-    response = chatbot.respond(user_message)
-    return jsonify({'response': response})
+@app.route("/get")
+def get_bot_response():
+    userText = request.args.get('msg')
+    response = get_completion(userText)
+    #return str(bot.get_response(userText))
+    return response
 
 
 if __name__ == '__main__':

@@ -506,7 +506,7 @@ def register():
     sesso = data['sesso']
     email = data['email']
     password = generate_password_hash(data['password'])
-    cap = data['cap']
+    provincia = data['provincia']
     q = f"""INSERT INTO utenti(nome, cognome, eta, sesso, email, password, cap)
                          VALUES('{nome}','{cognome}','{eta}','{sesso}','{email}','{password}','{cap}')"""
     try:
@@ -570,3 +570,4 @@ def deletePreferito():
         return {"success": True}
     else:
         return {"success": False}
+
