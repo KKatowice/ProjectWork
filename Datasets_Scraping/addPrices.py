@@ -7,8 +7,11 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 
-
-chrome_driver_path = "/usr/bin/chromium-browser"
+isFabio = False
+if isFabio == False:
+    chrome_driver_path = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+else:
+    chrome_driver_path = "/usr/bin/chromium-browser"
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
 #--disable-dev-shm-usage
@@ -62,7 +65,7 @@ async def seleniumscrape(link):
 
 async def scrapePrices():
     
-    with open('./Datasets_Scraping/completo.json', 'r') as f:
+    with open('completo.json', 'r') as f:
         dcarModel = json.load(f)
         for x in tqdm(dcarModel, f"scraping prices"):
             #print(x)
