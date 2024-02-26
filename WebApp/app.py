@@ -22,6 +22,10 @@ app.config['SQLALCHEMY_DATABASE_URI'] = (
 def home():
    return render_template('Home.html')
 
+@app.route('/grafici')
+def grafs():
+   return render_template('Grafici.html')
+
 
 @app.route('/auto', methods=['GET'])
 def show_auto():
