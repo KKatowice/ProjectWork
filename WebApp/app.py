@@ -115,6 +115,10 @@ def logutente():
 def preferiti():
     mail_utente = session.get('utente')
     lista_auto = getPreferenze(mail_utente)
+    for d in lista_auto:
+        for key, value in d.items():
+            if isinstance(value, Decimal):
+                d[key] = float(value)
     return render_template('preferiti.html', auto=lista_auto)
 
 

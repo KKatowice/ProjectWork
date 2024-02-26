@@ -225,8 +225,8 @@ def register():
         return {'success':False}
 
 
-@apiBlueprint.route('api/utentebloccato', methods=['POST'])
-def utentebloccato:
+@apiBlueprint.route('/api/utentebloccato', methods=['POST'])
+def utentebloccato():
     connessione = create_db_connection(DBNAME)
     data = request.get_json()
     email = data['email']
@@ -262,6 +262,7 @@ def getPreferenze(utente):
         info_auto = read_query(c, q1)[0]
         lista_finale.append(info_auto)
     c.close()
+    print(lista_finale)
     return lista_finale
 
 @apiBlueprint.route('/api/deletePreferito', methods=['DELETE'])

@@ -27,15 +27,15 @@
             padding: 0;
         }
             .container-a {
-            background-color: #6ca577;
-            color: black;
-            text-align: center;
-            padding: 10px 0;
-            position: absolute;
-            bottom: 5px;
-            width: 100%;
-            margin-top: 3%
-        }
+                background-color: #6ca577;
+                color: black;
+                text-align: center;
+                padding: 10px 0;
+                position: absolute;
+                bottom: 5;
+                width: 100%;
+                margin-top: 3%;
+            }
         </style>
     </head>
     <body>
@@ -73,7 +73,7 @@
                             <img src="{{elem.foto_marchio}}" class="card-img-top w-75 mr-4 ml-4 mt-4 mb-2" alt="..." />
                             <div class="card-body">
                                 <h5 class="card-title card-title lead">{{elem.nome | capitalize}}</h5>
-                                <a href="/autopermarchio?marchio={{elem.nome}}" class="btn btn-dark">Visualizza auto</a>
+                                <a href="/autopermarchio?marchio={{elem.nome}}" class="btn btn-dark mt-3">Visualizza auto</a>
                             </div>
                         </div>
                     </div>
@@ -96,10 +96,12 @@
                 {% endif %}
             </ul>
         </nav>
+
+        <!-- Includi Bootstrap JS (opzionale) -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <div class="container-a">
             <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
         </div>
-        <!-- Includi Bootstrap JS (opzionale) -->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </body>
+
 </html>
