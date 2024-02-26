@@ -122,6 +122,8 @@ def getAutobyBudget():
     c.close()
     return res
 
+
+from decimal import Decimal
 from classAuto import Auto, Motore, Marchio
 def fixaRess(diz):
     diz = diz.copy()
@@ -143,8 +145,9 @@ def fixaRess(diz):
         ).first()
     max_values = max_values_query._asdict()
     min_values = min_values_query._asdict()
+    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",max_values, min_values)
     for k,v in diz.items():
-        if v == "0":
+        if v == "0" or v == "0.0":
         #data['consumi'] - data['prezzo'] - data['emissioni'] - tutto il resto check >=
             if k == 'consumi' or k == 'emissioni':
                 diz[k] = max_values[k]
@@ -153,6 +156,9 @@ def fixaRess(diz):
                 diz[k] = min_values[k]
             elif k == 'prezzo':
                 diz[k] = 100000000
+        if isinstance(v,Decimal):
+            diz[k] = float(v)
+
         
     return diz
 
@@ -160,10 +166,11 @@ def fixaRess(diz):
 
 @apiBlueprint.route('/api/auto_filter', methods=['POST'])
 def filtra_auto(data=None):
+    print("\n-------prima->->-->---",data)
     if data == None:
         data = request.get_json()
     data = fixaRess(data)
-    #print(data,"\n--------------\n",sistemato)
+    print(data,"\n-<-<-,--dopo--------\n")
     resultz = (Motore.query.join(Auto, Motore.id_motore == Auto.id_motore)
             .join(Marchio, Marchio.id_marchio == Auto.id_marchio)
             .filter(Motore.consumi <= float(data['consumi']))
@@ -177,7 +184,7 @@ def filtra_auto(data=None):
             )
     if data['marchio'] != 'tutti':
         resultz = resultz.filter(Marchio.nome == data['marchio'])
-    if data['carburante'] != 'tutti':
+    if data['carburante'] != 'tutti ':
         resultz = resultz.filter(Motore.carburante == data['carburante'])
     resultz = resultz.all()
     #print("dai su!!!!!!!!!!!!!\n ", resultz)

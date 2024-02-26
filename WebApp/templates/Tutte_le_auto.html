@@ -151,8 +151,8 @@
                             <div class="filter-item">
                                 <label for="carburante">Carburante:</label>
                                 <select name="carburante" id="carburante">
+                                    <option value="tutti ">Tutti</option>
                                     <option value="Diesel ">Diesel</option><!-- TODO togli spazio   -->
-                                    
                                     <option value="Benzina">Benzina</option>
                                     <option value="Ibrido">Ibrido</option>
                                     <option value="Diesel">Diesel</option>
@@ -170,6 +170,7 @@
                             <div class="filter-item"><!-- TODO query e forloop marchi e carburanti -->
                                 <label for="marchio">Marchio:</label>
                                 <select name="marchio" id="marchio">
+                                    <option value="tutti">Tutti</option>
                                     <option value="alfa-romeo">Alfa Romeo</option>
                                     <option value="audi">Audi</option>
                                     <option value="bmw">BMW</option>
@@ -200,39 +201,39 @@
 
                             <div class="filter-item">
                                 <label for="cilindrata">Cilindrata:</label>
-                                <input type="range" name="cilindrata" id="cilindrata" value="2.2" class="custom-range" min="0.0" max="5.0" />
+                                <input type="range" name="cilindrata" id="cilindrata" value="0.0" class="custom-range" min="0.0" max="5.0" />
                                 <span class="range-value" id="cilindrata-value" data-unit="cc">0 cc</span>
 
                             </div>
 
                             <div class="filter-item">
                                 <label for="consumi">Consumi:</label>
-                                <input type="range" name="consumi" id="consumi" value="5.5" class="custom-range" min="0" max="100" />
+                                <input type="range" name="consumi" id="consumi" value="0.0" class="custom-range" min="0" max="100" />
                                 <span class="range-value" id="consumi-value">0 litri/km</span>
                             </div>
                             <div class="filter-item">
                                 <label for="emissioni">Emissioni:</label>
-                                <input type="range" name="emissioni" id="emissioni" value="144.0" class="custom-range" min="0" max="100" />
+                                <input type="range" name="emissioni" id="emissioni" value="0.0" class="custom-range" min="0" max="100" />
                                 <span class="range-value" id="emissioni-value">0</span>
                             </div>
                             <div class="filter-item">
                                 <label for="prezzo">Prezzo:</label>
-                                <input type="range" name="prezzo" id="prezzo" value="99000" class="custom-range" min="0" max="1000000" />
+                                <input type="range" name="prezzo" id="prezzo" value="0" class="custom-range" min="0" max="1000000" />
                                 <span class="range-value" id="prezzo-value">0</span>
                             </div>
                             <div class="filter-item">
                                 <label for="potenza">Potenza:</label>
-                                <input type="range" name="potenza" id="potenza" value="100.0" class="custom-range" min="0.0" max="500.0" />
+                                <input type="range" name="potenza" id="potenza" value="0.0" class="custom-range" min="0.0" max="500.0" />
                                 <span class="range-value" id="potenza-value">0 CV</span>
                             </div>
                             <div class="filter-item">
                                 <label for="cavalli">Cavalli:</label>
-                                <input type="range" name="cavalli" id="cavalli" value="100" class="custom-range" min="0" max="500" />
+                                <input type="range" name="cavalli" id="cavalli" value="0" class="custom-range" min="0" max="500" />
                                 <span class="range-value" id="cavalli-value">0</span>
                             </div>
                             <div class="filter-item">
                                 <label for="serbatoio">Serbatoio:</label>
-                                <input type="range" name="serbatoio" id="serbatoio" value="57.9" class="custom-range" min="0" max="500" />
+                                <input type="range" name="serbatoio" id="serbatoio" value="0.0" class="custom-range" min="0" max="500" />
                                 <span class="range-value" id="serbatoio-value"></span>
                             </div>
 
