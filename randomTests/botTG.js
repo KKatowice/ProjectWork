@@ -12,23 +12,22 @@ const {
 const bot = new Bot(ky);
 
 let qna = {
-  "Quale e' il tuo Budget?": 'Budget',
-  "Quanti Cavalli minimo?": 'Cavalli',
-  "Massimo Consumi 100km?": 'Consumi',
-  "Cilindrata minima?": 'Cilindrata',
+  "Quale e' il tuo Budget?": 'prezzo',
+  "Quanti Cavalli minimo?": 'cavalli',
+  "Massimo Consumi 100km?": 'consumi',
+  "Cilindrata minima?": 'cilindrata',
+  //"Emissioni massime?": 'emissioni',
 }
-let qna_settings = {
-  'Budget':false,
-  'Cavalli':false,
-  'Consumi':false,
-  'Cilindrata':false,
-}
+
+a = {'marchio': 'tutti', 'carburante': 'tutti ', 'consumi': 0, 'emissioni': 0, 'prezzo': 0, 'serbatoio': 0, 'potenza': 0, 'cilindrata': 0, 'cavalli': 0} 
+b = {'marchio': false, 'carburante': false, 'consumi': false, 'emissioni': false, 'prezzo': false, 'serbatoio': false, 'potenza': false, 'cilindrata': false, 'cavalli': false}
+
 
 const userState = new Map();
 
 
   function session_collector() {
-    return {}
+    return {'settings':{'marchio': 'tutti', 'carburante': 'tutti ', 'consumi': 0, 'emissioni': 0, 'prezzo': 0, 'serbatoio': 0, 'potenza': 0, 'cilindrata': 0, 'cavalli': 0},'clicked':b}
   }
 
 bot.use(session({
@@ -46,17 +45,17 @@ bot.command("mySession", (ctx) => {
 function tryConvert(e,val){
   console.log("in tryconv",e,val, typeof(e))
   try{
-    if (val=='Budget'){
+    if (val=='prezzo'){
       console.log("eeE",parseInt(e))
       return parseInt(e);
     }
-    else if(val == 'Cavalli'){
+    else if(val == 'cavalli'){
       return parseInt(e);
     }
-    else if(val == 'Consumi'){
+    else if(val == 'consumi'){
       return parseFloat(e);
     }
-    else if(val == 'Cilindrata'){
+    else if(val == 'cilindrata'){
       return parseFloat(e);
     }
   }catch (err){
@@ -66,44 +65,64 @@ function tryConvert(e,val){
 }
 
 async function validateAnswer(a,val){
-  console.log(a,"1aa",val)
   oldA = a;
   a = tryConvert(a,val)
-  console.log(a,"2aa", typeof(a))
-  if (val=='Budget'){
-    if (typeof(a)==='number' && Number.isInteger(a) && a > 1000){
+  if (val=='prezzo'){
+    if (typeof(a)==='number' && Number.isInteger(a) ){
         return true;
     }
-}
-else if(val == 'Cavalli'){
-    if (typeof(a)==='number' && Number.isInteger(a) && a > 0){
-        return true;
-    }
-}
-else if(val == 'Consumi'){
-    if (typeof(a)==='number' && oldA.includes('.') && a > 0){
-        return true;
-    }
-}
-else if(val == 'Cilindrata'){
-    if (typeof(a)==='number' && oldA.includes('.') && a > 0){
-        return true;
-    }
-}
+  }
+  else if(val == 'cavalli'){
+      if (typeof(a)==='number' && Number.isInteger(a) ){
+          return true;
+      }
+  }
+  else if(val == 'consumi'){
+      if (typeof(a)==='number' && oldA.includes('.')){
+          return true;
+      }
+  }
+  else if(val == 'cilindrata'){
+      if (typeof(a)==='number' && oldA.includes('.')){
+          return true;
+      }
+  }
   
   return false;
 }
 
 
 async function getshowC(ctx){
-  await ctx.reply(`I dati inseriti sono: ${JSON.stringify(ctx.session)}`);
+  await ctx.reply(`I dati inseriti sono: ${JSON.stringify(ctx.session['settings'])}`);
   let res = await fetch('http://127.0.0.1:5000/api/auto_filter', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(ctx.session),
+    body: JSON.stringify(ctx.session['settings']),
   })
+  res = await res.json()
+  console.log("reeeees", res)
+  if (res['success']){
+    await ctx.reply(`Ecco ${res['data'].length} macchine che soddifano i tuoi criteri`);
+  }
+  else{
+    await ctx.reply(`0 Macchine trovate`);
+  }
+  res['data'].forEach(async element => {
+    msg = `
+    Marca: da rimedia
+    Modello: da rimedia
+    Cilindrata: ${element['cilindrata']}L
+    Potenza: ${element['potenza']}kw
+    Cavalli: ${element['cavalli']}cv
+    Carburante: ${element['carburante']}
+    Consumi: ${element['consumi']}L/100km
+    Emissioni: ${element['emissioni']}g/km
+    Serbatoio: ${element['serbatoio']}L
+    `
+    await ctx.reply(msg);
+  });
 }
 
 
@@ -127,17 +146,16 @@ async function collect_data_conv(conversation, ctx) {
         return}
       val = await validateAnswer(valuez, value)
     }
-    ctx.session[value.toLowerCase()] = valuez;
+    ctx.session['settings'][value.toLowerCase()] = valuez;
   }
-  console.log(ctx.session)
- getshowC(ctx)
+  console.log("sesssione ctx setting",ctx.session['settings'])
+  await getshowC(ctx)
   
 }
 bot.use(createConversation(collect_data_conv));
 
 
-const buttonRow = qna_settings
-  .map(([label, data]) => InlineKeyboard.text(label, data));
+const buttonRow = Object.entries(b).map(([label, data]) => InlineKeyboard.text(label, data));
 const keyboard = InlineKeyboard.from([buttonRow]);
 
 
@@ -150,49 +168,3 @@ bot.command("settings", (ctx) => {
 
 bot.start();
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* async function collect_data_conv(conversation, ctx) {
-  fields_to_collect = ["Budget",
-                       "Cavalli",
-                       "Consumi",
-                       "Cilindrata"];
-  const inlineKeyb = new InlineKeyboard()
-  .text('Budget', 'Budget')
-  .text('Cavalli', 'Cavalli')
-  .text('Consumi', 'Consumi')
-  .text('Cilindrata', 'Cilindrata');
-  await ctx.reply("Quale dato vuoi inserire?", { reply_markup: inlineKeyb });
-
-  for (let i = 0; i < fields_to_collect.length; i++) {
-    let selected_field = await conversation.waitFor("callback_query");
-    selected_field = selected_field.update.callback_query.data;
-    ///
-    await ctx.reply(`Inserisci il valore di ${selected_field}DA`);
-    let value = await conversation.waitFor("message:text");
-    value = value.message.text;
-    ctx.session[`${selected_field}DA`] = value;
-    await ctx.reply(`Il valore di ${selected_field} è ${value}`);
-    ///
-    await ctx.reply(`Inserisci il valore di ${selected_field}A`);
-    value = await conversation.waitFor("message:text");
-    value = value.message.text;
-    ctx.session[`${selected_field}A`] = value;
-    await ctx.reply(`Il valore di ${selected_field} è ${value}`);
-    ///
-  }
-  await ctx.reply("Grazie per aver inserito i dati!");
-  // send all the data
-  
-  await ctx.reply(`I dati inseriti sono: ${JSON.stringify(ctx.session)}`);
-} */

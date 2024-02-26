@@ -145,19 +145,20 @@ def fixaRess(diz):
         ).first()
     max_values = max_values_query._asdict()
     min_values = min_values_query._asdict()
-    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",max_values, min_values)
+    #print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",max_values, min_values)
     for k,v in diz.items():
-        if v == "0" or v == "0.0":
+        if v == "0" or v == "0.0" or v == 0:
         #data['consumi'] - data['prezzo'] - data['emissioni'] - tutto il resto check >=
             if k == 'consumi' or k == 'emissioni':
                 diz[k] = max_values[k]
             elif k == 'serbatoio' or k == 'cilindrata' or k == 'cavalli' or k == 'potenza':
-                print(max_values[k], type(max_values[k]))
+                #print(max_values[k], type(max_values[k]))
                 diz[k] = min_values[k]
             elif k == 'prezzo':
                 diz[k] = 100000000
-        if isinstance(v,Decimal):
-            diz[k] = float(v)
+        print(v)
+        if isinstance(diz[k],Decimal):
+            diz[k] = float(diz[k])
 
         
     return diz
@@ -166,9 +167,9 @@ def fixaRess(diz):
 
 @apiBlueprint.route('/api/auto_filter', methods=['POST'])
 def filtra_auto(data=None):
-    print("\n-------prima->->-->---",data)
     if data == None:
         data = request.get_json()
+    print("\n-------prima->->-->---",data)
     data = fixaRess(data)
     print(data,"\n-<-<-,--dopo--------\n")
     resultz = (Motore.query.join(Auto, Motore.id_motore == Auto.id_motore)
@@ -180,7 +181,6 @@ def filtra_auto(data=None):
             .filter(Motore.cilindrata >= float(data['cilindrata']))
             .filter(Motore.cavalli >= int(data['cavalli']))
             .filter(Motore.potenza >= float(data['potenza']))
-           
             )
     if data['marchio'] != 'tutti':
         resultz = resultz.filter(Marchio.nome == data['marchio'])
@@ -190,7 +190,6 @@ def filtra_auto(data=None):
     #print("dai su!!!!!!!!!!!!!\n ", resultz)
     result = []
     for x in resultz:
-        #print(x.to_dict())
         result.append(x.to_dict())
 
     if result:
