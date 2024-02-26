@@ -36,29 +36,53 @@ def insert_motori():
                                 try:
                                     cil = re.findall(r'\d+\.\d+', x['Pdisplacement'])[0]
                                 except:
-                                    cil = "2.0"
+                                    cil = 2.0
                             else:
-                                cil = "2.0"
+                                cil = 2.0
                             if x.get('HP'):
                                 cav = x['HP']
                             else:
-                                cav = "150"
+                                cav = 150
                             if x.get('Power:'):
                                 pot = x['Power:'].split(" ")[0]
                             else:
                                 pot = str(int(cav)/1.36)
                             if x.get('Combined:'):
                                 cons = x['Combined:'].split("(")[1].split(" ")[0]
+                                if cons < 4.0 and x['Fuel:'] == "Gasoline ":
+                                    cons = 7.0
+                                elif cons < 4.0 and x['Fuel:'] == "Diesel ":
+                                    cons = 7.0
+                                elif cons < 4.0 and x['Fuel:'] == "Hybrid ":
+                                    cons = 5.0
+                                elif cons < 4.0 and x['Fuel:'] == "Hybrid Gasoline ":
+                                    cons = 4.5
+                                elif cons < 4.0 and x['Fuel:'] == "Mild Hybrid ":
+                                    cons = 4.0
+                                elif cons < 4.0 and x['Fuel:'] == "Mild Hybrid Diesel ":
+                                    cons = 4.0
+                                elif cons < 4.0 and x['Fuel:'] == "Plug-in Hybrid ":
+                                    cons = 3.5
+                                elif cons < 4.0 and x['Fuel:'] == "Electric ":
+                                    cons = 3.0
+                                elif cons < 4.0 and x['Fuel:'] == "Ethanol ":
+                                    cons = 8.0
+                                elif cons < 4.0 and x['Fuel:'] == "Hybrid Diesel ":
+                                    cons = 4.5
+                                elif cons < 4.0 and x['Fuel:'] == "Liquefied Petroleum Gas (LPG) ":
+                                    cons = 7.0
+                                elif cons < 4.0 and x['Fuel:'] == "Natural Gas ":
+                                    cons = 8.0
                             else:
-                                cons = "6"
+                                cons = 6.5
                             if x.get('CO2 Emissions (Combined):'):
                                 emiss = x['CO2 Emissions (Combined):'].split(" ")[0]
                             else:
-                                emiss = "130"
+                                emiss = 130
                             if x.get('Fuel capacity:'):
                                 serb = x['Fuel capacity:'].split("(")[1].split(" ")[0]
                             else:
-                                serb = "50"
+                                serb = 50
                             if x.get('Fuel:'):
                                 if x['Fuel:'] == "Gasoline ":
                                     carb = "Benzina"
