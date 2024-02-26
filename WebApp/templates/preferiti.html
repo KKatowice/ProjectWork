@@ -12,42 +12,26 @@
 
         body {
             background-color:#ffffff;
-            color: #000000; /* Testo nero */
-            font-family: 'Arial', sans-serif;
+            color: #000000; /* Chaanged text color to black */
+            /*font-family: 'Georgia', sans-serif;*/
             margin: 0;
             padding: 0;
         }
-
-        .navbar {
-            position: relative;
-            background-color:#D3D3D3;
-            background-size: cover;
-            background-position: center;
-            border-bottom: 1px solid #6ca577;
-        }
-
-        .navbar-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.5);
-            z-index: 1;
-        }
-
-        .navbar-brand, .navbar-nav .nav-link {
-            color: #000000; /* Testo nero */
-            font-weight: bold;
-            z-index: 2;
-        }
-
-        .nav-link:hover {
-            color: #000000; /* Testo nero */
-        }
-
-        .navbar-brand i {
-            margin-right: 5px;
+        .card {
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombra leggera di base */
+                transition: box-shadow 0.3s ease; /* Transizione fluida per l'ombra */
+            }
+            /* Stile per l'ombreggiatura quando si passa sopra */
+            .card:hover {
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ombra più marcata quando si passa sopra */
+            }
+            .card:hover h5 {
+                color: #28a745 !important;
+            }
+            .card-title {
+         font-family: 'Georgia', sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
@@ -77,18 +61,16 @@
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-              <a class="nav-link active" href="/">Home</a>
+                <a class="nav-link active" href="/">Home</a>
                 <a class="nav-link" href="/chisiamo">Chi Siamo</a>
                 <a class="nav-link" href="/marchi">I nostri Marchi</a>
-                <a class="nav-link" href="/Tutte_le_auto">Tutte le automobili</a>
+                <a class="nav-link" href="/auto">Tutte le automobili</a>
                 <a class="nav-link" href="/grafici">Grafici</a>
                 <a class="nav-link" href="/Utente">Utente</a>
-                <a class="nav-link" href="/Preferiti">Preferiti</a>
+                <a class="nav-link" href="/preferiti">Preferiti</a>
             </div>
         </div>
-    </div>
 </nav>
 
 <div class="container text-center">
@@ -104,8 +86,8 @@
                                         <img src="{{elem.foto_auto}}" class="card-img-top" alt="..." />
                                         <div class="card-body">
                                             <h5 class="card-title card-title lead">{{elem.modello}}</h5>
-                                            <button type="button" class="btn btn-dark" onclick="openPopup({{elem}})">Dettagli</button>
-                                            <button type="button" class="btn btn-dark" onclick="deletePreferito({{elem.id_auto}})">Elimina</button>
+                                            <button type="button" class="btn btn-dark mt-4" onclick="openPopup({{elem}})">Dettagli</button>
+                                            <button type="button" class="btn btn-dark mt-4" onclick="deletePreferito({{elem.id_auto}})">Elimina</button>
                                         </div>
                                     </div>
                                 </div>
