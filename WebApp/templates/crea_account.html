@@ -217,7 +217,7 @@ var datiJSON = {
     provincia: provincia
     };
 //console.log(datiJSON)
-let resp = await fetch('/api/register', {
+let resp = await fetch('/crea_account', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -225,18 +225,25 @@ let resp = await fetch('/api/register', {
         body: JSON.stringify(datiJSON)
 
 })
-console.log(datiJSON)
 
+let resp = await fetch('/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datiJSON)
 
-    let trueResp = await resp.json()
+})
+let trueResp = await resp.json()
     console.log(trueResp)
     var notyf = new Notyf();
     if (trueResp.success) {
 
         notyf.success('Registration successfull');
-        window.location.href = "/";
-    } else {
-        notyf.error('Login errato');
+        window.location.href = "/registration_confirmation";
+    }
+    else {
+        notyf.error('Mail già utilizzata');
         //alert("Credenziali errate")
     }
 }
