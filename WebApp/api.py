@@ -235,26 +235,26 @@ def login():
     finally:
         connessione.close()
 
-@apiBlueprint.route('/api/register', methods=['POST'])
-def register():
-    data = request.get_json()
-    connessione = create_db_connection(DBNAME)
-    nome = data['nome']
-    cognome = data['cognome']
-    eta = data['eta']
-    sesso = data['sesso']
-    email = data['email']
-    password = generate_password_hash(data['password'])
-    cap = data['cap']
-    q = f"""INSERT INTO utenti(nome, cognome, eta, sesso, email, password, cap)
-                         VALUES('{nome}','{cognome}','{eta}','{sesso}','{email}','{password}','{cap}')"""
-    try:
-        execute_query(connessione, q)
-        return {'success':True}
-
-    except Exception as e:
-        print(e)
-        return {'success':False}
+# @apiBlueprint.route('/api/register', methods=['POST'])
+# def register():
+#     data = request.get_json()
+#     connessione = create_db_connection(DBNAME)
+#     nome = data['nome']
+#     cognome = data['cognome']
+#     eta = data['eta']
+#     sesso = data['sesso']
+#     email = data['email']
+#     password = generate_password_hash(data['password'])
+#     cap = data['cap']
+#     q = f"""INSERT INTO utenti(nome, cognome, eta, sesso, email, password, cap)
+#                          VALUES('{nome}','{cognome}','{eta}','{sesso}','{email}','{password}','{cap}')"""
+#     try:
+#         execute_query(connessione, q)
+#         return {'success':True}
+#
+#     except Exception as e:
+#         print(e)
+#         return {'success':False}
 
 
 @apiBlueprint.route('/api/utentebloccato', methods=['POST'])
@@ -310,3 +310,5 @@ def deletePreferito():
         return {"success":True}
     else:
         return {"success":False}
+
+

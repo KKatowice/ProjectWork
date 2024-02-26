@@ -160,16 +160,16 @@
                 <input type='text' id='eta' placeholder='Età' class='input-line full-width'>
 <div id="sessosfrenato">
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="sesso" id="sesso" value="maschio">
-  <label class="form-check-label" for="">Maschio</label>
+  <input class="form-check-input" type="radio" name="sesso" id="sessoM" value="maschio">
+  <label class="form-check-label" for="sessoM">Maschio</label>
 </div>
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="sesso" id="sesso" value="femmina">
-  <label class="form-check-label" for="">Femmina</label>
+  <input class="form-check-input" type="radio" name="sesso" id="sessoF" value="femmina">
+  <label class="form-check-label" for="sessoF">Femmina</label>
 </div>
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="sesso" id="sesso" value="altro">
-  <label class="form-check-label" for="">Altro </label>
+  <input class="form-check-input" type="radio" name="sesso" id="sessoA" value="altro">
+  <label class="form-check-label" for="sessoA">Altro </label>
 </div>
 </div>
 
@@ -226,14 +226,7 @@ let resp = await fetch('/crea_account', {
 
 })
 
-let resp = await fetch('/register', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(datiJSON)
 
-})
 let trueResp = await resp.json()
     console.log(trueResp)
     var notyf = new Notyf();

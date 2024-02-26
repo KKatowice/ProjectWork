@@ -39,7 +39,8 @@ utenti = """CREATE TABLE utenti(
             email varchar(55) UNIQUE NOT NULL,
             password varchar(255) NOT NULL,
             provincia varchar(55),
-            budget int)"""
+            budget int,
+            registrazione boolean NOT NULL DEFAULT 0)"""
 
 preferenze = """CREATE TABLE preferenze(
                 id_preferenze int PRIMARY KEY AUTO_INCREMENT,
