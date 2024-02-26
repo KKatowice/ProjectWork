@@ -60,9 +60,32 @@ def insert_motori():
                             else:
                                 serb = "50"
                             if x.get('Fuel:'):
-                                carb = x['Fuel:']
-                            else:
-                                carb = "/"
+                                if x['Fuel:'] == "Gasoline ":
+                                    carb = "Benzina"
+                                elif x['Fuel:'] == "Hybrid ":
+                                    carb = "Ibrido"
+                                elif x['Fuel:'] == "Diesel ":
+                                    carb = "Diesel"
+                                elif x['Fuel:'] == "Hybrid Gasoline ":
+                                    carb = "Ibrido-Benzina"
+                                elif x['Fuel:'] == "Mild Hybrid ":
+                                    carb = "Mild Ibrido"
+                                elif x['Fuel:'] == "Mild Hybrid Diesel ":
+                                    carb = "Mild Ibrido-Diesel"
+                                elif x['Fuel:'] == "Plug-in Hybrid ":
+                                    carb = "Ibrido plug-in"
+                                elif x['Fuel:'] == "Electric ":
+                                    carb = "Elettrico"
+                                elif x['Fuel:'] == "Ethanol ":
+                                    carb = "Etanolo"
+                                elif x['Fuel:'] == "Hybrid Diesel ":
+                                    carb = "Ibrido-Diesel"
+                                elif x['Fuel:'] == "Liquefied Petroleum Gas (LPG) ":
+                                    carb = "Gas(LPG)"
+                                elif x['Fuel:'] == "Natural Gas ":
+                                    carb = "Metano"
+                                else:
+                                    carb = "/"
                             t = (cil, pot, cav, carb, cons, emiss, serb)
                             l.append(t)
     query = f"""INSERT INTO motori(cilindrata, potenza, cavalli, carburante,

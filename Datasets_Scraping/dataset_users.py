@@ -35,8 +35,13 @@ for x in range(1,10_000):
     nome = stringa[0]
     cognome = stringa[1]
     provincia= random.choice(lista_province)
-    eta =(randint(18,110))
-    budget =(randint(15_000,300_000))
+    eta =(randint(18,100))
+    if eta >= 18 and eta < 25:
+        budget =(randint(10_000,20_000))
+    elif eta >= 25 and eta < 35:
+        budget =(randint(20_000,100_000))
+    elif eta > 35:
+        budget =(randint(100_000,300_000))
     sesso = sessi[randint(0,2)]
 
     d[x] = {'nome': nome,
