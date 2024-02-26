@@ -72,7 +72,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Marchi/consumi</h5>
                             <p class="card-text">Visualizza il grafico sui marchi preferiti dagli utenti in base ai consumi delle automobili</p>
-                            <a href="" class="btn btn-dark">Visualizza grafico</a>
+                            <a href="#" class="btn btn-dark" onclick="openPopup('emissioni.png')">Visualizza grafico</a>
                         </div>
                     </div>
                 </div>
@@ -167,5 +167,11 @@
         </div>
         <!-- Includi Bootstrap JS (opzionale) -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+    function openPopup(imageUrl) {
+        var popupWindow = window.open("", "popupWindow", "width=600,height=600");
+        popupWindow.document.write("<img src='" + imageUrl + "' alt='Grafico' style='max-width: 100%; max-height: 100%;'>");
+    }
+</script>
     </body>
 </html>
