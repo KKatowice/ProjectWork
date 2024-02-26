@@ -4,7 +4,7 @@ import re
 
 #Apro i due file json
 c = create_db_connection()
-data = json.load(open("../Datasets_Scraping/completo_wPrices_cleaner.json"))
+data = json.load(open("../Datasets_Scraping/completo_wPrices_official.json"))
 users = json.load(open("../Datasets_Scraping/utenti_official.json"))
 
 #Inserimento dei marchi
@@ -47,8 +47,37 @@ def insert_motori():
                                 pot = x['Power:'].split(" ")[0]
                             else:
                                 pot = str(int(cav)/1.36)
+                            if x.get('Fuel:'):
+                                print("Ce")
+                                if x['Fuel:'] == "Gasoline ":
+                                    carb = "Benzina"
+                                elif x['Fuel:'] == "Hybrid ":
+                                    carb = "Ibrido"
+                                elif x['Fuel:'] == "Diesel ":
+                                    carb = "Diesel"
+                                elif x['Fuel:'] == "Hybrid Gasoline ":
+                                    carb = "Ibrido-Benzina"
+                                elif x['Fuel:'] == "Mild Hybrid ":
+                                    carb = "Mild Ibrido"
+                                elif x['Fuel:'] == "Mild Hybrid Diesel ":
+                                    carb = "Mild Ibrido-Diesel"
+                                elif x['Fuel:'] == "Plug-in Hybrid ":
+                                    carb = "Ibrido plug-in"
+                                elif x['Fuel:'] == "Electric ":
+                                    carb = "Elettrico"
+                                elif x['Fuel:'] == "Ethanol ":
+                                    carb = "Etanolo"
+                                elif x['Fuel:'] == "Hybrid Diesel ":
+                                    carb = "Ibrido-Diesel"
+                                elif x['Fuel:'] == "Liquefied Petroleum Gas (LPG) ":
+                                    carb = "Gas(LPG)"
+                                elif x['Fuel:'] == "Natural Gas ":
+                                    carb = "Metano"
+                            else:
+                                carb = "/"
+                                continue
                             if x.get('Combined:'):
-                                cons = x['Combined:'].split("(")[1].split(" ")[0]
+                                cons = float(x['Combined:'].split("(")[1].split(" ")[0])
                                 if cons < 4.0 and x['Fuel:'] == "Gasoline ":
                                     cons = 7.0
                                 elif cons < 4.0 and x['Fuel:'] == "Diesel ":
@@ -83,33 +112,7 @@ def insert_motori():
                                 serb = x['Fuel capacity:'].split("(")[1].split(" ")[0]
                             else:
                                 serb = 50
-                            if x.get('Fuel:'):
-                                if x['Fuel:'] == "Gasoline ":
-                                    carb = "Benzina"
-                                elif x['Fuel:'] == "Hybrid ":
-                                    carb = "Ibrido"
-                                elif x['Fuel:'] == "Diesel ":
-                                    carb = "Diesel"
-                                elif x['Fuel:'] == "Hybrid Gasoline ":
-                                    carb = "Ibrido-Benzina"
-                                elif x['Fuel:'] == "Mild Hybrid ":
-                                    carb = "Mild Ibrido"
-                                elif x['Fuel:'] == "Mild Hybrid Diesel ":
-                                    carb = "Mild Ibrido-Diesel"
-                                elif x['Fuel:'] == "Plug-in Hybrid ":
-                                    carb = "Ibrido plug-in"
-                                elif x['Fuel:'] == "Electric ":
-                                    carb = "Elettrico"
-                                elif x['Fuel:'] == "Ethanol ":
-                                    carb = "Etanolo"
-                                elif x['Fuel:'] == "Hybrid Diesel ":
-                                    carb = "Ibrido-Diesel"
-                                elif x['Fuel:'] == "Liquefied Petroleum Gas (LPG) ":
-                                    carb = "Gas(LPG)"
-                                elif x['Fuel:'] == "Natural Gas ":
-                                    carb = "Metano"
-                                else:
-                                    carb = "/"
+
                             t = (cil, pot, cav, carb, cons, emiss, serb)
                             l.append(t)
     query = f"""INSERT INTO motori(cilindrata, potenza, cavalli, carburante,
@@ -148,10 +151,18 @@ def insert_auto():
 
 q1 = """SET FOREIGN_KEY_CHECKS = 0;"""
 q2= """ SET FOREIGN_KEY_CHECKS = 1"""
+q3 = """TRUNCATE TABLE auto"""
+q4 = """TRUNCATE TABLE marchi"""
+q5 = """TRUNCATE TABLE motori"""
+q6 = """TRUNCATE TABLE utenti"""
 execute_query(c,q1)
-insert_marchi()
-insert_users()
-insert_motori()
+execute_query(c,q3)
+# execute_query(c,q4)
+# execute_query(c,q5)
+# execute_query(c,q6)
+# insert_marchi()
+# insert_users()
+# insert_motori()
 insert_auto()
 execute_query(c,q2)
 
