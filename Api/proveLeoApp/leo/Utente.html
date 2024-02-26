@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accesso e Registrazione Account</title>
-    <!-- Bootstrap CSS -->
+    <title>Log In</title>
+
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     <style>
-        body {
-            background-color: #ffffff;
-            color: #000000; /* testo nero */
+         body {
+            background-color:#ffffff;
+            color: #000000;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
@@ -19,99 +20,141 @@
 
         .navbar {
             position: relative;
-            background-color: #D3D3D3; /* grigio */
+            background-color:#D3D3D3;
+            background-size: cover;
+            background-position: center;
             border-bottom: 1px solid #6ca577;
         }
 
+        .navbar-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            z-index: 1;
+        }
+
         .navbar-brand, .navbar-nav .nav-link {
-            color: #000000; /* testo nero */
+            color: #7FFFD4; /* grigio */
             font-weight: bold;
+            z-index: 2;
         }
 
         .nav-link:hover {
-            color: #7FFFD4; /* verde salvia */
+            color: #7FFFD4;
         }
-
         .container {
-            max-width: 800px;
-            margin: 20px auto;
+            margin-top: 50px;
         }
 
         .btn-primary {
-            background-color: #93a996; /* verde salvia */
-            border-color: #93a996; /* verde salvia */
+            background-color: #51875; /* Verde scuro */
+            border-color: #51875;
         }
 
         .btn-primary:hover {
-            background-color: #7FFFD4; /* verde salvia chiaro */
-            border-color: #7FFFD4; /* verde salvia chiaro */
+            background-color: #51875; /* Verde scuro */
+            border-color: #51875;
         }
 
-        .login-container, .register-container {
-            margin-top: 30px;
+        .btn-success {
+            background-color: #95c799; /* Verde */
+            border-color: #95c799;
+            color: #ffffff; /* Testo bianco */
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-success:hover {
+            background-color: #1d5f38; /* Verde più scuro */
+            border-color: #1d5f38;
+        }
+
+        .card {
+            background-color: #f8f9fa; /* Grigio chiaro */
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Effetto di sollevamento al passaggio del mouse */
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+        .container-a {
+            background-color: #6ca577;
+            color: black;
+            text-align: center;
+            padding: 20px 0;
+            position: absolute;
+            bottom: 5;
+            width: 100%;
+            margin-top: 3%
         }
     </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="navbar-overlay"></div>
     <div class="container">
         <a class="navbar-brand" href="#">DrivenChoice</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-            <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link" href="#">Chi Siamo</a>
-            <a class="nav-link" href="#">I nostri Marchi</a>
-            <a class="nav-link" href="#">Tutte le automobili</a>
-            <a class="nav-link" href="#">Grafici</a>
-            <a class="nav-link" href="#">Utente</a>
-            <a class="nav-link" href="#">Preferiti</a>
+             <a class="nav-link active" href="/">Home</a>
+                <a class="nav-link" href="/chisiamo">Chi Siamo</a>
+                <a class="nav-link" href="/marchi">I nostri Marchi</a>
+                <a class="nav-link" href="/Tutte_le_auto">Tutte le automobili</a>
+                <a class="nav-link" href="/Grafici">Grafici</a>
+                <a class="nav-link" href="/Utente">Utente</a>
+                <a class="nav-link" href="/Preferiti">Preferiti</a>
         </div>
+    </div>
     </div>
 </nav>
 
 <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="login-container">
-                <h2 class="text-center mb-4">Accesso al tuo account</h2>
-                <form>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Inserisci email">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" class="form-control" id="password" placeholder="Inserisci password">
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">Accedi</button>
-                </form>
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Accedi al tuo account</h2>
+                    <form class="form-signin" >
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Inserisci email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" name="password" class="form-control" id="password" placeholder="Inserisci password">
+                        </div>
+                    </form>
+                     <button onclick="login()" id="btnLogIn"  class="btn btn-success btn-block">Accedi</button>
+                </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="register-container">
-                <h2 class="text-center mb-4">Crea un account</h2>
-                <form>
-                    <div class="form-group">
-                        <label for="nome">Nome:</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Inserisci il tuo nome">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Crea un account</h2>
+                    <p class="text-center mb-4">Non hai ancora un account? Crea un nuovo account qui.</p>
+                    <div class="text-center">
+                        <a href="/crea_account" class="btn btn-success btn-block">Crea Account <i class="bi bi-person-plus-fill"></i></a>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Inserisci email">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" class="form-control" id="password" placeholder="Inserisci password">
-                    </div>
-                    <div class="form-group">
-                        <label for="conferma_password">Conferma Password:</label>
-                        <input type="password" class="form-control" id="conferma_password" placeholder="Conferma password">
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">Registrati</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
@@ -120,77 +163,93 @@
 <div class="container-a">
     <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
 </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Intestazione -->
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <!-- Barra di navigazione -->
+</nav>
+
+<div class="container">
+    <!-- Sezione di login -->
+</div>
+
+<div class="container mt-5">
+    <!-- Sezione di creazione account -->
+</div>
+
+<div class="container-a">
+    <!-- Footer -->
+</div>
 
 <!-- Script delle librerie JavaScript -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
 <script>
-var attempts = 0;
-var maxAttempts = 3;
-function login() {
-var email = document.getElementByid("email").value;
-var password = document.getElementByid("password").value;
+var tentativiFalliti = 0
+async function login() {
+var email = document.getElementById("email").value;
+var password = document.getElementById("password").value;
+
 
 
 var datiJSON = {
     email: email,
     password: password
     };
-
-fetch('/login', {
+//console.log(datiJSON)
+let resp = await fetch('/api/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(datiJSON)
-    });
-})
-        .then(response => {
-            if (response.ok) {
-                // Reindirizza l'utente alla dashboard dopo il login
-                window.location.href = '/dashboard';
-            } else {
-                // Mostra un messaggio di errore se le credenziali sono errate
-                attempts++;
-                if (attempts >= maxAttempts) {alert("Hai esaurito tutti i tentativi. Account bloccato per motivi di sicurezza.");
-                    document.getElementById("loginButton").disabled = true; // Disabilita il pulsante di login
-                } else {alert("Email o password errate. Tentativi rimanenti:" + (maxAttempts - attempts));
-                }
+
+    })
+    let trueResp = await resp.json()
+    console.log(trueResp)
+    var notyf = new Notyf();
+
+    if (trueResp.success) {
+        notyf.success('Login succesfull');
+        window.location.href = "/";
+        }
+
+    else {
+        tentativiFalliti += 1
+        notyf.error('Login errato');
+        //alert("Credenziali errate")
+        if (tentativiFalliti >= 3 {
+            await bloccaUtente(email);
             }
-        })
-        .catch(error => {
-            console.error('Si è verificato un errore:', error);
-        });
+        else {}
+    }
+
 }
-</script>
-<script>
-function register() {
-var nome = document.getElementByid("nome").value;
-var cognome = document.getElementByid("cognome").value;
-var eta = document.getElementByid("eta").value;
-var sesso = document.getElementByid("sesso").value;
-var email = document.getElementByid("email").value;
-var password = document.getElementByid("password").value;
-var cap = document.getElementByid("cap").value;
 
+async function bloccaUtente(email) {
 var datiJSON = {
-    nome: nome,
-    cognome: cognome
-    eta: eta,
-    sesso: sesso
-    email: email,
-    password: password
-    cap: cap
-    };
+    email: email
+};
 
-fetch('/register', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(datiJSON)
-    });
+let resp = await fetch('/api/utentebloccato', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(datiJSON)
+});
+
+let trueResp = await resp.json();
+console.log(trueResp);
 }
 
 

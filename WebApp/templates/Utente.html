@@ -144,6 +144,7 @@
 <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
 
 <script>
+var tentativiFalliti = 0
  async function login() {
 var email = document.getElementById("email").value;
 var password = document.getElementById("password").value;
@@ -173,6 +174,22 @@ let resp = await fetch('/api/login', {
         notyf.error('Login errato');
         //alert("Credenziali errate")
     }
+}
+  async function bloccaUtente(email) {
+var datiJSON = {
+    email: email
+};
+
+let resp = await fetch('/api/utentebloccato', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(datiJSON)
+});
+
+let trueResp = await resp.json();
+console.log(trueResp);
 }
 </script>
 </body>

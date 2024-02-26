@@ -171,5 +171,12 @@ def chisiamo():
    return render_template('ChiSiamo.html')
 
 
+@app.route('/chat', methods=['POST'])
+def chat():
+    user_message = request.json['message']
+    response = chatbot.respond(user_message)
+    return jsonify({'response': response})
+
+
 if __name__ == '__main__':
     app.run(debug=True)

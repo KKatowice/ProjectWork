@@ -178,19 +178,25 @@ def login():
         print("data dentro python login",data)
         email = data['email']
         password = data['password']
-        q = f"""SELECT password FROM utenti WHERE email = '{email}';"""
-        data1 = read_query(connessione, q)[0]
+        q1 = f"""SELECT password FROM utenti WHERE email = '{email}';"""
+        q2 = f"""SELECT password FROM utente_bloccato WHERE email = '{email}'"""
+        data1 = read_query(connessione, q1)[0]
+        data2 = read_query(connessione, q2)[0]
         #print(data1, password)
-        if len(data1) > 0:
+
+        if len(data1) > 0 and len(data2) == 0 :
             #print(check_password_hash(str(data1['password']), password))
             pswcheck = check_password_hash(str(data1['password']), password)
             if pswcheck:
                 session['utente'] = data['email']
                 return {'success':True}
             else:
-                return {'success':False}
+                return {'success': False, 'bloccato': False}
         else:
-            return {'success':False}
+            if len(data2) > 0:
+                return {'success':False, 'bloccato': True}
+            else:
+                return {'success': False, 'bloccato': False}
     except Exception as e:
         print(e)
         return {'success':False}
@@ -217,6 +223,15 @@ def register():
     except Exception as e:
         print(e)
         return {'success':False}
+
+
+@apiBlueprint.route('api/utentebloccato', methods=['POST'])
+def utentebloccato:
+    connessione = create_db_connection(DBNAME)
+    data = request.get_json()
+    email = data['email']
+    q = f"""INSERT INTO utente_bloccato(email) VALUES('{email}')"""
+    execute_query(connessione,q)
 
 
 @apiBlueprint.route('/api/aggiungiPreferiti', methods=['PUT'])
