@@ -24,6 +24,8 @@
     display: flex;
     flex-direction: column;
     gap: 20px; /* Aggiungiamo uno spazio tra i filtri */
+     margin-top: 140px;
+    margin-left: 20px;
 }
 
 .filter-item {
@@ -34,6 +36,7 @@
 .filter-item label {
     margin-right: 10px;
 }
+
 
 .range-value {
     margin-left: 10px;
@@ -81,11 +84,11 @@
 
             .range-value {
                 font-size: 14px;
-                margin-left: 10px;
+                margin-left: 5px;
                 color: #4caf50; /* Colore verde salvia */
-                position: absolute;
+                position: ;
                 bottom: calc(100% + 5px);
-                left: 50%;
+                left: 550%;
                 transform: translateX(-50%);
             }
 
@@ -96,7 +99,7 @@
             }
 
             /* Personalizzazione del pulsante Filtri */
-            #applyFiltersBtn {
+
                 background-color: #93a996; /* Colore verde foglia */
                 border-color: #93a996; /* Colore del bordo */
             }
@@ -345,7 +348,7 @@
                 location.href = callzLink;
                 return callzLink;
 
-                
+
             }
 
                 var rangeInputs = document.querySelectorAll('input[type="range"]');
