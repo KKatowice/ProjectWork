@@ -49,8 +49,30 @@ def insert_motori():
                                 pot = str(int(cav)/1.36)
                             if x.get('Combined:'):
                                 cons = x['Combined:'].split("(")[1].split(" ")[0]
-                                if cons < 4.0:
+                                if cons < 4.0 and x['Fuel:'] == "Gasoline ":
                                     cons = 7.0
+                                elif cons < 4.0 and x['Fuel:'] == "Diesel ":
+                                    cons = 7.0
+                                elif cons < 4.0 and x['Fuel:'] == "Hybrid ":
+                                    cons = 5.0
+                                elif cons < 4.0 and x['Fuel:'] == "Hybrid Gasoline ":
+                                    cons = 4.5
+                                elif cons < 4.0 and x['Fuel:'] == "Mild Hybrid ":
+                                    cons = 4.0
+                                elif cons < 4.0 and x['Fuel:'] == "Mild Hybrid Diesel ":
+                                    cons = 4.0
+                                elif cons < 4.0 and x['Fuel:'] == "Plug-in Hybrid ":
+                                    cons = 3.5
+                                elif cons < 4.0 and x['Fuel:'] == "Electric ":
+                                    cons = 3.0
+                                elif cons < 4.0 and x['Fuel:'] == "Ethanol ":
+                                    cons = 8.0
+                                elif cons < 4.0 and x['Fuel:'] == "Hybrid Diesel ":
+                                    cons = 4.5
+                                elif cons < 4.0 and x['Fuel:'] == "Liquefied Petroleum Gas (LPG) ":
+                                    cons = 7.0
+                                elif cons < 4.0 and x['Fuel:'] == "Natural Gas ":
+                                    cons = 8.0
                             else:
                                 cons = 6.5
                             if x.get('CO2 Emissions (Combined):'):
