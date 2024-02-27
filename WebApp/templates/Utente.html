@@ -1,211 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Log In</title>
 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
-    <style>
-         body {
-            background-color:#ffffff;
-            color: #000000; /* Chaanged text color to black */
-            /*font-family: 'Georgia', sans-serif;*/
-            margin: 0;
-            padding: 0;
-        }
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" />
+        <style>
+            body {
+                background-color: #ffffff;
+                color: #000000; /* Chaanged text color to black */
+                /*font-family: 'Georgia', sans-serif;*/
+                margin: 0;
+                padding: 0;
+            }
 
+            .btn-primary {
+                background-color: #51875; /* Verde scuro */
+                border-color: #51875;
+            }
 
-        .btn-primary {
-            background-color: #51875; /* Verde scuro */
-            border-color: #51875;
-        }
+            .btn-primary:hover {
+                background-color: #51875; /* Verde scuro */
+                border-color: #51875;
+            }
 
-        .btn-primary:hover {
-            background-color: #51875; /* Verde scuro */
-            border-color: #51875;
-        }
+            .btn-success {
+                background-color: #95c799; /* Verde */
+                border-color: #95c799;
+                color: #ffffff; /* Testo bianco */
+                transition: background-color 0.3s ease;
+            }
 
-        .btn-success {
-            background-color: #95c799; /* Verde */
-            border-color: #95c799;
-            color: #ffffff; /* Testo bianco */
-            transition: background-color 0.3s ease;
-        }
+            .btn-success:hover {
+                background-color: #1d5f38; /* Verde più scuro */
+                border-color: #1d5f38;
+            }
 
-        .btn-success:hover {
-            background-color: #1d5f38; /* Verde più scuro */
-            border-color: #1d5f38;
-        }
+            .card {
+                background-color: #f8f9fa; /* Grigio chiaro */
+                border: none;
+                border-radius: 20px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                transition: transform 0.3s ease;
+            }
 
-        .card {
-            background-color: #f8f9fa; /* Grigio chiaro */
-            border: none;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
-        }
+            .card:hover {
+                transform: translateY(-5px); /* Effetto di sollevamento al passaggio del mouse */
+            }
 
-        .card:hover {
-            transform: translateY(-5px); /* Effetto di sollevamento al passaggio del mouse */
-        }
-
-        .card-body {
-            padding: 30px;
-        }
-        .container-a {
-            background-color: #6ca577;
-            color: black;
-            text-align: center;
-            padding: 10px 0;
-            position: absolute;
-            bottom: 5px;
-            width: 100%;
-            margin-top: 3%;
-        }
-    </style>
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="/"><i class="fas fa-car"></i> DrivenChoice</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-            <div class="navbar-nav ml-auto">
-                <a class="nav-link active" href="/">Home</a>
-                <a class="nav-link" href="/chisiamo">Chi Siamo</a>
-                <a class="nav-link" href="/marchi">I nostri Marchi</a>
-                <a class="nav-link" href="/auto">Tutte le automobili</a>
-                <a class="nav-link" href="/grafici">Grafici</a>
-                <a class="nav-link" href="/Utente">Utente</a>
-                <a class="nav-link" href="/preferiti">Preferiti</a>
-                <form class="d-flex" role="search" action="/search" method="get">
-                    <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name">
-                    <button class="btn btn-outline-success" type="submit">Cerca</button>
-                </form>
-            </div>
-        </div>
-</nav>
-{% if session['utente'] %}
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card mt-5">
-                <div class="card-body">
-                    <h2 class="text-center mb-4">Effettua il logout</h2>
-                     <button onclick="/logout" id="btnLogOut"  class="btn btn-danger btn-block">Logout</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{% else %}
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card mt-5">
-                <div class="card-body">
-                    <h2 class="text-center mb-4">Accedi al tuo account</h2>
-                    <form class="form-signin" >
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" name="email" class="form-control" id="email" placeholder="Inserisci email">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password:</label>
-                            <input type="password" name="password" class="form-control" id="password" placeholder="Inserisci password">
-                        </div>
+            .card-body {
+                padding: 30px;
+            }
+            .container-a {
+                background-color: #6ca577;
+                color: black;
+                text-align: center;
+                padding: 10px 0;
+                position: absolute;
+                bottom: 5px;
+                width: 100%;
+                margin-top: 3%;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/"><i class="fas fa-car"></i> DrivenChoice</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" href="/">Home</a>
+                    <a class="nav-link" href="/chisiamo">Chi Siamo</a>
+                    <a class="nav-link" href="/marchi">I nostri Marchi</a>
+                    <a class="nav-link" href="/auto">Tutte le automobili</a>
+                    <a class="nav-link" href="/grafici">Grafici</a>
+                    <a class="nav-link" href="/Utente">Utente</a>
+                    <a class="nav-link" href="/preferiti">Preferiti</a>
+                    <form class="d-flex" role="search" action="/search" method="get">
+                        <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name" />
+                        <button class="btn btn-outline-success" type="submit">Cerca</button>
                     </form>
-                     <button onclick="login()" id="btnLogIn"  class="btn btn-success btn-block">Accedi</button>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-{% endif %}
-<div class="container mt-5 mb-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h2 class="text-center mb-4">Crea un account</h2>
-                    <p class="text-center mb-4">Non hai ancora un account? Crea un nuovo account qui.</p>
-                    <div class="text-center">
-                        <a href="/crea_account" class="btn btn-success btn-block">Crea Account <i class="bi bi-person-plus-fill"></i></a>
+        </nav>
+        {% if session['utente'] %}
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card mt-5">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Effettua il logout</h2>
+                            <button onclick="/logout" id="btnLogOut" class="btn btn-danger btn-block">Logout</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="container-a mt-5">
-    <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
-</div>
+        {% else %}
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card mt-5">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Accedi al tuo account</h2>
+                            <form class="form-signin">
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="Inserisci email" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password:</label>
+                                    <input type="password" name="password" class="form-control" id="password" placeholder="Inserisci password" />
+                                </div>
+                            </form>
+                            <button onclick="login()" id="btnLogIn" class="btn btn-success btn-block">Accedi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <div class="container mt-5 mb-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Crea un account</h2>
+                            <p class="text-center mb-4">Non hai ancora un account? Crea un nuovo account qui.</p>
+                            <div class="text-center">
+                                <a href="/crea_account" class="btn btn-success btn-block">Crea Account <i class="bi bi-person-plus-fill"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-a mt-5">
+            <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
+        </div>
 
+        <!-- Script delle librerie JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
 
-<!-- Script delle librerie JavaScript -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+        <script>
+            var tentativiFalliti = 0;
+            async function login() {
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
 
-<script>
-var tentativiFalliti = 0
- async function login() {
-var email = document.getElementById("email").value;
-var password = document.getElementById("password").value;
+                var datiJSON = {
+                    email: email,
+                    password: password,
+                };
+                //console.log(datiJSON)
+                let resp = await fetch("/api/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(datiJSON),
+                });
+                let trueResp = await resp.json();
+                console.log(trueResp);
+                var notyf = new Notyf();
+                if (trueResp.success) {
+                    notyf.success("Login succesfull");
+                    window.location.href = "/";
+                } else {
+                    notyf.error("Login errato");
+                    //alert("Credenziali errate")
+                }
+            }
+            async function bloccaUtente(email) {
+                var datiJSON = {
+                    email: email,
+                };
 
+                let resp = await fetch("/api/utentebloccato", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(datiJSON),
+                });
 
-var datiJSON = {
-    email: email,
-    password: password
-    };
-//console.log(datiJSON)
-let resp = await fetch('/api/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(datiJSON)
-
-    })
-    let trueResp = await resp.json()
-    console.log(trueResp)
-    var notyf = new Notyf();
-    if (trueResp.success) {
-        
-        notyf.success('Login succesfull');
-        window.location.href = "/";
-    } else {
-        notyf.error('Login errato');
-        //alert("Credenziali errate")
-    }
-}
-  async function bloccaUtente(email) {
-var datiJSON = {
-    email: email
-};
-
-let resp = await fetch('/api/utentebloccato', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(datiJSON)
-});
-
-let trueResp = await resp.json();
-console.log(trueResp);
-}
-</script>
-</body>
+                let trueResp = await resp.json();
+                console.log(trueResp);
+            }
+        </script>
+    </body>
 </html>
-
-
