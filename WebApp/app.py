@@ -255,8 +255,16 @@ def confirm_registration(token):
 @app.route('/search', methods= ['GET'])
 def search():
     name = request.args.get('name')
-    results = Auto.query.join(Motore, Motore.id_motore == Auto.id_motore).join(Marchio, Marchio.id_marchio == Auto.id_marchio).filter(Auto.modello.ilike(f'%{name}%')).all()
-    result_data = [x.to_dict() for x in results]
+    results = Auto.query.join(Motore, Motore.id_motore == Auto.id_motore).join(Marchio, Marchio.id_marchio == Auto.id_marchio).with_entities(Auto, Motore, Marchio).filter(Auto.modello.ilike(f'%{name}%')).all()
+    print(results)
+    result_data = []
+    for t in results:
+        a = t[0].to_dict()
+        b = t[1].to_dict()
+        c = t[2].to_dict()
+        dd = a | b | c
+        print(dd)
+        result_data.append(dd)
     print(result_data)
     for d in result_data:
         for key, value in d.items():
