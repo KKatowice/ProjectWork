@@ -215,12 +215,12 @@ def login():
         email = data['email']
         password = data['password']
         q1 = f"""SELECT password FROM utenti WHERE email = '{email}';"""
-        q2 = f"""SELECT password FROM utente_bloccato WHERE email = '{email}'"""
+        q2 = f"""SELECT password FROM utenti_bloccato WHERE email = '{email}'"""
         data1 = read_query(connessione, q1)[0]
-        data2 = read_query(connessione, q2)[0]
+        data2 = read_query(connessione, q2)
         #print(data1, password)
 
-        if len(data1) > 0 and len(data2) == 0 :
+        if len(data1) > 0 and data2 == None :
             #print(check_password_hash(str(data1['password']), password))
             pswcheck = check_password_hash(str(data1['password']), password)
             if pswcheck:
