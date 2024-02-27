@@ -11,20 +11,24 @@
     <!-- Custom Styles -->
     <style>
         .card {height: 300px;
-                            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombra leggera di base */
-                            transition: box-shadow 0.3s ease; /* Transizione fluida per l'ombra */
-                        }
-                        /* Stile per l'ombreggiatura quando si passa sopra */
-                        .card:hover {
-                            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ombra più marcata quando si passa sopra */
-                        }
-                        .card:hover h5 {
-                            color: #28a745 !important;
-                        }
-                        .card-img-top {
-                        height: 200px; /* Imposta l'altezza desiderata per le immagini */
-                        object-fit: cover; /* Ridimensiona le immagini mantenendo le proporzioni e coprendo l'area specificata */
-                        }
+                   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombra leggera di base */
+                   transition: box-shadow 0.3s ease; /* Transizione fluida per l'ombra */
+               }
+               /* Stile per l'ombreggiatura quando si passa sopra */
+               .card:hover {
+                   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ombra più marcata quando si passa sopra */
+               }
+               .card:hover h5 {
+                   color: #28a745 !important;
+               }
+               .card-img-top {
+               height: 200px; /* Imposta l'altezza desiderata per le immagini */
+               object-fit: cover; /* Ridimensiona le immagini mantenendo le proporzioni e coprendo l'area specificata */
+               }
+
+
+
+
         /* Banner di benvenuto */
         .welcome-banner {
             background-color: #6ca577;
@@ -65,6 +69,11 @@
             width: 100%;
             margin-top: 3%;
         }
+        .card-title-sm {
+        font-size: 16px; /* Imposta la dimensione del carattere del titolo della card */
+        }
+
+
     </style>
 </head>
 <body>
@@ -104,7 +113,7 @@
 </section>
 
 <!-- Immagine sotto Chi Siamo -->
-<section class="about-image">
+<section class="about-image mb-5">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 text-center"> <!-- Centra il contenuto orizzontalmente -->
@@ -114,27 +123,65 @@
     </div>
 </section>
 
-
-<!-- Sezione Contatti -->
 <section class="about-section">
     <div class="container">
         <div class="row">
             <div class="col">
-                <h2>Contatti</h2>
-                <div class="accordion-body text-center">
-                    <div class="contact-card">
-                        <ul class="list-unstyled">
-                            <li><i class="bi bi-telephone"></i> Numero di telefono: +06 302 578 5</li>
-                            <li><i class="bi bi-envelope"></i> Email: info@drivenchoice.com</li>
-                            <li><i class="bi bi-geo-alt"></i> Sede legale: Via Udine 123, 20019, Milano, Italia</li>
-                            <li><i class="bi bi-credit-card"></i> Partita IVA: 7548596183</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                <h2>I membri del Team</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="card">
+        <img src="{{ url_for('static', filename='ele.jpg') }}" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title card-title-sm">Eleonora Marasca</h5>
+          <a href="https://www.linkedin.com/in/eleonora-marasca-9b6959142/" class="btn btn-dark btn-sm">Vai al profilo Linkedin</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+        <img src="{{ url_for('static', filename='fabio.jpg') }}" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title card-title-sm">Fabio Limardi</h5>
+          <a href="https://www.linkedin.com/in/fabio-limardi/" class="btn btn-dark btn-sm">Vai al profilo Linkedin</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+        <img src="{{ url_for('static', filename='edo.jpg') }}" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title card-title-sm">Edoardo Pippia</h5>
+          <a href="https://www.linkedin.com/in/edoardopippia" class="btn btn-dark btn-sm">Vai al profilo Linkedin</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title card-title-sm">Leonardo Piccioli</h5>
+          <a href="https://www.linkedin.com/in/leonardo-piccioli-68a991208" class="btn btn-dark btn-sm">Vai al profilo Linkedin</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+        <img src="{{ url_for('static', filename='nick.jpg') }}" class="card-img-top" alt=" ">
+        <div class="card-body text-center">
+          <h5 class="card-title card-title-sm">Nicholas Pantarotto</h5>
+          <a href="https://www.linkedin.com/in/nicholaspantarotto" class="btn btn-dark btn-sm">Vai al profilo Linkedin</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
         </div>
     </div>
 </section>
+
 
 <!-- Sezione Le nostre Sedi -->
 <section class="about-section">
@@ -188,7 +235,28 @@
             </div>
         </div>
     </div>
+</section>
 
+
+<!-- Sezione Contatti -->
+<section class="about-section">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Contatti</h2>
+                <div class="accordion-body text-center">
+                    <div class="contact-card">
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-telephone"></i> Numero di telefono: +06 302 578 5</li>
+                            <li><i class="bi bi-envelope"></i> Email: info@drivenchoice.com</li>
+                            <li><i class="bi bi-geo-alt"></i> Sede legale: Via Udine 123, 20019, Milano, Italia</li>
+                            <li><i class="bi bi-credit-card"></i> Partita IVA: 7548596183</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <div>
