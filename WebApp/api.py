@@ -3,7 +3,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from classAuto import *
 from sys import path
 import json
-isFABIO = False
+isFABIO = True
 # isFABIO = True
 if not isFABIO:
     path.append(r'ProjectWork/Database')
@@ -186,11 +186,16 @@ def filtra_auto(data=None):
         resultz = resultz.filter(Marchio.nome == data['marchio'])
     if data['carburante'] != 'tutti ':
         resultz = resultz.filter(Motore.carburante == data['carburante'])
-    resultz = resultz.all()
-    #print("dai su!!!!!!!!!!!!!\n ", resultz)
+    resultz = resultz.add_columns(Auto).all()
+    print("dai su!!!!!!!!!!!!!\n ", resultz)
     result = []
     for x in resultz:
-        result.append(x.to_dict())
+        d1 = x[0].to_dict()
+        d2 = x[1].to_dict()
+        d3 = {**d1, **d2}
+        splt = d3['modello'].split(" ")
+        d3['nome'] = splt[0]
+        result.append(d3)
 
     if result:
         r = {'data':result, 'success': True}

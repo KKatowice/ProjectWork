@@ -30,6 +30,7 @@ body {
     background: linear-gradient(180deg, #09283d, #1b415c, #29516c, #6e8ea5, #7cadd0, #7cadd0, #7cadd0, #7cadd0, #6e8ea5, #3a6583, #1a4461, #09283d);
     background-size: 2400% 2400%;
     animation: dayNight  60s ease infinite;
+    overflow-x: hidden;
     }
 
 @keyframes dayNight {
@@ -241,6 +242,7 @@ body {
         bottom: 0%;
         margin-left: -10px;
         padding: 0;
+
     }
     .road::before {
         content: " ";
@@ -414,6 +416,15 @@ body {
             transition: transform 0.3s, background-color 0.3s;
             z-index: 1;
         }
+        .background-animation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        /* Il resto del tuo stile per l'animazione di sfondo */
+}
 
         .btn-custom:hover {
             transform: scale(1.05);
