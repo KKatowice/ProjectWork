@@ -1,6 +1,4 @@
 from decimal import Decimal
-from urllib import request
-
 from flask import *
 import openai
 from api import *

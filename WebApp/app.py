@@ -146,7 +146,7 @@ def login():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        q1 = f"""SELECT email,password FROM utente WHERE {email} AND {password}"""
+        q1 = f"""SELECT email,password FROM utenti WHERE {email} AND {password}"""
         verifica = execute_query(connessione, q1)
         if len(verifica) > 1:        # Password corretta, autenticazione riuscita
             return redirect(url_for('dashboard'))
@@ -207,14 +207,14 @@ def register():
         email = data['email']
         password = data['password']
         provincia = data['provincia']
-        q = f""" SELECT * FROM utente WHERE nome= '{nome}' AND  cognome = '{cognome}' AND eta= '{eta}' AND sesso = '{sesso}' AND email = '{email}' AND password = '{password}' AND provincia = '{provincia}');"""
+        q = f""" SELECT * FROM utenti WHERE nome= '{nome}' AND  cognome = '{cognome}' AND eta= '{eta}' AND sesso = '{sesso}' AND email = '{email}' AND password = '{password}' AND provincia = '{provincia}');"""
         verifica = read_query(connessione, q)
 
         if verifica == None:
             token = secrets.token_urlsafe(16)
             confirmation_tokens[token] = email
             send_confirmation_email(email, token)
-            q1 = f"""INSERT INTO utente(nome, cognome, eta, sesso, email, password, provincia)
+            q1 = f"""INSERT INTO utenti(nome, cognome, eta, sesso, email, password, provincia)
                              VALUES('{nome}','{cognome}','{eta}','{sesso}','{email}','{password}','{provincia}')"""
             execute_query(connessione,q1)
             connessione.close()
