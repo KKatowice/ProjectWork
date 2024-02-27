@@ -1,7 +1,7 @@
 /* import 'dotenv/config'
 require('dotenv').config() */
 const ky = '7056648941:AAG_FCbKAFCKQp8tn1DpGBNRNXZvYzznyHk'
-const { Bot, session, InlineKeyboard } = require("grammy");
+const { Bot, session, InlineKeyboard, InlineQueryResultBuilder } = require("grammy");
 const { Menu } = require("@grammyjs/menu");
 const {
   conversations,
@@ -108,11 +108,13 @@ async function getshowC(ctx){
   }
   else{
     await ctx.reply(`0 Macchine trovate`);
+    return 
   }
-  res['data'].forEach(async element => {
+  for (const element of res['data']) {
     msg = `
-    Marca: da rimedia
-    Modello: da rimedia
+    <a href="${element['foto_auto']}">${element['modello']}</a>
+    Marca: ${element['nome']}
+    Prezzo: ${element['prezzo']}$
     Cilindrata: ${element['cilindrata']}L
     Potenza: ${element['potenza']}kw
     Cavalli: ${element['cavalli']}cv
@@ -121,8 +123,11 @@ async function getshowC(ctx){
     Emissioni: ${element['emissioni']}g/km
     Serbatoio: ${element['serbatoio']}L
     `
-    await ctx.reply(msg);
-  });
+    console.log("meeeessssaggiuss",msg)
+    //await ctx.replyWithPhoto({ url: `${element['foto_auto']}` }, { caption: msg });
+    
+    await ctx.reply(msg,{ parse_mode: 'HTML' });
+  };
 }
 
 
