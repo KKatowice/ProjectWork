@@ -316,3 +316,14 @@ def deletePreferito():
         return {"success":False}
 
 
+@apiBlueprint.route('/api/deleteAccount', methods=['DELETE'])
+def deleteAccount():
+    c = create_db_connection(DBNAME)
+    email = session.get('utente')
+    q = f"DELETE FROM utenti WHERE email = '{email}';"
+    r = execute_query(c, q)
+    c.close()
+    if r:
+        return {"success": True}
+    else:
+        return {"success": False}

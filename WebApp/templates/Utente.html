@@ -102,6 +102,18 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card mt-5">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Cancella il tuo account</h2>
+                            <button onclick="deleteAccount()" id="btnDelAcc" class="btn btn-danger btn-block">Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         {% else %}
         <div class="container">
             <div class="row justify-content-center">
@@ -125,7 +137,6 @@
                 </div>
             </div>
         </div>
-        {% endif %}
         <div class="container mt-5 mb-5">
             <div class="row justify-content-center">
                 <div class="col-md-6">
@@ -141,6 +152,7 @@
                 </div>
             </div>
         </div>
+        {% endif %}
         <div class="container-a mt-5">
             <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
         </div>
@@ -198,6 +210,30 @@
                 let trueResp = await resp.json();
                 console.log(trueResp);
             }
+        </script>
+        <script>
+            async function deleteAccount() {
+            try {
+                const resp = await fetch('/api/deleteAccount', { method: 'DELETE' });
+
+                if (resp.ok) {
+                    const trueResp = await resp.json();
+                    const notyf = new Notyf();
+
+                    if (trueResp.success) {
+                        notyf.success('Account eliminato');
+                        location.href = "/";
+                    } else {
+                        notyf.error('Errore');
+                    }
+                } else {
+                    console.error('Error:', resp.status);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
         </script>
     </body>
 </html>
