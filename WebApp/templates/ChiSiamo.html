@@ -10,6 +10,21 @@
 
     <!-- Custom Styles -->
     <style>
+        .card {height: 300px;
+                            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombra leggera di base */
+                            transition: box-shadow 0.3s ease; /* Transizione fluida per l'ombra */
+                        }
+                        /* Stile per l'ombreggiatura quando si passa sopra */
+                        .card:hover {
+                            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ombra più marcata quando si passa sopra */
+                        }
+                        .card:hover h5 {
+                            color: #28a745 !important;
+                        }
+                        .card-img-top {
+                        height: 200px; /* Imposta l'altezza desiderata per le immagini */
+                        object-fit: cover; /* Ridimensiona le immagini mantenendo le proporzioni e coprendo l'area specificata */
+                        }
         /* Banner di benvenuto */
         .welcome-banner {
             background-color: #6ca577;
