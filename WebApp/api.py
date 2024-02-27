@@ -3,8 +3,8 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from classAuto import *
 from sys import path
 import json
-isFABIO = True
 # isFABIO = True
+isFABIO = False
 if not isFABIO:
     path.append(r'ProjectWork/Database')
     from ProjectWork.Database.dbUtils_aiven import *
@@ -324,6 +324,7 @@ def deleteAccount():
     r = execute_query(c, q)
     c.close()
     if r:
+        session['utente'] = None
         return {"success": True}
     else:
         return {"success": False}
