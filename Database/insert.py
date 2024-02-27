@@ -156,14 +156,14 @@ q4 = """TRUNCATE TABLE marchi"""
 q5 = """TRUNCATE TABLE motori"""
 q6 = """TRUNCATE TABLE utenti"""
 execute_query(c,q1)
-execute_query(c,q3)
+# execute_query(c,q3)
 # execute_query(c,q4)
 # execute_query(c,q5)
-# execute_query(c,q6)
+execute_query(c,q6)
 # insert_marchi()
-# insert_users()
+insert_users()
 # insert_motori()
-insert_auto()
+# insert_auto()
 execute_query(c,q2)
 
 
