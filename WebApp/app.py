@@ -176,9 +176,7 @@ def dashboard():
 def chisiamo():
    return render_template('ChiSiamo.html')
 
-@app.route('/crea_account')
-def reg():
-   return render_template('crea_account.html')
+
 
 
 
@@ -205,7 +203,7 @@ def register():
         eta = data['eta']
         sesso = data['sesso']
         email = data['email']
-        password = data['password']
+        password = generate_password_hash(data['password'])
         provincia = data['provincia']
         q = f""" SELECT * FROM utenti WHERE nome= '{nome}' AND  cognome = '{cognome}' AND eta= '{eta}' AND sesso = '{sesso}' AND email = '{email}' AND password = '{password}' AND provincia = '{provincia}');"""
         verifica = read_query(connessione, q)
