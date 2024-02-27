@@ -36,14 +36,9 @@
             line-height: 1.6;
         }
 
-        /* Stile per ridimensionare l'immagine */
-        .about-image__img {
-            max-width: 70%;
-            max-height: 700px; /* Riduci l'altezza massima dell'immagine */
-            width:900%;
-            height: auto;
-            object-fit: cover; /* Mantiene le proporzioni originali e taglia l'immagine se necessario */
-        }
+.wider-image {
+    width: 80%; /* Imposta la larghezza dell'immagine al 80% */
+}
 
         .container-a {
             background-color: #6ca577;
@@ -96,13 +91,14 @@
 <!-- Immagine sotto Chi Siamo -->
 <section class="about-image">
     <div class="container">
-        <div class="row justify-content-center"> <!-- Center the column horizontally -->
-            <div class="col-12">
-                <img src="https://st.depositphotos.com/1518767/1407/i/600/depositphotos_14077409-stock-photo-man-giving-keys-to-another.jpg" alt="Chi Siamo" class="about-image__img">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center"> <!-- Centra il contenuto orizzontalmente -->
+                <img src="https://st.depositphotos.com/1518767/1407/i/600/depositphotos_14077409-stock-photo-man-giving-keys-to-another.jpg" alt="Chi Siamo" class="about-image__img mx-auto wider-image"> <!-- Centra l'immagine all'interno del contenitore -->
             </div>
         </div>
     </div>
 </section>
+
 
 <!-- Sezione Contatti -->
 <section class="about-section">
