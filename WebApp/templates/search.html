@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ricerca</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     <style>
             .card {
                 box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombra leggera di base */
@@ -141,7 +142,7 @@
                         <a class="nav-link" href="/preferiti">Preferiti</a>
                         <form class="d-flex" role="search" action="/search" method="get">
                             <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name">
-                            <button onclick="ricerca()" class="btn btn-outline-success" type="submit">Cerca</button>
+                            <button class="btn btn-outline-success" type="submit">Cerca</button>
                         </form>
                     </div>
                 </div>
@@ -205,7 +206,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
 <script>
             function openPopup(car) {
                 console.log(car);
@@ -231,6 +232,40 @@
                 carBrandElement.textContent = "Brand: " + car.nome;
                 $("#carModal").modal("show");
             }
+        </script>
+<script>
+            async function aggiungiPreferiti(car,user){
+                console.log('funzione chiamata')
+                var auto = car.modello;
+                var utente = user;
+                var datiJSON = {
+                    auto: auto,
+                    utente: utente
+            };
+                try {
+        const resp = await fetch('/api/aggiungiPreferiti', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(datiJSON)
+        });
+
+        if (resp.ok) { console.log('dati fetchati')
+            const trueResp = await resp.json();
+            var notyf = new Notyf();
+            if (trueResp.success) {
+                notyf.success('Aggiunto ai preferiti');
+            } else {
+                notyf.error('Già nei preferiti');
+            }
+        } else {
+            console.error('Error:', resp.status);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
         </script>
 </body>
 </html>

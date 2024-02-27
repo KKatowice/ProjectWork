@@ -255,10 +255,13 @@ def confirm_registration(token):
 @app.route('/search', methods= ['GET'])
 def search():
     name = request.args.get('name')
-    print(name)
     results = Auto.query.join(Motore, Motore.id_motore == Auto.id_motore).join(Marchio, Marchio.id_marchio == Auto.id_marchio).filter(Auto.modello.ilike(f'%{name}%')).all()
-    print(results)
-    result_data = [x.to_dict for x in results]
+    result_data = [x.to_dict() for x in results]
+    print(result_data)
+    for d in result_data:
+        for key, value in d.items():
+            if isinstance(value, Decimal):
+                d[key] = float(value)
     return render_template('search.html', auto=result_data)
 
 if __name__ == '__main__':
