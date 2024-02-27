@@ -79,8 +79,8 @@
                         <img src="https://rivistanatura.com/wp-content/uploads/2015/04/fuel-e1430297664835.jpg" class="card-img-top" alt="..." />
                         <div class="card-body">
                             <h5 class="card-title">Carburanti preferiti dagli utenti</h5>
-                            <p class="card-text">Visualizza il grafico sui carburanti preferiti dagli utenti</p>
-                            <a href="#" class="btn btn-dark" onclick="openPopup('prefecarb.png')">Visualizza grafico</a>
+                            <p class="card-text">Visualizza il grafico sui carburanti  preferiti dagli utenti </p>
+                            <a href="#" class="btn btn-dark" onclick="openPopup(`{{ url_for('static', filename='prefecarb.jpg') }}`)">Visualizza grafico</a>
                         </div>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Automobili più potenti</h5>
                             <p class="card-text">Visualizza il grafico sulle nostre automobili più potenti</p>
-                            <a href="#" class="btn btn-dark" onclick="openPopup('autopotenti.png')">Visualizza grafico</a>
+                            <a href="#" class="btn btn-dark" onclick="openPopup(`{{ url_for('static', filename='autopotenti.jpg') }}`)">Visualizza grafico</a>
                         </div>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Automobili preferite dagli utenti</h5>
                             <p class="card-text">Visualizza il grafico sulla tipologia di automobile più acquistata dai nostri utenti</p>
-                            <a href="#" class="btn btn-dark" onclick="openPopup('prefeutenti.png')">Visualizza grafico</a>
+                            <a href="#" class="btn btn-dark" onclick="openPopup(`{{ url_for('static', filename='prefeutenti.jpg') }}`)">Visualizza grafico</a>
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Budget under 30</h5>
                             <p class="card-text">Budget medio dei nostri utenti under 30</p>
-                            <a href="#" class="btn btn-dark" onclick="openPopup('under30.png')">Visualizza grafico</a>
+                            <a href="#" class="btn btn-dark" onclick="openPopup(`{{ url_for('static', filename='under30.jpg') }}`)">Visualizza grafico</a>
                         </div>
                     </div>
                 </div>
@@ -122,7 +122,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Budget 30-60</h5>
                             <p class="card-text">Budget medio dei nostri utenti nella fascia d'età 30-60</p>
-                            <a href="#" class="btn btn-dark" onclick="openPopup('budget3060.png')">Visualizza grafico</a>
+                            <a href="#" class="btn btn-dark" onclick="openPopup(`{{ url_for('static', filename='budget3060.jpg') }}`)">Visualizza grafico</a>
                         </div>
                     </div>
                 </div>
@@ -132,7 +132,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Mappa degli utenti in base alla provincia</h5>
                             <p class="card-text">Mappa illustrata in base alla provincia degli utenti</p>
-                            <a href="#" class="btn btn-dark" onclick="openPopup('prov.jpg')">Visualizza grafico</a>
+                            <a href="#" class="btn btn-dark" onclick="openPopup(`{{ url_for('static', filename='prov.jpg') }}`)">Visualizza grafico</a>
                         </div>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
         <script>
             function openPopup(imageUrl) {
                 var popupWindow = window.open("", "popupWindow", "width=600,height=600");
-                popupWindow.document.write("<img src='" + imageUrl + "' alt='Grafico' style='max-width: 100%; max-height: 100%;'>");
+                popupWindow.document.write(`<img src="${imageUrl}" alt="Grafico" style="max-width: 100%; max-height: 100%;">`);
             }
         </script>
     </body>
