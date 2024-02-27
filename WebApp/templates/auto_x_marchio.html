@@ -6,7 +6,7 @@
         <title>AutoPerMarchio</title>
         <!-- Bootstrap CSS -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" />
         <style>
             .card {
                 box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombra leggera di base */
@@ -19,16 +19,16 @@
             .card:hover h5 {
                 color: #28a745 !important;
             }
-             .container-a {
-            background-color: #6ca577;
-            color: black;
-            text-align: center;
-            padding: 10px 0;
-            position: absolute;
-            bottom: 5;
-            width: 100%;
-            margin-top: 3%
-        }
+            .container-a {
+                background-color: #6ca577;
+                color: black;
+                text-align: center;
+                padding: 10px 0;
+                position: absolute;
+                bottom: 5;
+                width: 100%;
+                margin-top: 3%;
+            }
         </style>
     </head>
     <body>
@@ -53,7 +53,7 @@
                         <a class="nav-link" href="/utente">Utente</a>
                         <a class="nav-link" href="/preferiti">Preferiti</a>
                         <form class="d-flex" role="search" action="/search" method="get">
-                            <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name">
+                            <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name" />
                             <button class="btn btn-outline-success" type="submit">Cerca</button>
                         </form>
                     </div>
@@ -71,12 +71,12 @@
                             <img src="{{elem.foto_auto}}" class="card-img-top" alt="..." />
                             <div class="card-body">
                                 <h5 class="card-title card-title lead">{{elem.modello}}</h5>
-                                    <div class="d-grid gap-2 d-md-block">
-                                        <button type="button" class="btn btn-dark" onclick="openPopup({{elem}})">Dettagli</button>
+                                <div class="d-grid gap-2 d-md-block">
+                                    <button type="button" class="btn btn-dark" onclick="openPopup({{elem}})">Dettagli</button>
                                     {% if session['utente'] %}
-                                        <button style="margin-top: 10px" type="button" class="btn btn-dark" onclick="aggiungiPreferiti({{elem}}, '{{session['utente']}}')">Salva nei preferiti</button>
+                                    <button style="margin-top: 10px;" type="button" class="btn btn-dark" onclick="aggiungiPreferiti({{elem}}, '{{session['utente']}}')">Salva nei preferiti</button>
                                     {% endif %}
-                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -138,44 +138,45 @@
                 $("#carModal").modal("show");
             }
         </script>
-    <script>
-            async function aggiungiPreferiti(car,user){
-                console.log('funzione chiamata')
+        <script>
+            async function aggiungiPreferiti(car, user) {
+                console.log("funzione chiamata");
                 var auto = car.modello;
                 var utente = user;
                 var datiJSON = {
                     auto: auto,
-                    utente: utente
-            };
+                    utente: utente,
+                };
                 try {
-        const resp = await fetch('/api/aggiungiPreferiti', {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(datiJSON)
-        });
+                    const resp = await fetch("/api/aggiungiPreferiti", {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(datiJSON),
+                    });
 
-        if (resp.ok) { console.log('dati fetchati')
-            const trueResp = await resp.json();
-            var notyf = new Notyf();
-            if (trueResp.success) {
-                notyf.success('Aggiunto ai preferiti');
-            } else {
-                notyf.error('Già nei preferiti');
+                    if (resp.ok) {
+                        console.log("dati fetchati");
+                        const trueResp = await resp.json();
+                        var notyf = new Notyf();
+                        if (trueResp.success) {
+                            notyf.success("Aggiunto ai preferiti");
+                        } else {
+                            notyf.error("Già nei preferiti");
+                        }
+                    } else {
+                        console.error("Error:", resp.status);
+                    }
+                } catch (error) {
+                    console.error("Error:", error);
+                }
             }
-        } else {
-            console.error('Error:', resp.status);
-        }
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
         </script>
     </body>
-<div>
-    <div class="container-a">
-        <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
+    <div>
+        <div class="container-a">
+            <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
+        </div>
     </div>
-</div>
 </html>

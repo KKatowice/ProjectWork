@@ -37,10 +37,9 @@
                 margin-top: 3%;
             }
             .card-img-top {
-            height: 200px; /* Imposta l'altezza desiderata per le immagini */
-            object-fit: cover; /* Ridimensiona le immagini mantenendo le proporzioni e coprendo l'area specificata */
+                height: 200px; /* Imposta l'altezza desiderata per le immagini */
+                object-fit: cover; /* Ridimensiona le immagini mantenendo le proporzioni e coprendo l'area specificata */
             }
-
         </style>
     </head>
     <body>
@@ -64,7 +63,7 @@
                         <a class="nav-link" href="/Utente">Utente</a>
                         <a class="nav-link" href="/preferiti">Preferiti</a>
                         <form class="d-flex" role="search" action="/search" method="get">
-                            <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name">
+                            <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name" />
                             <button class="btn btn-outline-success" type="submit">Cerca</button>
                         </form>
                     </div>
@@ -80,7 +79,7 @@
                         <img src="https://rivistanatura.com/wp-content/uploads/2015/04/fuel-e1430297664835.jpg" class="card-img-top" alt="..." />
                         <div class="card-body">
                             <h5 class="card-title">Carburanti preferiti dagli utenti</h5>
-                            <p class="card-text">Visualizza il grafico sui carburanti  preferiti dagli utenti </p>
+                            <p class="card-text">Visualizza il grafico sui carburanti preferiti dagli utenti</p>
                             <a href="#" class="btn btn-dark" onclick="openPopup('prefecarb.png')">Visualizza grafico</a>
                         </div>
                     </div>
@@ -144,11 +143,11 @@
         </div>
         <!-- Includi Bootstrap JS (opzionale) -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-    function openPopup(imageUrl) {
-        var popupWindow = window.open("", "popupWindow", "width=600,height=600");
-        popupWindow.document.write("<img src='" + imageUrl + "' alt='Grafico' style='max-width: 100%; max-height: 100%;'>");
-    }
-</script>
+        <script>
+            function openPopup(imageUrl) {
+                var popupWindow = window.open("", "popupWindow", "width=600,height=600");
+                popupWindow.document.write("<img src='" + imageUrl + "' alt='Grafico' style='max-width: 100%; max-height: 100%;'>");
+            }
+        </script>
     </body>
 </html>

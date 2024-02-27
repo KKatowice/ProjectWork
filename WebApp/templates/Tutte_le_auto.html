@@ -6,119 +6,119 @@
         <title>TutteLeAuto</title>
         <!-- Bootstrap CSS -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" />
         <style>
-            .card {height: 300px;
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombra leggera di base */
-                transition: box-shadow 0.3s ease; /* Transizione fluida per l'ombra */
-            }
-            /* Stile per l'ombreggiatura quando si passa sopra */
-            .card:hover {
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ombra più marcata quando si passa sopra */
-            }
-            .card:hover h5 {
-                color: #28a745 !important;
-            }
+                        .card {height: 300px;
+                            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombra leggera di base */
+                            transition: box-shadow 0.3s ease; /* Transizione fluida per l'ombra */
+                        }
+                        /* Stile per l'ombreggiatura quando si passa sopra */
+                        .card:hover {
+                            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ombra più marcata quando si passa sopra */
+                        }
+                        .card:hover h5 {
+                            color: #28a745 !important;
+                        }
 
-           .filters {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Aggiungiamo uno spazio tra i filtri */
-     margin-top: 130px;
-    margin-left: 10px;
-}
-
-.filter-item {
-    display: flex;
-    align-items: center;
-}
-
-.filter-item label {
-    margin-right: 10px;
-}
-
-
-.range-value {
-    margin-left: 10px;
-}
-
-
-            /* Custom styling for range input */
-            .custom-range {
-                -webkit-appearance: none;
-                appearance: none;
-                width: 100%;
-                height: 10px; /* Altezza barra di scorrimento */
-                background-color: #e0e0e0; /* Colore barra di scorrimento */
-                outline: none;
-                border-radius: 6px;
-                margin-top: 8px;
-                position: relative;
+                       .filters {
+                display: flex;
+                flex-direction: column;
+                gap: 20px; /* Aggiungiamo uno spazio tra i filtri */
+                 margin-top: 130px;
+                margin-left: 10px;
             }
 
-            .custom-range::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                appearance: none;
-                width: 20px; /* Larghezza del pollice */
-                height: 20px; /* Altezza del pollice */
-                background-color: #93a996; /* Colore del pollice */
-                border: 2px solid #93a996; /* Colore del bordo del pollice */
-                border-radius: 50%; /* Bordi arrotondati */
-                cursor: pointer;
-                margin-top: -7px;
-                transition: transform 0.2s;
-                z-index: 1;
+            .filter-item {
+                display: flex;
+                align-items: center;
             }
 
-            .custom-range::-moz-range-thumb {
-                width: 20px; /* Larghezza del pollice */
-                height: 20px; /* Altezza del pollice */
-                background-color: #93a996; /* Colore del pollice */
-                border: 2px solid #93a996; /* Colore del bordo del pollice */
-                border-radius: 50%; /* Bordi arrotondati */
-                cursor: pointer;
-                margin-top: -7px;
-                transition: transform 0.2s;
-                z-index: 1;
+            .filter-item label {
+                margin-right: 10px;
             }
+
 
             .range-value {
-                font-size: 14px;
-                margin-left: 5px;
-                color: #4caf50; /* Colore verde salvia */
-                position: ;
-                bottom: calc(100% + 5px);
-                left: 550%;
-                transform: translateX(70%);
+                margin-left: 10px;
             }
 
-            /* Hover effect on range thumb */
-            .custom-range::-webkit-slider-thumb:hover,
-            .custom-range::-moz-range-thumb:hover {
-                transform: scale(1.1);
-            }
 
-            /* Personalizzazione del pulsante Filtri */
+                        /* Custom styling for range input */
+                        .custom-range {
+                            -webkit-appearance: none;
+                            appearance: none;
+                            width: 100%;
+                            height: 10px; /* Altezza barra di scorrimento */
+                            background-color: #e0e0e0; /* Colore barra di scorrimento */
+                            outline: none;
+                            border-radius: 6px;
+                            margin-top: 8px;
+                            position: relative;
+                        }
 
-                background-color: #93a996; /* Colore verde foglia */
-                border-color: #93a996; /* Colore del bordo */
-            }
+                        .custom-range::-webkit-slider-thumb {
+                            -webkit-appearance: none;
+                            appearance: none;
+                            width: 20px; /* Larghezza del pollice */
+                            height: 20px; /* Altezza del pollice */
+                            background-color: #93a996; /* Colore del pollice */
+                            border: 2px solid #93a996; /* Colore del bordo del pollice */
+                            border-radius: 50%; /* Bordi arrotondati */
+                            cursor: pointer;
+                            margin-top: -7px;
+                            transition: transform 0.2s;
+                            z-index: 1;
+                        }
 
-            /* Stile per il pallino verde */
-            .green-dot {
-                color: #93a996; /* Colore verde foglia */
-                margin-right: 5px;
-            }
-            .container-a {
-                background-color: #6ca577;
-                color: black;
-                text-align: center;
-                padding: 10px 0;
-                position: absolute;
-                bottom: 5;
-                width: 100%;
-                margin-top: 3%;
-            }
+                        .custom-range::-moz-range-thumb {
+                            width: 20px; /* Larghezza del pollice */
+                            height: 20px; /* Altezza del pollice */
+                            background-color: #93a996; /* Colore del pollice */
+                            border: 2px solid #93a996; /* Colore del bordo del pollice */
+                            border-radius: 50%; /* Bordi arrotondati */
+                            cursor: pointer;
+                            margin-top: -7px;
+                            transition: transform 0.2s;
+                            z-index: 1;
+                        }
+
+                        .range-value {
+                            font-size: 14px;
+                            margin-left: 5px;
+                            color: #4caf50; /* Colore verde salvia */
+                            position: ;
+                            bottom: calc(100% + 5px);
+                            left: 550%;
+                            transform: translateX(70%);
+                        }
+
+                        /* Hover effect on range thumb */
+                        .custom-range::-webkit-slider-thumb:hover,
+                        .custom-range::-moz-range-thumb:hover {
+                            transform: scale(1.1);
+                        }
+
+                        /* Personalizzazione del pulsante Filtri */
+
+                            background-color: #93a996; /* Colore verde foglia */
+                            border-color: #93a996; /* Colore del bordo */
+                        }
+
+                        /* Stile per il pallino verde */
+                        .green-dot {
+                            color: #93a996; /* Colore verde foglia */
+                            margin-right: 5px;
+                        }
+                        .container-a {
+                            background-color: #6ca577;
+                            color: black;
+                            text-align: center;
+                            padding: 10px 0;
+                            position: absolute;
+                            bottom: 5;
+                            width: 100%;
+                            margin-top: 3%;
+                        }
         </style>
     </head>
     <body>
@@ -142,7 +142,7 @@
                         <a class="nav-link" href="/Utente">Utente</a>
                         <a class="nav-link" href="/preferiti">Preferiti</a>
                         <form class="d-flex" role="search" action="/search" method="get">
-                            <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name">
+                            <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name" />
                             <button class="btn btn-outline-success" type="submit">Cerca</button>
                         </form>
                     </div>
@@ -159,7 +159,8 @@
                                 <label for="carburante">Carburante:</label>
                                 <select name="carburante" id="carburante">
                                     <option value="tutti ">Tutti</option>
-                                    <option value="Diesel ">Diesel</option><!-- TODO togli spazio   -->
+                                    <option value="Diesel ">Diesel</option>
+                                    <!-- TODO togli spazio   -->
                                     <option value="Benzina">Benzina</option>
                                     <option value="Ibrido">Ibrido</option>
                                     <option value="Diesel">Diesel</option>
@@ -174,7 +175,8 @@
                                     <option value="Metano">Metano</option>
                                 </select>
                             </div>
-                            <div class="filter-item"><!-- TODO query e forloop marchi e carburanti -->
+                            <div class="filter-item">
+                                <!-- TODO query e forloop marchi e carburanti -->
                                 <label for="marchio">Marchio:</label>
                                 <select name="marchio" id="marchio">
                                     <option value="tutti">Tutti</option>
@@ -210,7 +212,6 @@
                                 <label for="cilindrata">Cilindrata:</label>
                                 <input type="range" name="cilindrata" id="cilindrata" value="0.0" class="custom-range" min="0.0" max="10.0" />
                                 <span class="range-value" id="cilindrata-value" data-unit="cc">0 L</span>
-
                             </div>
 
                             <div class="filter-item">
@@ -267,10 +268,10 @@
                                         <div class="card-body">
                                             <h5 class="card-title card-title lead">{{elem.modello}}</h5>
                                             <div class="d-grid gap-2 d-md-block">
-                                            <button type="button" class="btn btn-dark" onclick="openPopup({{elem}})">Dettagli</button>
-                                            {% if session['utente'] %}
-                                            <button style="margin-top: 10px" type="button" class="btn btn-dark" onclick="aggiungiPreferiti({{elem}}, '{{session['utente']}}')">Salva nei preferiti</button>
-                                            {% endif %}
+                                                <button type="button" class="btn btn-dark" onclick="openPopup({{elem}})">Dettagli</button>
+                                                {% if session['utente'] %}
+                                                <button style="margin-top: 10px;" type="button" class="btn btn-dark" onclick="aggiungiPreferiti({{elem}}, '{{session['utente']}}')">Salva nei preferiti</button>
+                                                {% endif %}
                                             </div>
                                         </div>
                                     </div>
@@ -351,18 +352,16 @@
                     });
                 location.href = callzLink;
                 return callzLink;
-
-
             }
 
-                var rangeInputs = document.querySelectorAll('input[type="range"]');
-             rangeInputs.forEach(function(input) {
-        var span = document.getElementById(input.id + "-value");
+            var rangeInputs = document.querySelectorAll('input[type="range"]');
+            rangeInputs.forEach(function (input) {
+                var span = document.getElementById(input.id + "-value");
 
-        input.addEventListener('input', function() {
-            span.textContent = this.value + (span.dataset.unit ? " " + span.dataset.unit : "");
-        });
-    });
+                input.addEventListener("input", function () {
+                    span.textContent = this.value + (span.dataset.unit ? " " + span.dataset.unit : "");
+                });
+            });
         </script>
         <script>
             function openPopup(car) {
@@ -391,38 +390,39 @@
             }
         </script>
         <script>
-            async function aggiungiPreferiti(car,user){
-                console.log('funzione chiamata')
+            async function aggiungiPreferiti(car, user) {
+                console.log("funzione chiamata");
                 var auto = car.modello;
                 var utente = user;
                 var datiJSON = {
                     auto: auto,
-                    utente: utente
-            };
+                    utente: utente,
+                };
                 try {
-        const resp = await fetch('/api/aggiungiPreferiti', {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(datiJSON)
-        });
+                    const resp = await fetch("/api/aggiungiPreferiti", {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(datiJSON),
+                    });
 
-        if (resp.ok) { console.log('dati fetchati')
-            const trueResp = await resp.json();
-            var notyf = new Notyf();
-            if (trueResp.success) {
-                notyf.success('Aggiunto ai preferiti');
-            } else {
-                notyf.error('Già nei preferiti');
+                    if (resp.ok) {
+                        console.log("dati fetchati");
+                        const trueResp = await resp.json();
+                        var notyf = new Notyf();
+                        if (trueResp.success) {
+                            notyf.success("Aggiunto ai preferiti");
+                        } else {
+                            notyf.error("Già nei preferiti");
+                        }
+                    } else {
+                        console.error("Error:", resp.status);
+                    }
+                } catch (error) {
+                    console.error("Error:", error);
+                }
             }
-        } else {
-            console.error('Error:', resp.status);
-        }
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
         </script>
         <div class="container-a">
             <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
