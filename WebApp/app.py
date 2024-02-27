@@ -34,6 +34,7 @@ def send_confirmation_email(email, token):
                       recipients=[email],
                       html=f'Clicca <a href="http://127.0.0.1:5000/confirm_registration?token={token}">qui</a> per confermare la registrazione.')
 
+    print(message)
     mail.send(message)
 @app.route('/')
 def home():
