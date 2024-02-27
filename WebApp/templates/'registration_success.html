@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Registrazione completata</title>
@@ -30,6 +30,17 @@
                 background: linear-gradient(180deg, #09283d, #1b415c, #29516c, #6e8ea5, #7cadd0, #7cadd0, #7cadd0, #7cadd0, #6e8ea5, #3a6583, #1a4461, #09283d);
                 background-size: 2400% 2400%;
                 animation: dayNight  60s ease infinite;
+                overflow-x: hidden;
+                }
+                h1 {
+                text-shadow:2px 2px 4px rgba(0, 0, 0, 0.3);
+                text-align: center;
+                color : #FFFFFF;
+                }
+                p{
+                text-shadow:2px 2px 4px rgba(0, 0, 0, 0.3);
+                text-align: center;
+                color : #FFFFFF;
                 }
 
             @keyframes dayNight {
@@ -232,8 +243,8 @@
                     bottom: 20%;
                 }
                 .road {
-                    width: 100%;
-                    height: 100px;
+                    width: 250%;
+                    height: 200px;
                     background-color: #585858;
                     border-top: 10px solid #756D6D;
                     border-bottom: 20px solid #756D6D;
@@ -241,7 +252,7 @@
                     bottom: 0%;
                     margin-left: -10px;
                     padding: 0;
-                    overflow: hidden;
+
                 }
                 .road::before {
                     content: " ";
@@ -415,6 +426,15 @@
                         transition: transform 0.3s, background-color 0.3s;
                         z-index: 1;
                     }
+                    .background-animation {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                    /* Il resto del tuo stile per l'animazione di sfondo */
+            }
 
                     .btn-custom:hover {
                         transform: scale(1.05);
@@ -458,7 +478,7 @@
                             position: absolute;
                             bottom: 5;
                             width: 100%;
-                            margin-top: 3%;
+                            margin-top: 14%;
                         }
         </style>
     </head>
@@ -527,7 +547,10 @@
             </div>
         </nav>
 
-        <h1 class="">registrazione completata</h1>
+        <h1 class="mt-5">Registrazione avvenuta con successo</h1>
+        <div><p>Ora esegui l'accesso con le tue credenziali, avrai la possibilità di accedere alla lista delle tue macchine preferite!</p></div>
+
+
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6">
@@ -551,12 +574,71 @@
             </div>
         </div>
 
-        <div class="container-a">
+
+
+<div class="container-a" >
             <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
         </div>
 
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
+<script>
+var tentativiFalliti = 0
+ async function login() {
+var email = document.getElementById("email").value;
+var password = document.getElementById("password").value;
+
+
+var datiJSON = {
+    email: email,
+    password: password
+    };
+//console.log(datiJSON)
+let resp = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datiJSON)
+
+    })
+    let trueResp = await resp.json()
+    console.log(trueResp)
+    var notyf = new Notyf();
+    if (trueResp.success) {
+
+        notyf.success('Login succesfull');
+        window.location.href = "/";
+    } else {
+        notyf.error('Login errato');
+        //alert("Credenziali errate")
+    }
+}
+  async function bloccaUtente(email) {
+var datiJSON = {
+    email: email
+};
+
+let resp = await fetch('/api/utentebloccato', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(datiJSON)
+});
+
+let trueResp = await resp.json();
+console.log(trueResp);
+}
+</script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </body>
+</body>
 </html>
