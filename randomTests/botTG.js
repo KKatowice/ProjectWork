@@ -102,15 +102,22 @@ async function getshowC(ctx){
     body: JSON.stringify(ctx.session['settings']),
   })
   res = await res.json()
-  console.log("reeeees", res)
+  
+  slicedRes = res['data']
+  if (res['data'].length > 10){
+    slicedRes = res['data'].slice(0,10)
+  }
+
+
   if (res['success']){
-    await ctx.reply(`Ecco ${res['data'].length} macchine che soddifano i tuoi criteri`);
+    await ctx.reply(`Ecco ${slicedRes.length}/${res['data'].length} macchine che soddifano i tuoi criteri`);
   }
   else{
     await ctx.reply(`0 Macchine trovate`);
     return 
   }
-  for (const element of res['data']) {
+  
+  for (const element of slicedRes) {
     msg = `
     <a href="${element['foto_auto']}">${element['modello']}</a>
     Marca: ${element['nome']}
