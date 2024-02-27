@@ -3,7 +3,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from classAuto import *
 from sys import path
 import json
-isFABIO = True
+isFABIO = False
 # isFABIO = True
 if not isFABIO:
     path.append(r'ProjectWork/Database')
