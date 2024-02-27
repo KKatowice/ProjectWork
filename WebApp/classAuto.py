@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+
 from flask import *
 import os
 from dotenv import load_dotenv
@@ -58,7 +59,6 @@ class Marchio(db.Model):
 
 class Auto(db.Model):
     __tablename__ = 'auto'
-
     id_auto = db.Column(db.Integer, primary_key=True, autoincrement=True)
     id_motore = db.Column(db.Integer, db.ForeignKey('motori.id_motore'))
     id_marchio = db.Column(db.Integer, db.ForeignKey('marchi.id_marchio'))

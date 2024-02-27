@@ -252,7 +252,14 @@ def confirm_registration(token):
 
 # Funzione per inviare l'email di conferma
 
-
+@app.route('/search', methods= ['GET'])
+def search():
+    name = request.args.get('name')
+    print(name)
+    results = Auto.query.join(Motore, Motore.id_motore == Auto.id_motore).join(Marchio, Marchio.id_marchio == Auto.id_marchio).filter(Auto.modello.ilike(f'%{name}%')).all()
+    print(results)
+    result_data = [x.to_dict for x in results]
+    return render_template('search.html', auto=result_data)
 
 if __name__ == '__main__':
     app.run(debug=True)
