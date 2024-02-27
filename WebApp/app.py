@@ -34,6 +34,7 @@ def send_confirmation_email(email, token):
                       recipients=[email],
                       html=f'Clicca <a href="http://127.0.0.1:5000/confirm_registration?token={token}">qui</a> per confermare la registrazione.')
 
+    print(message)
     mail.send(message)
 @app.route('/')
 def home():
@@ -145,7 +146,7 @@ def login():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        q1 = f"""SELECT email,password FROM utente WHERE {email} AND {password}"""
+        q1 = f"""SELECT email,password FROM utenti WHERE {email} AND {password}"""
         verifica = execute_query(connessione, q1)
         if len(verifica) > 1:        # Password corretta, autenticazione riuscita
             return redirect(url_for('dashboard'))
@@ -206,14 +207,14 @@ def register():
         email = data['email']
         password = data['password']
         provincia = data['provincia']
-        q = f""" SELECT * FROM utente WHERE nome= '{nome}' AND  cognome = '{cognome}' AND eta= '{eta}' AND sesso = '{sesso}' AND email = '{email}' AND password = '{password}' AND provincia = '{provincia}');"""
+        q = f""" SELECT * FROM utenti WHERE nome= '{nome}' AND  cognome = '{cognome}' AND eta= '{eta}' AND sesso = '{sesso}' AND email = '{email}' AND password = '{password}' AND provincia = '{provincia}');"""
         verifica = read_query(connessione, q)
 
         if verifica == None:
             token = secrets.token_urlsafe(16)
             confirmation_tokens[token] = email
             send_confirmation_email(email, token)
-            q1 = f"""INSERT INTO utente(nome, cognome, eta, sesso, email, password, provincia)
+            q1 = f"""INSERT INTO utenti(nome, cognome, eta, sesso, email, password, provincia)
                              VALUES('{nome}','{cognome}','{eta}','{sesso}','{email}','{password}','{provincia}')"""
             execute_query(connessione,q1)
             connessione.close()
@@ -232,8 +233,9 @@ def registration_confirmation():
 
 
 # Pagina di conferma registrazione con token
-@app.route('/confirm_registration/<token>')
-def confirm_registration(token):
+@app.route('/confirm_registration')
+def confirm_registration():
+    token = request.args.get('token')
     connessione = create_db_connection(DBNAME)
     email = confirmation_tokens.get(token)
     if email:
@@ -252,7 +254,25 @@ def confirm_registration(token):
 
 # Funzione per inviare l'email di conferma
 
-
+@app.route('/search', methods= ['GET'])
+def search():
+    name = request.args.get('name')
+    results = Auto.query.join(Motore, Motore.id_motore == Auto.id_motore).join(Marchio, Marchio.id_marchio == Auto.id_marchio).with_entities(Auto, Motore, Marchio).filter(Auto.modello.ilike(f'%{name}%')).all()
+    print(results)
+    result_data = []
+    for t in results:
+        a = t[0].to_dict()
+        b = t[1].to_dict()
+        c = t[2].to_dict()
+        dd = a | b | c
+        print(dd)
+        result_data.append(dd)
+    print(result_data)
+    for d in result_data:
+        for key, value in d.items():
+            if isinstance(value, Decimal):
+                d[key] = float(value)
+    return render_template('search.html', auto=result_data)
 
 if __name__ == '__main__':
     app.run(debug=True)
