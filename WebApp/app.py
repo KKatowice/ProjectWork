@@ -233,8 +233,9 @@ def registration_confirmation():
 
 
 # Pagina di conferma registrazione con token
-@app.route('/confirm_registration/<token>')
-def confirm_registration(token):
+@app.route('/confirm_registration')
+def confirm_registration():
+    token = request.args.get('token')
     connessione = create_db_connection(DBNAME)
     email = confirmation_tokens.get(token)
     if email:
