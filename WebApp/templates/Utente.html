@@ -91,7 +91,20 @@
             </div>
         </div>
 </nav>
-
+{% if session['utente'] %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Effettua il logout</h2>
+                     <button onclick="/logout" id="btnLogOut"  class="btn btn-danger btn-block">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -114,7 +127,7 @@
         </div>
     </div>
 </div>
-
+{% endif %}
 <div class="container mt-5 mb-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
