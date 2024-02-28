@@ -4,8 +4,21 @@ import pandas as pd
 from tqdm import tqdm
 import copy
 
+isFabio = True
+if isFabio == False:
+    chrome_driver_path = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+    pathFile = "completo_wPrices_cleaner_official.json"
+    pathInitFile = "completo_wPrices_official.json"
+else:
+    chrome_driver_path = "/usr/bin/google-chrome"
+    pathFile = "Datasets_Scraping/completo_wPrices_cleaner_official.json"
+    pathInitFile = "Datasets_Scraping/completo_wPrices_official.json"
+
+
+
+
 def dai():
-    with open('completo_wPrices_official.json', 'r') as f:
+    with open(pathInitFile, 'r') as f:
         dcarModel = json.load(f)
         dcarModel_cln = copy.deepcopy(dcarModel)
         deletatiByCilindr = 0
@@ -16,6 +29,9 @@ def dai():
                 a = dcarModel[brand][model]
                 """ if a['price'] < 1000:
                     dcarModel_cln[brand][model]['price'] = None """
+                if a['price'] == 0:
+                    del dcarModel_cln[brand][model]
+                    continue
                 
                 if len(a['engines'].keys()) == 0:
                     print("cancello [eng == 0]",brand, model)
@@ -48,7 +64,7 @@ def dai():
         print("cancellatiByEng", deletatiByEng)
         print("cancellatiByCilindr", deletatiByCilindr)
                     
-    with open('completo_wPrices_cleaner_official.json', 'w') as f:
+    with open(pathFile, 'w') as f:
         json.dump(dcarModel_cln, f)
             
 dai()

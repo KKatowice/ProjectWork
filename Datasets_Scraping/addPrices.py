@@ -7,11 +7,16 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 
-isFabio = False
+isFabio = True
 if isFabio == False:
     chrome_driver_path = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+    pathFile = "completo_wPrices_official.json"
+    pathInitFile = "completo.json"
 else:
-    chrome_driver_path = "/usr/bin/chromium-browser"
+    chrome_driver_path = "/usr/bin/google-chrome"
+    pathFile = "Datasets_Scraping/completo_wPrices_official.json"
+    pathInitFile = "Datasets_Scraping/completo.json"
+
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
 #--disable-dev-shm-usage
@@ -68,7 +73,7 @@ async def seleniumscrape(link):
 
 async def scrapePrices():
     
-    with open('completo.json', 'r') as f:
+    with open(pathInitFile, 'r') as f:
         dcarModel = json.load(f)
         for x in tqdm(dcarModel, f"scraping prices"):
             #print(x)
@@ -81,7 +86,7 @@ async def scrapePrices():
                 dcarModel[x][y]['price'] = pricez
 
 
-        with open('completo_wPrices_official.json', 'w') as f:
+        with open(pathFile, 'w') as f:
             json.dump(dcarModel, f)
             
 
