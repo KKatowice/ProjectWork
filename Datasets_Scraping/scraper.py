@@ -51,7 +51,6 @@ def removeBrandName(s: str, torem: str):
     #print(f"remove {torem} da {s}")
     return s.replace(torem,"").strip()
 
-
 async def scrape_car_model_data(lstBrand: list):
     ret = {} #{ brand:{model:{..info}}, ...  }
     for link_brand in tqdm(lstBrand,"scraping car models"):
@@ -86,14 +85,9 @@ def getEngines(divvoneCar: BeautifulSoup, brand: str, model: str):
     eng = {}
     for x in boxEngines:
         for y in x.find_all('a'):
-            #print(y.text)
-            #print(y['href'])
-            # pulito o no ? TODO
-            #nme = y.text.replace(brand.upper(),"").replace(model.upper(),"").rsplit("(")[0].strip()
             eng[y.text] = {'link':y['href']}
     return eng
     
-
 async def scrape_eachModel_data(dizModels: dict):
     for brand in tqdm(dizModels.keys(),f"scraping models details"):
         for model in dizModels[brand]:
@@ -110,7 +104,6 @@ async def scrape_eachModel_data(dizModels: dict):
             dizModels[brand][model]['engines'] = engList
             dizModels[brand][model]['car_imglink'] = imgcar
             
-
     if DEBUGZ:
         with open('marca_modello_engines.json', 'w') as f:
             json.dump(dizModels, f)

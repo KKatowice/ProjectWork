@@ -6,8 +6,8 @@ import re
 
 #Apro i due file json
 c = create_db_connection()
-data = json.load(open("../Datasets_Scraping/completo_wPrices_cleaner_official.json"))
-users = json.load(open("../Datasets_Scraping/utenti_official.json"))
+data = json.load(open("Datasets_Scraping/completo_wPrices_cleaner_official.json"))
+users = json.load(open("Datasets_Scraping/utenti_official.json"))
 
 #Inserimento dei marchi
 def insert_marchi():
@@ -170,6 +170,7 @@ insert_marchi()
 # insert_users()
 insert_motori()
 insert_auto()
+
 execute_query(c,q2)
 
 

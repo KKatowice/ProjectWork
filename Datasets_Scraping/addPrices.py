@@ -19,7 +19,6 @@ else:
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
-#--disable-dev-shm-usage
 chrome_options.binary_location = chrome_driver_path
 
 def convert_to_integer(number_str):

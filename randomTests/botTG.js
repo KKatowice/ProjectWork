@@ -33,7 +33,7 @@ const userState = new Map();
 
 
   function session_collector() {
-    return {'settings':{'marchio': 'tutti', 'carburante': 'tutti ', 'consumi': 0, 'emissioni': 0, 'prezzo': 0, 'serbatoio': 0, 'potenza': 0, 'cilindrata': 0, 'cavalli': 0},
+    return {'settings':{'marchio': 'tutti', 'carburante': 'tutti ', 'consumi': 0, 'emissioni': 0, 'prezzo': 0, 'serbatoio': 0, 'potenza': 0, 'cilindrata': 0, 'cavalli': 0, 'limit':0},
             'limit':10,
             'clicked':{ 'prezzo': false, 'emissioni': false, 'consumi': false, 'serbatoio': false, 'potenza': false, 'cilindrata': false, 'cavalli': false, 'limit': false}}
   }
@@ -144,7 +144,8 @@ async function getshowC(ctx){
   res = await res.json()
   
   slicedRes = res['data']
-  lmt = ctx.session['settings']['limit']
+  lmt = ctx.session['limit']
+  console.log("limit>????", lmt)
   if (res['data'].length > lmt){
     slicedRes = res['data'].slice(0,lmt)
   }
@@ -184,6 +185,7 @@ async function collect_data_conv(conversation, ctx) {
   await ctx.reply(`Benvenuto in DrivenChoice Bot`);
   for (const [key, value] of Object.entries(qna)) {
     if (!ctx.session['clicked'][value]){
+      console.log(value, "??", ctx.session['clicked'])
       continue;
     }
     await ctx.reply(key);
