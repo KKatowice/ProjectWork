@@ -1,239 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Log In</title>
-
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" />
-        <style>
-            body {
-                background-color: #ffffff;
-                color: #000000; /* Chaanged text color to black */
-                /*font-family: 'Georgia', sans-serif;*/
-                margin: 0;
-                padding: 0;
-            }
-
-            .btn-primary {
-                background-color: #51875; /* Verde scuro */
-                border-color: #51875;
-            }
-
-            .btn-primary:hover {
-                background-color: #51875; /* Verde scuro */
-                border-color: #51875;
-            }
-
-            .btn-success {
-                background-color: #95c799; /* Verde */
-                border-color: #95c799;
-                color: #ffffff; /* Testo bianco */
-                transition: background-color 0.3s ease;
-            }
-
-            .btn-success:hover {
-                background-color: #1d5f38; /* Verde più scuro */
-                border-color: #1d5f38;
-            }
-
-            .card {
-                background-color: #f8f9fa; /* Grigio chiaro */
-                border: none;
-                border-radius: 20px;
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-                transition: transform 0.3s ease;
-            }
-
-            .card:hover {
-                transform: translateY(-5px); /* Effetto di sollevamento al passaggio del mouse */
-            }
-
-            .card-body {
-                padding: 30px;
-            }
-            .container-a {
-                background-color: #6ca577;
-                color: black;
-                text-align: center;
-                padding: 10px 0;
-                position: absolute;
-                bottom: 5px;
-                width: 100%;
-                margin-top: 3%;
-            }
-        </style>
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="/"><i class="fas fa-car"></i> DrivenChoice</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-nav ml-auto">
-                    <a class="nav-link active" href="/">Home</a>
-                    <a class="nav-link" href="/chisiamo">Chi Siamo</a>
-                    <a class="nav-link" href="/marchi">I nostri Marchi</a>
-                    <a class="nav-link" href="/auto">Tutte le automobili</a>
-                    <a class="nav-link" href="/grafici">Grafici</a>
-                    <a class="nav-link" href="/Utente">Utente</a>
-                    <a class="nav-link" href="/preferiti">Preferiti</a>
-                    <form class="d-flex" role="search" action="/search" method="get">
-                        <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name" />
-                        <button class="btn btn-outline-success" type="submit">Cerca</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
-        {% if session['utente'] %}
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="card mt-5">
-                        <div class="card-body">
-                            <h2 class="text-center mb-4">Effettua il logout</h2>
-                            <button onclick="/logout" id="btnLogOut" class="btn btn-danger btn-block">Logout</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="card mt-5">
-                        <div class="card-body">
-                            <h2 class="text-center mb-4">Cancella il tuo account</h2>
-                            <button onclick="deleteAccount()" id="btnDelAcc" class="btn btn-danger btn-block">Cancella</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% else %}
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="card mt-5">
-                        <div class="card-body">
-                            <h2 class="text-center mb-4">Accedi al tuo account</h2>
-                            <form class="form-signin">
-                                <div class="form-group">
-                                    <label for="email">Email:</label>
-                                    <input type="email" name="email" class="form-control" id="email" placeholder="Inserisci email" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Password:</label>
-                                    <input type="password" name="password" class="form-control" id="password" placeholder="Inserisci password" />
-                                </div>
-                            </form>
-                            <button onclick="login()" id="btnLogIn" class="btn btn-success btn-block">Accedi</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container mt-5 mb-5">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="text-center mb-4">Aggiungi Automobile</h2>
-                            <p class="text-center mb-4">Non hai ancora un account? Crea un nuovo account qui.</p>
-                            <div class="text-center">
-                                <a href="/crea_account" class="btn btn-success btn-block">Crea Account <i class="bi bi-person-plus-fill"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endif %}
-        <div class="container-a mt-5">
-            <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
-        </div>
-
-        <!-- Script delle librerie JavaScript -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-
-        <script>
-            var tentativiFalliti = 0;
-            async function login() {
-                var email = document.getElementById("email").value;
-                var password = document.getElementById("password").value;
-
-                var datiJSON = {
-                    email: email,
-                    password: password,
-                };
-                //console.log(datiJSON)
-                let resp = await fetch("/api/login", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(datiJSON),
-                });
-                let trueResp = await resp.json();
-                console.log(trueResp);
-                var notyf = new Notyf();
-                if (trueResp.success) {
-                    notyf.success("Login succesfull");
-                    window.location.href = "/";
-                } else {
-                    notyf.error("Login errato");
-                    //alert("Credenziali errate")
-                }
-            }
-            async function bloccaUtente(email) {
-                var datiJSON = {
-                    email: email,
-                };
-
-                let resp = await fetch("/api/utentebloccato", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(datiJSON),
-                });
-
-                let trueResp = await resp.json();
-                console.log(trueResp);
-            }
-        </script>
-        <script>
-            async function deleteAccount() {
-            try {
-                const resp = await fetch('/api/deleteAccount', { method: 'DELETE' });
-
-                if (resp.ok) {
-                    const trueResp = await resp.json();
-                    const notyf = new Notyf();
-
-                    if (trueResp.success) {
-                        notyf.success('Account eliminato');
-                        location.href = "/";
-                    } else {
-                        notyf.error('Errore');
-                    }
-                } else {
-                    console.error('Error:', resp.status);
-                }
-            } catch (error) {
-                console.error('Error:', error);
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aggiungi Automobile</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        body, html {
+            margin: 0;
+            height: 100%;
         }
 
-        </script>
-    </body>
+        input {
+            border: none;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        .input-line:focus {
+            outline: none;
+            border-color: #fff;
+            transition: all .2s ease;
+        }
+
+        .ghost-round {
+            cursor: pointer;
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-radius: 25px;
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 1.2rem;
+            font-weight: 300;
+            line-height: 2.5em;
+            margin-top: auto;
+            margin-bottom: 25px;
+            transition: all .2s ease;
+        }
+
+        .ghost-round:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: #FFFFFF;
+            transition: all .2s ease;
+        }
+
+        .input-line {
+            background: none;
+            margin-bottom: 10px;
+            line-height: 2.4em;
+            color: #fff;
+            font-weight: 300;
+            letter-spacing: 0.02rem;
+            font-size: 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+            transition: all .2s ease;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: ;
+            height: 100%;
+        }
+
+        .window {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 15px 50px 10px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+            height: 780px;
+            width:800px;
+            background: #93a996 url('https://pexels.imgix.net/photos/27718/pexels-photo-27718.jpg?fit=crop&w=1280&h=823') top left no-repeat;
+        }
+
+        .overlay {
+            background: linear-gradient(#93a996, #93a996);
+            opacity: 0.85;
+            position: absolute;
+            width:100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 0 25px;
+            display: flex;
+            flex-direction: column;
+            z-index: 5;
+        }
+
+        .welcome {
+            font-weight: 500;
+            margin-top: 75px;
+            text-align: center;
+            font-size: 2.5rem;
+            letter-spacing: 0.05rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-weight: 100;
+            letter-spacing: 0.02rem;
+            margin-bottom: 25px;
+        }
+        .container-a {
+            background-color: #6ca577;
+            color: black;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 5;
+            width: 100%;
+            margin-top: 3%
+        }
+    </style>
+</head>
+<body>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">DrivenChoice</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-nav ml-auto">
+            <a class="nav-link active" href="/">Home</a>
+            <a class="nav-link" href="/chisiamo">Chi Siamo</a>
+            <a class="nav-link" href="/marchi">I  Marchi</a>
+            <a class="nav-link" href="/Tutte_le_auto">Tutte le automobili</a>
+            <a class="nav-link" href="/grafici">Grafici</a>
+            <a class="nav-link" href="/Utente">Utente</a>
+            <a class="nav-link" href="/Preferiti">Preferiti</a>
+            <form class="d-flex" role="search" action="/search" method="get">
+                <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name">
+                <button class="btn btn-outline-success" type="submit">Cerca</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class='bold-line'></div>
+<div class='container'>
+    <div class='window'>
+        <div class='overlay'></div>
+        <div class='content'>
+            <div class='welcome'>Ciao!</div>
+            <div class='subtitle'>Aggiungi i dati della tua automobile</div>
+            <div class='input-fields'>
+                <input type='text' id='modello' placeholder='Modello Automobile' class='input-line full-width'>
+                <input type='text' id='marchio' placeholder='Marchio Automobile' class='input-line full-width'>
+                <input type='text' id='cilindrata' placeholder='Cilidrata' class='input-line full-width'>
+                <input type='text' id='potenza' placeholder='Potenza' class='input-line full-width'>
+                <input type='text' id='cavalli' placeholder='Cavalli' class='input-line full-width'>
+                <input type='text' id='carburante' placeholder='Carburante' class='input-line full-width'>
+                 <input type='text' id='consumi' placeholder='Consumi' class='input-line full-width'>
+                <input type='text' id='emissioni' placeholder='Emissioni' class='input-line full-width'>
+                <input type='text' id='Serbatoio' placeholder='Serbatoio' class='input-line full-width'>
+                <input type='file' id='foto_auto' placeholder='Foto' accept='image/*' class='input-line full-width'>
+            </div>
+            <div>
+                <button onclick="aggiungiauto()" class='ghost-round full-width'>Aggiungi Automobile </button>
+            </div>
+            <div id="success-message" style="display: none; text-align: center; color: green;">Automobile creata con successo</div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+
+
+async function aggiungiauto() {
+var modello = document.getElementById("modello").value;
+var marchio = document.getElementById("marchio").value;
+var prezzo = document.getElementById("prezzo").value;
+var foto_auto = document.getElementById("foto_auto").value;
+var cilindrata = document.getElementById("cilindrata").value;
+var potenza = document.getElementById("potenza").value;
+var cavalli = document.getElementById("cavalli").value;
+var carburante = document.getElementById("carburante").value;
+var consumi = document.getElementById("consumi").value;
+var emissioni = document.getElementById("emissioni").value;
+var serbatoio = document.getElementById("serbatoio").value;
+
+var datiJSON = {
+    modello = modello
+        marchio = marchio
+        prezzo = prezzo
+        foto_auto = foto_auto
+        cilindrata = cilindrata
+        potenza = potenza
+        cavalli =cavalli
+        carburante = carburante
+        consumi =consumi
+        emissioni = emissioni
+        serbatoio = serbatoio
+    };
+//console.log(datiJSON)
+let resp = await fetch('/crea_account', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datiJSON)
+
+})
+
+
+let trueResp = await resp.json()
+    console.log(trueResp)
+    var notyf = new Notyf();
+    if (trueResp.success) {
+
+        notyf.success('Update successfull');
+        window.location.href = "/auto/<int:id>/aggiungi";
+    }
+    else {
+        notyf.error('Auto già presente');
+        //alert("Dati inseriti sbagliati")
+    }
+}
+
+
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+</div>
+ <div>
+    <div class="container-a">
+        <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
+    </div>
+</div>
+</script>
+</body>
+
+
 </html>

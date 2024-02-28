@@ -83,8 +83,8 @@ def show_utenti():
 
 # Modifica dei dati
 
-@app.route('/auto/<int:id>/modifica', methods=['GET', 'POST'])
-def modifica_auto(id):
+@app.route('/auto/<int:id>/aggiungi', methods=['GET', 'POST'])
+def aggiungia_auto(id):
     auto = Auto.query.get(id)
     if request.method == 'POST':
         auto.marca_id = request.form['marca_id']
