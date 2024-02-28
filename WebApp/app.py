@@ -140,30 +140,30 @@ def preferiti():
     return render_template('preferiti.html', auto=lista_auto)
 
 
-@app.route('/Utente', methods=['GET', 'POST'])
+@app.route('/Utente', methods=['GET'])
 def login():
-    connessione = create_db_connection(DBNAME)
-    if request.method == 'POST':
-        email = request.form['email']
-        password = request.form['password']
-        q1 = f"""SELECT email,password FROM utenti WHERE {email} AND {password}"""
-        verifica = execute_query(connessione, q1)
-        if len(verifica) > 1:        # Password corretta, autenticazione riuscita
-            return redirect(url_for('dashboard'))
-        else:
-            return "email o password errate"
-        # else:
-            # Password errata, incrementa il numero di tentativi
-            attempts += 1
-            remaining_attempts = max_attempts - attempts
-            if remaining_attempts > 0:
-                return f"Password errata. {remaining_attempts} tentativi rimanenti."
-            else:
-                c.execute("INSERT INTO utenti_bloccati (email) VALUES (?)", (email,))
-                conn.commit()
+    # connessione = create_db_connection(DBNAME)
+    # if request.method == 'POST':
+    #     email = request.form['email']
+    #     password = request.form['password']
+    #     q1 = f"""SELECT email,password FROM utenti WHERE {email} AND {password}"""
+    #     verifica = execute_query(connessione, q1)
+    #     if len(verifica) > 1:        # Password corretta, autenticazione riuscita
+    #         return redirect(url_for('dashboard'))
+    #     else:
+    #         return "email o password errate"
+    #     # else:
+    #         # Password errata, incrementa il numero di tentativi
+    #         attempts += 1
+    #         remaining_attempts = max_attempts - attempts
+    #         if remaining_attempts > 0:
+    #             return f"Password errata. {remaining_attempts} tentativi rimanenti."
+    #         else:
+    #             c.execute("INSERT INTO utenti_bloccati (email) VALUES (?)", (email,))
+    #             conn.commit()
 
-    else:
-        return render_template('Utente.html')
+    # else:
+    return render_template('Utente.html')
 
 @app.route('/dashboard')
 def dashboard():
@@ -271,6 +271,15 @@ def search():
             if isinstance(value, Decimal):
                 d[key] = float(value)
     return render_template('search.html', auto=result_data)
+
+@app.route('/admin')
+def admin():
+    if session['utente'] == 'admin':
+        return render_template('admin.html')
+
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
