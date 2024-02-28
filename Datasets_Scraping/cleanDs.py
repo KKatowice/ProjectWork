@@ -4,7 +4,7 @@ import pandas as pd
 from tqdm import tqdm
 import copy
 
-isFabio = True
+isFabio = False
 if isFabio == False:
     chrome_driver_path = "C:\Program Files\Google\Chrome\Application\chrome.exe"
     pathFile = "completo_wPrices_cleaner_official.json"

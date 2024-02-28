@@ -1,3 +1,5 @@
+import statistics
+
 from dbUtils_aiven import *
 import json
 import re
@@ -24,6 +26,7 @@ def insert_users():
     execute_many_query(c,query,lista)
 
 def insert_motori():
+    lista_cons= []
     l = []
     for marchio in data.keys():
         for elem in data[marchio].keys():
@@ -78,6 +81,9 @@ def insert_motori():
                                 continue
                             if x.get('Combined:'):
                                 cons = float(x['Combined:'].split("(")[1].split(" ")[0])
+                                if cons > 40:
+                                    cons = sum(lista_cons)/len(lista_cons)
+                                lista_cons.append(cons)
                                 if cons < 4.0 and x['Fuel:'] == "Gasoline ":
                                     cons = 7.0
                                 elif cons < 4.0 and x['Fuel:'] == "Diesel ":
@@ -103,7 +109,7 @@ def insert_motori():
                                 elif cons < 4.0 and x['Fuel:'] == "Natural Gas ":
                                     cons = 8.0
                             else:
-                                cons = 6.5
+                                cons = sum(lista_cons)/len(lista_cons)
                             if x.get('CO2 Emissions (Combined):'):
                                 emiss = x['CO2 Emissions (Combined):'].split(" ")[0]
                             else:
@@ -156,12 +162,12 @@ q4 = """TRUNCATE TABLE marchi"""
 q5 = """TRUNCATE TABLE motori"""
 q6 = """TRUNCATE TABLE utenti"""
 execute_query(c,q1)
-# execute_query(c,q3)
-# execute_query(c,q4)
-# execute_query(c,q5)
+execute_query(c,q3)
+execute_query(c,q4)
+execute_query(c,q5)
 # execute_query(c,q6)
 insert_marchi()
-insert_users()
+# insert_users()
 insert_motori()
 insert_auto()
 execute_query(c,q2)
