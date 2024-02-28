@@ -37,18 +37,11 @@ def admin_getAutobyMotori():
     return render_template()  # Restituisci i risultati in formato JSON
 
 
-@adminBlueprint.route('/auto/<int:id>/modifica', methods=['GET', 'POST'])
-def modifica_auto(id):
-    auto = Auto.query.get(id)
-    if request.method == 'POST':
-        auto.marca_id = request.form['marca_id']
-        auto.modello = request.form['modello']
-        db.session.commit()
-        return redirect(url_for('show_auto'))
-    return render_template('modifica_auto.html', auto=auto)
+def modifica_utenti():
 
 
-@adminBlueprint.route('/marchi/<int:id>/modifica', methods=['GET', 'POST'])
+
+@apiBlueprint.route('/marchi/<int:id>/modifica', methods=['GET', 'POST'])
 def modifica_marchi(id):
     auto = Auto.query.get(id)
     if request.method == 'POST':
@@ -59,7 +52,7 @@ def modifica_marchi(id):
     return render_template('modifica_marchi.html', auto=auto)
 
 
-@adminBlueprint.route('/motori/<int:id>/modifica', methods=['GET', 'POST'])
+@apiBlueprint.route('/motori/<int:id>/modifica', methods=['GET', 'POST'])
 def modifica_motori(id):
     motore = Motori.query.get(id)
     if request.method == 'POST':
@@ -69,24 +62,89 @@ def modifica_motori(id):
     return render_template('modifica_motori.html', motore=motore)
 
 
-@adminBlueprint.route('/utenti/<int:id>/modifica', methods=['GET', 'POST'])
-def modifica_utenti(id):
-    utente = Utenti.query.get(id)
-    if request.method == 'POST':
-        utente.username = request.form['username']
-        db.session.commit()
-        return redirect(url_for('show_utenti'))
-    return render_template('modifica_utenti.html', utente=utente)
+
+
+
+
+@apiBlueprint.route('/api/aggiungi_auto', methods=['GET', 'POST'])
+def aggiungi_auto():
+    c = create_db_connection(DBNAME)
+    data = request.get_json()
+    modello = data["modello"]
+    marchio = data["marchio"]
+    prezzo = data["prezzo"]
+    foto_auto = data["foto_auto"]
+    cilindrata = data["cilindrata"]
+    potenza = data["potenza"]
+    cavalli = data["cavalli"]
+    carburante = data["carburante"]
+    consumi = data["consumi"]
+    emissioni = data["emissioni"]
+    serbatoio = data["serbatoio"]
+    q1 = f"""INSERT INTO auto Values('{modello}','{marchio}','{cilindrata}','{prezzo}','{foto_auto}');"""
+    q2 = f"""INSERT INTO motori Values('{potenza}','{cavalli}','{carburante}','{consumi}','{emissioni}','{serbatoio}');"""
+    r1 = execute_query(c, q1)
+    r2 = execute_query(c, q2)
+    if r1 and r2:
+        return {"success": True}
+    else:
+        return {"success": False}
+
+@apiBlueprint.route('/api/modifica_auto', methods=['GET', 'POST'])
+def modifica_auto():
+    c = create_db_connection(DBNAME)
+    if session.get("utente") == "admin":
+        data = request.get_json()
+        modello = data["modello"]
+        marchio = data["marchio"]
+        prezzo = data["prezzo"]
+        foto_auto = data["foto_auto"]
+        cilindrata = data["cilindrata"]
+        potenza = data["potenza"]
+        cavalli = data["cavalli"]
+        carburante = data["carburante"]
+        consumi = data["consumi"]
+        emissioni = data["emissioni"]
+        serbatoio = data["serbatoio"]
+        q = f"""
+                   UPDATE auto
+                   SET modello = '{modello}', marchio = '{marchio}', prezzo = '{prezzo}', foto_auto = '{foto_auto}'
+                   ;
+                   """
+        q2 = f"""
+                   UPDATE motori
+                   SET cilindrata = '{cilindrata}', potenza = '{potenza}',
+                    cavalli = '{cavalli}', carburante = '{carburante}',
+                    carburante = '{carburante}', consumi = '{consumi}',
+                    emissioni = '{emissioni}', serbatoio = '{serbatoio}'
+                   ;
+                   """
+        r = execute_query(c, q)
+        r2 = execute_query(c, q2)
+        c.close()
+        if r and r2:
+            return {"success": True}
+        else:
+            return {"success": True}
 
 
 # Cancellazione dei dati
 
-@adminBlueprint.route('/auto/<int:id>/cancella', methods=['POST'])
-def cancella_auto(id):
-    auto = Auto.query.get(id)
-    db.session.delete(auto)
-    db.session.commit()
-    return redirect(url_for('show_auto'))
+@apiBlueprint.route('/api/cancella_auto', methods=['POST'])
+def cancella_auto():
+    c = create_db_connection(DBNAME)
+    if session.get("utente") == "admin":
+        data = request.get_json()
+        modello = data["modello"]
+        q = f"""DELETE FROM auto
+                    WHERE modello = '{modello}';"""
+        r = execute_query(c, q)
+        if r:
+            return {'success':True}
+        else:
+            return {'success':False}
+
+
 
 
 @adminBlueprint.route('/marchi/<int:id>/cancella', methods=['POST'])

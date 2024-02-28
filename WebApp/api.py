@@ -216,8 +216,10 @@ def login():
         password = data['password']
         q1 = f"""SELECT password FROM utenti WHERE email = '{email}';"""
         q2 = f"""SELECT password FROM utenti_bloccati WHERE email = '{email}'"""
+        q_admin = f"""SELECT admin FROM utenti WHERE admin = 1"""
         data1 = read_query(connessione, q1)[0]
         data2 = read_query(connessione, q2)
+        data_admin = read_query(connessione, q_admin )
         print(data1, password, data2)
 
         if len(data1) > 0 and (data2 == None or len(data2) == 0) :
@@ -225,9 +227,15 @@ def login():
             #print(check_password_hash(str(data1['password']), password))
             pswcheck = check_password_hash(str(data1['password']), password)
             if pswcheck:
-                print('check superato')
-                session['utente'] = data['email']
+                if data_admin:
+                    print('check superato per admin')
+                    session["utente"] = "admin"
+                else:
+
+                    print('check superato per utente')
+                    session['utente'] = data['email']
                 return {'success':True}
+
             else:
                 print('sorry')
                 return {'success': False, 'bloccato': False}

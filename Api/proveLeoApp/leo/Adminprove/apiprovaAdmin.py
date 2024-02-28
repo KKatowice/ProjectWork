@@ -73,22 +73,16 @@ def aggiungi_auto():
         return {"success": False, "error": str(e)}
 
 
-@app.route('api/elimina_auto', methods=['GET', 'POST'])
-def elimina_auto():
+@apiBlueprint.route('/api/cancella_auto', methods=['POST'])
+def cancella_auto():
     c = create_db_connection(DBNAME)
-    try:
+    if session.get("utente") == "admin":
         data = request.get_json()
         modello = data["modello"]
         q = f"""DELETE FROM auto
-            WHERE modello = '{modello}';"""
+                    WHERE modello = '{modello}';"""
         r = execute_query(c, q)
-
-        if len(r) == None:
-            session['admin'] = True
-            return {"cancellato": True}
+        if r:
+            return {'success':True}
         else:
-            return {"cancellato": False}
-
-    except Exception as e:
-        # In caso di errore, restituisci una risposta JSON con indicazione dell'errore
-        return {"success": False, "error": str(e)}
+            return {'success':False}
