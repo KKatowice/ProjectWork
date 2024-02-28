@@ -5,7 +5,7 @@ from tqdm import tqdm
 import copy
 
 def dai():
-    with open('completo_wPrices.json', 'r') as f:
+    with open('completo_wPrices_official.json', 'r') as f:
         dcarModel = json.load(f)
         dcarModel_cln = copy.deepcopy(dcarModel)
         deletatiByCilindr = 0
@@ -48,7 +48,7 @@ def dai():
         print("cancellatiByEng", deletatiByEng)
         print("cancellatiByCilindr", deletatiByCilindr)
                     
-    with open('completo_wPrices_cleaner.json', 'w') as f:
+    with open('completo_wPrices_cleaner_official.json', 'w') as f:
         json.dump(dcarModel_cln, f)
             
 dai()
