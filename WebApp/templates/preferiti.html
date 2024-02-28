@@ -39,6 +39,54 @@
                 width: 100%;
                 margin-top: 3%;
             }
+            /* Stile per il pop-up */
+                        #carModal .modal-dialog {
+                            max-width: 800px; /* Larghezza massima del pop-up */
+                        }
+
+                        #carModal .modal-content {
+                            border-radius: 15px; /* Angoli arrotondati */
+                            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Ombra */
+                            background-color: #555;
+                            color: #fff; /* Testo bianco */
+                            display: flex;
+                        }
+
+                        #carModal .modal-header {
+                            border-bottom: none; /* Rimuove il bordo inferiore dall'intestazione */
+                        }
+
+                        #carModal .modal-footer {
+                            border-top: none; /* Rimuove il bordo superiore dal piè di pagina */
+                        }
+
+                        #carModal .modal-title {
+                            font-weight: bold; /* Testo in grassetto */
+                            color: #fff; /* Colore del testo */
+                        }
+
+                        #carModal .modal-body {
+                            padding: 30px; /* Padding interno */
+                            font-size: 16px; /* Dimensione del testo */
+                            flex: 1;
+                        }
+
+                        #carModal .close {
+                            color: #ff0000; /* Colore del pulsante di chiusura */
+                            opacity: 0.5; /* Opacità del pulsante di chiusura */
+                        }
+
+                        #carModal .close:hover {
+                            color: #ff0000; /* Colore del pulsante di chiusura al passaggio del mouse */
+                            opacity: 1; /* Opacità del pulsante di chiusura al passaggio del mouse */
+                        }
+                        #carImage {
+                            width: 300px; /* Larghezza fissa dell'immagine */
+                            height: 200px; /* Altezza fissa dell'immagine */
+                            object-fit: cover; /* Per mantenere le proporzioni e coprire l'area specificata */
+                            float: right; /* Posiziona l'immagine a destra */
+                            margin-left: 20px; /* Aggiunge spazio a sinistra dell'immagine */
+                        }
         </style>
     </head>
     <body>
@@ -94,6 +142,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                        <img src="" id="carImage" class="img-fluid mb-3" alt="Immagine auto">
                         <h5 id="carDetails"></h5>
                         <p id="carBrand"></p>
                         <p id="carPrice"></p>
@@ -137,9 +186,12 @@
                 var carSerElement = document.getElementById("carSer");
                 carSerElement.textContent = "Serbatoio: " + car.serbatoio + " L";
                 var carBrandElement = document.getElementById("carBrand");
-                carBrandElement.textContent = "Brand: " + car.nome;
+                carBrandElement.textContent = "Brand: " + car.nome.toUpperCase();
+                var carImageElement = document.getElementById("carImage");
+                carImageElement.src = car.foto_auto;
                 $("#carModal").modal("show");
             }
+        </script>
         </script>
         <script>
             async function deletePreferito(auto) {
@@ -165,6 +217,7 @@
                     console.error("Error:", resp.status);
                 }
             }
+
         </script>
         <!-- Script delle librerie JavaScript -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
