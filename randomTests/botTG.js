@@ -16,18 +16,26 @@ let qna = {
   "Quanti Cavalli minimo?": 'cavalli',
   "Massimo Consumi 100km?": 'consumi',
   "Cilindrata minima?": 'cilindrata',
-  //"Emissioni massime?": 'emissioni',
+  "Emissioni massime?": 'emissioni',
+  "Serbatoio minimo?": 'serbatoio',
+  "Potenza minima?": 'potenza',
+  "Quanti risultati vuoi avere?": 'limit',
+  //"Carburante?": 'carburante',
+  //"Marca?": 'marchio',
+
 }
 
 a = {'marchio': 'tutti', 'carburante': 'tutti ', 'consumi': 0, 'emissioni': 0, 'prezzo': 0, 'serbatoio': 0, 'potenza': 0, 'cilindrata': 0, 'cavalli': 0} 
-b = {'marchio': false, 'carburante': false, 'consumi': false, 'emissioni': false, 'prezzo': false, 'serbatoio': false, 'potenza': false, 'cilindrata': false, 'cavalli': false}
-
+b = {'consumi': false, 'emissioni': false, 'prezzo': false, 'serbatoio': false, 'potenza': false, 'cilindrata': false, 'cavalli': false}
+//'marchio': false,'carburante': false,
 
 const userState = new Map();
 
 
   function session_collector() {
-    return {'settings':{'marchio': 'tutti', 'carburante': 'tutti ', 'consumi': 0, 'emissioni': 0, 'prezzo': 0, 'serbatoio': 0, 'potenza': 0, 'cilindrata': 0, 'cavalli': 0},'clicked':b}
+    return {'settings':{'marchio': 'tutti', 'carburante': 'tutti ', 'consumi': 0, 'emissioni': 0, 'prezzo': 0, 'serbatoio': 0, 'potenza': 0, 'cilindrata': 0, 'cavalli': 0},
+            'limit':10,
+            'clicked':{ 'prezzo': false, 'emissioni': false, 'consumi': false, 'serbatoio': false, 'potenza': false, 'cilindrata': false, 'cavalli': false, 'limit': false}}
   }
 
 bot.use(session({
@@ -58,6 +66,18 @@ function tryConvert(e,val){
     else if(val == 'cilindrata'){
       return parseFloat(e);
     }
+    else if(val == 'emissioni'){
+      return parseFloat(e);
+    }
+    else if(val == 'serbatoio'){
+      return parseFloat(e);
+    }
+    else if(val == 'potenza'){
+      return parseFloat(e);
+    }
+    else if(val == 'limit'){
+      return parseInt(e);
+    }
   }catch (err){
     console.log("mmm?",err)
     return false;
@@ -78,13 +98,33 @@ async function validateAnswer(a,val){
       }
   }
   else if(val == 'consumi'){
-      if (typeof(a)==='number' && oldA.includes('.')){
+      if (typeof(a)==='number' && (oldA.includes('.') || a==0)){
           return true;
       }
   }
   else if(val == 'cilindrata'){
-      if (typeof(a)==='number' && oldA.includes('.')){
+      if (typeof(a)==='number' && (oldA.includes('.') || a==0)){
           return true;
+      }
+  }
+  else if(val == 'serbatoio'){
+    if (typeof(a)==='number' && (oldA.includes('.') || a==0)){
+        return true;
+    }
+  }
+  else if(val == 'emissioni'){
+    if (typeof(a)==='number' && (oldA.includes('.') || a==0)){
+        return true;
+    }
+  }
+  else if(val == 'potenza'){
+    if (typeof(a)==='number' && (oldA.includes('.') || a==0)){
+        return true;
+      }
+    }
+  else if(val == 'limit'){
+    if (typeof(a)==='number' && Number.isInteger(a)){
+        return true;
       }
   }
   
@@ -104,8 +144,9 @@ async function getshowC(ctx){
   res = await res.json()
   
   slicedRes = res['data']
-  if (res['data'].length > 10){
-    slicedRes = res['data'].slice(0,10)
+  lmt = ctx.session['settings']['limit']
+  if (res['data'].length > lmt){
+    slicedRes = res['data'].slice(0,lmt)
   }
 
 
@@ -138,13 +179,18 @@ async function getshowC(ctx){
 }
 
 
-
 // convo function
 async function collect_data_conv(conversation, ctx) {
-  await ctx.reply(`Benvenuto in DrivenChoice Bot [scrivi /stop per bloccarmi]`);
+  await ctx.reply(`Benvenuto in DrivenChoice Bot`);
   for (const [key, value] of Object.entries(qna)) {
+    if (!ctx.session['clicked'][value]){
+      continue;
+    }
     await ctx.reply(key);
     let valuez = await conversation.waitFor("message:text");
+    if (valuez == '/stop'){
+      await ctx.reply(`Stopping`);
+      return}
     valuez = valuez.message.text;
     val = await validateAnswer(valuez,value)
     while (!val){
@@ -166,17 +212,47 @@ async function collect_data_conv(conversation, ctx) {
 }
 bot.use(createConversation(collect_data_conv));
 
-
-const buttonRow = Object.entries(b).map(([label, data]) => InlineKeyboard.text(label, data));
-const keyboard = InlineKeyboard.from([buttonRow]);
-
+/* 
+bot.api.setMyCommands([
+  { command: "start", description: "Start the bot" },
+  { command: "search", description: "Search for a car" },
+  { command: "settings", description: "Open filter settings" },
+]);  */
 
 bot.command("start", async (ctx) => {
   //ctx.session = new session_collector();
+  console.log(ctx)
+  await ctx.reply(`Benvenuto seleziona i filtri e fai /search`);
+});
+bot.command("search", async (ctx) => {
+  //ctx.session = new session_collector();
   let a =await ctx.conversation.enter("collect_data_conv");
 });
+
+
+
+
+
 bot.command("settings", (ctx) => {
-  ctx.reply("Welcome! seelziona i parametri per la tua auto"), { reply_markup: keyboard }});
+  const inlineKeyboard = new InlineKeyboard();
+  c = 0
+  Object.entries(ctx.session['clicked']).forEach(([label, data]) => {
+    if (c%2==0){
+      inlineKeyboard.text(`${label}`, label).row();
+    }else{
+      inlineKeyboard.text(`${label}`, label);
+    }
+    c+=1
+  });
+
+  ctx.reply("Welcome! seleziona i parametri per la tua auto poi fai /search", { reply_markup: inlineKeyboard });
+});
+bot.callbackQuery(Object.keys(b), (ctx) => {
+  const label = ctx.callbackQuery.data;
+  ctx.session['clicked'][label] = !ctx.session['clicked'][label];
+});
+
+
 
 bot.start();
 
