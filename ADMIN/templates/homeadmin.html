@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home Page</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <style>
+
+                    body {
+                        background-color:#ffffff;
+                        color: #000000; /* Chaanged text color to black */
+                        /*font-family: 'Georgia', sans-serif;*/
+                        margin: 0;
+                        padding: 0;
+                    }
+            html {
+                    box-sizing: border-box;
+                }
+                *,
+                *:before,
+                *:after {
+                    box-sizing: inherit;
+                }
+
+
+
+                    .card {height: 300px;
+                   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombra leggera di base */
+                   transition: box-shadow 0.3s ease; /* Transizione fluida per l'ombra */
+               }
+               /* Stile per l'ombreggiatura quando si passa sopra */
+               .card:hover {
+                   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ombra più marcata quando si passa sopra */
+               }
+               .card:hover h5 {
+                   color: #28a745 !important;
+               }
+               .card-img-top {
+               height: 200px; /* Imposta l'altezza desiderata per le immagini */
+               object-fit: cover; /* Ridimensiona le immagini mantenendo le proporzioni e coprendo l'area specificata */
+               }
+               .card-title-sm {
+        font-size: 25px; /* Imposta la dimensione del carattere del titolo della card */
+        }
+        /* Stile per il contenuto della sezione "Chi Siamo" */
+        .about-section {
+            padding: 50px 0;
+        }
+
+        .about-section h2 {
+            color: #343a40; /* Dark gray text color */
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .about-section p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+                     .container-a {
+                            background-color: #6ca577;
+                            color: black;
+                            text-align: center;
+                            padding: 10px 0;
+                            position: absolute;
+                            bottom: 5;
+                            width: 100%;
+                            margin-top: 3%;
+                        }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/"><i class="fas fa-car"></i> DrivenChoice</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" href="/">Home</a>
+                    <a class="nav-link" href="/chisiamo">Chi Siamo</a>
+                    <a class="nav-link" href="/marchi">I nostri Marchi</a>
+                    <a class="nav-link" href="/auto">Tutte le automobili</a>
+                    <a class="nav-link" href="/grafici">Grafici</a>
+                    <a class="nav-link" href="/Utente">Administration</a>
+                    <form class="d-flex" role="search" action="/search" method="get">
+                        <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name" />
+                        <button class="btn btn-outline-success" type="submit">Cerca</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <section class="about-section">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Bentornato Admin, che cosa vuoi modificare? </h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="card">
+        <img src="https://th.bing.com/th/id/OIP.OkPLsoEjHHQ7VTs3uY3c6QHaEK?rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title card-title-sm">Auto</h5>
+          <a href="/aggiungi/auto" class="btn btn-dark btn-sm">Aggiungi</a>
+            <a href="" class="btn btn-dark btn-sm">Rimuovi</a>
+            <a href="" class="btn btn-dark btn-sm">Modifica</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+        <img src="{{ url_for('staticA', filename='logo.jpg') }}" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title card-title-sm">Marchi</h5>
+          <a href="" class="btn btn-dark btn-sm">Aggiungi</a>
+            <a href="" class="btn btn-dark btn-sm">Rimuovi</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+        <img src="https://img.freepik.com/free-photo/hands-holding-tablet-with-icons_1134-90.jpg?t=st=1709131551~exp=1709135151~hmac=bf957aa79c59cda5704a43ab95f432ab854da171399360bac458eea061963fcd&w=996" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title card-title-sm">Utenti</h5>
+          <a href="/aggiungi/utente" class="btn btn-dark btn-sm">Aggiungi</a>
+            <a href="/rimuovi/utente" class="btn btn-dark btn-sm">Rimuovi</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+        </div>
+    </div>
+</section>
+
+
+
+        <div class="container-a">
+            <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>

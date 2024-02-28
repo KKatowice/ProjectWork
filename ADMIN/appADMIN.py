@@ -298,5 +298,26 @@ def elimina_auto():
         return {"success": False, "error": str(e)}
 
 
+@app.route('/aggiungi/auto')
+def addcar():
+   return render_template('aggiungiauto.html')
+
+@app.route('/modifica/auto')
+def updatecar():
+   return render_template('modificaauto.html')
+
+@app.route('/rimuovi/auto')
+def removecar():
+   return render_template('rimuoviauto.html')
+
+@app.route('/aggiungi/utente')
+def adduser():
+   return render_template('aggiungiutente.html')
+
+@app.route('/rimuovi/utente')
+def adduser():
+   return render_template('rimuoviutente.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)

@@ -155,23 +155,16 @@
         <div class='overlay'></div>
         <div class='content'>
             <div class='welcome'>Ciao!</div>
-            <div class='subtitle'>Aggiungi i dati della tua automobile</div>
+            <div class='subtitle'>Rimuovi l'utente</div>
             <div class='input-fields'>
-                <input type='text' id='modello' placeholder='Modello Automobile' class='input-line full-width'>
-                <input type='text' id='marchio' placeholder='Marchio Automobile' class='input-line full-width'>
-                <input type='text' id='cilindrata' placeholder='Cilidrata' class='input-line full-width'>
-                <input type='text' id='potenza' placeholder='Potenza' class='input-line full-width'>
-                <input type='text' id='cavalli' placeholder='Cavalli' class='input-line full-width'>
-                <input type='text' id='carburante' placeholder='Carburante' class='input-line full-width'>
-                 <input type='text' id='consumi' placeholder='Consumi' class='input-line full-width'>
-                <input type='text' id='emissioni' placeholder='Emissioni' class='input-line full-width'>
-                <input type='text' id='serbatoio' placeholder='Serbatoio' class='input-line full-width'>
-                <input type='file' id='foto_auto' placeholder='Foto' accept='image/*' class='input-line full-width'>
+                <input type='text' id='nome' placeholder='Nome' class='input-line full-width'>
+                <input type='text' id='cognome' placeholder='Cognome' class='input-line full-width'>
+                <input type='text' id='email' placeholder='Email' class='input-line full-width'>
             </div>
             <div>
-                <button onclick="/api/aggiungi_auto" class='ghost-round full-width'>Aggiungi Automobile </button>
+                <button onclick="/api/rimuovi/utente" class='ghost-round full-width'>Aggiungi Automobile </button>
             </div>
-            <div id="success-message" style="display: none; text-align: center; color: green;">Automobile creata con successo</div>
+            <div id="success-message" style="display: none; text-align: center; color: green;">Utente rimosso con successo</div>
         </div>
     </div>
 </div>

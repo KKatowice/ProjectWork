@@ -129,27 +129,25 @@
 </head>
 <body>
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="/">DrivenChoice</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-nav ml-auto">
-            <a class="nav-link active" href="/">Home</a>
-            <a class="nav-link" href="/chisiamo">Chi Siamo</a>
-            <a class="nav-link" href="/marchi">I  Marchi</a>
-            <a class="nav-link" href="/Tutte_le_auto">Tutte le automobili</a>
-            <a class="nav-link" href="/grafici">Grafici</a>
-            <a class="nav-link" href="/Utente">Utente</a>
-            <a class="nav-link" href="/Preferiti">Preferiti</a>
-            <form class="d-flex" role="search" action="/search" method="get">
-                <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name">
-                <button class="btn btn-outline-success" type="submit">Cerca</button>
-            </form>
-        </div>
-    </div>
-</nav>
+            <div class="container">
+                <a class="navbar-brand" href="/"><i class="fas fa-car"></i> DrivenChoice</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" href="/">Home</a>
+                    <a class="nav-link" href="/chisiamo">Chi Siamo</a>
+                    <a class="nav-link" href="/marchi">I nostri Marchi</a>
+                    <a class="nav-link" href="/auto">Tutte le automobili</a>
+                    <a class="nav-link" href="/grafici">Grafici</a>
+                    <a class="nav-link" href="/homeadmin">Administration</a>
+                    <form class="d-flex" role="search" action="/search" method="get">
+                        <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name" />
+                        <button class="btn btn-outline-success" type="submit">Cerca</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
 
 <div class='bold-line'></div>
 <div class='container'>
@@ -157,23 +155,21 @@
         <div class='overlay'></div>
         <div class='content'>
             <div class='welcome'>Ciao!</div>
-            <div class='subtitle'>Aggiungi i dati della automobile da Modificare</div>
+            <div class='subtitle'>Aggiungi i dati dell' utente</div>
             <div class='input-fields'>
-                <input type='text' id='modello' placeholder='Modello Automobile' class='input-line full-width'>
-                <input type='text' id='marchio' placeholder='Marchio Automobile' class='input-line full-width'>
-                <input type='text' id='cilindrata' placeholder='Cilidrata' class='input-line full-width'>
-                <input type='text' id='potenza' placeholder='Potenza' class='input-line full-width'>
-                <input type='text' id='cavalli' placeholder='Cavalli' class='input-line full-width'>
-                <input type='text' id='carburante' placeholder='Carburante' class='input-line full-width'>
-                 <input type='text' id='consumi' placeholder='Consumi' class='input-line full-width'>
-                <input type='text' id='emissioni' placeholder='Emissioni' class='input-line full-width'>
-                <input type='text' id='Serbatoio' placeholder='Serbatoio' class='input-line full-width'>
-                <input type='file' id='foto_auto' placeholder='Foto' accept='image/*' class='input-line full-width'>
+                <input type='text' id='nome' placeholder='Nome' class='input-line full-width'>
+                <input type='text' id='cognome' placeholder='Cognome' class='input-line full-width'>
+                <input type='text' id='eta' placeholder='Età' class='input-line full-width'>
+                <input type='text' id='sesso' placeholder='Sesso' class='input-line full-width'>
+                <input type='text' id='email' placeholder='Email' class='input-line full-width'>
+                <input type='text' id='password' placeholder='Password' class='input-line full-width'>
+                 <input type='text' id='provincia' placeholder='Provincia' class='input-line full-width'>
+                <input type='text' id='budget' placeholder='Budget' class='input-line full-width'>
             </div>
             <div>
-                <button onclick="modificauto()" class='ghost-round full-width'>Modifica Automobile </button>
+                <button onclick="/api/aggiungi/utente" class='ghost-round full-width'>Aggiungi Automobile </button>
             </div>
-            <div id="success-message" style="display: none; text-align: center; color: green;">Automobile modificata con successo</div>
+            <div id="success-message" style="display: none; text-align: center; color: green;">Utente aggiunto con successo</div>
         </div>
     </div>
 </div>
@@ -184,7 +180,7 @@
 
 
 
-async function modificauto() {
+async function aggiungiauto() {
 var modello = document.getElementById("modello").value;
 var marchio = document.getElementById("marchio").value;
 var prezzo = document.getElementById("prezzo").value;
@@ -227,10 +223,10 @@ let trueResp = await resp.json()
     if (trueResp.success) {
 
         notyf.success('Update successfull');
-        window.location.href = "/auto/<int:id>/modifica'";
+        window.location.href = "/auto/<int:id>/aggiungi";
     }
     else {
-        notyf.error('Auto già Modificata');
+        notyf.error('Auto già presente');
         //alert("Dati inseriti sbagliati")
     }
 }

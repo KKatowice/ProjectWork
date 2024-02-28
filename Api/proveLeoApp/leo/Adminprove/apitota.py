@@ -163,7 +163,7 @@ def cancella_motori(id):
     return redirect(url_for('show_motori'))
 
 
-@apiBlueprint.route('/api/cancella_utenti', methods=['POST'])
+@apiBlueprint.route('/api/rimuovi/utente', methods=['POST'])
 def cancella_utenti():
     c = create_db_connection(DBNAME)
     if session.get("utente") == "admin":
@@ -190,7 +190,7 @@ def cancella_utenti():
 
 
 
-@apiBlueprint.route('/api/cancella_utenti', methods=['POST'])
+@apiBlueprint.route('/api/aggiungi/utente', methods=['POST'])
 def aggiungi_utenti():
     c = create_db_connection(DBNAME)
     if session.get("utente") == "admin":
@@ -203,8 +203,10 @@ def aggiungi_utenti():
         sesso = data["sesso"]
         provincia = data["provincia"]
         budget = data["budget"]
+        admin = 0
+        registrazione = 0
         q_verifica = f"""SELECT FROM utenti WHERE nome ={nome} AND cognome = {cognome} AND  eta = {eta} AND email = {email} AND password = {password} AND sesso = {sesso} AND provincia = {provincia} AND budget = {budget}"""
-        q = f"""INSERT INTO utenti Values('{nome}','{cognome}','{eta}','{email}','{password}','{sesso}','{provincia}','{budget}')"""
+        q = f"""INSERT INTO utenti Values('{nome}','{cognome}','{eta}','{email}','{password}','{sesso}','{provincia}','{budget}','{admin}','{registrazione}')"""
         verifica = read_query(c, q_verifica)
         r = execute_query(c, q)
         if len(verifica) == 0:

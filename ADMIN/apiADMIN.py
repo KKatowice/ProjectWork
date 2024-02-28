@@ -37,35 +37,6 @@ def admin_getAutobyMotori():
     return render_template()  # Restituisci i risultati in formato JSON
 
 
-
-
-
-
-@apiBlueprint.route('/marchi/<int:id>/modifica', methods=['GET', 'POST'])
-def modifica_marchi(id):
-    auto = Auto.query.get(id)
-    if request.method == 'POST':
-        auto.marca_id = request.form['marca_id']
-        auto.modello = request.form['modello']
-        db.session.commit()
-        return redirect(url_for('show_marchi'))
-    return render_template('modifica_marchi.html', auto=auto)
-
-
-@apiBlueprint.route('/motori/<int:id>/modifica', methods=['GET', 'POST'])
-def modifica_motori(id):
-    motore = Motori.query.get(id)
-    if request.method == 'POST':
-        motore.nome = request.form['nome']
-        db.session.commit()
-        return redirect(url_for('show_motori'))
-    return render_template('modifica_motori.html', motore=motore)
-
-
-
-
-
-
 @apiBlueprint.route('/api/aggiungi_auto', methods=['GET', 'POST'])
 def aggiungi_auto():
     c = create_db_connection(DBNAME)
@@ -155,19 +126,59 @@ def cancella_marchi(id):
     return redirect(url_for('show_marchi'))
 
 
-@adminBlueprint.route('/motori/<int:id>/cancella', methods=['POST'])
-def cancella_motori(id):
-    motore = Motori.query.get(id)
-    db.session.delete(motore)
-    db.session.commit()
-    return redirect(url_for('show_motori'))
 
-
-@apiBlueprint.route('/utenti/<int:id>/cancella', methods=['POST'])
+@apiBlueprint.route('/api/rimuovi/utente', methods=['POST'])
 def cancella_utenti():
-    utente = Utenti.query.get(id)
-    db.session.delete(utente)
-    db.session.commit()
-    return redirect(url_for('show_utenti'))
-@apiBlueprint.route('/utenti/<int:id>/cancella', methods=['POST'])
-def modifica_utenti():
+    c = create_db_connection(DBNAME)
+    if session.get("utente") == "admin":
+        data = request.get_json()
+        nome = data["nome"]
+        cognome = data["cognome"]
+        email = data["email"]
+        q = f"""SELECT FROM utenti
+                                WHERE nome = '{nome}',cognome = '{cognome}',email = '{email}';"""
+
+        q2 = f"""DELETE FROM utenti
+                        WHERE nome = '{nome}',cognome = '{cognome}',email = '{email}';"""
+        verifica = read_query(c, q)
+        r = execute_query(c, q2)
+
+        if len(verifica) > 0:
+            if r:
+                return {'success': True}
+            else:
+                return {'success': False}
+        else:
+            return {'success': False}
+
+
+
+
+@apiBlueprint.route('/api/aggiungi/utente', methods=['POST'])
+def aggiungi_utenti():
+    c = create_db_connection(DBNAME)
+    if session.get("utente") == "admin":
+        data = request.get_json()
+        nome = nome = data["nome"]
+        cognome =  data["cognome"]
+        eta = data["eta"]
+        email = nome = data["email"]
+        password = nome = data["password"]
+        sesso = data["sesso"]
+        provincia = data["provincia"]
+        budget = data["budget"]
+        admin = 0
+        registrazione = 0
+        q_verifica = f"""SELECT FROM utenti WHERE nome ={nome} AND cognome = {cognome} AND  eta = {eta} AND email = {email} AND password = {password} AND sesso = {sesso} AND provincia = {provincia} AND budget = {budget}"""
+        q = f"""INSERT INTO utenti Values('{nome}','{cognome}','{eta}','{email}','{password}','{sesso}','{provincia}','{budget}','{admin}','{registrazione}')"""
+        verifica = read_query(c, q_verifica)
+        r = execute_query(c, q)
+        if len(verifica) == 0:
+            if r:
+                return {'success': True}
+            else:
+                return {'success': False}
+
+        else:
+            return {'Error': True}
+
