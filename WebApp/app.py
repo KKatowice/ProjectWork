@@ -117,7 +117,7 @@ def show_auto_for_marchi():
 @app.route('/userHome')
 def userHome():
     if session.get('user'):
-        return render_template('userHome.html')
+        return render_template('UserHome.html')
     else:
         return render_template('error.html', error='Unauthorized Access')
 
