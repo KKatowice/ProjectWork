@@ -215,8 +215,8 @@ def login():
         email = data['email']
         password = data['password']
         q1 = f"""SELECT password FROM utenti WHERE email = '{email}';"""
-        q2 = f"""SELECT password FROM utenti_bloccati WHERE email = '{email}'"""
-        q_admin = f"""SELECT admin FROM utenti WHERE admin = 1"""
+        q2 = f"""SELECT password FROM utenti_bloccati WHERE email = '{email}';"""
+        q_admin = f"""SELECT admin FROM utenti WHERE email = '{email}';"""
         data1 = read_query(connessione, q1)[0]
         data2 = read_query(connessione, q2)
         data_admin = read_query(connessione, q_admin )
@@ -227,7 +227,7 @@ def login():
             #print(check_password_hash(str(data1['password']), password))
             pswcheck = check_password_hash(str(data1['password']), password)
             if pswcheck:
-                if data_admin:
+                if data_admin[0]['admin'] == 1:
                     print('check superato per admin')
                     session["utente"] = "admin"
                 else:
@@ -243,7 +243,7 @@ def login():
             if len(data2) > 0:
                 return {'success':False, 'bloccato': True}
             else:
-                print('dove cazzo sono')
+
                 return {'success': False, 'bloccato': False}
     except Exception as e:
         print(e)
@@ -340,3 +340,163 @@ def deleteAccount():
         return {"success": True}
     else:
         return {"success": False}
+
+# CRUD ADMIN
+
+@apiBlueprint.route('/api/aggiungi_auto', methods=['POST'])
+def aggiungi_auto():
+    if session.get("utente") == "admin":
+        c = create_db_connection(DBNAME)
+        data = request.get_json()
+        modello = data['modello']
+        marchio = data['marchio']
+        prezzo = data['prezzo']
+        foto_auto = data['foto_auto']
+        cilindrata = data['cilindrata']
+        potenza = data['potenza']
+        cavalli = data['cavalli']
+        carburante = data['carburante']
+        consumi = data['consumi']
+        emissioni = data['emissioni']
+        serbatoio = data['serbatoio']
+        q_ver = f"""SELECT * FROM motori WHERE cilindrata = '{cilindrata}' AND potenza = '{potenza}' AND cavalli = '{cavalli}'
+         AND carburante = '{carburante}' AND consumi = '{consumi}' AND emissioni = '{emissioni}' 
+         AND serbatoio = '{serbatoio}';"""
+        if len(q_ver)==0:
+            q2 = f"""INSERT INTO motori(cilindrata, potenza, cavalli, carburante, consumi, emissioni, serbatoio) 
+            Values('{cilindrata}','{potenza}','{cavalli}','{carburante}','{consumi}','{emissioni}','{serbatoio}');"""
+            r2 = execute_query(c, q2)
+            id_query = f"""SELECT id_motore FROM motori WHERE cilindrata = '{cilindrata}' AND potenza = '{potenza}' AND cavalli = '{cavalli}'
+                    AND carburante = '{carburante}' AND consumi = '{consumi}' AND emissioni = '{emissioni}' 
+                    AND serbatoio = '{serbatoio}';"""
+            id = read_query(c,id_query)[0]['id_motore']
+            id2_query = f"""SELECT id_marchio FROM marchi WHERE nome = '{marchio}'"""
+            id2= read_query(c,id2_query)[0]['id_marchio']
+            q1 = f"""INSERT INTO auto(id_motore, id_marchio, modello, prezzo, foto_auto) 
+                VALUES('{id}','{id2}','{modello}','{prezzo}','{foto_auto}');"""
+            r1 = execute_query(c, q1)
+            if r1 and r2:
+                return {"success": True}
+            else:
+                return {"success": False}
+
+@apiBlueprint.route('/api/modifica/auto', methods=['GET', 'POST'])
+def modifica_auto():
+    c = create_db_connection(DBNAME)
+    data = request.get_json()
+    modello = data["modello"]
+    new_modello = data['new_modello']
+    id_motore = read_query(c, f"""SELECT id_motore FROM auto WHERE modello = '{modello}' """)[0]['id_motore']
+    marchio = data["marchio"]
+    prezzo = data["prezzo"]
+    foto_auto = data["foto_auto"]
+    cilindrata = data["cilindrata"]
+    potenza = data["potenza"]
+    cavalli = data["cavalli"]
+    carburante = data["carburante"]
+    consumi = data["consumi"]
+    emissioni = data["emissioni"]
+    serbatoio = data["serbatoio"]
+    q = f"""
+               UPDATE auto
+               SET id_marchio = '{marchio}', modello = '{new_modello}',
+               prezzo = '{prezzo}', foto_auto = '{foto_auto}'
+               WHERE modello = '{modello}'
+               ;
+               """
+    q2 = f"""
+               UPDATE motori
+               SET cilindrata = '{cilindrata}', potenza = '{potenza}',
+                cavalli = '{cavalli}', carburante = '{carburante}',
+                carburante = '{carburante}', consumi = '{consumi}',
+                emissioni = '{emissioni}', serbatoio = '{serbatoio}'
+                WHERE id_motore = '{id_motore}'
+               ;
+               """
+    r = execute_query(c, q)
+    r2 = execute_query(c, q2)
+    c.close()
+    if r and r2:
+        return {"success": True}
+    else:
+        return {"success": True}
+
+
+
+@apiBlueprint.route('/api/rimuovi/auto', methods=['POST'])
+def cancella_auto():
+    c = create_db_connection(DBNAME)
+    if session.get("utente") == "admin":
+        data = request.get_json()
+        modello = data["modello"]
+        q = f"""DELETE FROM auto
+                    WHERE modello = '{modello}';"""
+        r = execute_query(c, q)
+        if r:
+            return {'success':True}
+        else:
+            return {'success':False}
+
+
+
+#UTENTI
+@apiBlueprint.route('/api/rimuovi/utente', methods=['POST'])
+def cancella_utenti():
+    c = create_db_connection(DBNAME)
+    if session.get("utente") == "admin":
+        data = request.get_json()
+        email = data["email"]
+        q = f"""SELECT * FROM utenti
+                                WHERE email = '{email}';"""
+
+        q2 = f"""DELETE FROM utenti
+                        WHERE email = '{email}';"""
+        verifica = read_query(c, q)
+
+
+        if len(verifica) > 0:
+            r = execute_query(c, q2)
+            if r:
+                return {'success': True}
+            else:
+                return {'success': False}
+        else:
+            return {'success': False}
+
+#MARCHIO
+
+@apiBlueprint.route('/api/aggiugi/marchio', methods=['POST'])
+def aggiugi_marchio():
+    c = create_db_connection(DBNAME)
+    if session.get("utente") == "admin":
+        data = request.get_json()
+        nome = data["nome"]
+        foto_marchio = data["foto_marchio"]
+        q_verifica = f"""SELECT FROM marchi WHERE nome = '{nome}';"""
+        q = f"""INSERT INTO marchi(nome, foto_marchio) VALUES('{nome}','{foto_marchio}')"""
+        verifica = read_query(c, q_verifica)
+        if len(verifica) == 0:
+            r = execute_query(c, q)
+            if r:
+                return {'success': True}
+            else:
+                return {'success': False}
+
+        else:
+            return {'Error': True}
+
+
+
+@apiBlueprint.route('/api/rimuovi/marchio', methods=['POST'])
+def rimuovi_marchio():
+    c = create_db_connection(DBNAME)
+    if session.get("utente") == "admin":
+        data = request.get_json()
+        nome = data["nome"]
+        q = f"""DELETE FROM marchi
+                        WHERE nome = '{nome}';"""
+        r = execute_query(c, q)
+        if r:
+            return {'success': True}
+        else:
+            return {'success': False}
