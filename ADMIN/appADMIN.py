@@ -181,14 +181,6 @@ def modifica_marchi(id):
     return render_template('modifica_marchi.html', auto=auto)
 
 
-@app.route('/motori/<int:id>/modifica', methods=['GET', 'POST'])
-def modifica_motori(id):
-    motore = Motori.query.get(id)
-    if request.method == 'POST':
-        motore.nome = request.form['nome']
-        db.session.commit()
-        return redirect(url_for('show_motori'))
-    return render_template('modifica_motori.html', motore=motore)
 
 
 @app.route('/utenti/<int:id>/modifica', methods=['GET', 'POST'])
@@ -317,6 +309,14 @@ def adduser():
 @app.route('/rimuovi/utente')
 def adduser():
    return render_template('rimuoviutente.html')
+
+@app.route('/aggiungi/marchio')
+def adduser():
+   return render_template('aggiungimarchio.html')
+
+@app.route('/rimuovi/marchio')
+def adduser():
+   return render_template('rimuovimarchio.html')
 
 
 if __name__ == '__main__':

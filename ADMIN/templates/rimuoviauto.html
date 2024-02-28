@@ -155,23 +155,15 @@
         <div class='overlay'></div>
         <div class='content'>
             <div class='welcome'>Ciao!</div>
-            <div class='subtitle'>Rimuovi un' automobile</div>
+            <div class='subtitle'>Inserisci il nome della automobile da eliminare</div>
             <div class='input-fields'>
                 <input type='text' id='modello' placeholder='Modello Automobile' class='input-line full-width'>
-                <input type='text' id='marchio' placeholder='Marchio Automobile' class='input-line full-width'>
-                <input type='text' id='cilindrata' placeholder='Cilidrata' class='input-line full-width'>
-                <input type='text' id='potenza' placeholder='Potenza' class='input-line full-width'>
-                <input type='text' id='cavalli' placeholder='Cavalli' class='input-line full-width'>
-                <input type='text' id='carburante' placeholder='Carburante' class='input-line full-width'>
-                 <input type='text' id='consumi' placeholder='Consumi' class='input-line full-width'>
-                <input type='text' id='emissioni' placeholder='Emissioni' class='input-line full-width'>
-                <input type='text' id='serbatoio' placeholder='Serbatoio' class='input-line full-width'>
-                <input type='file' id='foto_auto' placeholder='Foto' accept='image/*' class='input-line full-width'>
+
             </div>
             <div>
-                <button onclick="/api/aggiungi_auto" class='ghost-round full-width'>Aggiungi Automobile </button>
+                <button onclick="/api/rimuovi/auto" class='ghost-round full-width'>Elimina Automobile </button>
             </div>
-            <div id="success-message" style="display: none; text-align: center; color: green;">Automobile creata con successo</div>
+            <div id="success-message" style="display: none; text-align: center; color: green;">Automobile eliminata con successo</div>
         </div>
     </div>
 </div>
@@ -182,31 +174,13 @@
 
 
 
-async function aggiungiauto() {
+async function eliminauto() {
 var modello = document.getElementById("modello").value;
-var marchio = document.getElementById("marchio").value;
-var prezzo = document.getElementById("prezzo").value;
-var foto_auto = document.getElementById("foto_auto").value;
-var cilindrata = document.getElementById("cilindrata").value;
-var potenza = document.getElementById("potenza").value;
-var cavalli = document.getElementById("cavalli").value;
-var carburante = document.getElementById("carburante").value;
-var consumi = document.getElementById("consumi").value;
-var emissioni = document.getElementById("emissioni").value;
-var serbatoio = document.getElementById("serbatoio").value;
+
 
 var datiJSON = {
     modello = modello
-        marchio = marchio
-        prezzo = prezzo
-        foto_auto = foto_auto
-        cilindrata = cilindrata
-        potenza = potenza
-        cavalli =cavalli
-        carburante = carburante
-        consumi =consumi
-        emissioni = emissioni
-        serbatoio = serbatoio
+
     };
 //console.log(datiJSON)
 let resp = await fetch('/crea_account', {
@@ -225,10 +199,10 @@ let trueResp = await resp.json()
     if (trueResp.success) {
 
         notyf.success('Update successfull');
-        window.location.href = "/auto/<int:id>/aggiungi";
+        window.location.href = "/auto/<int:id>/cancella";
     }
     else {
-        notyf.error('Auto già presente');
+        notyf.error('Auto già eliminata');
         //alert("Dati inseriti sbagliati")
     }
 }

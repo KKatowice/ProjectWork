@@ -13,31 +13,31 @@ adminBlueprint = Blueprint("adminBlueprint", __name__)
 from ProjectWork.WebApp.api import *  # Aggiorna con i nomi corretti delle funzioni API
 
 
-@adminBlueprint.route('/admin/getAuto', methods=['GET'])
-def admin_getAuto():
-    result = getAuto()  # Chiama la funzione API getAuto della tua web app
-    return jsonify(result)  # Restituisci i risultati in formato JSON
+# @adminBlueprint.route('/admin/getAuto', methods=['GET'])
+# def admin_getAuto():
+#     result = getAuto()  # Chiama la funzione API getAuto della tua web app
+#     return jsonify(result)  # Restituisci i risultati in formato JSON
+#
+#
+# @adminBlueprint.route('/admin/getMarchio', methods=['GET'])
+# def admin_getMarchio():
+#     result = getMarchio()  # Chiama la funzione API getMarchio della tua web app
+#     return jsonify(result)  # Restituisci i risultati in formato JSON
+#
+#
+# @adminBlueprint.route('/admin/getAutobyMarchio', methods=['GET'])
+# def admin_getAutobyMarchio():
+#     result = getAutobyMarchio()  # Chiama la funzione API getAutobyMarchio della tua web app
+#     return jsonify(result)  # Restituisci i risultati in formato JSON
+#
+#
+# @adminBlueprint.route('/admin/getAutobyMotori', methods=['GET'])
+# def admin_getAutobyMotori():
+#     result = getAutobyMotori()  # Chiama la funzione API getAutobyMotori della tua web app
+#     return render_template()  # Restituisci i risultati in formato JSON
 
 
-@adminBlueprint.route('/admin/getMarchio', methods=['GET'])
-def admin_getMarchio():
-    result = getMarchio()  # Chiama la funzione API getMarchio della tua web app
-    return jsonify(result)  # Restituisci i risultati in formato JSON
-
-
-@adminBlueprint.route('/admin/getAutobyMarchio', methods=['GET'])
-def admin_getAutobyMarchio():
-    result = getAutobyMarchio()  # Chiama la funzione API getAutobyMarchio della tua web app
-    return jsonify(result)  # Restituisci i risultati in formato JSON
-
-
-@adminBlueprint.route('/admin/getAutobyMotori', methods=['GET'])
-def admin_getAutobyMotori():
-    result = getAutobyMotori()  # Chiama la funzione API getAutobyMotori della tua web app
-    return render_template()  # Restituisci i risultati in formato JSON
-
-
-@apiBlueprint.route('/api/aggiungi_auto', methods=['GET', 'POST'])
+@apiBlueprint.route('/api/aggiungi/auto', methods=['GET', 'POST'])
 def aggiungi_auto():
     c = create_db_connection(DBNAME)
     data = request.get_json()
@@ -61,7 +61,7 @@ def aggiungi_auto():
     else:
         return {"success": False}
 
-@apiBlueprint.route('/api/modifica_auto', methods=['GET', 'POST'])
+@apiBlueprint.route('/api/modifica/auto', methods=['GET', 'POST'])
 def modifica_auto():
     c = create_db_connection(DBNAME)
     if session.get("utente") == "admin":
@@ -99,9 +99,8 @@ def modifica_auto():
             return {"success": True}
 
 
-# Cancellazione dei dati
 
-@apiBlueprint.route('/api/cancella_auto', methods=['POST'])
+@apiBlueprint.route('/api/cancella/auto', methods=['POST'])
 def cancella_auto():
     c = create_db_connection(DBNAME)
     if session.get("utente") == "admin":
@@ -115,15 +114,6 @@ def cancella_auto():
         else:
             return {'success':False}
 
-
-
-
-@adminBlueprint.route('/marchi/<int:id>/cancella', methods=['POST'])
-def cancella_marchi(id):
-    marchio = Marchi.query.get(id)
-    db.session.delete(marchio)
-    db.session.commit()
-    return redirect(url_for('show_marchi'))
 
 
 
