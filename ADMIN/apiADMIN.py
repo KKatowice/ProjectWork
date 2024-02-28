@@ -37,7 +37,7 @@ def admin_getAutobyMotori():
     return render_template()  # Restituisci i risultati in formato JSON
 
 
-def modifica_utenti():
+
 
 
 
@@ -163,9 +163,11 @@ def cancella_motori(id):
     return redirect(url_for('show_motori'))
 
 
-@adminBlueprint.route('/utenti/<int:id>/cancella', methods=['POST'])
-def cancella_utenti(id):
+@apiBlueprint.route('/utenti/<int:id>/cancella', methods=['POST'])
+def cancella_utenti():
     utente = Utenti.query.get(id)
     db.session.delete(utente)
     db.session.commit()
     return redirect(url_for('show_utenti'))
+@apiBlueprint.route('/utenti/<int:id>/cancella', methods=['POST'])
+def modifica_utenti():
