@@ -111,7 +111,3 @@ def cancella_utenti(id):
     db.session.delete(utente)
     db.session.commit()
     return redirect(url_for('show_utenti'))
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
