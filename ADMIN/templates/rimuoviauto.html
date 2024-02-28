@@ -161,7 +161,7 @@
 
             </div>
             <div>
-                <button onclick="/api/rimuovi/auto" class='ghost-round full-width'>Elimina Automobile </button>
+                <button onclick="eliminauto()" class='ghost-round full-width'>Elimina Automobile </button>
             </div>
             <div id="success-message" style="display: none; text-align: center; color: green;">Automobile eliminata con successo</div>
         </div>
@@ -183,7 +183,7 @@ var datiJSON = {
 
     };
 //console.log(datiJSON)
-let resp = await fetch('/crea_account', {
+let resp = await fetch('/api/rimuovi/auto', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -199,7 +199,7 @@ let trueResp = await resp.json()
     if (trueResp.success) {
 
         notyf.success('Update successfull');
-        window.location.href = "/auto/<int:id>/cancella";
+
     }
     else {
         notyf.error('Auto già eliminata');
