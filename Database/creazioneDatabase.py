@@ -40,6 +40,7 @@ utenti = """CREATE TABLE utenti(
             password varchar(255) NOT NULL,
             provincia varchar(55),
             budget int,
+            admin boolean DEFAULT 0,
             registrazione boolean NOT NULL DEFAULT 0)"""
 
 preferenze = """CREATE TABLE preferenze(
