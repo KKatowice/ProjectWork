@@ -133,7 +133,7 @@ async function validateAnswer(a,val){
 
 
 async function getshowC(ctx){
-  await ctx.reply(`I dati inseriti sono: ${JSON.stringify(ctx.session['settings'])}`);
+  //await ctx.reply(`I dati inseriti sono: ${JSON.stringify(ctx.session['settings'])}`);
   let res = await fetch('http://127.0.0.1:5000/api/auto_filter', {
     method: 'POST',
     headers: {
@@ -151,10 +151,7 @@ async function getshowC(ctx){
   }
 
 
-  if (res['success']){
-    await ctx.reply(`Ecco ${slicedRes.length}/${res['data'].length} macchine che soddifano i tuoi criteri`);
-  }
-  else{
+  if (!res['success']){
     await ctx.reply(`0 Macchine trovate`);
     return 
   }
@@ -177,6 +174,7 @@ async function getshowC(ctx){
     
     await ctx.reply(msg,{ parse_mode: 'HTML' });
   };
+  await ctx.reply(`Ecco ${slicedRes.length}/${res['data'].length} macchine che soddifano i tuoi criteri`);
 }
 
 
@@ -224,7 +222,7 @@ bot.api.setMyCommands([
 bot.command("start", async (ctx) => {
   //ctx.session = new session_collector();
   console.log(ctx)
-  await ctx.reply(`Benvenuto seleziona i filtri e fai /search`);
+  await ctx.reply(`Benvenuto seleziona i filtri con /settings e poi fai /search`);
 });
 bot.command("search", async (ctx) => {
   //ctx.session = new session_collector();
