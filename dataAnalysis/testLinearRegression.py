@@ -41,6 +41,7 @@ df['consumi'] = pd.to_numeric(df['consumi'])
 df['emissioni'] = pd.to_numeric(df['emissioni'])
 df['potenza'] = pd.to_numeric(df['potenza'])
 df['serbatoio'] = pd.to_numeric(df['serbatoio'])
+
 df = df.loc[~((df['potenza'] > 50) & (df['potenza'] < 500))]
 df = df.loc[~((df['cavalli'] > 50) & (df['cavalli'] < 500))]
 
