@@ -495,11 +495,13 @@ def aggiungi_marchio():
     c = create_db_connection(DBNAME)
     if session.get("utente") == "admin":
         data = request.get_json()
-        nome = data["nome_marchio"]
+        print(data)
+        nome = data["nome"]
         foto_marchio = data["foto"]
-        q_verifica = f"""SELECT FROM concessionario.marchi WHERE nome = '{nome}';"""
+        q_verifica = f"""SELECT * FROM concessionario.marchi WHERE nome = '{nome}';"""
         q = f"""INSERT INTO marchi(nome, foto_marchio) VALUES('{nome}','{foto_marchio}')"""
         verifica = read_query(c, q_verifica)
+        print(verifica)
         if len(verifica) == 0:
             r = execute_query(c, q)
             if r:
@@ -509,6 +511,7 @@ def aggiungi_marchio():
 
         else:
             return {'Error': True}
+            print("Fanculo")
     else:
         return {'Error': True}
 
