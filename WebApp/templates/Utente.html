@@ -58,8 +58,8 @@
                 color: black;
                 text-align: center;
                 padding: 10px 0;
-                position: absolute;
-                bottom: 5px;
+                position: static;
+                bottom: 0px;
                 width: 100%;
                 margin-top: 3%;
             }
@@ -72,27 +72,25 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <!-- Icona della macchina -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav ml-auto">
-                        <a class="nav-link active" href="/">Home</a>
-                        <a class="nav-link" href="/chisiamo">Chi Siamo</a>
-                        <a class="nav-link" href="/marchi">I nostri Marchi</a>
-                        <a class="nav-link" href="/auto">Tutte le automobili</a>
-                        <a class="nav-link" href="/grafici">Grafici</a>
-                        <a class="nav-link" href="/Utente">Utente</a>
-                        <a class="nav-link" href="/preferiti">Preferiti</a>
-                        <form class="d-flex" role="search" action="/search" method="get">
-                            <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name" />
-                            <button class="btn btn-outline-success" type="submit">Cerca</button>
-                        </form>
-                    </div>
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" href="/">Home</a>
+                    <a class="nav-link" href="/chisiamo">Chi Siamo</a>
+                    <a class="nav-link" href="/marchi">I nostri Marchi</a>
+                    <a class="nav-link" href="/auto">Tutte le automobili</a>
+                    <a class="nav-link" href="/grafici">Grafici</a>
+                    <a class="nav-link" href="/Utente">Utente</a>
+                    <a class="nav-link" href="/preferiti">Preferiti</a>
+                    {% if session['utente'] == 'admin' %}
+                    <a class="nav-link" href="/admin">Admin</a>
+                    {%endif%}
+                    <form class="d-flex" role="search" action="/search" method="get">
+                        <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name" />
+                        <button class="btn btn-outline-success" type="submit">Cerca</button>
+                    </form>
                 </div>
             </div>
         </nav>
+
         {% if session['utente'] %}
         <div class="container">
             <div class="row justify-content-center">
@@ -100,7 +98,7 @@
                     <div class="card mt-5">
                         <div class="card-body">
                             <h2 class="text-center mb-4">Effettua il logout</h2>
-                            <button onclick="/logout" id="btnLogOut" class="btn btn-danger btn-block">Logout</button>
+                            <a href="/logout"> <button id="btnLogOut" class="btn btn-danger btn-block">Logout</button></a>
                         </div>
                     </div>
                 </div>
@@ -157,7 +155,7 @@
             </div>
         </div>
         {% endif %}
-        <div class="container-a mt-5">
+        <div class="container-a">
             <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
         </div>
 

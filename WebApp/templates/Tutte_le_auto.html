@@ -183,27 +183,25 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <!-- Icona della macchina -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav ml-auto">
-                        <a class="nav-link active" href="/">Home</a>
-                        <a class="nav-link" href="/chisiamo">Chi Siamo</a>
-                        <a class="nav-link" href="/marchi">I nostri Marchi</a>
-                        <a class="nav-link" href="/auto">Tutte le automobili</a>
-                        <a class="nav-link" href="/grafici">Grafici</a>
-                        <a class="nav-link" href="/Utente">Utente</a>
-                        <a class="nav-link" href="/preferiti">Preferiti</a>
-                        <form class="d-flex" role="search" action="/search" method="get">
-                            <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name" />
-                            <button class="btn btn-outline-success" type="submit">Cerca</button>
-                        </form>
-                    </div>
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" href="/">Home</a>
+                    <a class="nav-link" href="/chisiamo">Chi Siamo</a>
+                    <a class="nav-link" href="/marchi">I nostri Marchi</a>
+                    <a class="nav-link" href="/auto">Tutte le automobili</a>
+                    <a class="nav-link" href="/grafici">Grafici</a>
+                    <a class="nav-link" href="/Utente">Utente</a>
+                    <a class="nav-link" href="/preferiti">Preferiti</a>
+                    {% if session['utente'] == 'admin' %}
+                    <a class="nav-link" href="/admin">Admin</a>
+                    {%endif%}
+                    <form class="d-flex" role="search" action="/search" method="get">
+                        <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name" />
+                        <button class="btn btn-outline-success" type="submit">Cerca</button>
+                    </form>
                 </div>
             </div>
         </nav>
+
 
         <div class="container mt-5 text-center">
             <div class="row">

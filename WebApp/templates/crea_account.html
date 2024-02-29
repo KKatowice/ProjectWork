@@ -129,27 +129,30 @@
 </head>
 <body>
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="/">DrivenChoice</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-nav ml-auto">
-            <a class="nav-link active" href="/">Home</a>
-            <a class="nav-link" href="/chisiamo">Chi Siamo</a>
-            <a class="nav-link" href="/marchi">I  Marchi</a>
-            <a class="nav-link" href="/Tutte_le_auto">Tutte le automobili</a>
-            <a class="nav-link" href="/grafici">Grafici</a>
-            <a class="nav-link" href="/Utente">Utente</a>
-            <a class="nav-link" href="/Preferiti">Preferiti</a>
-            <form class="d-flex" role="search" action="/search" method="get">
-                <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name">
-                <button class="btn btn-outline-success" type="submit">Cerca</button>
-            </form>
-        </div>
-    </div>
-</nav>
+            <div class="container">
+                <a class="navbar-brand" href="/"><i class="fas fa-car"></i> DrivenChoice</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" href="/">Home</a>
+                    <a class="nav-link" href="/chisiamo">Chi Siamo</a>
+                    <a class="nav-link" href="/marchi">I nostri Marchi</a>
+                    <a class="nav-link" href="/auto">Tutte le automobili</a>
+                    <a class="nav-link" href="/grafici">Grafici</a>
+                    <a class="nav-link" href="/Utente">Utente</a>
+                    <a class="nav-link" href="/preferiti">Preferiti</a>
+                    {% if session['utente'] == 'admin' %}
+                    <a class="nav-link" href="/admin">Admin</a>
+                    {%endif%}
+                    <form class="d-flex" role="search" action="/search" method="get">
+                        <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name" />
+                        <button class="btn btn-outline-success" type="submit">Cerca</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
 
 <div class='bold-line'></div>
 <div class='container'>
@@ -253,13 +256,13 @@ let trueResp = await resp.json()
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-</div>
+
  <div>
     <div class="container-a">
         <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
     </div>
 </div>
-</script>
+
 </body>
 <div>
     <div class="container-a">

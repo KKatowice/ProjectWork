@@ -518,6 +518,9 @@
                     <a class="nav-link" href="/grafici">Grafici</a>
                     <a class="nav-link" href="/Utente">Utente</a>
                     <a class="nav-link" href="/preferiti">Preferiti</a>
+                    {% if session['utente'] == 'admin' %}
+                    <a class="nav-link" href="/admin">Admin</a>
+                    {%endif%}
                     <form class="d-flex" role="search" action="/search" method="get">
                         <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name" />
                         <button class="btn btn-outline-success" type="submit">Cerca</button>
@@ -525,6 +528,7 @@
                 </div>
             </div>
         </nav>
+
 
         <div class="welcome-banner">
             <div class="container welcome-banner-content">
