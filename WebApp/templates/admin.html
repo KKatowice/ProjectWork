@@ -514,19 +514,19 @@
         <img src="https://th.bing.com/th/id/OIP.OkPLsoEjHHQ7VTs3uY3c6QHaEK?rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title card-title-sm">Auto</h5>
-          <a href="/aggiungi/auto" class="btn btn-dark btn-sm">Aggiungi</a>
-            <a href="/rimuovi/auto" class="btn btn-dark btn-sm">Rimuovi</a>
-            <a href="/modifica/auto" class="btn btn-dark btn-sm">Modifica</a>
+          <button onclick="openPopup('PopupAA')" class="btn btn-dark btn-sm">Aggiungi</button>
+            <button onclick="openPopup('PopupAR')" class="btn btn-dark btn-sm">Rimuovi</button>
+            <button onclick="openPopup('PopupAM')" class="btn btn-dark btn-sm">Modifica</button>
         </div>
       </div>
     </div>
     <div class="col-sm">
       <div class="card">
-        <img src="{{ url_for('staticA', filename='logo.jpg') }}" class="card-img-top" alt="...">
+        <img src="{{ url_for('static', filename='logo.jpg') }}" class="card-img-top" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title card-title-sm">Marchi</h5>
-          <a href="/aggiungi/utente" class="btn btn-dark btn-sm">Aggiungi</a>
-            <a href="/rimuovi/utente" class="btn btn-dark btn-sm">Rimuovi</a>
+          <button onclick="openPopup('PopupMA')" class="btn btn-dark btn-sm">Aggiungi</button>
+            <button onclick="openPopup('PopupMR')" class="btn btn-dark btn-sm">Rimuovi</button>
         </div>
       </div>
     </div>
@@ -535,8 +535,7 @@
         <img src="https://img.freepik.com/free-photo/hands-holding-tablet-with-icons_1134-90.jpg?t=st=1709131551~exp=1709135151~hmac=bf957aa79c59cda5704a43ab95f432ab854da171399360bac458eea061963fcd&w=996" class="card-img-top" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title card-title-sm">Utenti</h5>
-          <a href="/aggiungi/marchio" class="btn btn-dark btn-sm">Aggiungi</a>
-            <a href="/rimuovi/marchio" class="btn btn-dark btn-sm">Rimuovi</a>
+            <button onclick="openPopup('PopupUR')" class="btn btn-dark btn-sm">Rimuovi</button>
         </div>
       </div>
     </div>
@@ -546,9 +545,493 @@
         </div>
     </div>
 </section>
+<div class="modal fade" id="PopupAA" tabindex="-1" role="dialog" aria-labelledby="carModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Dettagli auto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class='container mt-5 mb-5'>
+                        <div class='bold-line'></div>
+                        <div class='container'>
+                            <div class='window'>
+                                <div class='overlay'></div>
+                                <div class='content'>
+                                    <div class='welcome'>Ciao!</div>
+                                    <div class='subtitle'>Aggiungi i dati della tua automobile</div>
+                                    <div class='input-fields'>
+                                        <input type='text' id='modello' placeholder='Modello Automobile' class='input-line full-width'>
+                                        <input type='text' id='marchio' placeholder='Marchio Automobile' class='input-line full-width'>
+                                        <input type='text' id='cilindrata' placeholder='Cilidrata' class='input-line full-width'>
+                                        <input type='text' id='potenza' placeholder='Potenza' class='input-line full-width'>
+                                        <input type='text' id='cavalli' placeholder='Cavalli' class='input-line full-width'>
+                                        <input type='text' id='carburante' placeholder='Carburante' class='input-line full-width'>
+                                         <input type='text' id='consumi' placeholder='Consumi' class='input-line full-width'>
+                                        <input type='text' id='emissioni' placeholder='Emissioni' class='input-line full-width'>
+                                        <input type='text' id='serbatoio' placeholder='Serbatoio' class='input-line full-width'>
+                                        <input type='file' id='foto_auto' placeholder='Foto' accept='image/*' class='input-line full-width'>
+                                    </div>
+                                    <div>
+                                        <button onclick="aggiungiauto()" class='ghost-round full-width btn-dark'>Aggiungi Automobile </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="modal fade" id="PopupAR" tabindex="-1" role="dialog" aria-labelledby="carModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Dettagli auto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class='bold-line'></div>
+                        <div class='container'>
+                            <div class='window'>
+                                <div class='overlay'></div>
+                                <div class='content'>
+                                    <div class='welcome'>Ciao!</div>
+                                    <div class='subtitle'>Inserisci il nome della automobile da eliminare</div>
+                                    <div class='input-fields'>
+                                        <input type='text' id='modello2' placeholder='Modello Automobile' class='input-line full-width'>
+
+                                    </div>
+                                    <div>
+                                        <button onclick="eliminauto()" class='ghost-round full-width'>Elimina Automobile </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="modal fade" id="PopupAM" tabindex="-1" role="dialog" aria-labelledby="carModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Dettagli auto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class='container mt-5 mb-5'>
+                        <div class='bold-line'></div>
+                        <div class='container'>
+                            <div class='window'>
+                                <div class='overlay'></div>
+                                <div class='content'>
+                                    <div class='welcome'>Ciao!</div>
+                                    <div class='subtitle'>Aggiungi i dati della tua automobile</div>
+                                    <div class='input-fields'>
+                                        <input type='text' id='modello3' placeholder='Modello Automobile da modificare' class='input-line full-width'>
+                                        <input type='text' id='new_modello' placeholder='Nuovo nome del modello' class='input-line full-width'>
+                                        <input type='text' id='marchio3' placeholder='Marchio Automobile' class='input-line full-width'>
+                                        <input type='text' id='cilindrata3' placeholder='Cilidrata' class='input-line full-width'>
+                                        <input type='text' id='potenza3' placeholder='Potenza' class='input-line full-width'>
+                                        <input type='text' id='cavalli3' placeholder='Cavalli' class='input-line full-width'>
+                                        <input type='text' id='carburante3' placeholder='Carburante' class='input-line full-width'>
+                                         <input type='text' id='consumi3' placeholder='Consumi' class='input-line full-width'>
+                                        <input type='text' id='emissioni3' placeholder='Emissioni' class='input-line full-width'>
+                                        <input type='text' id='serbatoio3' placeholder='Serbatoio' class='input-line full-width'>
+                                        <input type='file' id='foto_auto3' placeholder='Foto' accept='image/*' class='input-line full-width'>
+                                    </div>
+                                    <div>
+                                        <button onclick="modificaauto()" class='ghost-round full-width btn-dark'>Aggiungi Automobile </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="modal fade" id="PopupMA" tabindex="-1" role="dialog" aria-labelledby="carModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Dettagli auto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class='bold-line'></div>
+                            <div class='container'>
+                                <div class='window'>
+                                    <div class='overlay'></div>
+                                    <div class='content'>
+                                        <div class='welcome'>Ciao!</div>
+                                        <div class='subtitle'>Aggiungi i dati del nuovo marchio</div>
+                                        <div class='input-fields'>
+                                            <input type='text' id='nome_marchio' placeholder='Nome' class='input-line full-width'>
+                                            <input type='file' id='foto_marchio' placeholder='Foto' accept='image/*' class='input-line full-width'>
+                                        </div>
+                                        <div>
+                                            <button onclick="aggiungimarchio()" class='ghost-round full-width'>Aggiungi Marchio </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="modal fade" id="PopupMR" tabindex="-1" role="dialog" aria-labelledby="carModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Dettagli auto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class='bold-line'></div>
+                        <div class='container'>
+                            <div class='window'>
+                                <div class='overlay'></div>
+                                <div class='content'>
+                                    <div class='welcome'>Ciao!</div>
+                                    <div class='subtitle'>Rimuovi il marchio</div>
+                                    <div class='input-fields'>
+                                        <input type='text' id='nome_marchio2' placeholder='Nome' class='input-line full-width'>
+
+                                    </div>
+                                    <div>
+                                        <button onclick="rimuovimarchio()" class='ghost-round full-width'>Rimuovi Marchio</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="modal fade" id="PopupUR" tabindex="-1" role="dialog" aria-labelledby="carModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="carrModalLabel">Dettagli auto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class='bold-line'></div>
+                            <div class='container'>
+                                <div class='window'>
+                                    <div class='overlay'></div>
+                                    <div class='content'>
+                                        <div class='welcome'>Ciao!</div>
+                                        <div class='subtitle'>Rimuovi l'utente</div>
+                                        <div class='input-fields'>
+                                            <input type='text' id='email' placeholder='Email' class='input-line full-width'>
+                                        </div>
+                                        <div>
+                                            <button onclick="rimuoviutente()" class='ghost-round full-width'>Aggiungi Automobile </button>
+                                        </div>
+                                        <div id="success-message" style="display: none; text-align: center; color: green;">Utente rimosso con successo</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            function openPopup(popupId) {
+            const popup = document.getElementById(popupId);
+            if (popup) {
+                // Toggle the visibility of the popup
+                $(popup).modal("show"); // Use the actual value of popupId
+            }
+        }
+
+        </script>
+        <script>
+            async function aggiungiauto() {
+var modello = document.getElementById("modello").value;
+var marchio = document.getElementById("marchio").value;
+var prezzo = document.getElementById("prezzo").value;
+var foto_auto = document.getElementById("foto_auto").value;
+var cilindrata = document.getElementById("cilindrata").value;
+var potenza = document.getElementById("potenza").value;
+var cavalli = document.getElementById("cavalli").value;
+var carburante = document.getElementById("carburante").value;
+var consumi = document.getElementById("consumi").value;
+var emissioni = document.getElementById("emissioni").value;
+var serbatoio = document.getElementById("serbatoio").value;
+
+var datiJSON = {
+        modello : modello,
+        marchio : marchio,
+        prezzo : prezzo,
+        foto_auto : foto_auto,
+        cilindrata : cilindrata,
+        potenza : potenza,
+        cavalli : cavalli,
+        carburante : carburante,
+        consumi : consumi,
+        emissioni : emissioni,
+        serbatoio : serbatoio
+    };
+//console.log(datiJSON)
+let resp = await fetch('/api/aggiungi/auto', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datiJSON)
+
+})
+
+
+let trueResp = await resp.json()
+    console.log(trueResp)
+    var notyf = new Notyf();
+    if (trueResp.success) {
+
+        notyf.success('Update successfull');
+
+    }
+    else {
+        notyf.error('Auto già presente');
+        //alert("Dati inseriti sbagliati")
+    }
+}
+
+        </script>
+        <script>
+        async function eliminauto() {
+var modello = document.getElementById("modello2").value;
+
+
+var datiJSON = {
+    modello : modello
+
+    };
+//console.log(datiJSON)
+let resp = await fetch('/api/rimuovi/auto', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datiJSON)
+
+})
+
+
+let trueResp = await resp.json()
+    console.log(trueResp)
+    var notyf = new Notyf();
+    if (trueResp.success) {
+
+        notyf.success('Update successfull');
+
+    }
+    else {
+        notyf.error('Auto già eliminata');
+        //alert("Dati inseriti sbagliati")
+    }
+}
+        </script>
+        <script>
+            async function aggiungiauto() {
+var modello = document.getElementById("modello3").value;
+var new_modello = document.getElementById("new_modello").value;
+var marchio = document.getElementById("marchio3").value;
+var prezzo = document.getElementById("prezzo3").value;
+var foto_auto = document.getElementById("foto_auto3").value;
+var cilindrata = document.getElementById("cilindrata3").value;
+var potenza = document.getElementById("potenza3").value;
+var cavalli = document.getElementById("cavalli3").value;
+var carburante = document.getElementById("carburante3").value;
+var consumi = document.getElementById("consumi3").value;
+var emissioni = document.getElementById("emissioni3").value;
+var serbatoio = document.getElementById("serbatoio3").value;
+
+var datiJSON = {
+        modello : modello,
+        new_modello : new_modello,
+        marchio : marchio,
+        prezzo : prezzo,
+        foto_auto : foto_auto,
+        cilindrata : cilindrata,
+        potenza : potenza,
+        cavalli : cavalli,
+        carburante : carburante,
+        consumi : consumi,
+        emissioni : emissioni,
+        serbatoio : serbatoio
+    };
+//console.log(datiJSON)
+let resp = await fetch('/api/aggiungi/auto', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datiJSON)
+
+})
+
+
+let trueResp = await resp.json()
+    console.log(trueResp)
+    var notyf = new Notyf();
+    if (trueResp.success) {
+
+        notyf.success('Update successfull');
+
+    }
+    else {
+        notyf.error('Auto già presente');
+        //alert("Dati inseriti sbagliati")
+    }
+}
+        </script>
+        <script>
+     async function aggiungimarchio() {
+var nome = document.getElementById("nome_marchio").value;
+var foto_marchio = document.getElementById("nome_marchio").value;
+
+
+var datiJSON = {
+    nome : nome,
+    foto_marchio
+
+    };
+//console.log(datiJSON)
+let resp = await fetch('/api/rimuovi/auto', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datiJSON)
+
+})
+
+
+let trueResp = await resp.json()
+    console.log(trueResp)
+    var notyf = new Notyf();
+    if (trueResp.success) {
+
+        notyf.success('Update successfull');
+
+    }
+    else {
+        notyf.error('Auto già eliminata');
+        //alert("Dati inseriti sbagliati")
+    }
+}
+        </script>
+        <script>
+ async function rimuovimarchio() {
+var nome = document.getElementById("nome_marchio2").value;
+
+
+var datiJSON = {
+    nome : nome
+
+    };
+//console.log(datiJSON)
+let resp = await fetch('/api/rimuovi/auto', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datiJSON)
+
+})
+
+
+let trueResp = await resp.json()
+    console.log(trueResp)
+    var notyf = new Notyf();
+    if (trueResp.success) {
+
+        notyf.success('Update successfull');
+
+    }
+    else {
+        notyf.error('Auto già eliminata');
+        //alert("Dati inseriti sbagliati")
+    }
+}
+        </script>
+        <script>
+ async function rimuoviutente() {
+var email = document.getElementById("email").value;
+
+
+var datiJSON = {
+    email : email
+
+    };
+//console.log(datiJSON)
+let resp = await fetch('/api/rimuovi/auto', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datiJSON)
+
+})
+
+
+let trueResp = await resp.json()
+    console.log(trueResp)
+    var notyf = new Notyf();
+    if (trueResp.success) {
+
+        notyf.success('Update successfull');
+
+    }
+    else {
+        notyf.error('Auto già eliminata');
+        //alert("Dati inseriti sbagliati")
+    }
+}
+        </script>
+
     </body>
 </html>

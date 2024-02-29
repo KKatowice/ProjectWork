@@ -4,7 +4,7 @@ from classAuto import *
 from sys import path
 import json
 # isFABIO = True
-isFABIO = True
+isFABIO = False
 if not isFABIO:
     path.append(r'ProjectWork/Database')
     from ProjectWork.Database.dbUtils_aiven import *
