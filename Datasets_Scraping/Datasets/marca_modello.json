@@ -1,0 +1,4001 @@
+{
+    "acura": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/acura-sm.jpg",
+        "MDX": {
+            "link": "https://www.autoevolution.com/acura/mdx/"
+        },
+        "RDX": {
+            "link": "https://www.autoevolution.com/acura/rdx/"
+        },
+        "TLX": {
+            "link": "https://www.autoevolution.com/acura/tlx/"
+        },
+        "ILX": {
+            "link": "https://www.autoevolution.com/acura/ilx/"
+        },
+        "RLX": {
+            "link": "https://www.autoevolution.com/acura/rlx/"
+        },
+        "ZDX": {
+            "link": "https://www.autoevolution.com/acura/zdx/"
+        },
+        "NSX": {
+            "link": "https://www.autoevolution.com/acura/nsx-1/"
+        },
+        "Integra Sedan": {
+            "link": "https://www.autoevolution.com/acura/integra-sedan/"
+        }
+    },
+    "alfa-romeo": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/alfa-romeo-sm.jpg",
+        "Giulia": {
+            "link": "https://www.autoevolution.com/alfa-romeo/giulia/"
+        },
+        "Stelvio": {
+            "link": "https://www.autoevolution.com/alfa-romeo/stelvio/"
+        },
+        "Giulietta": {
+            "link": "https://www.autoevolution.com/alfa-romeo/giulietta/"
+        },
+        "4C": {
+            "link": "https://www.autoevolution.com/alfa-romeo/4c/"
+        },
+        "4C Spider": {
+            "link": "https://www.autoevolution.com/alfa-romeo/4c-spider/"
+        },
+        "Giulia Veloce": {
+            "link": "https://www.autoevolution.com/alfa-romeo/giulia-veloce/"
+        },
+        "Stelvio Quadrifoglio": {
+            "link": "https://www.autoevolution.com/alfa-romeo/stelvio-quadrifoglio/"
+        },
+        "Giulia GTA": {
+            "link": "https://www.autoevolution.com/alfa-romeo/giulia-gta/"
+        },
+        "Giulia Quadrifoglio": {
+            "link": "https://www.autoevolution.com/alfa-romeo/giulia-quadrifoglio-verde/"
+        },
+        "Tonale": {
+            "link": "https://www.autoevolution.com/alfa-romeo/tonale/"
+        }
+    },
+    "alpine": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/alpine-sm.jpg",
+        "A110S": {
+            "link": "https://www.autoevolution.com/alpine/a110s/"
+        },
+        "A110": {
+            "link": "https://www.autoevolution.com/alpine/a110/"
+        }
+    },
+    "ariel": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/ariel-sm.jpg",
+        "Atom": {
+            "link": "https://www.autoevolution.com/ariel/atom/"
+        },
+        "Nomad": {
+            "link": "https://www.autoevolution.com/ariel/nomad-1/"
+        }
+    },
+    "artega": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/artega-sm.jpg",
+        "Scalo": {
+            "link": "https://www.autoevolution.com/artega/scalo/"
+        }
+    },
+    "aston-martin": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/aston-martin-sm.jpg",
+        "V12 Vantage": {
+            "link": "https://www.autoevolution.com/aston-martin/v12-vantage/"
+        },
+        "V8 Vantage": {
+            "link": "https://www.autoevolution.com/aston-martin/v8-vantage/"
+        },
+        "DBS": {
+            "link": "https://www.autoevolution.com/aston-martin/dbs/"
+        },
+        "DB12 Volante": {
+            "link": "https://www.autoevolution.com/aston-martin/db12-volante/"
+        },
+        "V12 Vantage S Roadster": {
+            "link": "https://www.autoevolution.com/aston-martin/v12-vantage-s-roadster/"
+        },
+        "DB11": {
+            "link": "https://www.autoevolution.com/aston-martin/db11/"
+        },
+        "DB12": {
+            "link": "https://www.autoevolution.com/aston-martin/db12/"
+        },
+        "Vantage GT8": {
+            "link": "https://www.autoevolution.com/aston-martin/vantage-gt8/"
+        },
+        "V8 Vantage S Roadster": {
+            "link": "https://www.autoevolution.com/aston-martin/v8-vantage-s-roadster/"
+        },
+        "DB11 Volante": {
+            "link": "https://www.autoevolution.com/aston-martin/db11-volante/"
+        },
+        "DBX": {
+            "link": "https://www.autoevolution.com/aston-martin/dbx/"
+        },
+        "V12 Zagato": {
+            "link": "https://www.autoevolution.com/aston-martin/v12-zagato/"
+        },
+        "Rapide AMR": {
+            "link": "https://www.autoevolution.com/aston-martin/rapide-amr/"
+        },
+        "V8 Vantage S": {
+            "link": "https://www.autoevolution.com/aston-martin/v8-vantage-s/"
+        },
+        "Rapide E": {
+            "link": "https://www.autoevolution.com/aston-martin/rapide-e/"
+        },
+        "Valhalla": {
+            "link": "https://www.autoevolution.com/aston-martin/valhalla/"
+        },
+        "V12 Speedster": {
+            "link": "https://www.autoevolution.com/aston-martin/v12-speedster/"
+        },
+        "Vantage Roadster": {
+            "link": "https://www.autoevolution.com/aston-martin/vantage-roadster/"
+        }
+    },
+    "audi": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/audi-sm.jpg",
+        "SQ7": {
+            "link": "https://www.autoevolution.com/audi/sq7/"
+        },
+        "Q7": {
+            "link": "https://www.autoevolution.com/audi/q7/"
+        },
+        "SQ8": {
+            "link": "https://www.autoevolution.com/audi/sq8/"
+        },
+        "Q8": {
+            "link": "https://www.autoevolution.com/audi/q8/"
+        },
+        "R8": {
+            "link": "https://www.autoevolution.com/audi/r8/"
+        },
+        "S8": {
+            "link": "https://www.autoevolution.com/audi/s8/"
+        },
+        "A3 Sedan": {
+            "link": "https://www.autoevolution.com/audi/a3-sedan/"
+        },
+        "A3 Sportback": {
+            "link": "https://www.autoevolution.com/audi/a3-sportback/"
+        },
+        "SQ2": {
+            "link": "https://www.autoevolution.com/audi/sq2/"
+        },
+        "RS 3 Sedan": {
+            "link": "https://www.autoevolution.com/audi/rs3-sedan/"
+        },
+        "S5 Cabriolet": {
+            "link": "https://www.autoevolution.com/audi/s5-cabriolet/"
+        },
+        "S5 Sportback": {
+            "link": "https://www.autoevolution.com/audi/s5-sportback/"
+        },
+        "SQ5": {
+            "link": "https://www.autoevolution.com/audi/sq5/"
+        },
+        "S3 Sportback": {
+            "link": "https://www.autoevolution.com/audi/s3-sportback/"
+        },
+        "Q5": {
+            "link": "https://www.autoevolution.com/audi/q5/"
+        },
+        "Q2": {
+            "link": "https://www.autoevolution.com/audi/q2/"
+        },
+        "S3 Sedan": {
+            "link": "https://www.autoevolution.com/audi/s3-sedan/"
+        },
+        "A4 Avant": {
+            "link": "https://www.autoevolution.com/audi/a4-avant/"
+        },
+        "A4": {
+            "link": "https://www.autoevolution.com/audi/a4/"
+        },
+        "A5 Sportback": {
+            "link": "https://www.autoevolution.com/audi/a5-sportback/"
+        },
+        "Allroad": {
+            "link": "https://www.autoevolution.com/audi/allroad/"
+        },
+        "TT RS Coupe": {
+            "link": "https://www.autoevolution.com/audi/tt-rs-coupe/"
+        },
+        "S4 Avant": {
+            "link": "https://www.autoevolution.com/audi/s4-avant/"
+        },
+        "S6 Avant": {
+            "link": "https://www.autoevolution.com/audi/s6-avant/"
+        },
+        "S4": {
+            "link": "https://www.autoevolution.com/audi/s4/"
+        },
+        "RS5 Sportback": {
+            "link": "https://www.autoevolution.com/audi/rs5-sportback/"
+        },
+        "TT RS Roadster": {
+            "link": "https://www.autoevolution.com/audi/tt-rs-roadster/"
+        },
+        "S6": {
+            "link": "https://www.autoevolution.com/audi/s6/"
+        },
+        "RS7 Sportback": {
+            "link": "https://www.autoevolution.com/audi/rs7-sportback/"
+        },
+        "RS 4 Avant": {
+            "link": "https://www.autoevolution.com/audi/rs4-avant/"
+        },
+        "RS 5": {
+            "link": "https://www.autoevolution.com/audi/rs5/"
+        },
+        "RS6 Avant": {
+            "link": "https://www.autoevolution.com/audi/rs6-avant/"
+        },
+        "A6 Avant": {
+            "link": "https://www.autoevolution.com/audi/a6-avant/"
+        },
+        "A6": {
+            "link": "https://www.autoevolution.com/audi/a6/"
+        },
+        "Q3": {
+            "link": "https://www.autoevolution.com/audi/q3/"
+        },
+        "A1": {
+            "link": "https://www.autoevolution.com/audi/a1/"
+        },
+        "R8 Spyder": {
+            "link": "https://www.autoevolution.com/audi/r8-spyder/"
+        },
+        "TT Roadster": {
+            "link": "https://www.autoevolution.com/audi/tt-roadster/"
+        },
+        "TT Coupe": {
+            "link": "https://www.autoevolution.com/audi/tt-coupe/"
+        },
+        "RS 3 Sportback": {
+            "link": "https://www.autoevolution.com/audi/rs3-sportback/"
+        },
+        "S7 Sportback": {
+            "link": "https://www.autoevolution.com/audi/s7-1/"
+        },
+        "A7": {
+            "link": "https://www.autoevolution.com/audi/a7/"
+        },
+        "A8": {
+            "link": "https://www.autoevolution.com/audi/a8/"
+        },
+        "S5": {
+            "link": "https://www.autoevolution.com/audi/s5/"
+        },
+        "S3": {
+            "link": "https://www.autoevolution.com/audi/s3/"
+        },
+        "S3 Cabriolet": {
+            "link": "https://www.autoevolution.com/audi/s3-cabriolet/"
+        },
+        "A4 Allroad": {
+            "link": "https://www.autoevolution.com/audi/a4-allroad/"
+        },
+        "A5": {
+            "link": "https://www.autoevolution.com/audi/a5/"
+        },
+        "A3 Cabriolet": {
+            "link": "https://www.autoevolution.com/audi/a3-cabriolet/"
+        },
+        "R8 GT": {
+            "link": "https://www.autoevolution.com/audi/r8-gt/"
+        },
+        "A5 Cabriolet": {
+            "link": "https://www.autoevolution.com/audi/a5-cabriolet/"
+        },
+        "Q8 Sportback": {
+            "link": "https://www.autoevolution.com/audi/q8-sportback-e-tron/"
+        },
+        "e-tron GT": {
+            "link": "https://www.autoevolution.com/audi/e-tron-gt/"
+        },
+        "Q4 Sportback": {
+            "link": "https://www.autoevolution.com/audi/q4-sportback/"
+        },
+        "Q4 e-tron": {
+            "link": "https://www.autoevolution.com/audi/q4-e-tron/"
+        },
+        "SQ5 Sportback": {
+            "link": "https://www.autoevolution.com/audi/sq5-sportback/"
+        },
+        "Q5 Sportback": {
+            "link": "https://www.autoevolution.com/audi/q5-sportback/"
+        },
+        "e-tron": {
+            "link": "https://www.autoevolution.com/audi/e-tron/"
+        },
+        "SQ8 e-tron": {
+            "link": "https://www.autoevolution.com/audi/sq8-e-tron/"
+        },
+        "Q8 e-tron": {
+            "link": "https://www.autoevolution.com/audi/q8-e-tron/"
+        },
+        "Q3 Sportback": {
+            "link": "https://www.autoevolution.com/audi/q3-sportback/"
+        },
+        "RS Q8": {
+            "link": "https://www.autoevolution.com/audi/rs-q8/"
+        },
+        "e-tron Sportback": {
+            "link": "https://www.autoevolution.com/audi/e-tron-sportback/"
+        }
+    },
+    "aurus": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/aurus-sm.jpg",
+        "Senat": {
+            "link": "https://www.autoevolution.com/aurus/senat/"
+        }
+    },
+    "bentley": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/bentley-sm.jpg",
+        "Bentayga Speed": {
+            "link": "https://www.autoevolution.com/bentley/bentayga-speed/"
+        },
+        "Bentayga": {
+            "link": "https://www.autoevolution.com/bentley/bentayga/"
+        },
+        "Flying Spur": {
+            "link": "https://www.autoevolution.com/bentley/flying-spur-1/"
+        },
+        "Continental GT": {
+            "link": "https://www.autoevolution.com/bentley/continental-gt/"
+        },
+        "Continental GTC": {
+            "link": "https://www.autoevolution.com/bentley/continental-gtc/"
+        },
+        "Mulsanne": {
+            "link": "https://www.autoevolution.com/bentley/mulsanne/"
+        },
+        "Mulliner": {
+            "link": "https://www.autoevolution.com/bentley/mulliner-bacalar/"
+        }
+    },
+    "bmw": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/bmw-sm.jpg",
+        "4 Series Convertible": {
+            "link": "https://www.autoevolution.com/bmw/4-series-convertible/"
+        },
+        "4 Series Coupe": {
+            "link": "https://www.autoevolution.com/bmw/4-series/"
+        },
+        "5 Series Touring": {
+            "link": "https://www.autoevolution.com/bmw/5-series-touring/"
+        },
+        "M4": {
+            "link": "https://www.autoevolution.com/bmw/m4/"
+        },
+        "M4 Convertible": {
+            "link": "https://www.autoevolution.com/bmw/m4-convertible/"
+        },
+        "X2": {
+            "link": "https://www.autoevolution.com/bmw/x2/"
+        },
+        "X5 M": {
+            "link": "https://www.autoevolution.com/bmw/x5m/"
+        },
+        "X6": {
+            "link": "https://www.autoevolution.com/bmw/x6/"
+        },
+        "X5": {
+            "link": "https://www.autoevolution.com/bmw/x5/"
+        },
+        "X6 M": {
+            "link": "https://www.autoevolution.com/bmw/x6m/"
+        },
+        "M2": {
+            "link": "https://www.autoevolution.com/bmw/m2/"
+        },
+        "3 Series Sedan": {
+            "link": "https://www.autoevolution.com/bmw/3-series-sedan/"
+        },
+        "3 Series Touring": {
+            "link": "https://www.autoevolution.com/bmw/3-series-touring/"
+        },
+        "M8 Convertible": {
+            "link": "https://www.autoevolution.com/bmw/m8-convertible/"
+        },
+        "X7": {
+            "link": "https://www.autoevolution.com/bmw/x7/"
+        },
+        "8 Series Coupe": {
+            "link": "https://www.autoevolution.com/bmw/8-series-coupe/"
+        },
+        "M8 Coupe": {
+            "link": "https://www.autoevolution.com/bmw/m8-coupe/"
+        },
+        "7 Series": {
+            "link": "https://www.autoevolution.com/bmw/7-series/"
+        },
+        "X1": {
+            "link": "https://www.autoevolution.com/bmw/x1/"
+        },
+        "8 Series Convertible": {
+            "link": "https://www.autoevolution.com/bmw/8-series-convertible/"
+        },
+        "X3": {
+            "link": "https://www.autoevolution.com/bmw/x3/"
+        },
+        "2 Series Active Tourer": {
+            "link": "https://www.autoevolution.com/bmw/2-series-active-tourer/"
+        },
+        "2 Series Coupe": {
+            "link": "https://www.autoevolution.com/bmw/2-series/"
+        },
+        "X4": {
+            "link": "https://www.autoevolution.com/bmw/x4/"
+        },
+        "4 Series Gran Coupe": {
+            "link": "https://www.autoevolution.com/bmw/4-series-gran-coupe/"
+        },
+        "M5": {
+            "link": "https://www.autoevolution.com/bmw/m5/"
+        },
+        "6 Series Gran Turismo": {
+            "link": "https://www.autoevolution.com/bmw/6-series-gran-turismo/"
+        },
+        "5 Series Sedan": {
+            "link": "https://www.autoevolution.com/bmw/5-series-sedan/"
+        },
+        "1 Series": {
+            "link": "https://www.autoevolution.com/bmw/1-series/"
+        },
+        "2 Series Gran Tourer": {
+            "link": "https://www.autoevolution.com/bmw/2-series-gran-tourer/"
+        },
+        "M3 Sedan": {
+            "link": "https://www.autoevolution.com/bmw/m3-sedan/"
+        },
+        "i3": {
+            "link": "https://www.autoevolution.com/bmw/i3/"
+        },
+        "1 Series 3 doors": {
+            "link": "https://www.autoevolution.com/bmw/1-series-3-doors/"
+        },
+        "2 Series Convertible": {
+            "link": "https://www.autoevolution.com/bmw/2-series-convertible/"
+        },
+        "Z4 Roadster": {
+            "link": "https://www.autoevolution.com/bmw/z4-roadster/"
+        },
+        "3 Series Gran Turismo": {
+            "link": "https://www.autoevolution.com/bmw/3-series-gran-turismo/"
+        },
+        "iX1": {
+            "link": "https://www.autoevolution.com/bmw/ix1/"
+        },
+        "i4": {
+            "link": "https://www.autoevolution.com/bmw/i4/"
+        },
+        "8 Series Gran Coupe": {
+            "link": "https://www.autoevolution.com/bmw/8-series-gran-coupe/"
+        },
+        "iX M": {
+            "link": "https://www.autoevolution.com/bmw/ix-m/"
+        },
+        "iX2": {
+            "link": "https://www.autoevolution.com/bmw/ix2/"
+        },
+        "M3 Touring": {
+            "link": "https://www.autoevolution.com/bmw/m3-touring/"
+        },
+        "iX3": {
+            "link": "https://www.autoevolution.com/bmw/ix3/"
+        },
+        "M4 CS": {
+            "link": "https://www.autoevolution.com/bmw/m4-cs/"
+        },
+        "X3 M": {
+            "link": "https://www.autoevolution.com/bmw/x3-m/"
+        },
+        "i7": {
+            "link": "https://www.autoevolution.com/bmw/i7/"
+        },
+        "X4 M": {
+            "link": "https://www.autoevolution.com/bmw/x4-m/"
+        },
+        "i5 Touring": {
+            "link": "https://www.autoevolution.com/bmw/i5-touring/"
+        },
+        "2 Series Gran Coupe": {
+            "link": "https://www.autoevolution.com/bmw/2-series-gran-coupe/"
+        },
+        "i5": {
+            "link": "https://www.autoevolution.com/bmw/i5/"
+        },
+        "1 Series Sedan": {
+            "link": "https://www.autoevolution.com/bmw/1-series-sedan/"
+        },
+        "M8 Gran Coupe": {
+            "link": "https://www.autoevolution.com/bmw/m8-series-gran-coupe/"
+        },
+        "XM": {
+            "link": "https://www.autoevolution.com/bmw/xm-1/"
+        },
+        "iX": {
+            "link": "https://www.autoevolution.com/bmw/ix/"
+        }
+    },
+    "bristol": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/bristol-sm.jpg",
+        "Bullet": {
+            "link": "https://www.autoevolution.com/bristol/bullet/"
+        }
+    },
+    "bufori": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/bufori-sm.jpg",
+        "Geneva": {
+            "link": "https://www.autoevolution.com/bufori/geneva/"
+        },
+        "La Joya": {
+            "link": "https://www.autoevolution.com/bufori/la-joya/"
+        }
+    },
+    "bugatti": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/bugatti-sm.jpg",
+        "Chiron": {
+            "link": "https://www.autoevolution.com/bugatti/chiron/"
+        },
+        "La Voiture Noire": {
+            "link": "https://www.autoevolution.com/bugatti/la-voiture-noire/"
+        },
+        "Bolide": {
+            "link": "https://www.autoevolution.com/bugatti/bolide/"
+        },
+        "Centodieci": {
+            "link": "https://www.autoevolution.com/bugatti/centodieci/"
+        },
+        "Divo": {
+            "link": "https://www.autoevolution.com/bugatti/divo/"
+        },
+        "Mistral": {
+            "link": "https://www.autoevolution.com/bugatti/mistral/"
+        }
+    },
+    "buick": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/buick-sm.jpg",
+        "Encore": {
+            "link": "https://www.autoevolution.com/buick/encore/"
+        },
+        "Envision": {
+            "link": "https://www.autoevolution.com/buick/envision/"
+        },
+        "Enclave": {
+            "link": "https://www.autoevolution.com/buick/enclave/"
+        },
+        "Regal": {
+            "link": "https://www.autoevolution.com/buick/regal/"
+        },
+        "Envista": {
+            "link": "https://www.autoevolution.com/buick/envista/"
+        },
+        "Regal Sportback": {
+            "link": "https://www.autoevolution.com/buick/regal-sportback/"
+        }
+    },
+    "cadillac": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/cadillac-sm.jpg",
+        "CT5-V": {
+            "link": "https://www.autoevolution.com/cadillac/ct5-v/"
+        },
+        "CT5": {
+            "link": "https://www.autoevolution.com/cadillac/ct5/"
+        },
+        "XT4": {
+            "link": "https://www.autoevolution.com/cadillac/xt4/"
+        },
+        "Escalade ESV": {
+            "link": "https://www.autoevolution.com/cadillac/escalade-esv/"
+        },
+        "Escalade": {
+            "link": "https://www.autoevolution.com/cadillac/escalade/"
+        },
+        "XT5": {
+            "link": "https://www.autoevolution.com/cadillac/xt5/"
+        },
+        "XTS": {
+            "link": "https://www.autoevolution.com/cadillac/xts/"
+        },
+        "Vistiq": {
+            "link": "https://www.autoevolution.com/cadillac/vistiq/"
+        },
+        "CT6": {
+            "link": "https://www.autoevolution.com/cadillac/ct6/"
+        },
+        "CT4-V": {
+            "link": "https://www.autoevolution.com/cadillac/ct4-v-1/"
+        },
+        "Celestiq": {
+            "link": "https://www.autoevolution.com/cadillac/celestiq/"
+        },
+        "CT4": {
+            "link": "https://www.autoevolution.com/cadillac/ct4-v/"
+        },
+        "Lyriq": {
+            "link": "https://www.autoevolution.com/cadillac/lyriq/"
+        },
+        "XT6": {
+            "link": "https://www.autoevolution.com/cadillac/xt6/"
+        },
+        "Optiq": {
+            "link": "https://www.autoevolution.com/cadillac/optiq/"
+        }
+    },
+    "caterham": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/caterham-sm.jpg",
+        "Supersport": {
+            "link": "https://www.autoevolution.com/caterham/supersport/"
+        },
+        "Seven 620": {
+            "link": "https://www.autoevolution.com/caterham/seven-620/"
+        },
+        "CSR": {
+            "link": "https://www.autoevolution.com/caterham/csr/"
+        },
+        "Classic": {
+            "link": "https://www.autoevolution.com/caterham/classic-1/"
+        },
+        "Roadsport": {
+            "link": "https://www.autoevolution.com/caterham/roadsport/"
+        },
+        "Superlight": {
+            "link": "https://www.autoevolution.com/caterham/superlight/"
+        },
+        "Seven 160": {
+            "link": "https://www.autoevolution.com/caterham/seven-160/"
+        },
+        "The Super Seven 1600": {
+            "link": "https://www.autoevolution.com/caterham/the-super-seven-1600/"
+        }
+    },
+    "chevrolet": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/chevrolet-sm.jpg",
+        "Equinox": {
+            "link": "https://www.autoevolution.com/chevrolet/equinox/"
+        },
+        "Tahoe": {
+            "link": "https://www.autoevolution.com/chevrolet/tahoe/"
+        },
+        "Silverado": {
+            "link": "https://www.autoevolution.com/chevrolet/silverado/"
+        },
+        "TrailBlazer": {
+            "link": "https://www.autoevolution.com/chevrolet/trailblazer/"
+        },
+        "Suburban": {
+            "link": "https://www.autoevolution.com/chevrolet/suburban/"
+        },
+        "Blazer": {
+            "link": "https://www.autoevolution.com/chevrolet/blazer/"
+        },
+        "Bolt": {
+            "link": "https://www.autoevolution.com/chevrolet/bolt/"
+        },
+        "Traverse": {
+            "link": "https://www.autoevolution.com/chevrolet/traverse/"
+        },
+        "Trax": {
+            "link": "https://www.autoevolution.com/chevrolet/trax/"
+        },
+        "Corvette Coupe": {
+            "link": "https://www.autoevolution.com/chevrolet/corvette-coupe/"
+        },
+        "Malibu": {
+            "link": "https://www.autoevolution.com/chevrolet/malibu/"
+        },
+        "Camaro": {
+            "link": "https://www.autoevolution.com/chevrolet/camaro/"
+        },
+        "Cruze": {
+            "link": "https://www.autoevolution.com/chevrolet/cruze-1/"
+        },
+        "Matiz / Spark": {
+            "link": "https://www.autoevolution.com/chevrolet/matiz-spark/"
+        },
+        "Cruze - 5 doors": {
+            "link": "https://www.autoevolution.com/chevrolet/cruze-5-doors/"
+        },
+        "Camaro Convertible": {
+            "link": "https://www.autoevolution.com/chevrolet/camaro-convertible/"
+        },
+        "Sonic Sedan": {
+            "link": "https://www.autoevolution.com/chevrolet/sonic-sedan/"
+        },
+        "Corvette ZR1": {
+            "link": "https://www.autoevolution.com/chevrolet/corvette-zr1/"
+        },
+        "Corvette Z06": {
+            "link": "https://www.autoevolution.com/chevrolet/corvette-z06/"
+        },
+        "Silverado 2500HD": {
+            "link": "https://www.autoevolution.com/chevrolet/silverado-2500hd/"
+        },
+        "Corvette Convertible": {
+            "link": "https://www.autoevolution.com/chevrolet/corvette-convertible/"
+        },
+        "Colorado Extended Cab": {
+            "link": "https://www.autoevolution.com/chevrolet/colorado-extended-cab/"
+        },
+        "Impala": {
+            "link": "https://www.autoevolution.com/chevrolet/impala/"
+        },
+        "Colorado Double Cab": {
+            "link": "https://www.autoevolution.com/chevrolet/colorado-double-cab/"
+        },
+        "Captiva": {
+            "link": "https://www.autoevolution.com/chevrolet/captiva/"
+        },
+        "Cobalt Sedan": {
+            "link": "https://www.autoevolution.com/chevrolet/cobalt-sedan/"
+        },
+        "Express": {
+            "link": "https://www.autoevolution.com/chevrolet/express/"
+        },
+        "Tracker": {
+            "link": "https://www.autoevolution.com/chevrolet/tracker/"
+        },
+        "Spin": {
+            "link": "https://www.autoevolution.com/chevrolet/spin/"
+        },
+        "Prisma": {
+            "link": "https://www.autoevolution.com/chevrolet/prisma-1/"
+        },
+        "Cruze Wagon": {
+            "link": "https://www.autoevolution.com/chevrolet/cruze-wagon/"
+        },
+        "Corvette E-Ray": {
+            "link": "https://www.autoevolution.com/chevrolet/corvette-e-ray/"
+        },
+        "Corvette Z06 Convertible": {
+            "link": "https://www.autoevolution.com/chevrolet/corvette-z06-convertible/"
+        },
+        "Sonic RS": {
+            "link": "https://www.autoevolution.com/chevrolet/sonic-rs/"
+        },
+        "Onix": {
+            "link": "https://www.autoevolution.com/chevrolet/onix/"
+        }
+    },
+    "chrysler": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/chrysler-sm.jpg",
+        "300": {
+            "link": "https://www.autoevolution.com/chrysler/300/"
+        },
+        "Pacifica": {
+            "link": "https://www.autoevolution.com/chrysler/pacifica/"
+        },
+        "300C": {
+            "link": "https://www.autoevolution.com/chrysler/300c/"
+        }
+    },
+    "citroen": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/citroen-sm.jpg",
+        "C3 Aircross": {
+            "link": "https://www.autoevolution.com/citroen/c3-aircross/"
+        },
+        "C3": {
+            "link": "https://www.autoevolution.com/citroen/c3/"
+        },
+        "E-Mehari": {
+            "link": "https://www.autoevolution.com/citroen/e-mehari/"
+        },
+        "Berlingo": {
+            "link": "https://www.autoevolution.com/citroen/berlingo/"
+        },
+        "C4 Picasso": {
+            "link": "https://www.autoevolution.com/citroen/c4-picasso/"
+        },
+        "Grand C4 Picasso": {
+            "link": "https://www.autoevolution.com/citroen/grand-c4-picasso/"
+        },
+        "C1 5 Doors": {
+            "link": "https://www.autoevolution.com/citroen/c1-5-doors/"
+        },
+        "C1 3 Doors": {
+            "link": "https://www.autoevolution.com/citroen/c1-3-doors/"
+        },
+        "C5 Estate": {
+            "link": "https://www.autoevolution.com/citroen/c5-estate/"
+        },
+        "C5 Aircross": {
+            "link": "https://www.autoevolution.com/citroen/c5-aircross/"
+        },
+        "C4": {
+            "link": "https://www.autoevolution.com/citroen/c4/"
+        },
+        "DS5": {
+            "link": "https://www.autoevolution.com/citroen/ds5/"
+        },
+        "AMI": {
+            "link": "https://www.autoevolution.com/citroen/ami/"
+        },
+        "DS4": {
+            "link": "https://www.autoevolution.com/citroen/ds4/"
+        },
+        "C5 X": {
+            "link": "https://www.autoevolution.com/citroen/c5-x/"
+        },
+        "C-Elysee": {
+            "link": "https://www.autoevolution.com/citroen/c-elysee/"
+        },
+        "C5 Crosstourer": {
+            "link": "https://www.autoevolution.com/citroen/c5-crosstourer/"
+        }
+    },
+    "cupra": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/cupra-sm.jpg",
+        "Ateca": {
+            "link": "https://www.autoevolution.com/cupra/ateca-1/"
+        },
+        "Leon Sportstourer": {
+            "link": "https://www.autoevolution.com/cupra/leon-sportstourer/"
+        },
+        "Born": {
+            "link": "https://www.autoevolution.com/cupra/born/"
+        },
+        "Leon": {
+            "link": "https://www.autoevolution.com/cupra/leon-1/"
+        },
+        "Formentor": {
+            "link": "https://www.autoevolution.com/cupra/formentor/"
+        },
+        "Tavascan": {
+            "link": "https://www.autoevolution.com/cupra/tavascan/"
+        }
+    },
+    "dacia": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/dacia-sm.jpg",
+        "Duster": {
+            "link": "https://www.autoevolution.com/dacia/duster/"
+        },
+        "JOGGER": {
+            "link": "https://www.autoevolution.com/dacia/jogger/"
+        },
+        "Sandero Stepway": {
+            "link": "https://www.autoevolution.com/dacia/sandero-stepway/"
+        },
+        "Sandero": {
+            "link": "https://www.autoevolution.com/dacia/sandero/"
+        },
+        "Logan": {
+            "link": "https://www.autoevolution.com/dacia/logan/"
+        },
+        "Logan MCV": {
+            "link": "https://www.autoevolution.com/dacia/logan-mcv/"
+        },
+        "Duster Pick-Up": {
+            "link": "https://www.autoevolution.com/dacia/duster-pick-up/"
+        },
+        "Dokker Van": {
+            "link": "https://www.autoevolution.com/dacia/dokker-van/"
+        },
+        "Logan MCV Stepway": {
+            "link": "https://www.autoevolution.com/dacia/logan-mcv-stepway/"
+        },
+        "Dokker": {
+            "link": "https://www.autoevolution.com/dacia/dokker/"
+        },
+        "Lodgy": {
+            "link": "https://www.autoevolution.com/dacia/lodgy/"
+        },
+        "Spring": {
+            "link": "https://www.autoevolution.com/dacia/spring/"
+        }
+    },
+    "daihatsu": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/daihatsu-sm.jpg",
+        "Sirion": {
+            "link": "https://www.autoevolution.com/daihatsu/sirion/"
+        },
+        "Ayla": {
+            "link": "https://www.autoevolution.com/daihatsu/ayla/"
+        },
+        "Cuore": {
+            "link": "https://www.autoevolution.com/daihatsu/cuore/"
+        }
+    },
+    "datsun": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/datsun-sm.jpg",
+        "GO": {
+            "link": "https://www.autoevolution.com/datsun/go/"
+        },
+        "GO+": {
+            "link": "https://www.autoevolution.com/datsun/go-1/"
+        },
+        "Mi-Do": {
+            "link": "https://www.autoevolution.com/datsun/mi-do/"
+        },
+        "on-Do": {
+            "link": "https://www.autoevolution.com/datsun/on-do/"
+        }
+    },
+    "dodge": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/dodge-sm.jpg",
+        "Durango": {
+            "link": "https://www.autoevolution.com/dodge/durango/"
+        },
+        "Durango SRT": {
+            "link": "https://www.autoevolution.com/dodge/durango-srt/"
+        },
+        "Charger SRT": {
+            "link": "https://www.autoevolution.com/dodge/charger-srt/"
+        },
+        "Challenger SRT": {
+            "link": "https://www.autoevolution.com/dodge/challenger-srt/"
+        },
+        "Charger": {
+            "link": "https://www.autoevolution.com/dodge/charger/"
+        },
+        "Journey": {
+            "link": "https://www.autoevolution.com/dodge/journey/"
+        },
+        "Ram": {
+            "link": "https://www.autoevolution.com/dodge/ram/"
+        },
+        "Hornet": {
+            "link": "https://www.autoevolution.com/dodge/hornet/"
+        }
+    },
+    "ds-automobiles": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/ds-automobiles-sm.jpg",
+        "DS 7": {
+            "link": "https://www.autoevolution.com/ds-automobiles/ds7-1/"
+        },
+        "DS 3": {
+            "link": "https://www.autoevolution.com/ds-automobiles/ds3-1/"
+        },
+        "DS 3 Crossback": {
+            "link": "https://www.autoevolution.com/ds-automobiles/ds-3-crossback/"
+        },
+        "DS 5": {
+            "link": "https://www.autoevolution.com/ds-automobiles/ds5-1/"
+        },
+        "DS 4": {
+            "link": "https://www.autoevolution.com/ds-automobiles/ds4-1/"
+        },
+        "DS 9": {
+            "link": "https://www.autoevolution.com/ds-automobiles/ds9/"
+        }
+    },
+    "ferrari": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/ferrari-sm.jpg",
+        "F8": {
+            "link": "https://www.autoevolution.com/ferrari/f8-tributo/"
+        },
+        "Portofino": {
+            "link": "https://www.autoevolution.com/ferrari/portofino/"
+        },
+        "296 GTS": {
+            "link": "https://www.autoevolution.com/ferrari/296-gts/"
+        },
+        "488 Pista": {
+            "link": "https://www.autoevolution.com/ferrari/488-pista/"
+        },
+        "GTC4Lusso T": {
+            "link": "https://www.autoevolution.com/ferrari/gtc4lusso-t/"
+        },
+        "812": {
+            "link": "https://www.autoevolution.com/ferrari/812-superfast/"
+        },
+        "Daytona": {
+            "link": "https://www.autoevolution.com/ferrari/daytona-2/"
+        },
+        "296 GTB": {
+            "link": "https://www.autoevolution.com/ferrari/296-gtb/"
+        },
+        "Purosangue": {
+            "link": "https://www.autoevolution.com/ferrari/purosangue/"
+        },
+        "Monza": {
+            "link": "https://www.autoevolution.com/ferrari/monza-1/"
+        },
+        "F60 America": {
+            "link": "https://www.autoevolution.com/ferrari/f60-america/"
+        },
+        "Roma Convertible": {
+            "link": "https://www.autoevolution.com/ferrari/roma-convertible/"
+        },
+        "Roma": {
+            "link": "https://www.autoevolution.com/ferrari/roma/"
+        },
+        "GTC4Lusso": {
+            "link": "https://www.autoevolution.com/ferrari/gtc4lusso/"
+        },
+        "SF90": {
+            "link": "https://www.autoevolution.com/ferrari/sf90/"
+        }
+    },
+    "fiat": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/fiat-sm.jpg",
+        "500 Abarth": {
+            "link": "https://www.autoevolution.com/fiat/500-abarth/"
+        },
+        "500X": {
+            "link": "https://www.autoevolution.com/fiat/500x/"
+        },
+        "500": {
+            "link": "https://www.autoevolution.com/fiat/500-1/"
+        },
+        "Doblo": {
+            "link": "https://www.autoevolution.com/fiat/doblo/"
+        },
+        "Panda 4X4": {
+            "link": "https://www.autoevolution.com/fiat/panda-4x4/"
+        },
+        "Panda": {
+            "link": "https://www.autoevolution.com/fiat/panda/"
+        },
+        "600": {
+            "link": "https://www.autoevolution.com/fiat/600/"
+        },
+        "Tipo 5 Doors": {
+            "link": "https://www.autoevolution.com/fiat/tipo-5-doors/"
+        },
+        "124 Spider": {
+            "link": "https://www.autoevolution.com/fiat/124-spider/"
+        },
+        "Topolino": {
+            "link": "https://www.autoevolution.com/fiat/500-topolino/"
+        },
+        "500 3+1": {
+            "link": "https://www.autoevolution.com/fiat/500-31/"
+        },
+        "Panda Cross": {
+            "link": "https://www.autoevolution.com/fiat/panda-cross/"
+        },
+        "Tipo Cross": {
+            "link": "https://www.autoevolution.com/fiat/tipo-cross/"
+        },
+        "Panda City Cross": {
+            "link": "https://www.autoevolution.com/fiat/panda-city-cross/"
+        },
+        "500L Urban": {
+            "link": "https://www.autoevolution.com/fiat/500l-urban/"
+        },
+        "Tipo": {
+            "link": "https://www.autoevolution.com/fiat/tipo/"
+        },
+        "500e": {
+            "link": "https://www.autoevolution.com/fiat/500e/"
+        },
+        "500L Trekking": {
+            "link": "https://www.autoevolution.com/fiat/500l-trekking/"
+        },
+        "Tipo Station Wagon": {
+            "link": "https://www.autoevolution.com/fiat/tipo-station-wagon/"
+        },
+        "Fullback": {
+            "link": "https://www.autoevolution.com/fiat/fullback/"
+        },
+        "Uno": {
+            "link": "https://www.autoevolution.com/fiat/uno/"
+        }
+    },
+    "fisker": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/fisker-sm.jpg",
+        "Ocean": {
+            "link": "https://www.autoevolution.com/fisker/ocean/"
+        }
+    },
+    "ford": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/ford-sm.jpg",
+        "Explorer": {
+            "link": "https://www.autoevolution.com/ford/explorer/"
+        },
+        "Kuga": {
+            "link": "https://www.autoevolution.com/ford/kuga/"
+        },
+        "Mustang Convertible": {
+            "link": "https://www.autoevolution.com/ford/mustang-convertible/"
+        },
+        "Escape": {
+            "link": "https://www.autoevolution.com/ford/escape/"
+        },
+        "Everest": {
+            "link": "https://www.autoevolution.com/ford/everest/"
+        },
+        "Wildtrak": {
+            "link": "https://www.autoevolution.com/ford/wildtrak/"
+        },
+        "Ranger Double Cab": {
+            "link": "https://www.autoevolution.com/ford/ranger-double-cab-1/"
+        },
+        "Expedition": {
+            "link": "https://www.autoevolution.com/ford/expedition/"
+        },
+        "Focus Wagon": {
+            "link": "https://www.autoevolution.com/ford/focus-wagon/"
+        },
+        "F-150 Raptor": {
+            "link": "https://www.autoevolution.com/ford/f-150-raptor-svt/"
+        },
+        "Focus ST 5 doors": {
+            "link": "https://www.autoevolution.com/ford/focus-st-5-doors/"
+        },
+        "Focus 5 Doors": {
+            "link": "https://www.autoevolution.com/ford/focus-5-doors/"
+        },
+        "Fiesta 5 Doors": {
+            "link": "https://www.autoevolution.com/ford/fiesta-5-doors/"
+        },
+        "Mustang": {
+            "link": "https://www.autoevolution.com/ford/mustang/"
+        },
+        "F-150 Super Crew": {
+            "link": "https://www.autoevolution.com/ford/f-150-super-crew/"
+        },
+        "Galaxy": {
+            "link": "https://www.autoevolution.com/ford/galaxy/"
+        },
+        "GT": {
+            "link": "https://www.autoevolution.com/ford/gt/"
+        },
+        "S-Max": {
+            "link": "https://www.autoevolution.com/ford/s-max/"
+        },
+        "Edge": {
+            "link": "https://www.autoevolution.com/ford/edge/"
+        },
+        "Figo": {
+            "link": "https://www.autoevolution.com/ford/figo/"
+        },
+        "Mondeo Wagon": {
+            "link": "https://www.autoevolution.com/ford/mondeo-wagon/"
+        },
+        "Fusion North American": {
+            "link": "https://www.autoevolution.com/ford/fusion-north-american/"
+        },
+        "Tourneo": {
+            "link": "https://www.autoevolution.com/ford/tourneo/"
+        },
+        "Ka+": {
+            "link": "https://www.autoevolution.com/ford/ka-1/"
+        },
+        "EcoSport": {
+            "link": "https://www.autoevolution.com/ford/ecosport/"
+        },
+        "Fiesta 3 Doors": {
+            "link": "https://www.autoevolution.com/ford/fiesta-3-doors/"
+        },
+        "Ranger Regular Cab": {
+            "link": "https://www.autoevolution.com/ford/ranger-regular-cab/"
+        },
+        "Ranger Super Cab": {
+            "link": "https://www.autoevolution.com/ford/ranger-super-cab/"
+        },
+        "F-150 Super Cab": {
+            "link": "https://www.autoevolution.com/ford/f-150-super-cab/"
+        },
+        "F-150 Regular Cab": {
+            "link": "https://www.autoevolution.com/ford/f-150-regular-cab/"
+        },
+        "Focus RS": {
+            "link": "https://www.autoevolution.com/ford/focus-rs/"
+        },
+        "Puma": {
+            "link": "https://www.autoevolution.com/ford/puma/"
+        },
+        "Bronco": {
+            "link": "https://www.autoevolution.com/ford/bronco/"
+        },
+        "Maverick": {
+            "link": "https://www.autoevolution.com/ford/maverick/"
+        },
+        "Focus ST Wagon": {
+            "link": "https://www.autoevolution.com/ford/focus-st-wagon/"
+        },
+        "Explorer Electric": {
+            "link": "https://www.autoevolution.com/ford/explorer-electric/"
+        },
+        "Ranger Wildtrak": {
+            "link": "https://www.autoevolution.com/ford/ranger-wildtrak/"
+        },
+        "Edge ST": {
+            "link": "https://www.autoevolution.com/ford/edge-st/"
+        },
+        "Transit Custom": {
+            "link": "https://www.autoevolution.com/ford/transit-custom/"
+        },
+        "Ranger Tremor": {
+            "link": "https://www.autoevolution.com/ford/ranger-tremor/"
+        },
+        "Super Duty": {
+            "link": "https://www.autoevolution.com/ford/super-duty/"
+        },
+        "Raptor Ranger": {
+            "link": "https://www.autoevolution.com/ford/ranger/"
+        },
+        "Puma ST": {
+            "link": "https://www.autoevolution.com/ford/puma-st/"
+        },
+        "Ka+ Active": {
+            "link": "https://www.autoevolution.com/ford/ka-active/"
+        },
+        "Territory": {
+            "link": "https://www.autoevolution.com/ford/territory/"
+        },
+        "Mustang MACH-E": {
+            "link": "https://www.autoevolution.com/ford/mach-e/"
+        },
+        "Transit Connect Wagon": {
+            "link": "https://www.autoevolution.com/ford/transit-connect-wagon/"
+        },
+        "Mustang Mach 1": {
+            "link": "https://www.autoevolution.com/ford/mustang-mach-1/"
+        },
+        "E-Tourneo": {
+            "link": "https://www.autoevolution.com/ford/e-tourneo/"
+        }
+    },
+    "geely": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/geely-sm.jpg",
+        "Emgrand EC7": {
+            "link": "https://www.autoevolution.com/geely/emgrand-ec7/"
+        },
+        "Galaxy": {
+            "link": "https://www.autoevolution.com/geely/l6/"
+        },
+        "LC": {
+            "link": "https://www.autoevolution.com/geely/lc/"
+        }
+    },
+    "genesis": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/genesis-sm.jpg",
+        "GV80": {
+            "link": "https://www.autoevolution.com/genesis/gv80/"
+        },
+        "G90": {
+            "link": "https://www.autoevolution.com/genesis/g90/"
+        },
+        "G70": {
+            "link": "https://www.autoevolution.com/genesis/g70/"
+        },
+        "G80": {
+            "link": "https://www.autoevolution.com/genesis/g80/"
+        },
+        "G70 Shooting Brake": {
+            "link": "https://www.autoevolution.com/genesis/g70-shooting-brake/"
+        },
+        "GV70": {
+            "link": "https://www.autoevolution.com/genesis/gv70/"
+        },
+        "GV60": {
+            "link": "https://www.autoevolution.com/genesis/gv60/"
+        },
+        "GV80 Coupe": {
+            "link": "https://www.autoevolution.com/genesis/gv80-coupe/"
+        }
+    },
+    "gmc": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/gmc-sm.jpg",
+        "Sierra": {
+            "link": "https://www.autoevolution.com/gmc/sierra/"
+        },
+        "Terrain": {
+            "link": "https://www.autoevolution.com/gmc/terrain/"
+        },
+        "Yukon XL": {
+            "link": "https://www.autoevolution.com/gmc/yukon-xl/"
+        },
+        "Yukon": {
+            "link": "https://www.autoevolution.com/gmc/yukon/"
+        },
+        "Acadia": {
+            "link": "https://www.autoevolution.com/gmc/acadia/"
+        },
+        "Savana": {
+            "link": "https://www.autoevolution.com/gmc/savana/"
+        },
+        "Canyon Crew Cab": {
+            "link": "https://www.autoevolution.com/gmc/canyon-crew-cab/"
+        },
+        "Sierra 2500HD": {
+            "link": "https://www.autoevolution.com/gmc/sierra-2500hd/"
+        },
+        "Hummer EV": {
+            "link": "https://www.autoevolution.com/gmc/hummer-ev/"
+        },
+        "Hummer EV SUV": {
+            "link": "https://www.autoevolution.com/gmc/hummer-ev-suv/"
+        }
+    },
+    "gordon-murray-automotive": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/gordon-murray-automotive-sm.jpg",
+        "GORDON MURRAY Automotive T.33": {
+            "link": "https://www.autoevolution.com/gordon-murray-automotive/t33/"
+        },
+        "GORDON MURRAY Automotive T.50": {
+            "link": "https://www.autoevolution.com/gordon-murray-automotive/t50/"
+        }
+    },
+    "hindustan": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/hindustan-sm.jpg",
+        "Pushpak/Trekker": {
+            "link": "https://www.autoevolution.com/hindustan/pushpaktrekker/"
+        },
+        "RTV/Ranger": {
+            "link": "https://www.autoevolution.com/hindustan/rtvranger/"
+        }
+    },
+    "holden": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/holden-sm.jpg",
+        "Commodore Sedan": {
+            "link": "https://www.autoevolution.com/holden/commodore-sedan/"
+        },
+        "Caprice/Statesman": {
+            "link": "https://www.autoevolution.com/holden/capricesatesman/"
+        },
+        "Rodeo": {
+            "link": "https://www.autoevolution.com/holden/rodeo/"
+        },
+        "Combo": {
+            "link": "https://www.autoevolution.com/holden/combo-2/"
+        },
+        "Cruze Mk II": {
+            "link": "https://www.autoevolution.com/holden/cruze-mk-ii/"
+        },
+        "Malibu": {
+            "link": "https://www.autoevolution.com/holden/malibu-1/"
+        },
+        "Barina RS": {
+            "link": "https://www.autoevolution.com/holden/barina-rs/"
+        }
+    },
+    "honda": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/honda-sm.jpg",
+        "Passport": {
+            "link": "https://www.autoevolution.com/honda/passport/"
+        },
+        "Accord": {
+            "link": "https://www.autoevolution.com/honda/accord/"
+        },
+        "Pilot": {
+            "link": "https://www.autoevolution.com/honda/pilot/"
+        },
+        "CR-V": {
+            "link": "https://www.autoevolution.com/honda/cr-v/"
+        },
+        "HR-V 5 Doors": {
+            "link": "https://www.autoevolution.com/honda/hr-v-5-doors/"
+        },
+        "Civic 5 Doors": {
+            "link": "https://www.autoevolution.com/honda/civic-5-doors/"
+        },
+        "Civic Sedan": {
+            "link": "https://www.autoevolution.com/honda/civic-sedan/"
+        },
+        "Odyssey": {
+            "link": "https://www.autoevolution.com/honda/odyssey/"
+        },
+        "Ridgeline": {
+            "link": "https://www.autoevolution.com/honda/ridgeline/"
+        },
+        "Civic Type-R": {
+            "link": "https://www.autoevolution.com/honda/civic-type-r/"
+        },
+        "Jazz / Fit": {
+            "link": "https://www.autoevolution.com/honda/jazz-fit/"
+        },
+        "Civic Coupe": {
+            "link": "https://www.autoevolution.com/honda/civic-coupe/"
+        },
+        "Insight": {
+            "link": "https://www.autoevolution.com/honda/insight/"
+        },
+        "Legend Sedan": {
+            "link": "https://www.autoevolution.com/honda/legend-sedan/"
+        },
+        "Civic Sedan US": {
+            "link": "https://www.autoevolution.com/honda/civic-sedan-us/"
+        },
+        "NSX": {
+            "link": "https://www.autoevolution.com/honda/nsx/"
+        },
+        "S660": {
+            "link": "https://www.autoevolution.com/honda/s660/"
+        },
+        "Prologue": {
+            "link": "https://www.autoevolution.com/honda/prologue/"
+        },
+        "e:Ny1": {
+            "link": "https://www.autoevolution.com/honda/eny1/"
+        },
+        "e": {
+            "link": "https://www.autoevolution.com/honda/e/"
+        },
+        "ZR-V": {
+            "link": "https://www.autoevolution.com/honda/zr-v/"
+        }
+    },
+    "hyundai": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/hyundai-sm.jpg",
+        "Bayon": {
+            "link": "https://www.autoevolution.com/hyundai/bayon/"
+        },
+        "i10": {
+            "link": "https://www.autoevolution.com/hyundai/i10/"
+        },
+        "Elantra Sedan": {
+            "link": "https://www.autoevolution.com/hyundai/elantra-sedan/"
+        },
+        "Sonata": {
+            "link": "https://www.autoevolution.com/hyundai/sonata/"
+        },
+        "ix35 / Tucson": {
+            "link": "https://www.autoevolution.com/hyundai/ix35-tucson/"
+        },
+        "Santa Fe": {
+            "link": "https://www.autoevolution.com/hyundai/santa-fe/"
+        },
+        "Kona Electric": {
+            "link": "https://www.autoevolution.com/hyundai/kona-electric/"
+        },
+        "Elantra N": {
+            "link": "https://www.autoevolution.com/hyundai/elantra-n-line/"
+        },
+        "Ioniq": {
+            "link": "https://www.autoevolution.com/hyundai/ioniq/"
+        },
+        "Palisade": {
+            "link": "https://www.autoevolution.com/hyundai/palisade/"
+        },
+        "i30 Estate": {
+            "link": "https://www.autoevolution.com/hyundai/i30-estate/"
+        },
+        "i30": {
+            "link": "https://www.autoevolution.com/hyundai/i30/"
+        },
+        "Kona": {
+            "link": "https://www.autoevolution.com/hyundai/kona/"
+        },
+        "i20": {
+            "link": "https://www.autoevolution.com/hyundai/i20/"
+        },
+        "i30 N": {
+            "link": "https://www.autoevolution.com/hyundai/i30-n/"
+        },
+        "i30 Fastback": {
+            "link": "https://www.autoevolution.com/hyundai/i30-fastback/"
+        },
+        "i20 Active": {
+            "link": "https://www.autoevolution.com/hyundai/i20-active/"
+        },
+        "i40 wagon": {
+            "link": "https://www.autoevolution.com/hyundai/i40-wagon/"
+        },
+        "Veloster": {
+            "link": "https://www.autoevolution.com/hyundai/veloster/"
+        },
+        "Accent Sedan": {
+            "link": "https://www.autoevolution.com/hyundai/accent-sedan/"
+        },
+        "Sonata Hybrid": {
+            "link": "https://www.autoevolution.com/hyundai/sonata-hybrid/"
+        },
+        "Elantra GT": {
+            "link": "https://www.autoevolution.com/hyundai/elantra-gt/"
+        },
+        "Grandeur / Azera": {
+            "link": "https://www.autoevolution.com/hyundai/grandeur-azera/"
+        },
+        "Elantra 5 Doors": {
+            "link": "https://www.autoevolution.com/hyundai/elantra-5-doors/"
+        },
+        "i20 N": {
+            "link": "https://www.autoevolution.com/hyundai/i20-n/"
+        },
+        "Ioniq 5": {
+            "link": "https://www.autoevolution.com/hyundai/ioniq-5/"
+        },
+        "i30 Coupe": {
+            "link": "https://www.autoevolution.com/hyundai/i30-coupe/"
+        },
+        "Santa Cruz": {
+            "link": "https://www.autoevolution.com/hyundai/santa-cruz/"
+        },
+        "Ioniq 6": {
+            "link": "https://www.autoevolution.com/hyundai/ioniq-6/"
+        },
+        "Kona N": {
+            "link": "https://www.autoevolution.com/hyundai/kona-n/"
+        },
+        "Mistra": {
+            "link": "https://www.autoevolution.com/hyundai/mistra/"
+        },
+        "Staria": {
+            "link": "https://www.autoevolution.com/hyundai/staria/"
+        },
+        "NEXO": {
+            "link": "https://www.autoevolution.com/hyundai/nexo/"
+        },
+        "Venue": {
+            "link": "https://www.autoevolution.com/hyundai/venue/"
+        }
+    },
+    "ineos": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/ineos-sm.jpg",
+        "Grenadier": {
+            "link": "https://www.autoevolution.com/ineos/grenadier/"
+        }
+    },
+    "infiniti": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/infiniti-sm.jpg",
+        "QX60": {
+            "link": "https://www.autoevolution.com/infiniti/qx60/"
+        },
+        "QX80": {
+            "link": "https://www.autoevolution.com/infiniti/qx80/"
+        },
+        "QX50": {
+            "link": "https://www.autoevolution.com/infiniti/qx50/"
+        },
+        "Q70": {
+            "link": "https://www.autoevolution.com/infiniti/q70/"
+        },
+        "Q50": {
+            "link": "https://www.autoevolution.com/infiniti/q50/"
+        },
+        "Q60": {
+            "link": "https://www.autoevolution.com/infiniti/q60/"
+        },
+        "QX30": {
+            "link": "https://www.autoevolution.com/infiniti/q30/"
+        },
+        "QX70": {
+            "link": "https://www.autoevolution.com/infiniti/qx70/"
+        },
+        "QX55": {
+            "link": "https://www.autoevolution.com/infiniti/qx55/"
+        }
+    },
+    "isuzu": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/isuzu-sm.jpg",
+        "Rodeo / D-Max": {
+            "link": "https://www.autoevolution.com/isuzu/rodeo-d-max/"
+        }
+    },
+    "jaguar": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/jaguar-sm.jpg",
+        "F-Pace SVR": {
+            "link": "https://www.autoevolution.com/jaguar/f-pace-svr/"
+        },
+        "F-Type Coupe": {
+            "link": "https://www.autoevolution.com/jaguar/f-type-coupe/"
+        },
+        "F-Pace": {
+            "link": "https://www.autoevolution.com/jaguar/f-pace/"
+        },
+        "F-Type Convertible": {
+            "link": "https://www.autoevolution.com/jaguar/convertible-1/"
+        },
+        "F-Type SVR Coupe": {
+            "link": "https://www.autoevolution.com/jaguar/f-type-svr-coupe/"
+        },
+        "XF Sportbrake": {
+            "link": "https://www.autoevolution.com/jaguar/xf-sportbrake/"
+        },
+        "XE": {
+            "link": "https://www.autoevolution.com/jaguar/xe/"
+        },
+        "XJR": {
+            "link": "https://www.autoevolution.com/jaguar/xjr/"
+        },
+        "XF": {
+            "link": "https://www.autoevolution.com/jaguar/xf/"
+        },
+        "E-Pace": {
+            "link": "https://www.autoevolution.com/jaguar/e-pace/"
+        },
+        "I-Pace": {
+            "link": "https://www.autoevolution.com/jaguar/i-pace/"
+        },
+        "XE SV": {
+            "link": "https://www.autoevolution.com/jaguar/xe-sv/"
+        }
+    },
+    "jeep": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/jeep-sm.jpg",
+        "Wrangler": {
+            "link": "https://www.autoevolution.com/jeep/wrangler/"
+        },
+        "Gladiator": {
+            "link": "https://www.autoevolution.com/jeep/gladiator/"
+        },
+        "Compass": {
+            "link": "https://www.autoevolution.com/jeep/compass/"
+        },
+        "Grand Cherokee": {
+            "link": "https://www.autoevolution.com/jeep/grand-cherokee/"
+        },
+        "Cherokee": {
+            "link": "https://www.autoevolution.com/jeep/cherokee/"
+        },
+        "Wrangler Unlimited": {
+            "link": "https://www.autoevolution.com/jeep/wrangler-unlimited/"
+        },
+        "Wagoneer": {
+            "link": "https://www.autoevolution.com/jeep/wagoneer/"
+        },
+        "Wrangler Rubicon": {
+            "link": "https://www.autoevolution.com/jeep/wrangler-rubicon/"
+        },
+        "Avenger": {
+            "link": "https://www.autoevolution.com/jeep/avenger-1/"
+        }
+    },
+    "karma": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/karma-sm.jpg",
+        "Karma Revero GT": {
+            "link": "https://www.autoevolution.com/karma/revero-gt/"
+        },
+        "Karma Revero GTS": {
+            "link": "https://www.autoevolution.com/karma/revero-gts/"
+        }
+    },
+    "kia": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/kia-sm.jpg",
+        "Carnival / Sedona": {
+            "link": "https://www.autoevolution.com/kia/carnival-sedona/"
+        },
+        "K5": {
+            "link": "https://www.autoevolution.com/kia/k5/"
+        },
+        "Picanto": {
+            "link": "https://www.autoevolution.com/kia/picanto/"
+        },
+        "Seltos": {
+            "link": "https://www.autoevolution.com/kia/seltos/"
+        },
+        "XCeed": {
+            "link": "https://www.autoevolution.com/kia/xceed/"
+        },
+        "Telluride": {
+            "link": "https://www.autoevolution.com/kia/telluride/"
+        },
+        "Soul": {
+            "link": "https://www.autoevolution.com/kia/soul/"
+        },
+        "Sportage": {
+            "link": "https://www.autoevolution.com/kia/sportage/"
+        },
+        "Ceed": {
+            "link": "https://www.autoevolution.com/kia/ceed-gt/"
+        },
+        "Forte": {
+            "link": "https://www.autoevolution.com/kia/forte/"
+        },
+        "Stinger": {
+            "link": "https://www.autoevolution.com/kia/stinger/"
+        },
+        "Optima / Magentis": {
+            "link": "https://www.autoevolution.com/kia/optima-magentis/"
+        },
+        "Sorento": {
+            "link": "https://www.autoevolution.com/kia/sorento/"
+        },
+        "Niro": {
+            "link": "https://www.autoevolution.com/kia/niro/"
+        },
+        "K9": {
+            "link": "https://www.autoevolution.com/kia/k9/"
+        },
+        "Rio Hatchback": {
+            "link": "https://www.autoevolution.com/kia/rio-hatchback/"
+        },
+        "Pro cee'd": {
+            "link": "https://www.autoevolution.com/kia/pro-cee-d/"
+        },
+        "Optima Sportswagon": {
+            "link": "https://www.autoevolution.com/kia/optima-sportswagon/"
+        },
+        "Forte 5 Door": {
+            "link": "https://www.autoevolution.com/kia/forte-5-door/"
+        },
+        "K7 / Cadenza": {
+            "link": "https://www.autoevolution.com/kia/k7-cadenza/"
+        },
+        "Rondo": {
+            "link": "https://www.autoevolution.com/kia/rondo/"
+        },
+        "Forte Koup": {
+            "link": "https://www.autoevolution.com/kia/forte-koup/"
+        },
+        "cee'd": {
+            "link": "https://www.autoevolution.com/kia/cee-d/"
+        },
+        "cee'd SW": {
+            "link": "https://www.autoevolution.com/kia/cee-d-sw/"
+        },
+        "EV5": {
+            "link": "https://www.autoevolution.com/kia/ev5/"
+        },
+        "Stonic": {
+            "link": "https://www.autoevolution.com/kia/stonic/"
+        },
+        "pro_cee\u2019d GT": {
+            "link": "https://www.autoevolution.com/kia/proceed-gt/"
+        },
+        "Borrego / Mohave": {
+            "link": "https://www.autoevolution.com/kia/borrego-mohave/"
+        },
+        "Cerato/Forte": {
+            "link": "https://www.autoevolution.com/kia/cerato-forte/"
+        },
+        "Picanto X-Line": {
+            "link": "https://www.autoevolution.com/kia/picanto-x-line/"
+        },
+        "Stonic GT-Line": {
+            "link": "https://www.autoevolution.com/kia/stonic-gt-line/"
+        },
+        "EV6": {
+            "link": "https://www.autoevolution.com/kia/ev6/"
+        },
+        "EV9": {
+            "link": "https://www.autoevolution.com/kia/ev9/"
+        }
+    },
+    "koenigsegg": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/koenigsegg-sm.jpg",
+        "Gemera": {
+            "link": "https://www.autoevolution.com/koenigsegg/gemera/"
+        },
+        "Jesko": {
+            "link": "https://www.autoevolution.com/koenigsegg/jesko/"
+        },
+        "Regera": {
+            "link": "https://www.autoevolution.com/koenigsegg/regera/"
+        }
+    },
+    "ktm": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/ktm-sm.jpg",
+        "X-Bow": {
+            "link": "https://www.autoevolution.com/ktm/x-bow/"
+        }
+    },
+    "lada": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/lada-sm.jpg",
+        "Kalina Sedan": {
+            "link": "https://www.autoevolution.com/lada/kalina-sedan/"
+        },
+        "Niva": {
+            "link": "https://www.autoevolution.com/lada/niva/"
+        }
+    },
+    "lamborghini": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/lamborghini-sm.jpg",
+        "Huracan Spyder": {
+            "link": "https://www.autoevolution.com/lamborghini/huracan-spyder/"
+        },
+        "Huracan": {
+            "link": "https://www.autoevolution.com/lamborghini/huracan/"
+        },
+        "Aventador": {
+            "link": "https://www.autoevolution.com/lamborghini/aventador/"
+        },
+        "Aventador Roadster": {
+            "link": "https://www.autoevolution.com/lamborghini/aventador-roadster/"
+        },
+        "Sian": {
+            "link": "https://www.autoevolution.com/lamborghini/sian/"
+        },
+        "Urus": {
+            "link": "https://www.autoevolution.com/lamborghini/urus/"
+        },
+        "Centenario Roadster": {
+            "link": "https://www.autoevolution.com/lamborghini/centenario-roadster/"
+        },
+        "Sian Roadster": {
+            "link": "https://www.autoevolution.com/lamborghini/sian-roadster/"
+        },
+        "Revuelto": {
+            "link": "https://www.autoevolution.com/lamborghini/revuelto/"
+        },
+        "Veneno Roadster": {
+            "link": "https://www.autoevolution.com/lamborghini/veneno-roadster/"
+        }
+    },
+    "lancia": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/lancia-sm.jpg",
+        "Ypsilon": {
+            "link": "https://www.autoevolution.com/lancia/ypsilon/"
+        }
+    },
+    "land-rover": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/land-rover-sm.jpg",
+        "Range Rover Velar": {
+            "link": "https://www.autoevolution.com/land-rover/range-rover-velar/"
+        },
+        "Range Rover Sport": {
+            "link": "https://www.autoevolution.com/land-rover/range-rover-sport/"
+        },
+        "Range Rover": {
+            "link": "https://www.autoevolution.com/land-rover/range-rover/"
+        },
+        "Defender 90": {
+            "link": "https://www.autoevolution.com/land-rover/defender-90/"
+        },
+        "Discovery Sport": {
+            "link": "https://www.autoevolution.com/land-rover/discovery-sport/"
+        },
+        "Range Rover Evoque": {
+            "link": "https://www.autoevolution.com/land-rover/range-rover-evoque/"
+        },
+        "Range Rover PHEV": {
+            "link": "https://www.autoevolution.com/land-rover/range-rover-phev/"
+        },
+        "Range Rover Sport SVR": {
+            "link": "https://www.autoevolution.com/land-rover/range-rover-sport-svr/"
+        },
+        "Defender 110": {
+            "link": "https://www.autoevolution.com/land-rover/defender-110/"
+        },
+        "Discovery": {
+            "link": "https://www.autoevolution.com/land-rover/discovery/"
+        },
+        "Range Rover Evoque Convertible": {
+            "link": "https://www.autoevolution.com/land-rover/range-rover-evoque-convertible/"
+        },
+        "Range Rover L": {
+            "link": "https://www.autoevolution.com/land-rover/range-rover-l/"
+        },
+        "Range Rover Sport PHEV": {
+            "link": "https://www.autoevolution.com/land-rover/range-rover-sport-phev/"
+        },
+        "Discovery SVX": {
+            "link": "https://www.autoevolution.com/land-rover/discovery-svx/"
+        },
+        "Defender 130": {
+            "link": "https://www.autoevolution.com/land-rover/defender-130/"
+        }
+    },
+    "lexus": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/lexus-sm.jpg",
+        "GX": {
+            "link": "https://www.autoevolution.com/lexus/gx/"
+        },
+        "ES": {
+            "link": "https://www.autoevolution.com/lexus/es-1/"
+        },
+        "RX": {
+            "link": "https://www.autoevolution.com/lexus/rx/"
+        },
+        "NX": {
+            "link": "https://www.autoevolution.com/lexus/nx/"
+        },
+        "LX": {
+            "link": "https://www.autoevolution.com/lexus/lx/"
+        },
+        "IS": {
+            "link": "https://www.autoevolution.com/lexus/is/"
+        },
+        "LS": {
+            "link": "https://www.autoevolution.com/lexus/ls-1/"
+        },
+        "RC": {
+            "link": "https://www.autoevolution.com/lexus/rc/"
+        },
+        "CT": {
+            "link": "https://www.autoevolution.com/lexus/ct/"
+        },
+        "GS F": {
+            "link": "https://www.autoevolution.com/lexus/gs-f/"
+        },
+        "LC": {
+            "link": "https://www.autoevolution.com/lexus/lc-1/"
+        },
+        "TX": {
+            "link": "https://www.autoevolution.com/lexus/tx/"
+        },
+        "LBX": {
+            "link": "https://www.autoevolution.com/lexus/lbx/"
+        },
+        "LM": {
+            "link": "https://www.autoevolution.com/lexus/lm/"
+        },
+        "RZ": {
+            "link": "https://www.autoevolution.com/lexus/rz/"
+        },
+        "RC F": {
+            "link": "https://www.autoevolution.com/lexus/rc-f/"
+        },
+        "UX": {
+            "link": "https://www.autoevolution.com/lexus/ux/"
+        }
+    },
+    "lightyear": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/lightyear-sm.jpg",
+        "Lightyear 0": {
+            "link": "https://www.autoevolution.com/lightyear/lightyear-0/"
+        },
+        "Lightyear 2": {
+            "link": "https://www.autoevolution.com/lightyear/lightyear-2/"
+        }
+    },
+    "lincoln": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/lincoln-sm.jpg",
+        "Nautilus": {
+            "link": "https://www.autoevolution.com/lincoln/nautilus/"
+        },
+        "Corsair": {
+            "link": "https://www.autoevolution.com/lincoln/corsair-1/"
+        },
+        "MKC": {
+            "link": "https://www.autoevolution.com/lincoln/mkc/"
+        },
+        "Navigator": {
+            "link": "https://www.autoevolution.com/lincoln/navigator/"
+        },
+        "Navigator L": {
+            "link": "https://www.autoevolution.com/lincoln/navigator-l/"
+        },
+        "MKZ": {
+            "link": "https://www.autoevolution.com/lincoln/mkz/"
+        },
+        "MKT": {
+            "link": "https://www.autoevolution.com/lincoln/mkt/"
+        },
+        "Zephyr": {
+            "link": "https://www.autoevolution.com/lincoln/zephyr/"
+        },
+        "Aviator": {
+            "link": "https://www.autoevolution.com/lincoln/aviator/"
+        },
+        "Continental": {
+            "link": "https://www.autoevolution.com/lincoln/continental-1/"
+        }
+    },
+    "lotus": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/lotus-sm.jpg",
+        "Elise": {
+            "link": "https://www.autoevolution.com/lotus/elise/"
+        },
+        "Exige": {
+            "link": "https://www.autoevolution.com/lotus/exige/"
+        },
+        "Evora": {
+            "link": "https://www.autoevolution.com/lotus/evora/"
+        },
+        "Eletre": {
+            "link": "https://www.autoevolution.com/lotus/eletre/"
+        },
+        "Evija": {
+            "link": "https://www.autoevolution.com/lotus/evija/"
+        },
+        "3 Eleven": {
+            "link": "https://www.autoevolution.com/lotus/3-eleven/"
+        },
+        "Emeya": {
+            "link": "https://www.autoevolution.com/lotus/emeya/"
+        }
+    },
+    "lucid-motors": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/lucid-motors-sm.jpg",
+        "Lucid Motors Air": {
+            "link": "https://www.autoevolution.com/lucid-motors/lucid-air/"
+        },
+        "Lucid Motors Gravity": {
+            "link": "https://www.autoevolution.com/lucid-motors/gravity/"
+        }
+    },
+    "mahindra": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/mahindra-sm.jpg",
+        "Mahindra Thar": {
+            "link": "https://www.autoevolution.com/mahindra/thar/"
+        },
+        "Mahindra Bolero": {
+            "link": "https://www.autoevolution.com/mahindra/bolero/"
+        },
+        "Mahindra Scorpio / GOA": {
+            "link": "https://www.autoevolution.com/mahindra/scorpio-goa/"
+        },
+        "Mahindra Verito": {
+            "link": "https://www.autoevolution.com/mahindra/verito/"
+        }
+    },
+    "marussia-motors": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/marussia-sm.jpg",
+        "MARUSSIA B1": {
+            "link": "https://www.autoevolution.com/marussia-motors/b1/"
+        },
+        "MARUSSIA B2": {
+            "link": "https://www.autoevolution.com/marussia-motors/b2/"
+        }
+    },
+    "maruti-suzuki": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/maruti-suzuki-sm.jpg",
+        "Swift": {
+            "link": "https://www.autoevolution.com/maruti-suzuki/swift/"
+        },
+        "800": {
+            "link": "https://www.autoevolution.com/maruti-suzuki/800/"
+        },
+        "Gipsy": {
+            "link": "https://www.autoevolution.com/maruti-suzuki/gipsy/"
+        },
+        "Wagon R": {
+            "link": "https://www.autoevolution.com/maruti-suzuki/wagon-r-1/"
+        }
+    },
+    "maserati": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/maserati-sm.jpg",
+        "Ghibli": {
+            "link": "https://www.autoevolution.com/maserati/ghibli/"
+        },
+        "Levante": {
+            "link": "https://www.autoevolution.com/maserati/levante/"
+        },
+        "GranTurismo": {
+            "link": "https://www.autoevolution.com/maserati/granturismo/"
+        },
+        "Quattroporte": {
+            "link": "https://www.autoevolution.com/maserati/quattroporte/"
+        },
+        "Grecale": {
+            "link": "https://www.autoevolution.com/maserati/grecale/"
+        },
+        "MC20": {
+            "link": "https://www.autoevolution.com/maserati/cielo-1/"
+        },
+        "Grecale Trofeo": {
+            "link": "https://www.autoevolution.com/maserati/grecale-trofeo/"
+        }
+    },
+    "mazda": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/mazda-sm.jpg",
+        "2 / Demio": {
+            "link": "https://www.autoevolution.com/mazda/2-demio/"
+        },
+        "3 / Axela Hatchback": {
+            "link": "https://www.autoevolution.com/mazda/3-axela-hatchback/"
+        },
+        "CX-3": {
+            "link": "https://www.autoevolution.com/mazda/cx-3/"
+        },
+        "3 / Axela Sedan": {
+            "link": "https://www.autoevolution.com/mazda/3-axela-sedan/"
+        },
+        "6 / Atenza Sedan": {
+            "link": "https://www.autoevolution.com/mazda/6-atenza-sedan/"
+        },
+        "CX-5": {
+            "link": "https://www.autoevolution.com/mazda/cx-5/"
+        },
+        "CX-9": {
+            "link": "https://www.autoevolution.com/mazda/cx-9/"
+        },
+        "6 / Atenza Wagon": {
+            "link": "https://www.autoevolution.com/mazda/6-atenza-wagon/"
+        },
+        "MX-5 / Miata": {
+            "link": "https://www.autoevolution.com/mazda/mx-5-miata/"
+        },
+        "5 / Premacy": {
+            "link": "https://www.autoevolution.com/mazda/5-premacy/"
+        },
+        "Biante": {
+            "link": "https://www.autoevolution.com/mazda/biante/"
+        },
+        "Flair": {
+            "link": "https://www.autoevolution.com/mazda/flair/"
+        },
+        "CX-30": {
+            "link": "https://www.autoevolution.com/mazda/cx-30/"
+        },
+        "CX-8": {
+            "link": "https://www.autoevolution.com/mazda/cx-8/"
+        },
+        "CX-50": {
+            "link": "https://www.autoevolution.com/mazda/cx-50/"
+        },
+        "CX-90": {
+            "link": "https://www.autoevolution.com/mazda/cx-90/"
+        },
+        "CX-60": {
+            "link": "https://www.autoevolution.com/mazda/cx-60/"
+        },
+        "MX-30": {
+            "link": "https://www.autoevolution.com/mazda/mx-30/"
+        },
+        "CX-70": {
+            "link": "https://www.autoevolution.com/mazda/cx-70/"
+        }
+    },
+    "mclaren": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/mclaren-sm.jpg",
+        "Senna": {
+            "link": "https://www.autoevolution.com/mclaren/senna/"
+        },
+        "570S Spider": {
+            "link": "https://www.autoevolution.com/mclaren/570s-spider/"
+        },
+        "Artura": {
+            "link": "https://www.autoevolution.com/mclaren/artura/"
+        },
+        "600LT": {
+            "link": "https://www.autoevolution.com/mclaren/600lt/"
+        },
+        "620R": {
+            "link": "https://www.autoevolution.com/mclaren/620r/"
+        },
+        "540C": {
+            "link": "https://www.autoevolution.com/mclaren/540c/"
+        },
+        "720S": {
+            "link": "https://www.autoevolution.com/mclaren/720s/"
+        },
+        "Elva": {
+            "link": "https://www.autoevolution.com/mclaren/elva/"
+        },
+        "750S": {
+            "link": "https://www.autoevolution.com/mclaren/750s/"
+        },
+        "GTS": {
+            "link": "https://www.autoevolution.com/mclaren/gts/"
+        },
+        "765LT": {
+            "link": "https://www.autoevolution.com/mclaren/765lt/"
+        },
+        "Speedtail": {
+            "link": "https://www.autoevolution.com/mclaren/speedtail/"
+        }
+    },
+    "mercedes-benz": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/mercedes-benz-sm.jpg",
+        "GLE-Class": {
+            "link": "https://www.autoevolution.com/mercedes-benz/gle-class/"
+        },
+        "GLE-Class Coupe": {
+            "link": "https://www.autoevolution.com/mercedes-benz/gle-class-coupe/"
+        },
+        "GLC Class Coupe": {
+            "link": "https://www.autoevolution.com/mercedes-benz/glc-class-coupe/"
+        },
+        "GLA": {
+            "link": "https://www.autoevolution.com/mercedes-benz/gla/"
+        },
+        "GLB": {
+            "link": "https://www.autoevolution.com/mercedes-benz/glb/"
+        },
+        "EQA": {
+            "link": "https://www.autoevolution.com/mercedes-benz/eqa/"
+        },
+        "E-Klasse and predecessors": {
+            "link": "https://www.autoevolution.com/mercedes-benz/e-klasse-and-predecessors/"
+        },
+        "GLS-Class": {
+            "link": "https://www.autoevolution.com/mercedes-benz/gls-class/"
+        },
+        "CLA Klasse": {
+            "link": "https://www.autoevolution.com/mercedes-benz/cla-klasse/"
+        },
+        "CLA Shooting Brake": {
+            "link": "https://www.autoevolution.com/mercedes-benz/cla-shooting-brake/"
+        },
+        "GLS Maybach": {
+            "link": "https://www.autoevolution.com/mercedes-benz/gls-maybach/"
+        },
+        "E-Class T-Modell All-Terrain": {
+            "link": "https://www.autoevolution.com/mercedes-benz/e-klasse-t-modell-all-terrain/"
+        },
+        "B-Klasse": {
+            "link": "https://www.autoevolution.com/mercedes-benz/b-klasse/"
+        },
+        "GLC Class": {
+            "link": "https://www.autoevolution.com/mercedes-benz/glc-class/"
+        },
+        "A-Klasse": {
+            "link": "https://www.autoevolution.com/mercedes-benz/a-klasse/"
+        },
+        "C-Klasse T-Modell": {
+            "link": "https://www.autoevolution.com/mercedes-benz/c-klasse-t-modell/"
+        },
+        "CLS-Klasse": {
+            "link": "https://www.autoevolution.com/mercedes-benz/cls-klasse/"
+        },
+        "C-Klasse and predecessors": {
+            "link": "https://www.autoevolution.com/mercedes-benz/c-klasse-and-predecessors/"
+        },
+        "S-Klasse and predecessors": {
+            "link": "https://www.autoevolution.com/mercedes-benz/s-klasse-and-predecessors/"
+        },
+        "E-Klasse Cabriolet and predecessors": {
+            "link": "https://www.autoevolution.com/mercedes-benz/e-klasse-cabriolet-and-predecessors/"
+        },
+        "S-Class Maybach": {
+            "link": "https://www.autoevolution.com/mercedes-benz/s-class-maybach/"
+        },
+        "V-Class and predecessors": {
+            "link": "https://www.autoevolution.com/mercedes-benz/v-class-and-predecessors/"
+        },
+        "Pullman": {
+            "link": "https://www.autoevolution.com/mercedes-benz/pullman/"
+        },
+        "G-Klasse": {
+            "link": "https://www.autoevolution.com/mercedes-benz/g-klasse/"
+        },
+        "S-Class Cabriolet": {
+            "link": "https://www.autoevolution.com/mercedes-benz/s-class-cabriolet/"
+        },
+        "CLS Shooting Brake": {
+            "link": "https://www.autoevolution.com/mercedes-benz/cls-shooting-brake/"
+        },
+        "SL AMG": {
+            "link": "https://www.autoevolution.com/mercedes-benz/sl-amg/"
+        },
+        "E-Klasse Coupe and predecessors": {
+            "link": "https://www.autoevolution.com/mercedes-benz/e-klasse-coupe-and-predecessors/"
+        },
+        "SL-Klasse": {
+            "link": "https://www.autoevolution.com/mercedes-benz/sl-klasse/"
+        },
+        "GLK-Klasse": {
+            "link": "https://www.autoevolution.com/mercedes-benz/glk-klasse/"
+        },
+        "CLS AMG": {
+            "link": "https://www.autoevolution.com/mercedes-benz/cls-amg/"
+        },
+        "C-Klasse Coupe": {
+            "link": "https://www.autoevolution.com/mercedes-benz/c-klasse-coupe/"
+        },
+        "EQT": {
+            "link": "https://www.autoevolution.com/mercedes-benz/eqt/"
+        },
+        "EQS SUV": {
+            "link": "https://www.autoevolution.com/mercedes-benz/eqs-suv/"
+        },
+        "Citan": {
+            "link": "https://www.autoevolution.com/mercedes-benz/citan/"
+        },
+        "EQS": {
+            "link": "https://www.autoevolution.com/mercedes-benz/eqs/"
+        },
+        "EQS SUV Maybach": {
+            "link": "https://www.autoevolution.com/mercedes-benz/eqs-suv-maybach/"
+        },
+        "A-Class Sedan": {
+            "link": "https://www.autoevolution.com/mercedes-benz/a-class/"
+        },
+        "CLE Cabriolet": {
+            "link": "https://www.autoevolution.com/mercedes-benz/cle-cabriolet/"
+        },
+        "C-Class Cabriolet": {
+            "link": "https://www.autoevolution.com/mercedes-benz/c-class-cabriolet/"
+        },
+        "Maybach EQS SUV": {
+            "link": "https://www.autoevolution.com/mercedes-benz/maybach-eqs/"
+        },
+        "EQV": {
+            "link": "https://www.autoevolution.com/mercedes-benz/eqv/"
+        },
+        "C-Klasse All-Terrain": {
+            "link": "https://www.autoevolution.com/mercedes-benz/c-klasse-all-terrain/"
+        },
+        "CLE Coupe": {
+            "link": "https://www.autoevolution.com/mercedes-benz/cle-coupe/"
+        },
+        "A-Klasse Saloon": {
+            "link": "https://www.autoevolution.com/mercedes-benz/a-klasse-saloon/"
+        },
+        "SLC-Class": {
+            "link": "https://www.autoevolution.com/mercedes-benz/slc-class/"
+        },
+        "EQC": {
+            "link": "https://www.autoevolution.com/mercedes-benz/eqc/"
+        },
+        "EQE": {
+            "link": "https://www.autoevolution.com/mercedes-benz/eqe/"
+        },
+        "T-Class": {
+            "link": "https://www.autoevolution.com/mercedes-benz/t-class/"
+        },
+        "EQE SUV": {
+            "link": "https://www.autoevolution.com/mercedes-benz/eqe-suv-1/"
+        },
+        "Vito": {
+            "link": "https://www.autoevolution.com/mercedes-benz/vito/"
+        }
+    },
+    "mercedes-amg": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/mercedes-amg-sm.jpg",
+        "Mercedes-AMG GLE  Coupe": {
+            "link": "https://www.autoevolution.com/mercedes-amg/gle-amg-coupe/"
+        },
+        "Mercedes-AMG CLA-Class": {
+            "link": "https://www.autoevolution.com/mercedes-amg/cla/"
+        },
+        "Mercedes-AMG GLS- Class": {
+            "link": "https://www.autoevolution.com/mercedes-amg/gls-class-amg-1/"
+        },
+        "Mercedes-AMG GLE": {
+            "link": "https://www.autoevolution.com/mercedes-amg/gle/"
+        },
+        "Mercedes-AMG GT 4-DOOR COUPE": {
+            "link": "https://www.autoevolution.com/mercedes-amg/gt-3/"
+        },
+        "Mercedes-AMG CLA Shooting brake": {
+            "link": "https://www.autoevolution.com/mercedes-amg/cla-amg-shooting-brake-1/"
+        },
+        "Mercedes-AMG GLA": {
+            "link": "https://www.autoevolution.com/mercedes-amg/gla-1/"
+        },
+        "Mercedes-AMG GLB": {
+            "link": "https://www.autoevolution.com/mercedes-amg/glb-1/"
+        },
+        "Mercedes-AMG GLC  Coupe": {
+            "link": "https://www.autoevolution.com/mercedes-amg/glc-amg-coupe-1/"
+        },
+        "Mercedes-AMG GT Coupe": {
+            "link": "https://www.autoevolution.com/mercedes-amg/amg-gt-coupe-1/"
+        },
+        "Mercedes-AMG C-CLASS": {
+            "link": "https://www.autoevolution.com/mercedes-amg/c-class-amg/"
+        },
+        "Mercedes-AMG C-CLASS COUPE": {
+            "link": "https://www.autoevolution.com/mercedes-amg/c-class-coupe/"
+        },
+        "Mercedes-AMG GT Roadster": {
+            "link": "https://www.autoevolution.com/mercedes-amg/amg-gt-roadster-1/"
+        },
+        "Mercedes-AMG CLS-Class": {
+            "link": "https://www.autoevolution.com/mercedes-amg/cls-e-53/"
+        },
+        "Mercedes-AMG E-Class Cabriolet": {
+            "link": "https://www.autoevolution.com/mercedes-amg/e-class-cabriolet/"
+        },
+        "Mercedes-AMG E-Class": {
+            "link": "https://www.autoevolution.com/mercedes-amg/e-class/"
+        },
+        "Mercedes-AMG E-Class Coupe": {
+            "link": "https://www.autoevolution.com/mercedes-amg/e-class-coupe/"
+        },
+        "Mercedes-AMG GLC-Class": {
+            "link": "https://www.autoevolution.com/mercedes-amg/glc-amg-1/"
+        },
+        "Mercedes-AMG C-CLASS T-MODELL": {
+            "link": "https://www.autoevolution.com/mercedes-amg/c-class-t-modell-amg/"
+        },
+        "Mercedes-AMG S-Class Cabriolet": {
+            "link": "https://www.autoevolution.com/mercedes-amg/s-class-cabriolet-amg-1/"
+        },
+        "Mercedes-AMG C-Class Wagon": {
+            "link": "https://www.autoevolution.com/mercedes-amg/c-class-wagon/"
+        },
+        "Mercedes-AMG A-Class": {
+            "link": "https://www.autoevolution.com/mercedes-amg/a-class-1/"
+        },
+        "Mercedes-AMG CLE Coupe": {
+            "link": "https://www.autoevolution.com/mercedes-amg/cle-coupe-1/"
+        },
+        "Mercedes-AMG SL-Class": {
+            "link": "https://www.autoevolution.com/mercedes-amg/sl-class/"
+        },
+        "Mercedes-AMG ONE": {
+            "link": "https://www.autoevolution.com/mercedes-amg/one/"
+        },
+        "Mercedes-AMG EQE": {
+            "link": "https://www.autoevolution.com/mercedes-amg/eqe-1/"
+        },
+        "Mercedes-AMG EQE SUV": {
+            "link": "https://www.autoevolution.com/mercedes-amg/eqe-suv/"
+        },
+        "Mercedes-AMG S-Class": {
+            "link": "https://www.autoevolution.com/mercedes-amg/s-class-amg/"
+        },
+        "Mercedes-AMG EQS": {
+            "link": "https://www.autoevolution.com/mercedes-amg/eqs-1/"
+        },
+        "Mercedes-AMG S-Class Coupe": {
+            "link": "https://www.autoevolution.com/mercedes-amg/s-class-coupe-amg-1/"
+        },
+        "Mercedes-AMG G 63": {
+            "link": "https://www.autoevolution.com/mercedes-amg/g-63/"
+        },
+        "Mercedes-AMG SLC": {
+            "link": "https://www.autoevolution.com/mercedes-amg/slc-amg-1/"
+        }
+    },
+    "mg": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/mg-sm.jpg",
+        "ZS": {
+            "link": "https://www.autoevolution.com/mg/zs/"
+        },
+        "5": {
+            "link": "https://www.autoevolution.com/mg/mg5/"
+        },
+        "Marvel R": {
+            "link": "https://www.autoevolution.com/mg/marvel-r/"
+        },
+        "HS": {
+            "link": "https://www.autoevolution.com/mg/hs-1/"
+        },
+        "3": {
+            "link": "https://www.autoevolution.com/mg/mg3/"
+        },
+        "6": {
+            "link": "https://www.autoevolution.com/mg/mg6/"
+        },
+        "4": {
+            "link": "https://www.autoevolution.com/mg/mg4/"
+        }
+    },
+    "mini": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/mini-sm.jpg",
+        "Countryman": {
+            "link": "https://www.autoevolution.com/mini/countryman/"
+        },
+        "Hatch": {
+            "link": "https://www.autoevolution.com/mini/hatch/"
+        },
+        "Convertible": {
+            "link": "https://www.autoevolution.com/mini/convertible/"
+        },
+        "Classic": {
+            "link": "https://www.autoevolution.com/mini/classic/"
+        },
+        "Clubvan": {
+            "link": "https://www.autoevolution.com/mini/clubvan/"
+        }
+    },
+    "mitsubishi": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/mitsubishi-sm.jpg",
+        "ASX / RVR / Outlander Sport": {
+            "link": "https://www.autoevolution.com/mitsubishi/asx-rvr-outlander-sport/"
+        },
+        "Outlander / Airtrek": {
+            "link": "https://www.autoevolution.com/mitsubishi/outlander-airtrek/"
+        },
+        "Eclipse Cross": {
+            "link": "https://www.autoevolution.com/mitsubishi/eclipse-cross/"
+        },
+        "Mirage": {
+            "link": "https://www.autoevolution.com/mitsubishi/mirage/"
+        },
+        "Mirage G4": {
+            "link": "https://www.autoevolution.com/mitsubishi/mirage-g4/"
+        },
+        "Lancer": {
+            "link": "https://www.autoevolution.com/mitsubishi/lancer/"
+        },
+        "L 200": {
+            "link": "https://www.autoevolution.com/mitsubishi/l-200/"
+        },
+        "Colt 5 Doors": {
+            "link": "https://www.autoevolution.com/mitsubishi/colt-5-doors/"
+        },
+        "Lancer Hatchback": {
+            "link": "https://www.autoevolution.com/mitsubishi/lancer-hatchback/"
+        },
+        "Pajero 5 Doors": {
+            "link": "https://www.autoevolution.com/mitsubishi/pajero-5-doors/"
+        },
+        "Pajero 3 Doors": {
+            "link": "https://www.autoevolution.com/mitsubishi/pajero-3-doors/"
+        },
+        "Space Star": {
+            "link": "https://www.autoevolution.com/mitsubishi/space-star/"
+        },
+        "Pajero Pinin / Shogun Pinin / Montero iO": {
+            "link": "https://www.autoevolution.com/mitsubishi/pajero-pinin-shogun-pinin-montero-io/"
+        },
+        "i-MiEV": {
+            "link": "https://www.autoevolution.com/mitsubishi/i-miev/"
+        },
+        "Attrage": {
+            "link": "https://www.autoevolution.com/mitsubishi/attrage/"
+        }
+    },
+    "morgan": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/morgan-sm.jpg",
+        "Plus Six": {
+            "link": "https://www.autoevolution.com/morgan/plus-six/"
+        },
+        "Plus 4": {
+            "link": "https://www.autoevolution.com/morgan/plus-4/"
+        },
+        "Aero 8": {
+            "link": "https://www.autoevolution.com/morgan/aero-8/"
+        },
+        "3 wheeler": {
+            "link": "https://www.autoevolution.com/morgan/3-wheeler/"
+        },
+        "4/4 2 Seater": {
+            "link": "https://www.autoevolution.com/morgan/4-4-2-seater/"
+        },
+        "Plus 8": {
+            "link": "https://www.autoevolution.com/morgan/plus-8/"
+        },
+        "Aero Coupe": {
+            "link": "https://www.autoevolution.com/morgan/aero-coupe/"
+        },
+        "Roadster": {
+            "link": "https://www.autoevolution.com/morgan/roadster-1/"
+        }
+    },
+    "nio": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/nio-sm.jpg",
+        "ES8": {
+            "link": "https://www.autoevolution.com/nio/es8/"
+        },
+        "EP9": {
+            "link": "https://www.autoevolution.com/nio/ep9/"
+        },
+        "EC6": {
+            "link": "https://www.autoevolution.com/nio/ec6/"
+        },
+        "ES6": {
+            "link": "https://www.autoevolution.com/nio/es6/"
+        },
+        "ET7": {
+            "link": "https://www.autoevolution.com/nio/et7/"
+        }
+    },
+    "nissan": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/nissan-sm.jpg",
+        "Sentra": {
+            "link": "https://www.autoevolution.com/nissan/sentra/"
+        },
+        "Rogue": {
+            "link": "https://www.autoevolution.com/nissan/rogue/"
+        },
+        "Tiida / Versa Sedan": {
+            "link": "https://www.autoevolution.com/nissan/tiida-versa-sedan/"
+        },
+        "Leaf": {
+            "link": "https://www.autoevolution.com/nissan/leaf/"
+        },
+        "GT-R": {
+            "link": "https://www.autoevolution.com/nissan/gt-r/"
+        },
+        "Altima": {
+            "link": "https://www.autoevolution.com/nissan/altima/"
+        },
+        "X-Trail": {
+            "link": "https://www.autoevolution.com/nissan/x-trail/"
+        },
+        "GT-R Nismo": {
+            "link": "https://www.autoevolution.com/nissan/gt-r-nismo/"
+        },
+        "Navara / Frontier Double Cab": {
+            "link": "https://www.autoevolution.com/nissan/navara-frontier-double-cab/"
+        },
+        "Pathfinder": {
+            "link": "https://www.autoevolution.com/nissan/pathfinder/"
+        },
+        "Qashqai": {
+            "link": "https://www.autoevolution.com/nissan/qashqai/"
+        },
+        "Armada": {
+            "link": "https://www.autoevolution.com/nissan/armada/"
+        },
+        "Micra 5 Doors": {
+            "link": "https://www.autoevolution.com/nissan/micra-5-doors/"
+        },
+        "Kicks": {
+            "link": "https://www.autoevolution.com/nissan/kicks/"
+        },
+        "Juke": {
+            "link": "https://www.autoevolution.com/nissan/juke/"
+        },
+        "Titan Crew Cab": {
+            "link": "https://www.autoevolution.com/nissan/titan-crew-cab/"
+        },
+        "Navara / Frontier King Cab": {
+            "link": "https://www.autoevolution.com/nissan/navara-frontier-king-cab/"
+        },
+        "Murano": {
+            "link": "https://www.autoevolution.com/nissan/murano/"
+        },
+        "Maxima": {
+            "link": "https://www.autoevolution.com/nissan/maxima/"
+        },
+        "Note": {
+            "link": "https://www.autoevolution.com/nissan/note/"
+        },
+        "Serena": {
+            "link": "https://www.autoevolution.com/nissan/serena/"
+        },
+        "Patrol LWB": {
+            "link": "https://www.autoevolution.com/nissan/patrol-lwb/"
+        },
+        "370Z Nismo": {
+            "link": "https://www.autoevolution.com/nissan/370z-nismo/"
+        },
+        "370Z Roadster": {
+            "link": "https://www.autoevolution.com/nissan/370z-roadster/"
+        },
+        "370Z": {
+            "link": "https://www.autoevolution.com/nissan/370z/"
+        },
+        "Quest": {
+            "link": "https://www.autoevolution.com/nissan/quest/"
+        },
+        "Teana": {
+            "link": "https://www.autoevolution.com/nissan/teana/"
+        },
+        "Almera / Pulsar Sedan": {
+            "link": "https://www.autoevolution.com/nissan/almera-pulsar-sedan/"
+        },
+        "Almera / Pulsar 5 Doors": {
+            "link": "https://www.autoevolution.com/nissan/almera-pulsar-5-doors/"
+        },
+        "Skyline": {
+            "link": "https://www.autoevolution.com/nissan/skyline/"
+        },
+        "Terrano 5 Doors": {
+            "link": "https://www.autoevolution.com/nissan/terrano-5-doors/"
+        },
+        "Grand Livina": {
+            "link": "https://www.autoevolution.com/nissan/grand-livina/"
+        },
+        "NV": {
+            "link": "https://www.autoevolution.com/nissan/nv/"
+        },
+        "Sunny": {
+            "link": "https://www.autoevolution.com/nissan/sunny/"
+        },
+        "Sakura": {
+            "link": "https://www.autoevolution.com/nissan/sakura/"
+        },
+        "Juke Nismo": {
+            "link": "https://www.autoevolution.com/nissan/juke-nismo/"
+        },
+        "Ariya": {
+            "link": "https://www.autoevolution.com/nissan/ariya/"
+        },
+        "Z": {
+            "link": "https://www.autoevolution.com/nissan/z/"
+        }
+    },
+    "opel": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/opel-sm.jpg",
+        "Corsa 5 Doors": {
+            "link": "https://www.autoevolution.com/opel/corsa-5-doors-1/"
+        },
+        "Grandland": {
+            "link": "https://www.autoevolution.com/opel/grandland-x/"
+        },
+        "Astra 5 Doors": {
+            "link": "https://www.autoevolution.com/opel/astra-5-doors/"
+        },
+        "Mokka": {
+            "link": "https://www.autoevolution.com/opel/mokka/"
+        },
+        "Zafira": {
+            "link": "https://www.autoevolution.com/opel/zafira-2/"
+        },
+        "Insignia": {
+            "link": "https://www.autoevolution.com/opel/insignia/"
+        },
+        "Astra Sports Tourer": {
+            "link": "https://www.autoevolution.com/opel/astra-sports-tourer/"
+        },
+        "Combo": {
+            "link": "https://www.autoevolution.com/opel/combo-1/"
+        },
+        "Ampera": {
+            "link": "https://www.autoevolution.com/opel/ampera/"
+        },
+        "Corsa OPC": {
+            "link": "https://www.autoevolution.com/opel/corsa-opc/"
+        },
+        "Corsa 3 Doors": {
+            "link": "https://www.autoevolution.com/opel/corsa-3-doors-1/"
+        },
+        "Insignia Sports Tourer": {
+            "link": "https://www.autoevolution.com/opel/insignia-sports-tourer/"
+        },
+        "Astra Sedan": {
+            "link": "https://www.autoevolution.com/opel/astra-sedan/"
+        },
+        "Astra OPC": {
+            "link": "https://www.autoevolution.com/opel/astra-opc/"
+        },
+        "Crossland": {
+            "link": "https://www.autoevolution.com/opel/crossland-x/"
+        },
+        "Adam": {
+            "link": "https://www.autoevolution.com/opel/adam/"
+        },
+        "Cascada": {
+            "link": "https://www.autoevolution.com/opel/cascada/"
+        },
+        "Rocks-e": {
+            "link": "https://www.autoevolution.com/opel/rocks-e/"
+        },
+        "Insignia OPC": {
+            "link": "https://www.autoevolution.com/opel/insignia-opc/"
+        },
+        "Adam Rocks": {
+            "link": "https://www.autoevolution.com/opel/adam-rocks/"
+        },
+        "Insignia Sports Tourer GSi": {
+            "link": "https://www.autoevolution.com/opel/insignia-sports-tourer-gsi/"
+        },
+        "Insignia GSi": {
+            "link": "https://www.autoevolution.com/opel/insignia-gsi/"
+        },
+        "Insignia Country Tourer": {
+            "link": "https://www.autoevolution.com/opel/insignia-country-tourer/"
+        },
+        "Astra GTC": {
+            "link": "https://www.autoevolution.com/opel/astra-gtc/"
+        }
+    },
+    "pagani": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/pagani-sm.jpg",
+        "Utopia": {
+            "link": "https://www.autoevolution.com/pagani/utopia/"
+        },
+        "Huayra": {
+            "link": "https://www.autoevolution.com/pagani/huayra/"
+        },
+        "Imola": {
+            "link": "https://www.autoevolution.com/pagani/imola/"
+        },
+        "Zonda F": {
+            "link": "https://www.autoevolution.com/pagani/zonda-f/"
+        }
+    },
+    "panoz": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/panoz-sm.jpg",
+        "Avezzano": {
+            "link": "https://www.autoevolution.com/panoz/avezzano/"
+        },
+        "Roadster": {
+            "link": "https://www.autoevolution.com/panoz/roadster-4/"
+        }
+    },
+    "perodua": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/perodua-sm.jpg",
+        "Axia": {
+            "link": "https://www.autoevolution.com/perodua/axia/"
+        },
+        "Bezza": {
+            "link": "https://www.autoevolution.com/perodua/bezza/"
+        },
+        "Alza": {
+            "link": "https://www.autoevolution.com/perodua/alza/"
+        },
+        "Aruz": {
+            "link": "https://www.autoevolution.com/perodua/aruz/"
+        },
+        "Myvi": {
+            "link": "https://www.autoevolution.com/perodua/myvi/"
+        }
+    },
+    "peugeot": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/peugeot-sm.jpg",
+        "2008": {
+            "link": "https://www.autoevolution.com/peugeot/2008/"
+        },
+        "208 5 doors": {
+            "link": "https://www.autoevolution.com/peugeot/208-5-doors/"
+        },
+        "508 SW": {
+            "link": "https://www.autoevolution.com/peugeot/508-sw/"
+        },
+        "508": {
+            "link": "https://www.autoevolution.com/peugeot/508/"
+        },
+        "308 5 Doors": {
+            "link": "https://www.autoevolution.com/peugeot/308-5-doors/"
+        },
+        "308 SW": {
+            "link": "https://www.autoevolution.com/peugeot/308-sw/"
+        },
+        "5008": {
+            "link": "https://www.autoevolution.com/peugeot/5008/"
+        },
+        "3008": {
+            "link": "https://www.autoevolution.com/peugeot/3008/"
+        },
+        "301": {
+            "link": "https://www.autoevolution.com/peugeot/301/"
+        },
+        "Tepee": {
+            "link": "https://www.autoevolution.com/peugeot/tepee/"
+        },
+        "Pick Up": {
+            "link": "https://www.autoevolution.com/peugeot/pick-up-1/"
+        },
+        "108": {
+            "link": "https://www.autoevolution.com/peugeot/108/"
+        },
+        "Landtrek": {
+            "link": "https://www.autoevolution.com/peugeot/landtrek/"
+        },
+        "RIFTER": {
+            "link": "https://www.autoevolution.com/peugeot/rifter/"
+        },
+        "408 Fastback": {
+            "link": "https://www.autoevolution.com/peugeot/408-fastback/"
+        },
+        "Traveller": {
+            "link": "https://www.autoevolution.com/peugeot/traveller/"
+        }
+    },
+    "pininfarina": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/pininfarina-sm.jpg",
+        "Pininfarina B95": {
+            "link": "https://www.autoevolution.com/pininfarina/b95/"
+        },
+        "Pininfarina Battista": {
+            "link": "https://www.autoevolution.com/pininfarina/battista/"
+        }
+    },
+    "polestar": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/polestar-sm.jpg",
+        "Polestar 2": {
+            "link": "https://www.autoevolution.com/polestar/polestar-2/"
+        },
+        "Polestar 1": {
+            "link": "https://www.autoevolution.com/polestar/polestar-1/"
+        },
+        "Polestar 3": {
+            "link": "https://www.autoevolution.com/polestar/polestar-3/"
+        },
+        "Polestar 4": {
+            "link": "https://www.autoevolution.com/polestar/4/"
+        }
+    },
+    "porsche": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/porsche-sm.jpg",
+        "Taycan": {
+            "link": "https://www.autoevolution.com/porsche/taycan/"
+        },
+        "Taycan Cross Turismo": {
+            "link": "https://www.autoevolution.com/porsche/taycan-cross-turismo/"
+        },
+        "Panamera 4": {
+            "link": "https://www.autoevolution.com/porsche/panamera-4/"
+        },
+        "Cayenne S": {
+            "link": "https://www.autoevolution.com/porsche/cayenne-s/"
+        },
+        "Cayenne": {
+            "link": "https://www.autoevolution.com/porsche/cayenne/"
+        },
+        "Cayenne Coupe": {
+            "link": "https://www.autoevolution.com/porsche/cayenne-coupe/"
+        },
+        "911 Carrera T": {
+            "link": "https://www.autoevolution.com/porsche/911-carrera-t/"
+        },
+        "911 GT3": {
+            "link": "https://www.autoevolution.com/porsche/911-gt3/"
+        },
+        "Macan S": {
+            "link": "https://www.autoevolution.com/porsche/macan/"
+        },
+        "911 Targa 4 GTS": {
+            "link": "https://www.autoevolution.com/porsche/911-targa-4-gts/"
+        },
+        "Macan GTS": {
+            "link": "https://www.autoevolution.com/porsche/macan-gts/"
+        },
+        "Panamera GTS Sport Turismo": {
+            "link": "https://www.autoevolution.com/porsche/panamera-gts-sport-turismo/"
+        },
+        "Panamera GTS": {
+            "link": "https://www.autoevolution.com/porsche/panamera-gts/"
+        },
+        "911 Targa 4": {
+            "link": "https://www.autoevolution.com/porsche/911-targa-4/"
+        },
+        "911 Turbo S Cabriolet": {
+            "link": "https://www.autoevolution.com/porsche/911-turbo-s-cabriolet/"
+        },
+        "911 Turbo": {
+            "link": "https://www.autoevolution.com/porsche/911-turbo/"
+        },
+        "911 Targa 4S": {
+            "link": "https://www.autoevolution.com/porsche/911-targa-4s/"
+        },
+        "911 Turbo S": {
+            "link": "https://www.autoevolution.com/porsche/911-turbo-s/"
+        },
+        "718 Cayman GT4": {
+            "link": "https://www.autoevolution.com/porsche/718-cayman-gt4/"
+        },
+        "911 Carrera Cabriolet": {
+            "link": "https://www.autoevolution.com/porsche/911-carrera-cabriolet/"
+        },
+        "911 Carrera S": {
+            "link": "https://www.autoevolution.com/porsche/911-carrera-s/"
+        },
+        "Macan Turbo": {
+            "link": "https://www.autoevolution.com/porsche/macan-turbo/"
+        },
+        "911 Carrera": {
+            "link": "https://www.autoevolution.com/porsche/911-carrera/"
+        },
+        "911 Carrera 4 GTS": {
+            "link": "https://www.autoevolution.com/porsche/911-carrera-4-gts/"
+        },
+        "Cayenne GTS": {
+            "link": "https://www.autoevolution.com/porsche/cayenne-gts/"
+        },
+        "911 Carrera 4S Cabriolet": {
+            "link": "https://www.autoevolution.com/porsche/911-carrera-4s-cabriolet/"
+        },
+        "911 Carrera 4S": {
+            "link": "https://www.autoevolution.com/porsche/911-carrera-4s/"
+        },
+        "Macan": {
+            "link": "https://www.autoevolution.com/porsche/macan-1/"
+        },
+        "Panamera Turbo S": {
+            "link": "https://www.autoevolution.com/porsche/panamera-turbo-s/"
+        },
+        "Cayenne Turbo": {
+            "link": "https://www.autoevolution.com/porsche/cayenne-turbo/"
+        },
+        "911 Carrera GTS Cabriolet": {
+            "link": "https://www.autoevolution.com/porsche/911-carrera-gts-cabriolet/"
+        },
+        "911 Carrera 4 Cabriolet": {
+            "link": "https://www.autoevolution.com/porsche/911-carrera-4-cabriolet/"
+        },
+        "Macan T": {
+            "link": "https://www.autoevolution.com/porsche/macan-t/"
+        },
+        "Cayenne Turbo S E-Hybrid": {
+            "link": "https://www.autoevolution.com/porsche/cayenne-turbo-s-e-hybrid/"
+        },
+        "Panamera Turbo E Hybrid": {
+            "link": "https://www.autoevolution.com/porsche/panamera-turbo-e-hybrid/"
+        },
+        "Macan Turbo Electric": {
+            "link": "https://www.autoevolution.com/porsche/macan-turbo-electric/"
+        },
+        "718 Boxster GTS": {
+            "link": "https://www.autoevolution.com/porsche/718-boxster-gts/"
+        },
+        "Cayenne Turbo E-Hybrid Coupe": {
+            "link": "https://www.autoevolution.com/porsche/cayenne-turbo-e-hybrid/"
+        },
+        "718 Boxster": {
+            "link": "https://www.autoevolution.com/porsche/718-boxster/"
+        },
+        "718 Cayman": {
+            "link": "https://www.autoevolution.com/porsche/718-cayman/"
+        },
+        "Taycan GTS Sport Turismo": {
+            "link": "https://www.autoevolution.com/porsche/taycan-gts-sport-turismo/"
+        },
+        "Speedster": {
+            "link": "https://www.autoevolution.com/porsche/speedster-1/"
+        },
+        "718 Spyder": {
+            "link": "https://www.autoevolution.com/porsche/718-spyder/"
+        },
+        "Macan 4 Electric": {
+            "link": "https://www.autoevolution.com/porsche/macan-4-electric/"
+        },
+        "Cayenne S E-Hybrid": {
+            "link": "https://www.autoevolution.com/porsche/cayenne-s-e-hybrid/"
+        },
+        "Cayenne GTS Coupe": {
+            "link": "https://www.autoevolution.com/porsche/cayenne-gts-coupe/"
+        },
+        "718 Cayman S": {
+            "link": "https://www.autoevolution.com/porsche/718-cayman-s/"
+        },
+        "911 R": {
+            "link": "https://www.autoevolution.com/porsche/911-r/"
+        },
+        "718 Cayman GTS": {
+            "link": "https://www.autoevolution.com/porsche/718-cayman-gts/"
+        },
+        "Panamera Turbo S Sport Turismo": {
+            "link": "https://www.autoevolution.com/porsche/panamera-turbo-s-sport-turismo/"
+        },
+        "Panamera Turbo S E-Hybrid Sport Turismo": {
+            "link": "https://www.autoevolution.com/porsche/panamera-turbo-s-e-hybrid-sport-turismo/"
+        },
+        "Panamera 4S Diesel Sport Turismo": {
+            "link": "https://www.autoevolution.com/porsche/panamera-4s-diesel-sport-turismo/"
+        },
+        "Panamera Turbo Sport Turismo": {
+            "link": "https://www.autoevolution.com/porsche/panamera-turbo-sport-turismo/"
+        },
+        "Panamera 4S E-Hybrid": {
+            "link": "https://www.autoevolution.com/porsche/panamera-4s-e-hybrid/"
+        },
+        "718 Boxster S": {
+            "link": "https://www.autoevolution.com/porsche/718-boxster-s/"
+        },
+        "Panamera 4S Sport Turismo": {
+            "link": "https://www.autoevolution.com/porsche/panamera-4s-sport-turismo/"
+        },
+        "Taycan GTS": {
+            "link": "https://www.autoevolution.com/porsche/taycan-gts/"
+        },
+        "Cayenne Turbo E-Hybrid": {
+            "link": "https://www.autoevolution.com/porsche/cayenne-turbo-e-hybrid-1/"
+        },
+        "Taycan Sport Turismo": {
+            "link": "https://www.autoevolution.com/porsche/taycan-sport-turismo/"
+        }
+    },
+    "proton": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/proton-sm.jpg",
+        "Persona": {
+            "link": "https://www.autoevolution.com/proton/persona/"
+        },
+        "Saga": {
+            "link": "https://www.autoevolution.com/proton/saga-flx/"
+        },
+        "Inspira": {
+            "link": "https://www.autoevolution.com/proton/inspira/"
+        },
+        "Perdana": {
+            "link": "https://www.autoevolution.com/proton/perdana/"
+        },
+        "Preve": {
+            "link": "https://www.autoevolution.com/proton/preve/"
+        },
+        "Ertiga": {
+            "link": "https://www.autoevolution.com/proton/ertiga-1/"
+        },
+        "Suprima S": {
+            "link": "https://www.autoevolution.com/proton/suprima-s/"
+        }
+    },
+    "qoros": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/qoros-sm.jpg",
+        "3": {
+            "link": "https://www.autoevolution.com/qoros/3/"
+        },
+        "5": {
+            "link": "https://www.autoevolution.com/qoros/5-1/"
+        }
+    },
+    "ram-trucks": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/ram-trucks-sm.jpg",
+        "RAM Trucks 1500": {
+            "link": "https://www.autoevolution.com/ram-trucks/1500-1/"
+        },
+        "RAM Trucks 2500": {
+            "link": "https://www.autoevolution.com/ram-trucks/2500/"
+        },
+        "RAM Trucks 3500": {
+            "link": "https://www.autoevolution.com/ram-trucks/3500/"
+        }
+    },
+    "renault": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/renault-sm.jpg",
+        "Espace": {
+            "link": "https://www.autoevolution.com/renault/espace/"
+        },
+        "Arkana": {
+            "link": "https://www.autoevolution.com/renault/arkana/"
+        },
+        "Clio 5 Doors": {
+            "link": "https://www.autoevolution.com/renault/clio-5-doors/"
+        },
+        "Megane Sedan": {
+            "link": "https://www.autoevolution.com/renault/megane-sedan/"
+        },
+        "Megane Estate": {
+            "link": "https://www.autoevolution.com/renault/megane-estate/"
+        },
+        "Kangoo": {
+            "link": "https://www.autoevolution.com/renault/kangoo/"
+        },
+        "Megane 5 Doors": {
+            "link": "https://www.autoevolution.com/renault/megane-5-doors/"
+        },
+        "Captur": {
+            "link": "https://www.autoevolution.com/renault/captur/"
+        },
+        "Koleos": {
+            "link": "https://www.autoevolution.com/renault/koleos/"
+        },
+        "ZOE": {
+            "link": "https://www.autoevolution.com/renault/zoe/"
+        },
+        "Twingo": {
+            "link": "https://www.autoevolution.com/renault/twingo/"
+        },
+        "Talisman": {
+            "link": "https://www.autoevolution.com/renault/talisman/"
+        },
+        "Kadjar": {
+            "link": "https://www.autoevolution.com/renault/kadjar/"
+        },
+        "Scenic": {
+            "link": "https://www.autoevolution.com/renault/scenic/"
+        },
+        "Grand Scenic": {
+            "link": "https://www.autoevolution.com/renault/grand-scenic/"
+        },
+        "Megane Cabriolet": {
+            "link": "https://www.autoevolution.com/renault/megane-cabriolet/"
+        },
+        "Kiger": {
+            "link": "https://www.autoevolution.com/renault/kiger/"
+        },
+        "Grand Kangoo": {
+            "link": "https://www.autoevolution.com/renault/grand-kangoo/"
+        },
+        "Kardian": {
+            "link": "https://www.autoevolution.com/renault/kardian/"
+        },
+        "Rafale": {
+            "link": "https://www.autoevolution.com/renault/rafale/"
+        },
+        "City K-ZE": {
+            "link": "https://www.autoevolution.com/renault/city-k-ze/"
+        },
+        "Megane E-Tech": {
+            "link": "https://www.autoevolution.com/renault/megane-e-tech/"
+        },
+        "Alaskan": {
+            "link": "https://www.autoevolution.com/renault/alaskan/"
+        },
+        "Austral": {
+            "link": "https://www.autoevolution.com/renault/austral/"
+        },
+        "Latitude": {
+            "link": "https://www.autoevolution.com/renault/latitude/"
+        },
+        "Sandero": {
+            "link": "https://www.autoevolution.com/renault/sandero-1/"
+        },
+        "Logan": {
+            "link": "https://www.autoevolution.com/renault/logan-1/"
+        },
+        "SCENIC XMOD": {
+            "link": "https://www.autoevolution.com/renault/scenic-xmod/"
+        },
+        "Clio RS": {
+            "link": "https://www.autoevolution.com/renault/clio-rs/"
+        },
+        "Triber": {
+            "link": "https://www.autoevolution.com/renault/triber/"
+        },
+        "Kwid": {
+            "link": "https://www.autoevolution.com/renault/kwid/"
+        },
+        "Twizy": {
+            "link": "https://www.autoevolution.com/renault/twizy/"
+        },
+        "Laguna Coupe": {
+            "link": "https://www.autoevolution.com/renault/laguna-coupe/"
+        }
+    },
+    "rimac": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/rimac-sm.jpg",
+        "Nevera": {
+            "link": "https://www.autoevolution.com/rimac/nevera/"
+        }
+    },
+    "rivian": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/rivian-sm.jpg",
+        "R1S": {
+            "link": "https://www.autoevolution.com/rivian/r1s/"
+        },
+        "R1T": {
+            "link": "https://www.autoevolution.com/rivian/r1t/"
+        }
+    },
+    "rolls-royce": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/rolls-royce-sm.jpg",
+        "ROLLS-ROYCE Ghost": {
+            "link": "https://www.autoevolution.com/rolls-royce/ghost/"
+        },
+        "ROLLS-ROYCE Phantom": {
+            "link": "https://www.autoevolution.com/rolls-royce/phantom/"
+        },
+        "ROLLS-ROYCE Dawn": {
+            "link": "https://www.autoevolution.com/rolls-royce/dawn/"
+        },
+        "ROLLS-ROYCE Cullinan": {
+            "link": "https://www.autoevolution.com/rolls-royce/cullinan/"
+        },
+        "ROLLS-ROYCE Spectre": {
+            "link": "https://www.autoevolution.com/rolls-royce/spectre/"
+        },
+        "ROLLS-ROYCE La Rose Noire": {
+            "link": "https://www.autoevolution.com/rolls-royce/la-rose-noire/"
+        },
+        "ROLLS-ROYCE Wraith": {
+            "link": "https://www.autoevolution.com/rolls-royce/wraith/"
+        }
+    },
+    "saab": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/saab-sm.jpg",
+        "9-3 Aero": {
+            "link": "https://www.autoevolution.com/saab/9-3-aero/"
+        }
+    },
+    "santana": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/santana-sm.jpg",
+        "PS 10 Pickup": {
+            "link": "https://www.autoevolution.com/santana/ps-10-pickup/"
+        },
+        "PS 10 Shortline": {
+            "link": "https://www.autoevolution.com/santana/ps-10-shortline/"
+        }
+    },
+    "seat": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/seat-sm.jpg",
+        "Arona": {
+            "link": "https://www.autoevolution.com/seat/arona/"
+        },
+        "Ibiza 5 Doors": {
+            "link": "https://www.autoevolution.com/seat/ibiza-5-doors/"
+        },
+        "Leon": {
+            "link": "https://www.autoevolution.com/seat/leon/"
+        },
+        "Ateca": {
+            "link": "https://www.autoevolution.com/seat/ateca/"
+        },
+        "Leon ST Estate": {
+            "link": "https://www.autoevolution.com/seat/leon-st-estate/"
+        },
+        "Mii": {
+            "link": "https://www.autoevolution.com/seat/mii/"
+        },
+        "Leon SC": {
+            "link": "https://www.autoevolution.com/seat/leon-sc/"
+        },
+        "Altea": {
+            "link": "https://www.autoevolution.com/seat/altea/"
+        },
+        "Leon Cupra R": {
+            "link": "https://www.autoevolution.com/seat/leon-cupra-r/"
+        },
+        "Alhambra": {
+            "link": "https://www.autoevolution.com/seat/alhambra/"
+        },
+        "Leon Cupra": {
+            "link": "https://www.autoevolution.com/seat/leon-cupra/"
+        },
+        "Ibiza": {
+            "link": "https://www.autoevolution.com/seat/ibiza/"
+        },
+        "Leon ST Cupra": {
+            "link": "https://www.autoevolution.com/seat/leon-st-cupra/"
+        },
+        "Leon X-Perience": {
+            "link": "https://www.autoevolution.com/seat/leon-x-perience/"
+        },
+        "Tarraco": {
+            "link": "https://www.autoevolution.com/seat/tarraco/"
+        }
+    },
+    "skoda": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/skoda-sm.jpg",
+        "Octavia": {
+            "link": "https://www.autoevolution.com/skoda/octavia/"
+        },
+        "Octavia Combi": {
+            "link": "https://www.autoevolution.com/skoda/octavia-combi/"
+        },
+        "Kamiq": {
+            "link": "https://www.autoevolution.com/skoda/kamiq/"
+        },
+        "Superb": {
+            "link": "https://www.autoevolution.com/skoda/superb/"
+        },
+        "Scala": {
+            "link": "https://www.autoevolution.com/skoda/scala-1/"
+        },
+        "Superb Combi / Scout": {
+            "link": "https://www.autoevolution.com/skoda/superb-combi/"
+        },
+        "Kodiaq": {
+            "link": "https://www.autoevolution.com/skoda/kodiaq/"
+        },
+        "Fabia": {
+            "link": "https://www.autoevolution.com/skoda/fabia/"
+        },
+        "Karoq": {
+            "link": "https://www.autoevolution.com/skoda/karoq/"
+        },
+        "Octavia Scout": {
+            "link": "https://www.autoevolution.com/skoda/octavia-scout/"
+        },
+        "Citigo": {
+            "link": "https://www.autoevolution.com/skoda/citigo/"
+        },
+        "Octavia Combi RS": {
+            "link": "https://www.autoevolution.com/skoda/octavia-combi-rs/"
+        },
+        "Fabia Combi": {
+            "link": "https://www.autoevolution.com/skoda/fabia-combi/"
+        },
+        "Octavia Combi 4x4": {
+            "link": "https://www.autoevolution.com/skoda/octavia-combi-4x4/"
+        },
+        "Kushaq": {
+            "link": "https://www.autoevolution.com/skoda/kushaq/"
+        },
+        "Rapid Spaceback": {
+            "link": "https://www.autoevolution.com/skoda/rapid-spaceback/"
+        },
+        "Rapid": {
+            "link": "https://www.autoevolution.com/skoda/rapid/"
+        },
+        "Slavia": {
+            "link": "https://www.autoevolution.com/skoda/slavia/"
+        },
+        "Enyaq Coupe": {
+            "link": "https://www.autoevolution.com/skoda/enyaq-coupe/"
+        },
+        "Enyaq": {
+            "link": "https://www.autoevolution.com/skoda/enyaq/"
+        }
+    },
+    "smart": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/smart-sm.jpg",
+        "forfour": {
+            "link": "https://www.autoevolution.com/smart/forfour/"
+        },
+        "fortwo": {
+            "link": "https://www.autoevolution.com/smart/fortwo/"
+        },
+        "fortwo Cabrio": {
+            "link": "https://www.autoevolution.com/smart/fortwo-cabrio/"
+        },
+        "Electric Drive": {
+            "link": "https://www.autoevolution.com/smart/electric-drive/"
+        },
+        "1": {
+            "link": "https://www.autoevolution.com/smart/1/"
+        }
+    },
+    "spyker": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/spyker-sm.jpg",
+        "C8 Preliator": {
+            "link": "https://www.autoevolution.com/spyker/c8-preliator/"
+        },
+        "C8 Double 12 S": {
+            "link": "https://www.autoevolution.com/spyker/c8-double-12-s/"
+        },
+        "C12 LaTurbie": {
+            "link": "https://www.autoevolution.com/spyker/c12-laturbie/"
+        },
+        "C8 Laviolette": {
+            "link": "https://www.autoevolution.com/spyker/c8-laviolette/"
+        },
+        "C8 Spyder": {
+            "link": "https://www.autoevolution.com/spyker/c8-spyder/"
+        }
+    },
+    "ssang-yong": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/ssang-yong-sm.jpg",
+        "SSANGYONG Rexton": {
+            "link": "https://www.autoevolution.com/ssang-yong/rexton/"
+        },
+        "SSANGYONG Korando": {
+            "link": "https://www.autoevolution.com/ssang-yong/korando/"
+        },
+        "SSANGYONG Tivoli": {
+            "link": "https://www.autoevolution.com/ssang-yong/tivoli/"
+        },
+        "SSANGYONG Musso": {
+            "link": "https://www.autoevolution.com/ssang-yong/musso/"
+        },
+        "SSANGYONG Tivoli XLV": {
+            "link": "https://www.autoevolution.com/ssang-yong/tivoli-xlv/"
+        }
+    },
+    "subaru": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/subaru-sm.jpg",
+        "Crosstrek": {
+            "link": "https://www.autoevolution.com/subaru/crosstrek/"
+        },
+        "Forester": {
+            "link": "https://www.autoevolution.com/subaru/forester/"
+        },
+        "Impreza": {
+            "link": "https://www.autoevolution.com/subaru/impreza/"
+        },
+        "Legacy": {
+            "link": "https://www.autoevolution.com/subaru/legacy/"
+        },
+        "Outback": {
+            "link": "https://www.autoevolution.com/subaru/outback/"
+        },
+        "Ascent": {
+            "link": "https://www.autoevolution.com/subaru/ascent/"
+        },
+        "WRX": {
+            "link": "https://www.autoevolution.com/subaru/wrx/"
+        },
+        "BRZ": {
+            "link": "https://www.autoevolution.com/subaru/brz/"
+        },
+        "Exiga Liberty": {
+            "link": "https://www.autoevolution.com/subaru/exiga-liberty/"
+        },
+        "Solterra": {
+            "link": "https://www.autoevolution.com/subaru/solterra/"
+        },
+        "Levorg": {
+            "link": "https://www.autoevolution.com/subaru/levorg/"
+        }
+    },
+    "suzuki": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/suzuki-sm.jpg",
+        "Swift 5 Doors": {
+            "link": "https://www.autoevolution.com/suzuki/swift-5-doors/"
+        },
+        "Jimny": {
+            "link": "https://www.autoevolution.com/suzuki/jimny/"
+        },
+        "Ignis": {
+            "link": "https://www.autoevolution.com/suzuki/ignis/"
+        },
+        "Vitara": {
+            "link": "https://www.autoevolution.com/suzuki/vitara/"
+        },
+        "SX4 Crossover": {
+            "link": "https://www.autoevolution.com/suzuki/sx4-crossover/"
+        },
+        "Escudo / Vitara 3 Doors": {
+            "link": "https://www.autoevolution.com/suzuki/escudo-vitara-3-doors/"
+        },
+        "Swace": {
+            "link": "https://www.autoevolution.com/suzuki/swace/"
+        },
+        "Across": {
+            "link": "https://www.autoevolution.com/suzuki/across/"
+        },
+        "Escudo / Grand Vitara 3 Doors": {
+            "link": "https://www.autoevolution.com/suzuki/escudo-grand-vitara-3-doors/"
+        },
+        "APV": {
+            "link": "https://www.autoevolution.com/suzuki/apv/"
+        },
+        "Baleno": {
+            "link": "https://www.autoevolution.com/suzuki/baleno-1/"
+        },
+        "S-Cross": {
+            "link": "https://www.autoevolution.com/suzuki/s-cross/"
+        }
+    },
+    "tata-motors": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/tata-motors-sm.jpg",
+        "Safari": {
+            "link": "https://www.autoevolution.com/tata-motors/safari-1/"
+        },
+        "Indigo": {
+            "link": "https://www.autoevolution.com/tata-motors/indigo/"
+        },
+        "Harrier": {
+            "link": "https://www.autoevolution.com/tata-motors/harrier-1/"
+        },
+        "Nexon": {
+            "link": "https://www.autoevolution.com/tata-motors/nexon/"
+        },
+        "Sumo": {
+            "link": "https://www.autoevolution.com/tata-motors/sumo/"
+        },
+        "Nano": {
+            "link": "https://www.autoevolution.com/tata-motors/nano/"
+        },
+        "Altroz": {
+            "link": "https://www.autoevolution.com/tata-motors/altroz/"
+        },
+        "Aria": {
+            "link": "https://www.autoevolution.com/tata-motors/aria/"
+        },
+        "Indigo SW": {
+            "link": "https://www.autoevolution.com/tata-motors/indigo-sw/"
+        },
+        "Telcoline Double Cab": {
+            "link": "https://www.autoevolution.com/tata-motors/telcoline-double-cab/"
+        }
+    },
+    "tesla-motors": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/tesla-motors-sm.jpg",
+        "TESLA Model 3": {
+            "link": "https://www.autoevolution.com/tesla-motors/model-3/"
+        },
+        "TESLA Model X": {
+            "link": "https://www.autoevolution.com/tesla-motors/model-x/"
+        },
+        "TESLA Model S": {
+            "link": "https://www.autoevolution.com/tesla-motors/model-s/"
+        },
+        "TESLA Roadster": {
+            "link": "https://www.autoevolution.com/tesla-motors/roadster-2/"
+        },
+        "TESLA Cybertruck": {
+            "link": "https://www.autoevolution.com/tesla-motors/cybertruck/"
+        },
+        "TESLA Model Y": {
+            "link": "https://www.autoevolution.com/tesla-motors/y/"
+        }
+    },
+    "toyota": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/toyota-sm.jpg",
+        "GR Yaris": {
+            "link": "https://www.autoevolution.com/toyota/gr-yaris/"
+        },
+        "Yaris 5 Doors": {
+            "link": "https://www.autoevolution.com/toyota/yaris-5-doors/"
+        },
+        "Yaris Cross": {
+            "link": "https://www.autoevolution.com/toyota/yaris-cross/"
+        },
+        "Tacoma": {
+            "link": "https://www.autoevolution.com/toyota/tacoma/"
+        },
+        "C-HR": {
+            "link": "https://www.autoevolution.com/toyota/c-hr/"
+        },
+        "Camry": {
+            "link": "https://www.autoevolution.com/toyota/camry/"
+        },
+        "Corolla Touring": {
+            "link": "https://www.autoevolution.com/toyota/corolla-touring/"
+        },
+        "Corolla Cross": {
+            "link": "https://www.autoevolution.com/toyota/corolla-cross/"
+        },
+        "Prius": {
+            "link": "https://www.autoevolution.com/toyota/prius/"
+        },
+        "Corolla Sedan": {
+            "link": "https://www.autoevolution.com/toyota/corolla-sedan/"
+        },
+        "Sequoia": {
+            "link": "https://www.autoevolution.com/toyota/sequoia/"
+        },
+        "Tundra": {
+            "link": "https://www.autoevolution.com/toyota/tundra/"
+        },
+        "Mirai": {
+            "link": "https://www.autoevolution.com/toyota/mirai/"
+        },
+        "Land Cruiser / Prado": {
+            "link": "https://www.autoevolution.com/toyota/land-cruiser-prado/"
+        },
+        "Sienna": {
+            "link": "https://www.autoevolution.com/toyota/sienna/"
+        },
+        "Hilux Double Cab": {
+            "link": "https://www.autoevolution.com/toyota/hilux-double-cab/"
+        },
+        "Avalon": {
+            "link": "https://www.autoevolution.com/toyota/avalon/"
+        },
+        "Highlander / Kluger": {
+            "link": "https://www.autoevolution.com/toyota/highlander-kluger/"
+        },
+        "RAV4 5 Doors": {
+            "link": "https://www.autoevolution.com/toyota/rav4-5-doors/"
+        },
+        "Auris 5 Doors": {
+            "link": "https://www.autoevolution.com/toyota/auris-5-doors/"
+        },
+        "Aygo 5 Doors": {
+            "link": "https://www.autoevolution.com/toyota/aygo-5-doors/"
+        },
+        "Yaris Sedan": {
+            "link": "https://www.autoevolution.com/toyota/yaris-sedan/"
+        },
+        "Corolla": {
+            "link": "https://www.autoevolution.com/toyota/corolla/"
+        },
+        "Prius C (Aqua)": {
+            "link": "https://www.autoevolution.com/toyota/prius-c-aqua/"
+        },
+        "Venza": {
+            "link": "https://www.autoevolution.com/toyota/venza/"
+        },
+        "Corolla (US)": {
+            "link": "https://www.autoevolution.com/toyota/corolla-us/"
+        },
+        "GT 86": {
+            "link": "https://www.autoevolution.com/toyota/gt-86/"
+        },
+        "Prius v/Prius+": {
+            "link": "https://www.autoevolution.com/toyota/prius-v-prius/"
+        },
+        "Fortuner": {
+            "link": "https://www.autoevolution.com/toyota/fortuner/"
+        },
+        "Hilux Extra Cab": {
+            "link": "https://www.autoevolution.com/toyota/hilux-extra-cab/"
+        },
+        "Avensis Wagon": {
+            "link": "https://www.autoevolution.com/toyota/avensis-wagon/"
+        },
+        "4Runner": {
+            "link": "https://www.autoevolution.com/toyota/4runner/"
+        },
+        "Avensis": {
+            "link": "https://www.autoevolution.com/toyota/avensis/"
+        },
+        "Hilux": {
+            "link": "https://www.autoevolution.com/toyota/hilux/"
+        },
+        "Previa / Estima": {
+            "link": "https://www.autoevolution.com/toyota/previa-estima/"
+        },
+        "Supra": {
+            "link": "https://www.autoevolution.com/toyota/supra/"
+        },
+        "GR Corolla": {
+            "link": "https://www.autoevolution.com/toyota/gr-corolla/"
+        },
+        "VERSO-S": {
+            "link": "https://www.autoevolution.com/toyota/verso-s/"
+        },
+        "Corolla Cross (US)": {
+            "link": "https://www.autoevolution.com/toyota/corolla-cross-us/"
+        },
+        "GR Supra": {
+            "link": "https://www.autoevolution.com/toyota/gr-supra/"
+        },
+        "Aqua": {
+            "link": "https://www.autoevolution.com/toyota/aqua/"
+        },
+        "Agya": {
+            "link": "https://www.autoevolution.com/toyota/agya/"
+        },
+        "bZ": {
+            "link": "https://www.autoevolution.com/toyota/bz/"
+        },
+        "Harrier": {
+            "link": "https://www.autoevolution.com/toyota/harrier/"
+        },
+        "GR 86": {
+            "link": "https://www.autoevolution.com/toyota/gr-86/"
+        },
+        "Century SUV": {
+            "link": "https://www.autoevolution.com/toyota/century-1/"
+        },
+        "Etios Liva": {
+            "link": "https://www.autoevolution.com/toyota/etios-liva/"
+        },
+        "Century Sedan": {
+            "link": "https://www.autoevolution.com/toyota/century-sedan/"
+        },
+        "Prius Prime": {
+            "link": "https://www.autoevolution.com/toyota/prius-prime/"
+        },
+        "Aygo X": {
+            "link": "https://www.autoevolution.com/toyota/aygo-x/"
+        },
+        "Etios": {
+            "link": "https://www.autoevolution.com/toyota/etios/"
+        },
+        "Vios": {
+            "link": "https://www.autoevolution.com/toyota/vios/"
+        },
+        "Crown SUV": {
+            "link": "https://www.autoevolution.com/toyota/crown-suv/"
+        },
+        "Rukus": {
+            "link": "https://www.autoevolution.com/toyota/rukus/"
+        },
+        "Yaris Hatchback": {
+            "link": "https://www.autoevolution.com/toyota/yaris-hatchback/"
+        },
+        "Grand Highlander": {
+            "link": "https://www.autoevolution.com/toyota/grand-highlander/"
+        }
+    },
+    "tvr": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/tvr-sm.jpg",
+        "Griffith": {
+            "link": "https://www.autoevolution.com/tvr/griffith/"
+        }
+    },
+    "vauxhall": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/vauxhall-sm.jpg",
+        "Astra Estate": {
+            "link": "https://www.autoevolution.com/vauxhall/astra-estate/"
+        },
+        "Astra Hatchback": {
+            "link": "https://www.autoevolution.com/vauxhall/astra-hatchback/"
+        },
+        "Corsa 5 Doors": {
+            "link": "https://www.autoevolution.com/vauxhall/corsa-5-doors/"
+        },
+        "Corsa 3 Doors": {
+            "link": "https://www.autoevolution.com/vauxhall/corsa-3-doors/"
+        },
+        "VXR8": {
+            "link": "https://www.autoevolution.com/vauxhall/vxr8/"
+        },
+        "Insignia VXR Sedan": {
+            "link": "https://www.autoevolution.com/vauxhall/insignia-vxr-sedan/"
+        },
+        "Grandland": {
+            "link": "https://www.autoevolution.com/vauxhall/grandland/"
+        }
+    },
+    "vinfast": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/vinfast-sm.jpg",
+        "VinFast VF 8": {
+            "link": "https://www.autoevolution.com/vinfast/vf-8/"
+        },
+        "VinFast VF 9": {
+            "link": "https://www.autoevolution.com/vinfast/vf-9/"
+        }
+    },
+    "volkswagen": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/volkswagen-sm.jpg",
+        "Golf GTI / GTD / GTE": {
+            "link": "https://www.autoevolution.com/volkswagen/golf-gti-gtd-gte/"
+        },
+        "Golf Variant": {
+            "link": "https://www.autoevolution.com/volkswagen/golf-variant/"
+        },
+        "Golf 5 Doors": {
+            "link": "https://www.autoevolution.com/volkswagen/golf-5-doors/"
+        },
+        "Passat Variant": {
+            "link": "https://www.autoevolution.com/volkswagen/passat-variant/"
+        },
+        "Touareg R": {
+            "link": "https://www.autoevolution.com/volkswagen/touareg-r/"
+        },
+        "Touareg": {
+            "link": "https://www.autoevolution.com/volkswagen/touareg/"
+        },
+        "ID.3": {
+            "link": "https://www.autoevolution.com/volkswagen/id3/"
+        },
+        "Atlas": {
+            "link": "https://www.autoevolution.com/volkswagen/atlas/"
+        },
+        "Multivan": {
+            "link": "https://www.autoevolution.com/volkswagen/multivan/"
+        },
+        "T-Roc R": {
+            "link": "https://www.autoevolution.com/volkswagen/t-roc-r/"
+        },
+        "T-Roc Cabriolet": {
+            "link": "https://www.autoevolution.com/volkswagen/t-roc-cabriolet/"
+        },
+        "Golf R Variant": {
+            "link": "https://www.autoevolution.com/volkswagen/golf-r-variant/"
+        },
+        "T-Roc": {
+            "link": "https://www.autoevolution.com/volkswagen/t-roc/"
+        },
+        "Golf R": {
+            "link": "https://www.autoevolution.com/volkswagen/golf-r/"
+        },
+        "Polo 5 Doors": {
+            "link": "https://www.autoevolution.com/volkswagen/polo-5-doors/"
+        },
+        "Jetta / Vento / Bora": {
+            "link": "https://www.autoevolution.com/volkswagen/jetta-vento-bora/"
+        },
+        "Polo GTI": {
+            "link": "https://www.autoevolution.com/volkswagen/polo-gti/"
+        },
+        "Tiguan": {
+            "link": "https://www.autoevolution.com/volkswagen/tiguan/"
+        },
+        "Golf Alltrack": {
+            "link": "https://www.autoevolution.com/volkswagen/golf-alltrack/"
+        },
+        "Tiguan Allspace": {
+            "link": "https://www.autoevolution.com/volkswagen/tiguan-allspace/"
+        },
+        "Arteon": {
+            "link": "https://www.autoevolution.com/volkswagen/arteon/"
+        },
+        "Amarok": {
+            "link": "https://www.autoevolution.com/volkswagen/amarok/"
+        },
+        "e-UP!": {
+            "link": "https://www.autoevolution.com/volkswagen/e-up/"
+        },
+        "Passat Variant GTE": {
+            "link": "https://www.autoevolution.com/volkswagen/passat-variant-gte/"
+        },
+        "Passat": {
+            "link": "https://www.autoevolution.com/volkswagen/passat/"
+        },
+        "Passat Alltrack": {
+            "link": "https://www.autoevolution.com/volkswagen/passat-alltrack/"
+        },
+        "Passat GTE": {
+            "link": "https://www.autoevolution.com/volkswagen/passat-gte/"
+        },
+        "Golf Sportsvan": {
+            "link": "https://www.autoevolution.com/volkswagen/golf-sportsvan/"
+        },
+        "e-Golf": {
+            "link": "https://www.autoevolution.com/volkswagen/e-golf/"
+        },
+        "Caddy": {
+            "link": "https://www.autoevolution.com/volkswagen/caddy/"
+        },
+        "up!": {
+            "link": "https://www.autoevolution.com/volkswagen/up/"
+        },
+        "Touran": {
+            "link": "https://www.autoevolution.com/volkswagen/touran/"
+        },
+        "Gol": {
+            "link": "https://www.autoevolution.com/volkswagen/gol/"
+        },
+        "Scirocco": {
+            "link": "https://www.autoevolution.com/volkswagen/scirocco/"
+        },
+        "Scirocco R": {
+            "link": "https://www.autoevolution.com/volkswagen/scirocco-r/"
+        },
+        "Sharan": {
+            "link": "https://www.autoevolution.com/volkswagen/sharan/"
+        },
+        "Polo Sedan": {
+            "link": "https://www.autoevolution.com/volkswagen/polo-sedan/"
+        },
+        "Taigo": {
+            "link": "https://www.autoevolution.com/volkswagen/taigo/"
+        },
+        "Arteon Shooting Brake": {
+            "link": "https://www.autoevolution.com/volkswagen/arteon-shooting-brake/"
+        },
+        "Atlas Cross Sport": {
+            "link": "https://www.autoevolution.com/volkswagen/atlas-cross-sport/"
+        },
+        "ID.7": {
+            "link": "https://www.autoevolution.com/volkswagen/id7/"
+        },
+        "ID.4": {
+            "link": "https://www.autoevolution.com/volkswagen/id4/"
+        },
+        "Polo BlueGT": {
+            "link": "https://www.autoevolution.com/volkswagen/polo-bluegt/"
+        },
+        "ID. Buzz": {
+            "link": "https://www.autoevolution.com/volkswagen/id-buzz/"
+        },
+        "up! GTI": {
+            "link": "https://www.autoevolution.com/volkswagen/up-gti/"
+        },
+        "Jetta GLI": {
+            "link": "https://www.autoevolution.com/volkswagen/jetta-gli/"
+        },
+        "T-Cross": {
+            "link": "https://www.autoevolution.com/volkswagen/t-cross/"
+        },
+        "Golf GTD Variant": {
+            "link": "https://www.autoevolution.com/volkswagen/golf-gtd-variant/"
+        },
+        "ID.5 GTX": {
+            "link": "https://www.autoevolution.com/volkswagen/id5-gtx/"
+        },
+        "Transporter Kombi": {
+            "link": "https://www.autoevolution.com/volkswagen/transporter-kombi/"
+        },
+        "ID.5": {
+            "link": "https://www.autoevolution.com/volkswagen/id5/"
+        },
+        "Nivus": {
+            "link": "https://www.autoevolution.com/volkswagen/nivus/"
+        },
+        "Vento": {
+            "link": "https://www.autoevolution.com/volkswagen/vento/"
+        }
+    },
+    "volvo": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/volvo-sm.jpg",
+        "XC40": {
+            "link": "https://www.autoevolution.com/volvo/xc40/"
+        },
+        "XC90": {
+            "link": "https://www.autoevolution.com/volvo/xc90/"
+        },
+        "S90": {
+            "link": "https://www.autoevolution.com/volvo/s90/"
+        },
+        "V90 Cross Country": {
+            "link": "https://www.autoevolution.com/volvo/v90-cross-country/"
+        },
+        "V90": {
+            "link": "https://www.autoevolution.com/volvo/v90/"
+        },
+        "S60": {
+            "link": "https://www.autoevolution.com/volvo/s60/"
+        },
+        "V60": {
+            "link": "https://www.autoevolution.com/volvo/v60/"
+        },
+        "V60 Polestar": {
+            "link": "https://www.autoevolution.com/volvo/v60-polestar/"
+        },
+        "V60 Cross Country": {
+            "link": "https://www.autoevolution.com/volvo/v60-cross-country/"
+        },
+        "S60 Polestar": {
+            "link": "https://www.autoevolution.com/volvo/s60-polestar/"
+        },
+        "XC60": {
+            "link": "https://www.autoevolution.com/volvo/xc60/"
+        },
+        "EX90": {
+            "link": "https://www.autoevolution.com/volvo/ex90/"
+        },
+        "C40": {
+            "link": "https://www.autoevolution.com/volvo/c40/"
+        },
+        "EX30": {
+            "link": "https://www.autoevolution.com/volvo/ex30/"
+        },
+        "EM90": {
+            "link": "https://www.autoevolution.com/volvo/em90/"
+        }
+    },
+    "wiesmann": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/wiesmann-sm.jpg",
+        "GT MF5": {
+            "link": "https://www.autoevolution.com/wiesmann/gt-mf5/"
+        },
+        "GT MF4": {
+            "link": "https://www.autoevolution.com/wiesmann/gt-mf4/"
+        },
+        "MF4 Roadster": {
+            "link": "https://www.autoevolution.com/wiesmann/mf4-roadster/"
+        },
+        "MF5 Roadster": {
+            "link": "https://www.autoevolution.com/wiesmann/mf5-roadster/"
+        },
+        "GT MF4-CS": {
+            "link": "https://www.autoevolution.com/wiesmann/gt-mf4-cs/"
+        },
+        "MF4-S Roadster": {
+            "link": "https://www.autoevolution.com/wiesmann/mf4-s-roadster/"
+        },
+        "GT MF4-S": {
+            "link": "https://www.autoevolution.com/wiesmann/gt-mf4-s/"
+        }
+    },
+    "xpeng": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/xpeng-sm.jpg",
+        "Xpeng G3": {
+            "link": "https://www.autoevolution.com/xpeng/g3i/"
+        },
+        "Xpeng P5": {
+            "link": "https://www.autoevolution.com/xpeng/p5/"
+        },
+        "Xpeng G6": {
+            "link": "https://www.autoevolution.com/xpeng/g6-1/"
+        },
+        "Xpeng G9": {
+            "link": "https://www.autoevolution.com/xpeng/g9/"
+        },
+        "Xpeng P7": {
+            "link": "https://www.autoevolution.com/xpeng/p7/"
+        }
+    },
+    "zenvo": {
+        "imglink": "https://s1.cdn.autoevolution.com/images/producers/zenvo-sm.jpg",
+        "Zenvo Aurora": {
+            "link": "https://www.autoevolution.com/zenvo/aurora-1/"
+        },
+        "Zenvo TS1": {
+            "link": "https://www.autoevolution.com/zenvo/ts1/"
+        },
+        "Zenvo TSR-S": {
+            "link": "https://www.autoevolution.com/zenvo/tsr-s/"
+        }
+    }
+}

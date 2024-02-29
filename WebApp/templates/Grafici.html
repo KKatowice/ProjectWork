@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Grafici</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Bootstrap Icons CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+
+        <style>
+            .card {
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombra leggera di base */
+                transition: box-shadow 0.3s ease; /* Transizione fluida per l'ombra */
+            }
+            /* Stile per l'ombreggiatura quando si passa sopra */
+            .card:hover {
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ombra più marcata quando si passa sopra */
+            }
+            .card:hover h5 {
+                color: #28a745 !important;
+            }
+            .card-title {
+                font-family: "Georgia", sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            .container-a {
+                background-color: #6ca577;
+                color: black;
+                text-align: center;
+                padding: 10px 0;
+                position: absolute;
+                bottom: 5;
+                width: 100%;
+                margin-top: 3%;
+            }
+            .card-img-top {
+                height: 200px; /* Imposta l'altezza desiderata per le immagini */
+                object-fit: cover; /* Ridimensiona le immagini mantenendo le proporzioni e coprendo l'area specificata */
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/"><i class="fas fa-car"></i> DrivenChoice</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" href="/">Home</a>
+                    <a class="nav-link" href="/chisiamo">Chi Siamo</a>
+                    <a class="nav-link" href="/marchi">I nostri Marchi</a>
+                    <a class="nav-link" href="/auto">Tutte le automobili</a>
+                    <a class="nav-link" href="/grafici">Grafici</a>
+                    <a class="nav-link" href="/Utente">Utente</a>
+                    <a class="nav-link" href="/preferiti">Preferiti</a>
+                    {% if session['utente'] == 'admin' %}
+                    <a class="nav-link" href="/admin">Admin</a>
+                    {%endif%}
+                    <form class="d-flex" role="search" action="/search" method="get">
+                        <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name" />
+                        <button class="btn btn-outline-success" type="submit">Cerca</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container mt-5 text-center">
+            <h1 class="mb-5">Tutti i Grafici</h1>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img src="https://rivistanatura.com/wp-content/uploads/2015/04/fuel-e1430297664835.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">Carburanti preferiti dagli utenti</h5>
+                            <p class="card-text">Visualizza il grafico sui carburanti  preferiti dagli utenti </p>
+                            <a href="#" class="btn btn-dark" onclick="openPopup(`{{ url_for('static', filename='prefecarb.jpg') }}`)">Visualizza grafico</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img src="https://cdn.motor1.com/images/mgl/9myzzG/s3/le-auto-col-cambio-manuale-piu-potenti.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">Automobili più potenti</h5>
+                            <p class="card-text">Visualizza il grafico sulle nostre automobili più potenti</p>
+                            <a href="#" class="btn btn-dark" onclick="openPopup(`{{ url_for('static', filename='autopotenti.jpg') }}`)">Visualizza grafico</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img src="https://motori.quotidiano.net/wp-content/uploads/2023/02/Fiat-Panda-4x4-dal-20121-700x494.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">Marchi preferiti dagli utenti</h5>
+                            <p class="card-text">Visualizza il grafico sulla tipologia di automobile più acquistata dai nostri utenti</p>
+                            <a href="#" class="btn btn-dark" onclick="openPopup(`{{ url_for('static', filename='prefeutenti.jpg') }}`)">Visualizza grafico</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img src="https://th.bing.com/th/id/R.beb7702dd4d6ed971b1b082b64872698?rik=H57uyHDKz3UQTA&pid=ImgRaw&r=0" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">Budget under 30</h5>
+                            <p class="card-text">Budget medio dei nostri utenti under 30</p>
+                            <a href="#" class="btn btn-dark" onclick="openPopup(`{{ url_for('static', filename='under30.jpg') }}`)">Visualizza grafico</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img src="https://loanpig-e14c.kxcdn.com/wp-content/uploads/2020/10/19309-scaled.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">Budget 30-60</h5>
+                            <p class="card-text">Budget medio dei nostri utenti nella fascia d'età 30-60</p>
+                            <a href="#" class="btn btn-dark" onclick="openPopup(`{{ url_for('static', filename='budget3060.jpg') }}`)">Visualizza grafico</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img src="https://th.bing.com/th/id/OIP.oW5RBiWN8xz5nigWzoJVHgHaIX?rs=1&pid=ImgDetMain" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">Mappa degli utenti in base alla provincia</h5>
+                            <p class="card-text">Mappa illustrata in base alla provincia degli utenti</p>
+                            <a href="#" class="btn btn-dark" onclick="openPopup(`{{ url_for('static', filename='prov.jpg') }}`)">Visualizza grafico</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-a">
+            <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
+        </div>
+        <!-- Includi Bootstrap JS (opzionale) -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            function openPopup(imageUrl) {
+                var popupWindow = window.open("", "popupWindow", "width=600,height=600");
+                popupWindow.document.write(`<img src="${imageUrl}" alt="Grafico" style="max-width: 100%; max-height: 100%;">`);
+            }
+        </script>
+    </body>
+</html>

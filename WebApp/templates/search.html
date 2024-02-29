@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ricerca</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <style>
+            .card {
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombra leggera di base */
+                transition: box-shadow 0.3s ease; /* Transizione fluida per l'ombra */
+            }
+            /* Stile per l'ombreggiatura quando si passa sopra */
+            .card:hover {
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ombra più marcata quando si passa sopra */
+            }
+            .card:hover h5 {
+                color: #28a745 !important;
+            }
+
+           .filters {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Aggiungiamo uno spazio tra i filtri */
+     margin-top: 130px;
+    margin-left: 10px;
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+}
+
+.filter-item label {
+    margin-right: 10px;
+}
+
+
+.range-value {
+    margin-left: 10px;
+}
+
+
+            /* Custom styling for range input */
+            .custom-range {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 100%;
+                height: 10px; /* Altezza barra di scorrimento */
+                background-color: #e0e0e0; /* Colore barra di scorrimento */
+                outline: none;
+                border-radius: 6px;
+                margin-top: 8px;
+                position: relative;
+            }
+
+            .custom-range::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 20px; /* Larghezza del pollice */
+                height: 20px; /* Altezza del pollice */
+                background-color: #93a996; /* Colore del pollice */
+                border: 2px solid #93a996; /* Colore del bordo del pollice */
+                border-radius: 50%; /* Bordi arrotondati */
+                cursor: pointer;
+                margin-top: -7px;
+                transition: transform 0.2s;
+                z-index: 1;
+            }
+
+            .custom-range::-moz-range-thumb {
+                width: 20px; /* Larghezza del pollice */
+                height: 20px; /* Altezza del pollice */
+                background-color: #93a996; /* Colore del pollice */
+                border: 2px solid #93a996; /* Colore del bordo del pollice */
+                border-radius: 50%; /* Bordi arrotondati */
+                cursor: pointer;
+                margin-top: -7px;
+                transition: transform 0.2s;
+                z-index: 1;
+            }
+
+            .range-value {
+                font-size: 14px;
+                margin-left: 5px;
+                color: #4caf50; /* Colore verde salvia */
+                position: ;
+                bottom: calc(100% + 5px);
+                left: 550%;
+                transform: translateX(70%);
+            }
+
+            /* Hover effect on range thumb */
+            .custom-range::-webkit-slider-thumb:hover,
+            .custom-range::-moz-range-thumb:hover {
+                transform: scale(1.1);
+            }
+
+            /* Personalizzazione del pulsante Filtri */
+
+                background-color: #93a996; /* Colore verde foglia */
+                border-color: #93a996; /* Colore del bordo */
+            }
+
+            /* Stile per il pallino verde */
+            .green-dot {
+                color: #93a996; /* Colore verde foglia */
+                margin-right: 5px;
+            }
+            .container-a {
+                background-color: #6ca577;
+                color: black;
+                text-align: center;
+                padding: 10px 0;
+                position: absolute;
+                bottom: 5;
+                width: 100%;
+                margin-top: 3%;
+            }
+        /* Stile per il pop-up */
+                        #carModal .modal-dialog {
+                            max-width: 800px; /* Larghezza massima del pop-up */
+                        }
+
+                        #carModal .modal-content {
+                            border-radius: 15px; /* Angoli arrotondati */
+                            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Ombra */
+                            background-color: #555;
+                            color: #fff; /* Testo bianco */
+                            display: flex;
+                        }
+
+                        #carModal .modal-header {
+                            border-bottom: none; /* Rimuove il bordo inferiore dall'intestazione */
+                        }
+
+                        #carModal .modal-footer {
+                            border-top: none; /* Rimuove il bordo superiore dal piè di pagina */
+                        }
+
+                        #carModal .modal-title {
+                            font-weight: bold; /* Testo in grassetto */
+                            color: #fff; /* Colore del testo */
+                        }
+
+                        #carModal .modal-body {
+                            padding: 30px; /* Padding interno */
+                            font-size: 16px; /* Dimensione del testo */
+                            flex: 1;
+                        }
+
+                        #carModal .close {
+                            color: #ff0000; /* Colore del pulsante di chiusura */
+                            opacity: 0.5; /* Opacità del pulsante di chiusura */
+                        }
+
+                        #carModal .close:hover {
+                            color: #ff0000; /* Colore del pulsante di chiusura al passaggio del mouse */
+                            opacity: 1; /* Opacità del pulsante di chiusura al passaggio del mouse */
+                        }
+                        #carImage {
+                            width: 300px; /* Larghezza fissa dell'immagine */
+                            height: 200px; /* Altezza fissa dell'immagine */
+                            object-fit: cover; /* Per mantenere le proporzioni e coprire l'area specificata */
+                            float: right; /* Posiziona l'immagine a destra */
+                            margin-left: 20px; /* Aggiunge spazio a sinistra dell'immagine */
+                        }
+        </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/"><i class="fas fa-car"></i> DrivenChoice</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" href="/">Home</a>
+                    <a class="nav-link" href="/chisiamo">Chi Siamo</a>
+                    <a class="nav-link" href="/marchi">I nostri Marchi</a>
+                    <a class="nav-link" href="/auto">Tutte le automobili</a>
+                    <a class="nav-link" href="/grafici">Grafici</a>
+                    <a class="nav-link" href="/Utente">Utente</a>
+                    <a class="nav-link" href="/preferiti">Preferiti</a>
+                    {% if session['utente'] == 'admin' %}
+                    <a class="nav-link" href="/admin">Admin</a>
+                    {%endif%}
+                    <form class="d-flex" role="search" action="/search" method="get">
+                        <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name" />
+                        <button class="btn btn-outline-success" type="submit">Cerca</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+                    <div class="container mt-5 text-center">
+                        <h1 class="mb-5">Auto trovate</h1>
+                        <div class="container text-center">
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                {% for elem in auto %}
+                                <div class="col-md-4 mb-4">
+                                    <div class="card h-100">
+                                        <img src="{{elem.foto_auto}}" class="card-img-top" alt="..." />
+                                        <div class="card-body d-flex flex-column align-items-center">
+                                            <h5 class="card-title card-title lead">{{elem.modello}}</h5>
+                                            <div class="d-grid gap-2 d-md-block mt-auto">
+                                            <button type="button" class="btn btn-dark" onclick="openPopup({{elem}})">Dettagli</button>
+                                            {% if session['utente'] %}
+                                            <button style="margin-top: 10px" type="button" class="btn btn-dark" onclick="aggiungiPreferiti({{elem}}, '{{session['utente']}}')">Salva nei preferiti</button>
+                                            {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+            <div class="modal fade" id="carModal" tabindex="-1" role="dialog" aria-labelledby="carModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="carrModalLabel">Dettagli auto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="" id="carImage" class="img-fluid mb-3" alt="Immagine auto">
+                        <h5 id="carDetails"></h5>
+                        <p id="carBrand"></p>
+                        <p id="carPrice"></p>
+                        <p id="carCil"></p>
+                        <p id="carCav"></p>
+                        <p id="carPot"></p>
+                        <p id="carCar"></p>
+                        <p id="carCons"></p>
+                        <p id="carEmi"></p>
+                        <p id="carSer"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="container-a">
+            <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
+        </div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+<script>
+            function openPopup(car) {
+                console.log(car);
+                var carDetailsElement = document.getElementById("carDetails");
+                carDetailsElement.textContent = car.modello;
+                var carPriceElement = document.getElementById("carPrice");
+                carPriceElement.textContent = "Prezzo: " + car.prezzo + "€";
+                var carCilElement = document.getElementById("carCil");
+                carCilElement.textContent = "Cilindrata: " + car.cilindrata + " L";
+                var carCavElement = document.getElementById("carCav");
+                carCavElement.textContent = "Cavalli: " + car.cavalli;
+                var carPotElement = document.getElementById("carPot");
+                carPotElement.textContent = "Potenza: " + car.potenza + " KW";
+                var carCarElement = document.getElementById("carCar");
+                carCarElement.textContent = "Carburante: " + car.carburante;
+                var carConsElement = document.getElementById("carCons");
+                carConsElement.textContent = "Consumi: " + car.consumi + " L/100km";
+                var carEmiElement = document.getElementById("carEmi");
+                carEmiElement.textContent = "Emissioni: " + car.emissioni + " g/km";
+                var carSerElement = document.getElementById("carSer");
+                carSerElement.textContent = "Serbatoio: " + car.serbatoio + " L";
+                var carBrandElement = document.getElementById("carBrand");
+                carBrandElement.textContent = "Brand: " + car.nome.toUpperCase();
+                var carImageElement = document.getElementById("carImage");
+                carImageElement.src = car.foto_auto;
+                $("#carModal").modal("show");
+            }
+        </script>
+<script>
+            async function aggiungiPreferiti(car,user){
+                console.log('funzione chiamata')
+                var auto = car.modello;
+                var utente = user;
+                var datiJSON = {
+                    auto: auto,
+                    utente: utente
+            };
+                try {
+        const resp = await fetch('/api/aggiungiPreferiti', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(datiJSON)
+        });
+
+        if (resp.ok) { console.log('dati fetchati')
+            const trueResp = await resp.json();
+            var notyf = new Notyf();
+            if (trueResp.success) {
+                notyf.success('Aggiunto ai preferiti');
+            } else {
+                notyf.error('Già nei preferiti');
+            }
+        } else {
+            console.error('Error:', resp.status);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+        </script>
+</body>
+</html>
