@@ -119,10 +119,10 @@
                                 <div class="d-grid gap-2 d-md-block mt-auto">
                                     <button type="button" class="btn btn-dark" onclick="openPopup({{elem}})">Dettagli</button>
                                     {% if session['utente'] %}
-                                    <button style="margin-top: 10px;" type="button" class="btn btn-dark" onclick="aggiungiPreferiti({{elem}}, '{{session['utente']}}')">Salva nei preferiti</button>
+                                    <button type="button" class="btn btn-dark" onclick="aggiungiPreferiti({{elem}}, '{{session['utente']}}')">Salva nei preferiti</button>
                                      {% elif session['utente'] == 'admin' %}
-                                    <button style="margin-top: 10px;" type="button" class="btn btn-dark" onclick="/api/cancella_auto">Cancella auto</button>
-                                     <button style="margin-top: 10px;" type="button" class="btn btn-dark" onclick="/api/modifica_auto">Modifica auto</button>
+                                    <button type="button" class="btn btn-dark" onclick="/api/cancella_auto">Cancella auto</button>
+                                     <button type="button" class="btn btn-dark" onclick="/api/modifica_auto">Modifica auto</button>
                                     {% endif %}
                                 </div>
                             </div>
