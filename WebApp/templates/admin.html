@@ -7,6 +7,7 @@
         <!-- Bootstrap CSS -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" />
         <style>
 
                     body {
@@ -773,10 +774,13 @@
                 </div>
             </div>
         </div>
-
+        <div class="container-a">
+            <p>&copy; 2024 DrivenChoice. All Rights Reserved.</p>
+        </div>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
         <script>
             function openPopup(popupId) {
             const popup = document.getElementById(popupId);
@@ -815,8 +819,8 @@ var datiJSON = {
         serbatoio : serbatoio
     };
 //console.log(datiJSON)
-let resp = await fetch('/api/aggiungi/auto', {
-        method: 'POST',
+let resp = await fetch('/api/aggiungi_auto', {
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -850,8 +854,8 @@ var datiJSON = {
 
     };
 //console.log(datiJSON)
-let resp = await fetch('/api/rimuovi/auto', {
-        method: 'POST',
+let resp = await fetch('/api/rimuovi_auto', {
+        method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -875,7 +879,7 @@ let trueResp = await resp.json()
 }
         </script>
         <script>
-            async function aggiungiauto() {
+            async function modificaauto() {
 var modello = document.getElementById("modello3").value;
 var new_modello = document.getElementById("new_modello").value;
 var marchio = document.getElementById("marchio3").value;
@@ -904,8 +908,8 @@ var datiJSON = {
         serbatoio : serbatoio
     };
 //console.log(datiJSON)
-let resp = await fetch('/api/aggiungi/auto', {
-        method: 'POST',
+let resp = await fetch('/api/modifica_auto', {
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -940,8 +944,8 @@ var datiJSON = {
 
     };
 //console.log(datiJSON)
-let resp = await fetch('/api/rimuovi/auto', {
-        method: 'POST',
+let resp = await fetch('/api/aggiugi_marchio', {
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -974,8 +978,8 @@ var datiJSON = {
 
     };
 //console.log(datiJSON)
-let resp = await fetch('/api/rimuovi/auto', {
-        method: 'POST',
+let resp = await fetch('/api/rimuovi_marchio', {
+        method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -1008,8 +1012,8 @@ var datiJSON = {
 
     };
 //console.log(datiJSON)
-let resp = await fetch('/api/rimuovi/auto', {
-        method: 'POST',
+let resp = await fetch('/api/rimuovi_utente', {
+        method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
         },

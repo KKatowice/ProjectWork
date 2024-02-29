@@ -343,7 +343,7 @@ def deleteAccount():
 
 # CRUD ADMIN
 
-@apiBlueprint.route('/api/aggiungi_auto', methods=['POST'])
+@apiBlueprint.route('/api/aggiungi_auto', methods=['PUT'])
 def aggiungi_auto():
     if session.get("utente") == "admin":
         c = create_db_connection(DBNAME)
@@ -380,7 +380,7 @@ def aggiungi_auto():
             else:
                 return {"success": False}
 
-@apiBlueprint.route('/api/modifica/auto', methods=['GET', 'POST'])
+@apiBlueprint.route('/api/modifica_auto', methods=['PUT'])
 def modifica_auto():
     c = create_db_connection(DBNAME)
     data = request.get_json()
@@ -423,7 +423,7 @@ def modifica_auto():
 
 
 
-@apiBlueprint.route('/api/rimuovi/auto', methods=['POST'])
+@apiBlueprint.route('/api/rimuovi_auto', methods=['DELETE'])
 def cancella_auto():
     c = create_db_connection(DBNAME)
     if session.get("utente") == "admin":
@@ -440,7 +440,7 @@ def cancella_auto():
 
 
 #UTENTI
-@apiBlueprint.route('/api/rimuovi/utente', methods=['POST'])
+@apiBlueprint.route('/api/rimuovi_utente', methods=['DELETE'])
 def cancella_utenti():
     c = create_db_connection(DBNAME)
     if session.get("utente") == "admin":
@@ -465,7 +465,7 @@ def cancella_utenti():
 
 #MARCHIO
 
-@apiBlueprint.route('/api/aggiugi/marchio', methods=['POST'])
+@apiBlueprint.route('/api/aggiugi_marchio', methods=['PUT'])
 def aggiugi_marchio():
     c = create_db_connection(DBNAME)
     if session.get("utente") == "admin":
@@ -487,7 +487,7 @@ def aggiugi_marchio():
 
 
 
-@apiBlueprint.route('/api/rimuovi/marchio', methods=['POST'])
+@apiBlueprint.route('/api/rimuovi_marchio', methods=['DELETE'])
 def rimuovi_marchio():
     c = create_db_connection(DBNAME)
     if session.get("utente") == "admin":
