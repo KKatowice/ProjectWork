@@ -357,56 +357,26 @@
                 transform: rotate(-9deg);
                 }
 
-                    .card {
-                        border: none;
-                        transition: transform 0.2s, box-shadow 0.2s;
-                        background-color: #ffffff;
-                        border-radius: 20px;
-                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                        margin-bottom: 20px;
-                        height: 100%;
-                        position: relative;
-                        overflow: hidden;
-                    }
+                .card {height: 300px;
+                   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ombra leggera di base */
+                   transition: box-shadow 0.3s ease; /* Transizione fluida per l'ombra */
+               }
+               /* Stile per l'ombreggiatura quando si passa sopra */
+               .card:hover {
+                   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ombra più marcata quando si passa sopra */
+               }
+               .card:hover h5 {
+                   color: #28a745 !important;
+               }
+               .card-img-top {
+               height: 200px; /* Imposta l'altezza desiderata per le immagini */
+               object-fit: cover; /* Ridimensiona le immagini mantenendo le proporzioni e coprendo l'area specificata */
+               }
+               .card-title-sm {
+        font-size: 25px; /* Imposta la dimensione del carattere del titolo della card */
+        }
 
-                    .card:before {
-                        content: "";
-                        position: absolute;
-                        top: 20;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background: linear-gradient(to bottom right, #D3D3D3, #D3D3D3);
-                        opacity: 0.8;
-                        z-index: 0;
-                    }
 
-                    .card:hover {
-                        transform: translateY(-5px);
-                        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
-                    }
-
-                    .card-img-top {
-                        border-radius: 20px 20px 0 0;
-                        z-index: 1;
-                    }
-
-                    .card-body {
-                        position: relative;
-                        z-index: 1;
-                    }
-
-                    .card-title {
-                        color: #009900;
-                        font-weight: bold;
-                        margin-bottom: 10px;
-                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-                    }
-
-                    .card-text {
-                        color: #000000;
-                        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-                    }
 
                     .btn-custom {
                         background-color: #6ca577;
@@ -488,9 +458,10 @@
                     <a class="nav-link" href="/marchi">I nostri Marchi</a>
                     <a class="nav-link" href="/auto">Tutte le automobili</a>
                     <a class="nav-link" href="/grafici">Grafici</a>
+                    <a class="nav-link" href="/Utente">Utente</a>
                     <a class="nav-link" href="/preferiti">Preferiti</a>
                     {% if session['utente'] == 'admin' %}
-                    <a class="nav-link" href="/admin">Administration</a>
+                    <a class="nav-link" href="/admin">Admin</a>
                     {%endif%}
                     <form class="d-flex" role="search" action="/search" method="get">
                         <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name" />
@@ -507,7 +478,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h2>Bentornato Admin, che cosa vuoi modificare? </h2>
+                <h2 class="text-center mt-5 mb-5">Bentornato Admin, che cosa vuoi modificare? </h2>
 <div class="container">
   <div class="row">
     <div class="col-sm">
@@ -567,14 +538,15 @@
                                     <div class='input-fields'>
                                         <input type='text' id='modello' placeholder='Modello Automobile' class='input-line full-width'>
                                         <input type='text' id='marchio' placeholder='Marchio Automobile' class='input-line full-width'>
-                                        <input type='text' id='cilindrata' placeholder='Cilidrata' class='input-line full-width'>
+                                        <input type='text' id='cilindrata' placeholder='Cilindrata' class='input-line full-width'>
                                         <input type='text' id='potenza' placeholder='Potenza' class='input-line full-width'>
                                         <input type='text' id='cavalli' placeholder='Cavalli' class='input-line full-width'>
                                         <input type='text' id='carburante' placeholder='Carburante' class='input-line full-width'>
                                          <input type='text' id='consumi' placeholder='Consumi' class='input-line full-width'>
                                         <input type='text' id='emissioni' placeholder='Emissioni' class='input-line full-width'>
                                         <input type='text' id='serbatoio' placeholder='Serbatoio' class='input-line full-width'>
-                                        <input type='file' id='foto_auto' placeholder='Foto' accept='image/*' class='input-line full-width'>
+                                        <input type='text' id='prezzo' placeholder='Prezzo' class='input-line full-width'>
+                                        <input type='text' id='foto_auto' placeholder='Link foto' class='input-line full-width'>
                                     </div>
                                     <div>
                                         <button onclick="aggiungiauto()" class='ghost-round full-width btn-dark'>Aggiungi Automobile </button>
@@ -646,17 +618,17 @@
                                         <input type='text' id='modello3' placeholder='Modello Automobile da modificare' class='input-line full-width'>
                                         <input type='text' id='new_modello' placeholder='Nuovo nome del modello' class='input-line full-width'>
                                         <input type='text' id='marchio3' placeholder='Marchio Automobile' class='input-line full-width'>
-                                        <input type='text' id='cilindrata3' placeholder='Cilidrata' class='input-line full-width'>
+                                        <input type='text' id='cilindrata3' placeholder='Cilindrata' class='input-line full-width'>
                                         <input type='text' id='potenza3' placeholder='Potenza' class='input-line full-width'>
                                         <input type='text' id='cavalli3' placeholder='Cavalli' class='input-line full-width'>
                                         <input type='text' id='carburante3' placeholder='Carburante' class='input-line full-width'>
                                          <input type='text' id='consumi3' placeholder='Consumi' class='input-line full-width'>
                                         <input type='text' id='emissioni3' placeholder='Emissioni' class='input-line full-width'>
                                         <input type='text' id='serbatoio3' placeholder='Serbatoio' class='input-line full-width'>
-                                        <input type='file' id='foto_auto3' placeholder='Foto' accept='image/*' class='input-line full-width'>
-                                    </div>
+                                        <input type='text' id='prezzo3' placeholder='Prezzo' class='input-line full-width'>
+                                        <input type='text' id='foto_auto3' placeholder='Link foto' class='input-line full-width'>                                    </div>
                                     <div>
-                                        <button onclick="modificaauto()" class='ghost-round full-width btn-dark'>Aggiungi Automobile </button>
+                                        <button onclick="modificaauto()" class='ghost-round full-width btn-dark'>Modifica Automobile </button>
                                     </div>
                                 </div>
                             </div>
@@ -689,10 +661,10 @@
                                         <div class='subtitle'>Aggiungi i dati del nuovo marchio</div>
                                         <div class='input-fields'>
                                             <input type='text' id='nome_marchio' placeholder='Nome' class='input-line full-width'>
-                                            <input type='file' id='foto_marchio' placeholder='Foto' accept='image/*' class='input-line full-width'>
+                                            <input type='text' id='foto_marchio' placeholder='Link Foto'  class='input-line full-width'>
                                         </div>
                                         <div>
-                                            <button onclick="aggiungimarchio()" class='ghost-round full-width'>Aggiungi Marchio </button>
+                                            <button onclick="aggiungimarchio()" class='ghost-round full-width mt-2'>Aggiungi Marchio </button>
                                         </div>
                                     </div>
                                 </div>
@@ -794,16 +766,29 @@
         <script>
             async function aggiungiauto() {
 var modello = document.getElementById("modello").value;
+console.log(modello)
 var marchio = document.getElementById("marchio").value;
+console.log(marchio)
 var prezzo = document.getElementById("prezzo").value;
+console.log(prezzo)
 var foto_auto = document.getElementById("foto_auto").value;
+console.log(foto_auto)
 var cilindrata = document.getElementById("cilindrata").value;
+console.log(cilindrata)
 var potenza = document.getElementById("potenza").value;
+console.log(potenza)
 var cavalli = document.getElementById("cavalli").value;
+console.log(cavalli)
 var carburante = document.getElementById("carburante").value;
+console.log(carburante)
 var consumi = document.getElementById("consumi").value;
+console.log(consumi)
 var emissioni = document.getElementById("emissioni").value;
+console.log(emissioni)
 var serbatoio = document.getElementById("serbatoio").value;
+console.log(serbatoio)
+
+
 
 var datiJSON = {
         modello : modello,
@@ -818,7 +803,7 @@ var datiJSON = {
         emissioni : emissioni,
         serbatoio : serbatoio
     };
-//console.log(datiJSON)
+    console.log(datiJSON)
 let resp = await fetch('/api/aggiungi_auto', {
         method: 'PUT',
         headers: {
@@ -935,16 +920,18 @@ let trueResp = await resp.json()
         <script>
      async function aggiungimarchio() {
 var nome = document.getElementById("nome_marchio").value;
-var foto_marchio = document.getElementById("nome_marchio").value;
+console.log(nome)
+var foto_marchio = document.getElementById("foto_marchio").value;
+console.log(foto_marchio)
 
 
 var datiJSON = {
     nome : nome,
-    foto_marchio
+    foto: foto_marchio
 
     };
 //console.log(datiJSON)
-let resp = await fetch('/api/aggiugi_marchio', {
+let resp = await fetch('/api/aggiungi_marchio', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -963,7 +950,7 @@ let trueResp = await resp.json()
 
     }
     else {
-        notyf.error('Auto già eliminata');
+        notyf.error('Marchio già esistente');
         //alert("Dati inseriti sbagliati")
     }
 }
@@ -997,7 +984,7 @@ let trueResp = await resp.json()
 
     }
     else {
-        notyf.error('Auto già eliminata');
+        notyf.error('Marchio non esistente');
         //alert("Dati inseriti sbagliati")
     }
 }

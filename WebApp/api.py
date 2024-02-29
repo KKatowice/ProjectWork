@@ -348,6 +348,7 @@ def aggiungi_auto():
     if session.get("utente") == "admin":
         c = create_db_connection(DBNAME)
         data = request.get_json()
+        print(data)
         modello = data['modello']
         marchio = data['marchio']
         prezzo = data['prezzo']
@@ -362,7 +363,8 @@ def aggiungi_auto():
         q_ver = f"""SELECT * FROM motori WHERE cilindrata = '{cilindrata}' AND potenza = '{potenza}' AND cavalli = '{cavalli}'
          AND carburante = '{carburante}' AND consumi = '{consumi}' AND emissioni = '{emissioni}' 
          AND serbatoio = '{serbatoio}';"""
-        if len(q_ver)==0:
+        x = read_query(c, q_ver)
+        if len(x)==0:
             q2 = f"""INSERT INTO motori(cilindrata, potenza, cavalli, carburante, consumi, emissioni, serbatoio) 
             Values('{cilindrata}','{potenza}','{cavalli}','{carburante}','{consumi}','{emissioni}','{serbatoio}');"""
             r2 = execute_query(c, q2)
@@ -379,6 +381,21 @@ def aggiungi_auto():
                 return {"success": True}
             else:
                 return {"success": False}
+        else:
+            id_query = f"""SELECT id_motore FROM motori WHERE cilindrata = '{cilindrata}' AND potenza = '{potenza}' AND cavalli = '{cavalli}'
+                                AND carburante = '{carburante}' AND consumi = '{consumi}' AND emissioni = '{emissioni}' 
+                                AND serbatoio = '{serbatoio}';"""
+            id = read_query(c, id_query)[0]['id_motore']
+            id2_query = f"""SELECT id_marchio FROM marchi WHERE nome = '{marchio}'"""
+            id2 = read_query(c, id2_query)[0]['id_marchio']
+            q1 = f"""INSERT INTO auto(id_motore, id_marchio, modello, prezzo, foto_auto) 
+                            VALUES('{id}','{id2}','{modello}','{prezzo}','{foto_auto}');"""
+            r1 = execute_query(c, q1)
+            if r1:
+                return {"success": True}
+            else:
+                return {"success": False}
+
 
 @apiBlueprint.route('/api/modifica_auto', methods=['PUT'])
 def modifica_auto():
@@ -388,6 +405,8 @@ def modifica_auto():
     new_modello = data['new_modello']
     id_motore = read_query(c, f"""SELECT id_motore FROM auto WHERE modello = '{modello}' """)[0]['id_motore']
     marchio = data["marchio"]
+    id_x = f"""SELECT id_marchio FROM concessionario.marchi WHERE nome = '{marchio}'"""
+    id_marchio = read_query(c,id_x)[0]['id_marchio']
     prezzo = data["prezzo"]
     foto_auto = data["foto_auto"]
     cilindrata = data["cilindrata"]
@@ -399,7 +418,7 @@ def modifica_auto():
     serbatoio = data["serbatoio"]
     q = f"""
                UPDATE auto
-               SET id_marchio = '{marchio}', modello = '{new_modello}',
+               SET id_marchio = '{id_marchio}', modello = '{new_modello}',
                prezzo = '{prezzo}', foto_auto = '{foto_auto}'
                WHERE modello = '{modello}'
                ;
@@ -408,13 +427,12 @@ def modifica_auto():
                UPDATE motori
                SET cilindrata = '{cilindrata}', potenza = '{potenza}',
                 cavalli = '{cavalli}', carburante = '{carburante}',
-                carburante = '{carburante}', consumi = '{consumi}',
-                emissioni = '{emissioni}', serbatoio = '{serbatoio}'
+                consumi = '{consumi}', emissioni = '{emissioni}', serbatoio = '{serbatoio}'
                 WHERE id_motore = '{id_motore}'
                ;
                """
-    r = execute_query(c, q)
-    r2 = execute_query(c, q2)
+    r = execute_query(c, q2)
+    r2 = execute_query(c, q)
     c.close()
     if r and r2:
         return {"success": True}
@@ -431,11 +449,18 @@ def cancella_auto():
         modello = data["modello"]
         q = f"""DELETE FROM auto
                     WHERE modello = '{modello}';"""
+        q2 = f"""SELECT motori.id_motore FROM concessionario.motori JOIN concessionario.auto ON auto.id_motore = motori.id_motore 
+                WHERE auto.modello = '{modello}'"""
+        s = read_query(c,q2)
+        q3 = f"""DELETE FROM concessionario.motori WHERE id_motore = '{s}'"""
         r = execute_query(c, q)
+        x = execute_query(c,q3)
         if r:
             return {'success':True}
         else:
             return {'success':False}
+    else:
+        return {'success': False}
 
 
 
@@ -465,14 +490,14 @@ def cancella_utenti():
 
 #MARCHIO
 
-@apiBlueprint.route('/api/aggiugi_marchio', methods=['PUT'])
-def aggiugi_marchio():
+@apiBlueprint.route('/api/aggiungi_marchio', methods=['PUT'])
+def aggiungi_marchio():
     c = create_db_connection(DBNAME)
     if session.get("utente") == "admin":
         data = request.get_json()
-        nome = data["nome"]
-        foto_marchio = data["foto_marchio"]
-        q_verifica = f"""SELECT FROM marchi WHERE nome = '{nome}';"""
+        nome = data["nome_marchio"]
+        foto_marchio = data["foto"]
+        q_verifica = f"""SELECT FROM concessionario.marchi WHERE nome = '{nome}';"""
         q = f"""INSERT INTO marchi(nome, foto_marchio) VALUES('{nome}','{foto_marchio}')"""
         verifica = read_query(c, q_verifica)
         if len(verifica) == 0:
@@ -484,6 +509,8 @@ def aggiugi_marchio():
 
         else:
             return {'Error': True}
+    else:
+        return {'Error': True}
 
 
 

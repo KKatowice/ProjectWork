@@ -98,7 +98,7 @@
                         <a class="nav-link" href="/marchi">I nostri Marchi</a>
                         <a class="nav-link" href="/auto">Tutte le automobili</a>
                         <a class="nav-link" href="/grafici">Grafici</a>
-                        <a class="nav-link" href="/utente">Utente</a>
+                        <a class="nav-link" href="/Utente">Utente</a>
                         <a class="nav-link" href="/preferiti">Preferiti</a>
                         <form class="d-flex" role="search" action="/search" method="get">
                             <input id="prova" class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" name="name" />
@@ -123,7 +123,7 @@
                                     <button type="button" class="btn btn-dark" onclick="openPopup({{elem}})">Dettagli</button>
                                     {% if session['utente'] %}
                                     <button style="margin-top: 10px;" type="button" class="btn btn-dark" onclick="aggiungiPreferiti({{elem}}, '{{session['utente']}}')">Salva nei preferiti</button>
-                                     {% if session['utente'] == 'admin' %}
+                                     {% elif session['utente'] == 'admin' %}
                                     <button style="margin-top: 10px;" type="button" class="btn btn-dark" onclick="/api/cancella_auto">Cancella auto</button>
                                      <button style="margin-top: 10px;" type="button" class="btn btn-dark" onclick="/api/modifica_auto">Modifica auto</button>
                                     {% endif %}

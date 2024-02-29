@@ -82,7 +82,7 @@ def show_auto():
         for key, value in d.items():
             if isinstance(value, Decimal):
                 d[key] = float(value)
-    print(lista_auto, "fine show_auto, now render template diopan")
+    print(lista_auto, "fine show_auto, now render template")
     c.close()
     return render_template('Tutte_le_auto.html', auto=lista_auto, page=page, total_pages=totale)
 
@@ -125,9 +125,9 @@ def userHome():
 def logout():
     session['utente'] = None
     return redirect('/')
-@app.route('/Utente')
-def logutente():
-    return render_template('Utente.html')
+# @app.route('/Utente')
+# def logutente():
+#     return render_template('Utente.html')
 
 @app.route('/preferiti')
 def preferiti():
