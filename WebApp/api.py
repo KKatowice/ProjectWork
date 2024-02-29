@@ -217,7 +217,7 @@ def login():
         q1 = f"""SELECT password FROM utenti WHERE email = '{email}';"""
         q2 = f"""SELECT password FROM utenti_bloccati WHERE email = '{email}';"""
         q_admin = f"""SELECT admin FROM utenti WHERE email = '{email}';"""
-        data1 = read_query(connessione, q1)[0]
+        data1 = read_query(connessione, q1)
         data2 = read_query(connessione, q2)
         data_admin = read_query(connessione, q_admin )
         print(data1, password, data2)
@@ -225,7 +225,7 @@ def login():
         if len(data1) > 0 and (data2 == None or len(data2) == 0) :
             print('entrato')
             #print(check_password_hash(str(data1['password']), password))
-            pswcheck = check_password_hash(str(data1['password']), password)
+            pswcheck = check_password_hash(str(data1[0]['password']), password)
             if pswcheck:
                 if data_admin[0]['admin'] == 1:
                     print('check superato per admin')
@@ -495,11 +495,13 @@ def aggiungi_marchio():
     c = create_db_connection(DBNAME)
     if session.get("utente") == "admin":
         data = request.get_json()
-        nome = data["nome_marchio"]
+        print(data)
+        nome = data["nome"]
         foto_marchio = data["foto"]
-        q_verifica = f"""SELECT FROM concessionario.marchi WHERE nome = '{nome}';"""
+        q_verifica = f"""SELECT * FROM concessionario.marchi WHERE nome = '{nome}';"""
         q = f"""INSERT INTO marchi(nome, foto_marchio) VALUES('{nome}','{foto_marchio}')"""
         verifica = read_query(c, q_verifica)
+        print(verifica)
         if len(verifica) == 0:
             r = execute_query(c, q)
             if r:
@@ -509,6 +511,7 @@ def aggiungi_marchio():
 
         else:
             return {'Error': True}
+            print("Fanculo")
     else:
         return {'Error': True}
 
